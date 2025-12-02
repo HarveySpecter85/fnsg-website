@@ -26,7 +26,11 @@ export const metadata = {
                 "postalCode": "30501",
                 "addressCountry": "US"
             },
-            "@type": "Organization",
+            "parentOrganization": {
+                "@type": "Organization",
+                "name": "First National Staffing OS",
+                "url": "https://firstnationalstaffing.com"
+            },
             "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "4.8",
