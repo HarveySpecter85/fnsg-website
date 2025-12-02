@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 
-export default function Redirect() {
+export default function Page() {
     redirect("/company/our-story");
+    return null;
 }

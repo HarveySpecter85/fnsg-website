@@ -8,8 +8,7 @@ import { FadeIn } from '@/app/components/anim/fade-in'
 import { TextReveal } from '@/app/components/anim/text-reveal'
 import { LineChart, Line, ResponsiveContainer, XAxis, YAxis, Tooltip } from 'recharts'
 import clsx from 'clsx'
-import gsap from 'gsap'
-import { useGSAP } from '@gsap/react'
+
 import { IntelligenceWidget } from '@/app/components/intelligence-engine/widget'
 import { KPIDashboard } from '@/app/components/kpi-dashboard'
 
