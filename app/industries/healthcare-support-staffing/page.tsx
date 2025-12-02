@@ -5,6 +5,7 @@ import { FadeIn } from '@/app/components/anim/fade-in'
 import { MagneticButton } from '@/app/components/anim/magnetic-button'
 import { HEALTH_TURNOVER_MARKET, HEALTH_TURNOVER_FNSG, HEALTH_FILL_TIME, HEALTH_COMPLIANCE_SCORE, CURRENT_YEAR } from '@/lib/site-config'
 import { Shield, Clock, CheckCircle, Activity, FileCheck, Stethoscope, Syringe, UserCheck, Building2 } from 'lucide-react'
+import { IntelligenceWidget } from '@/app/components/intelligence-engine/widget'
 
 export const metadata: Metadata = {
     title: "Healthcare Support & EVS Staffing Georgia | JCAHO Ready & HIPAA Compliant",
@@ -82,6 +83,40 @@ export default function HealthcareSupportStaffingPage() {
                             </p>
                         </div>
                     </FadeIn>
+                </div>
+            </section>
+
+            {/* Market Intelligence Widget */}
+            <section className="py-20 bg-slate-950 relative overflow-hidden">
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+                <div className="container relative z-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                                Diagnose Your Staffing Health
+                            </h2>
+                            <p className="text-lg text-slate-400 mb-8">
+                                Run a diagnostic on your non-clinical workforce. Our system identifies compliance risks and proposes JCAHO-ready staffing solutions.
+                            </p>
+                            <ul className="space-y-4">
+                                <li className="flex items-center gap-3 text-slate-300">
+                                    <div className="w-2 h-2 rounded-full bg-cyan-500" />
+                                    Compliance Risk Scan
+                                </li>
+                                <li className="flex items-center gap-3 text-slate-300">
+                                    <div className="w-2 h-2 rounded-full bg-cyan-500" />
+                                    Turnover Impact Analysis
+                                </li>
+                                <li className="flex items-center gap-3 text-slate-300">
+                                    <div className="w-2 h-2 rounded-full bg-cyan-500" />
+                                    Patient Satisfaction Correlation
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <IntelligenceWidget industry="Healthcare" defaultLocation="Atlanta, GA" />
+                        </div>
+                    </div>
                 </div>
             </section>
 

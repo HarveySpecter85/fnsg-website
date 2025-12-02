@@ -20,6 +20,7 @@ export const metadata: Metadata = {
 import { SiteHeader } from "./components/site-header";
 import { SiteFooter } from "./components/site-footer";
 import { SmoothScroller } from "./components/ui/smooth-scroller";
+import KnowledgeGraph from "./components/json-ld-knowledge-graph";
 
 export default function RootLayout({
   children,
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <KnowledgeGraph />
         <SmoothScroller>
           <SiteHeader />
           {children}

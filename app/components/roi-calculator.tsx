@@ -2,10 +2,8 @@
 
 import { saveInitialCalculation } from '@/app/actions'
 import { useState } from 'react'
-import { useRouter } from 'next/navigation' // 👈 Importamos el router
+import { useRouter } from 'next/navigation'
 
-// ... (Tu constante INDUSTRIES sigue igual, no la borres, pégala aquí arriba) ...
-// Si la borraste, avísame y te la paso, pero asumo que la tienes.
 const INDUSTRIES = [
     { id: 'agriculture', label: 'Agriculture & Nursery', icon: '🌱', color: 'bg-green-100 text-green-800', killerQuestion: '¿Temporada / Cultivo?', placeholder: 'Ej. Cosecha Arándanos' },
     { id: 'logistics', label: 'Warehouse & Logistics', icon: '📦', color: 'bg-blue-100 text-blue-800', killerQuestion: '¿Volumen Peak Season?', placeholder: 'Ej. 50 staff extra' },
@@ -18,26 +16,25 @@ const INDUSTRIES = [
 
 export default function ROICalculator() {
     const [selectedIndustry, setSelectedIndustry] = useState<typeof INDUSTRIES[0] | null>(null)
-    const [isSubmitting, setIsSubmitting] = useState(false) // Estado manual de carga
-    const router = useRouter() // Hook para navegar
+    const [isSubmitting, setIsSubmitting] = useState(false)
+    const router = useRouter()
 
-    // Función manual de envío
     async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-        event.preventDefault() // 🛑 Evita que la página se recargue sola
+        event.preventDefault()
         setIsSubmitting(true)
 
-        // 1. Recogemos los datos del formulario
         const formData = new FormData(event.currentTarget)
-
-        // 2. Llamamos a la Server Action y ESPERAMOS la respuesta
         const result = await saveInitialCalculation(formData)
 
-        // 3. Verificamos qué pasó
         if (result.success && result.id) {
-            // ✅ Éxito: Navegamos manualmente
-            router.push(`/results?token=${result.id}`)
+            const params = new URLSearchParams()
+            params.set('token', result.id)
+            if (selectedIndustry) params.set('industry', selectedIndustry.label)
+            const rate = formData.get('rate') as string
+            if (rate) params.set('wage', rate)
+
+            router.push(`/data-insights/return-on-staffing-roi-model?${params.toString()}`)
         } else {
-            // ❌ Error: Mostramos una alerta visible
             alert(`Error: ${result.error || "No se pudo conectar"}`)
             setIsSubmitting(false)
         }
@@ -62,7 +59,6 @@ export default function ROICalculator() {
                         </div>
                     </div>
                 ) : (
-                    /* NOTA: Quitamos 'action={...}' y ponemos 'onSubmit={handleSubmit}' */
                     <form onSubmit={handleSubmit} className="animate-in fade-in slide-in-from-right-8 space-y-4">
                         <button type="button" onClick={() => setSelectedIndustry(null)} className="text-xs text-blue-600 hover:underline mb-2">← Cambiar Industria</button>
                         <input type="hidden" name="industry" value={selectedIndustry.id} />

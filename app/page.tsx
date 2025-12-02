@@ -10,74 +10,12 @@ import { LineChart, Line, ResponsiveContainer, XAxis, YAxis, Tooltip } from 'rec
 import clsx from 'clsx'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
+import { IntelligenceWidget } from '@/app/components/intelligence-engine/widget'
+import { KPIDashboard } from '@/app/components/kpi-dashboard'
 
 // --- Components ---
 
-function LiveMarketScanner() {
-  return (
-    <div className="relative w-full h-[400px] lg:h-[500px] bg-slate-900/50 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden shadow-[0_0_40px_-10px_rgba(6,182,212,0.15)] group">
-      {/* Header */}
-      <div className="absolute top-0 left-0 right-0 p-4 border-b border-white/5 flex justify-between items-center bg-slate-900/80 z-20">
-        <div className="flex items-center gap-2">
-          <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-          <span className="text-xs font-mono text-cyan-400 tracking-wider">LIVE_MARKET_FEED</span>
-        </div>
-        <div className="flex gap-2">
-          <div className="w-1.5 h-1.5 rounded-full bg-slate-700" />
-          <div className="w-1.5 h-1.5 rounded-full bg-slate-700" />
-          <div className="w-1.5 h-1.5 rounded-full bg-slate-700" />
-        </div>
-      </div>
 
-      {/* Map Visualization (Abstract) */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-30">
-        {/* Stylized Georgia Shape / Grid */}
-        <svg viewBox="0 0 200 200" className="w-full h-full text-slate-700 fill-current">
-          <path d="M40,180 L30,120 L50,40 L120,20 L160,50 L170,140 L140,190 Z" fill="none" stroke="currentColor" strokeWidth="0.5" />
-          {/* Grid Lines */}
-          <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.2" />
-          </pattern>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
-      </div>
-
-      {/* Hotspots */}
-      <div className="absolute top-1/3 left-1/3">
-        <div className="relative">
-          <div className="absolute -inset-4 bg-cyan-500/20 rounded-full animate-ping" />
-          <div className="relative w-3 h-3 bg-cyan-400 rounded-full border border-white shadow-[0_0_15px_rgba(34,211,238,0.8)]" />
-          <div className="absolute left-4 top-0 bg-slate-900/90 border border-cyan-500/30 px-2 py-1 rounded text-[10px] font-mono text-cyan-300 whitespace-nowrap">
-            ATL_HUB: HIGH_DEMAND
-          </div>
-        </div>
-      </div>
-      <div className="absolute bottom-1/3 right-1/3">
-        <div className="relative">
-          <div className="absolute -inset-4 bg-emerald-500/20 rounded-full animate-ping delay-700" />
-          <div className="relative w-3 h-3 bg-emerald-400 rounded-full border border-white shadow-[0_0_15px_rgba(52,211,153,0.8)]" />
-          <div className="absolute left-4 top-0 bg-slate-900/90 border border-emerald-500/30 px-2 py-1 rounded text-[10px] font-mono text-emerald-300 whitespace-nowrap">
-            SAV_PORT: ACTIVE
-          </div>
-        </div>
-      </div>
-
-      {/* Floating Tickers */}
-      <div className="absolute bottom-6 left-6 right-6 grid grid-cols-3 gap-2">
-        {[
-          { label: "Active Candidates", value: "12,450", color: "text-white" },
-          { label: "Avg Fill Time", value: "24h", color: "text-cyan-400" },
-          { label: "Compliance Score", value: "100%", color: "text-emerald-400" }
-        ].map((stat, i) => (
-          <div key={i} className="bg-slate-800/80 backdrop-blur-md border border-white/5 p-3 rounded-lg">
-            <div className="text-[10px] text-slate-400 uppercase tracking-wider mb-1">{stat.label}</div>
-            <div className={`text-lg font-mono font-bold ${stat.color}`}>{stat.value}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
 
 function IntelligenceEngine() {
   const chartData = [
@@ -267,24 +205,26 @@ function MissionSelector() {
   )
 }
 
-function SystemTicker() {
+function UnlockStrategyCTA() {
   return (
-    <div className="w-full bg-slate-950 border-t border-white/5 py-3 overflow-hidden flex items-center relative z-20">
-      <div className="flex whitespace-nowrap animate-marquee">
-        {[...Array(2)].map((_, i) => (
-          <div key={i} className="flex items-center gap-12 mx-6">
-            <span className="font-mono text-xs text-emerald-500">[SUCCESS] Placed 50 FTEs at Savannah Port...</span>
-            <span className="font-mono text-xs text-blue-500">[LOG] 98% Audit Score in Gainesville...</span>
-            <span className="font-mono text-xs text-purple-500">[UPDATE] New Wage Guide Available...</span>
-            <span className="font-mono text-xs text-cyan-500">[SYSTEM] eScreen Integration Online...</span>
-            <span className="font-mono text-xs text-slate-500">[INFO] 12,450 Active Candidates...</span>
-          </div>
-        ))}
+    <Link
+      href="/industries/manufacturing-production-staffing"
+      className="block w-full bg-gradient-to-r from-red-900/80 via-red-600/20 to-red-900/80 border-y border-red-500/30 py-6 relative z-20 group hover:bg-red-900/90 transition-all cursor-pointer overflow-hidden"
+    >
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-30 mix-blend-overlay"></div>
+      <div className="container mx-auto px-4 flex items-center justify-center gap-4 relative z-10">
+        <div className="w-2 h-2 rounded-full bg-red-500 animate-ping" />
+        <span className="font-mono text-red-200 font-bold tracking-widest uppercase text-sm md:text-base group-hover:text-white transition-colors">
+          System Alert: Market Data Unlocked
+        </span>
+        <span className="hidden md:inline-block text-red-400/50">|</span>
+        <span className="text-white font-bold text-lg md:text-xl flex items-center gap-2">
+          Click to Reveal Competitor Strategy <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+        </span>
       </div>
-      {/* Gradient Masks */}
-      <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-slate-950 to-transparent" />
-      <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-slate-950 to-transparent" />
-    </div>
+      {/* Glitch Effect Overlay */}
+      <div className="absolute inset-0 bg-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity animate-pulse" />
+    </Link>
   )
 }
 
@@ -292,13 +232,13 @@ function SystemTicker() {
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-200 selection:bg-cyan-500/30">
+    <main className="min-h-screen bg-slate-900 text-slate-200 selection:bg-cyan-500/30">
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
         {/* Background Grid */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-transparent to-slate-950" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/90 via-slate-900/50 to-slate-900/90" />
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -348,20 +288,24 @@ export default function HomePage() {
 
             {/* Right: Widget */}
             <FadeIn delay={0.5} className="w-full">
-              <LiveMarketScanner />
+              <IntelligenceWidget />
             </FadeIn>
           </div>
         </div>
       </section>
 
       {/* Social Proof Ticker */}
-      <SystemTicker />
+      {/* Social Proof Ticker / CTA */}
+      <UnlockStrategyCTA />
 
       {/* Bento Grid */}
       <IntelligenceEngine />
 
       {/* Industry Selector */}
       <MissionSelector />
+
+      {/* KPI Dashboard */}
+      <KPIDashboard />
 
     </main>
   )

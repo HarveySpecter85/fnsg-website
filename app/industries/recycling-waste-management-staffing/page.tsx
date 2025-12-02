@@ -5,6 +5,7 @@ import { FadeIn } from '@/app/components/anim/fade-in'
 import { MagneticButton } from '@/app/components/anim/magnetic-button'
 import { RECYCLING_SORTER_WAGE, RECYCLING_SAFETY_RATE_FNSG, RECYCLING_SAFETY_RATE_AVG, RECYCLING_RETENTION, CURRENT_YEAR } from '@/lib/site-config'
 import { Recycle, ShieldAlert, Truck, HardHat, Syringe, FileCheck, Timer, Users, AlertTriangle, CheckCircle } from 'lucide-react'
+import { IntelligenceWidget } from '@/app/components/intelligence-engine/widget'
 
 export const metadata: Metadata = {
     title: "Recycling & Waste Management Staffing Georgia | OSHA Certified MRF Labor",
@@ -82,6 +83,40 @@ export default function RecyclingWasteManagementStaffingPage() {
                             </p>
                         </div>
                     </FadeIn>
+                </div>
+            </section>
+
+            {/* Market Intelligence Widget */}
+            <section className="py-20 bg-slate-950 relative overflow-hidden">
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+                <div className="container relative z-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                                Reduce Safety Incidents & Liability
+                            </h2>
+                            <p className="text-lg text-slate-400 mb-8">
+                                High turnover in MRFs leads to higher injury rates. Analyze your current safety exposure and see how our trained workforce reduces risk.
+                            </p>
+                            <ul className="space-y-4">
+                                <li className="flex items-center gap-3 text-slate-300">
+                                    <div className="w-2 h-2 rounded-full bg-cyan-500" />
+                                    Safety Incident Risk Score
+                                </li>
+                                <li className="flex items-center gap-3 text-slate-300">
+                                    <div className="w-2 h-2 rounded-full bg-cyan-500" />
+                                    Turnover Cost Analysis
+                                </li>
+                                <li className="flex items-center gap-3 text-slate-300">
+                                    <div className="w-2 h-2 rounded-full bg-cyan-500" />
+                                    Sorting Line Efficiency Model
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <IntelligenceWidget industry="Waste" defaultLocation="Atlanta, GA" />
+                        </div>
+                    </div>
                 </div>
             </section>
 

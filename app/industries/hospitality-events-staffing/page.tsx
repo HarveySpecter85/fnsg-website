@@ -5,6 +5,7 @@ import { FadeIn } from '@/app/components/anim/fade-in'
 import { MagneticButton } from '@/app/components/anim/magnetic-button'
 import { HOSPITALITY_WAGE, HOSPITALITY_TURNOVER_FNSG, HOSPITALITY_CLEANING_TIME, CURRENT_YEAR } from '@/lib/site-config'
 import { BedDouble, Utensils, Shirt, Clock, ShieldCheck, Check, Users, Hotel, CalendarCheck } from 'lucide-react'
+import { IntelligenceWidget } from '@/app/components/intelligence-engine/widget'
 
 export const metadata: Metadata = {
     title: "Hospitality & Event Staffing Georgia | 98% Shift Fulfillment Rate",
@@ -82,6 +83,40 @@ export default function HospitalityEventsStaffingPage() {
                             </p>
                         </div>
                     </FadeIn>
+                </div>
+            </section>
+
+            {/* Market Intelligence Widget */}
+            <section className="py-20 bg-slate-950 relative overflow-hidden">
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+                <div className="container relative z-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                                Engineer the Perfect Guest Experience
+                            </h2>
+                            <p className="text-lg text-slate-400 mb-8">
+                                Model your event or hotel staffing needs. We calculate the optimal staff-to-guest ratio to maximize service quality while controlling labor costs.
+                            </p>
+                            <ul className="space-y-4">
+                                <li className="flex items-center gap-3 text-slate-300">
+                                    <div className="w-2 h-2 rounded-full bg-cyan-500" />
+                                    Event Volume Scaling
+                                </li>
+                                <li className="flex items-center gap-3 text-slate-300">
+                                    <div className="w-2 h-2 rounded-full bg-cyan-500" />
+                                    MPOR Efficiency Targets
+                                </li>
+                                <li className="flex items-center gap-3 text-slate-300">
+                                    <div className="w-2 h-2 rounded-full bg-cyan-500" />
+                                    Seasonal Demand Forecasting
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <IntelligenceWidget industry="Hospitality" defaultLocation="Atlanta, GA" />
+                        </div>
+                    </div>
                 </div>
             </section>
 

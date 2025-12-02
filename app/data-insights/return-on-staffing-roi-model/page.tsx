@@ -1,11 +1,12 @@
 'use client'
 
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts'
 import CountUp from 'react-countup'
 import { Calculator, Download, TrendingUp, DollarSign, Clock, Settings2 } from 'lucide-react'
 import { FadeIn } from '@/app/components/anim/fade-in'
 import clsx from 'clsx'
+import { useSearchParams } from 'next/navigation'
 
 // --- Industry Benchmarks ---
 const INDUSTRY_DATA = {
@@ -55,14 +56,49 @@ const INDUSTRY_DATA = {
 
 type IndustryKey = keyof typeof INDUSTRY_DATA
 
-export default function ROISimulatorPage() {
-    // --- State ---
-    const [industry, setIndustry] = useState<IndustryKey>('Warehouse & Logistics')
-    const [headcount, setHeadcount] = useState(50)
-    const [wage, setWage] = useState(19.50)
+function ROISimulatorContent() {
+    const searchParams = useSearchParams()
 
-    // Update wage when industry changes
+    // --- State ---
+    // Initialize from URL params if available, otherwise default
+    const [industry, setIndustry] = useState<IndustryKey>(() => {
+        const paramIndustry = searchParams.get('industry')
+        if (paramIndustry) {
+            // 1. Try exact match
+            if (Object.keys(INDUSTRY_DATA).includes(paramIndustry)) {
+                return paramIndustry as IndustryKey
+            }
+            // 2. Try partial match (e.g. "Manufacturing" -> "Manufacturing & Production")
+            const partialMatch = Object.keys(INDUSTRY_DATA).find(key =>
+                key.toLowerCase().includes(paramIndustry.toLowerCase()) ||
+                paramIndustry.toLowerCase().includes(key.toLowerCase())
+            )
+            if (partialMatch) return partialMatch as IndustryKey
+        }
+        return 'Warehouse & Logistics'
+    })
+
+    const [headcount, setHeadcount] = useState(50)
+
+    const [wage, setWage] = useState(() => {
+        const paramWage = searchParams.get('wage')
+        return paramWage ? parseFloat(paramWage) : 19.50
+    })
+
+    // Update wage when industry changes ONLY if not manually set via URL initially?
+    // Actually, the original logic was:
+    // React.useEffect(() => { setWage(INDUSTRY_DATA[industry].avgWage) }, [industry])
+    // This overrides the URL param immediately if we are not careful.
+    // Let's modify the effect to only update if industry changes AFTER mount.
+
+    // We'll use a ref to track if it's the initial mount
+    const isFirstMount = React.useRef(true)
+
     React.useEffect(() => {
+        if (isFirstMount.current) {
+            isFirstMount.current = false
+            return
+        }
         setWage(INDUSTRY_DATA[industry].avgWage)
     }, [industry])
 
@@ -334,5 +370,13 @@ export default function ROISimulatorPage() {
 
             </div>
         </main>
+    )
+}
+
+export default function ROISimulatorPage() {
+    return (
+        <React.Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-slate-50"><div className="animate-pulse text-slate-400">Loading Simulator...</div></div>}>
+            <ROISimulatorContent />
+        </React.Suspense>
     )
 }

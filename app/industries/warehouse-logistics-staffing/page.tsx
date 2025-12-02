@@ -5,6 +5,7 @@ import { FadeIn } from '@/app/components/anim/fade-in'
 import { MagneticButton } from '@/app/components/anim/magnetic-button'
 import { LOGISTICS_FORKLIFT_WAGE, LOGISTICS_FILL_RATE, LOGISTICS_TURNOVER_RED, CURRENT_YEAR } from '@/lib/site-config'
 import { Truck, Package, Timer, Barcode, ShieldCheck, Users, TrendingDown, Rocket, CheckSquare, Warehouse } from 'lucide-react'
+import { IntelligenceWidget } from '@/app/components/intelligence-engine/widget'
 
 export const metadata: Metadata = {
     title: "Warehouse Logistics Staffing Georgia | 24-72h Fill & Risk Management",
@@ -83,6 +84,40 @@ export default function WarehouseLogisticsStaffingPage() {
                             </p>
                         </div>
                     </FadeIn>
+                </div>
+            </section>
+
+            {/* Market Intelligence Widget */}
+            <section className="py-20 bg-slate-950 relative overflow-hidden">
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+                <div className="container relative z-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                                Calibrate Your Logistics Workforce
+                            </h2>
+                            <p className="text-lg text-slate-400 mb-8">
+                                Use our AI-driven intelligence engine to analyze local wage benchmarks, turnover risks, and candidate availability for your specific distribution hub.
+                            </p>
+                            <ul className="space-y-4">
+                                <li className="flex items-center gap-3 text-slate-300">
+                                    <div className="w-2 h-2 rounded-full bg-cyan-500" />
+                                    Real-time Wage Analysis
+                                </li>
+                                <li className="flex items-center gap-3 text-slate-300">
+                                    <div className="w-2 h-2 rounded-full bg-cyan-500" />
+                                    Competitor Headcount Scanning
+                                </li>
+                                <li className="flex items-center gap-3 text-slate-300">
+                                    <div className="w-2 h-2 rounded-full bg-cyan-500" />
+                                    Instant Shift Coverage Estimates
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <IntelligenceWidget industry="Logistics" defaultLocation="Atlanta, GA" />
+                        </div>
+                    </div>
                 </div>
             </section>
 

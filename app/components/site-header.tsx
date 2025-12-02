@@ -42,8 +42,18 @@ const navigation = {
         { title: 'Safety Training Protocols', href: '/risk-compliance/safety-training-protocols' },
     ],
     dataInsights: [
-        { title: 'ROI Calculator', href: '/data-insights/return-on-staffing-roi-model' },
-        { title: 'Data & Insights Overview', href: '/data-insights' },
+        { title: 'Workforce KPIs', href: '/insights/kpis/' },
+        { title: 'Labor Market Trends', href: '/insights/labor-market/' },
+        { title: 'Reports & Forecasts', href: '/insights/reports/' },
+        { title: 'City Insights', href: '/insights/city/' },
+        { title: 'Industry Deep Dives', href: '/insights/industry/' },
+    ],
+    company: [
+        { title: 'Performance Metrics', href: '/company/performance-metrics/' },
+        { title: 'Leadership Team', href: '/company/leadership-team/' },
+        { title: 'Our Story', href: '/company/our-story/' },
+        { title: 'Press & Media', href: '/company/press-media/' },
+        { title: 'Blog', href: '/company/blog/' },
     ],
     locations: [
         { title: 'Atlanta Staffing Agency', href: '/locations/atlanta-staffing-agency' },
@@ -173,6 +183,24 @@ export function SiteHeader() {
                         <div className="absolute -left-8 top-full z-10 mt-3 w-64 overflow-hidden rounded-xl bg-white shadow-lg ring-1 ring-slate-900/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-2 group-hover:translate-y-0">
                             <div className="p-4">
                                 {navigation.dataInsights.map((item) => (
+                                    <div key={item.title} className="group/item relative flex gap-x-6 rounded-lg p-2 hover:bg-slate-50">
+                                        <Link href={item.href} className="block text-sm font-semibold leading-6 text-slate-900">
+                                            {item.title}
+                                            <span className="absolute inset-0" />
+                                        </Link>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Company Dropdown */}
+                    <div className="group relative flex items-center gap-x-1 text-sm font-semibold leading-6 text-slate-900 cursor-pointer py-2">
+                        Company
+                        <ChevronDown className="h-4 w-4 flex-none text-slate-400 transition-transform group-hover:rotate-180" aria-hidden="true" />
+                        <div className="absolute -left-8 top-full z-10 mt-3 w-64 overflow-hidden rounded-xl bg-white shadow-lg ring-1 ring-slate-900/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-2 group-hover:translate-y-0">
+                            <div className="p-4">
+                                {navigation.company.map((item) => (
                                     <div key={item.title} className="group/item relative flex gap-x-6 rounded-lg p-2 hover:bg-slate-50">
                                         <Link href={item.href} className="block text-sm font-semibold leading-6 text-slate-900">
                                             {item.title}
@@ -321,11 +349,35 @@ export function SiteHeader() {
                             </div>
                         </div>
 
+                        {/* Mobile Data Insights */}
+                        <div>
+                            <h3 className="font-bold text-slate-900 mb-2">Data Insights</h3>
+                            <div className="pl-4 space-y-2 border-l-2 border-slate-100">
+                                {navigation.dataInsights.map(item => (
+                                    <Link key={item.title} href={item.href} onClick={() => setMobileMenuOpen(false)} className="block py-1 text-sm text-slate-700">
+                                        {item.title}
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+
                         {/* Mobile Locations */}
                         <div>
                             <h3 className="font-bold text-slate-900 mb-2">Locations</h3>
                             <div className="pl-4 space-y-2 border-l-2 border-slate-100">
                                 {navigation.locations.map(item => (
+                                    <Link key={item.title} href={item.href} onClick={() => setMobileMenuOpen(false)} className="block py-1 text-sm text-slate-700">
+                                        {item.title}
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Mobile Company */}
+                        <div>
+                            <h3 className="font-bold text-slate-900 mb-2">Company</h3>
+                            <div className="pl-4 space-y-2 border-l-2 border-slate-100">
+                                {navigation.company.map(item => (
                                     <Link key={item.title} href={item.href} onClick={() => setMobileMenuOpen(false)} className="block py-1 text-sm text-slate-700">
                                         {item.title}
                                     </Link>

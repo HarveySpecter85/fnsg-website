@@ -5,11 +5,14 @@ import { FadeIn } from '@/app/components/anim/fade-in'
 import { MagneticButton } from '@/app/components/anim/magnetic-button'
 import { MFG_ASSEMBLER_WAGE, MFG_MACHINE_OP_WAGE, MFG_FILL_RATE, MFG_SAFETY_RATE, CURRENT_YEAR } from '@/lib/site-config'
 import { Factory, Cog, HardHat, ShieldAlert, Timer, Users, CheckSquare, Shield, Ruler, Box } from 'lucide-react'
+import { IntelligenceWidget } from '@/app/components/intelligence-engine/widget'
 
 export const metadata: Metadata = {
     title: "Manufacturing & Production Staffing Georgia | Assembly & Machine Operators",
     description: "Scalable light industrial workforce for Georgia manufacturers. OSHA-trained Assemblers, Machine Operators, and QA Inspectors. Support for Lean & ISO environments.",
 }
+
+import { PainPointModal } from '@/app/components/intelligence-engine/pain-point-modal'
 
 export default function ManufacturingProductionStaffingPage() {
     const schema = {
@@ -51,6 +54,9 @@ export default function ManufacturingProductionStaffingPage() {
         <main className="bg-white">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
+            {/* Dark Psychology Modal - Auto Opens */}
+            <PainPointModal industry="Manufacturing" />
+
             {/* Hero Section */}
             <section className="relative py-24 lg:py-32 overflow-hidden bg-slate-50 border-b border-slate-200">
                 <div className="container">
@@ -82,6 +88,40 @@ export default function ManufacturingProductionStaffingPage() {
                             </p>
                         </div>
                     </FadeIn>
+                </div>
+            </section>
+
+            {/* Market Intelligence Widget */}
+            <section className="py-20 bg-slate-950 relative overflow-hidden">
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+                <div className="container relative z-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                                Optimize Production Labor
+                            </h2>
+                            <p className="text-lg text-slate-400 mb-8">
+                                Input your production targets to receive a custom workforce architecture plan. We analyze shift patterns and skill gaps to propose the optimal headcount mix.
+                            </p>
+                            <ul className="space-y-4">
+                                <li className="flex items-center gap-3 text-slate-300">
+                                    <div className="w-2 h-2 rounded-full bg-cyan-500" />
+                                    Shift Coverage Modeling
+                                </li>
+                                <li className="flex items-center gap-3 text-slate-300">
+                                    <div className="w-2 h-2 rounded-full bg-cyan-500" />
+                                    Skill Gap Analysis
+                                </li>
+                                <li className="flex items-center gap-3 text-slate-300">
+                                    <div className="w-2 h-2 rounded-full bg-cyan-500" />
+                                    Safety Incident Risk Assessment
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <IntelligenceWidget industry="Manufacturing" defaultLocation="Gwinnett County, GA" />
+                        </div>
+                    </div>
                 </div>
             </section>
 
