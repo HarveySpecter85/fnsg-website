@@ -1,0 +1,15 @@
+{
+    "redirects": [
+        {
+            "source": "/(.*)",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "www.firstnationalstaffing.com"
+                }
+            ],
+            "destination": "https://firstnationalstaffing.com/$1",
+            "permanent": true
+        }
+    ]
+}
