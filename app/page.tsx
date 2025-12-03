@@ -1,311 +1,454 @@
-'use client'
+'use client';
 
-import React, { useState, useRef } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { ArrowRight, ShieldCheck, Zap, Activity, MapPin, Terminal, Cpu, BarChart3, Users, Clock, CheckCircle2 } from 'lucide-react'
-import { FadeIn } from '@/app/components/anim/fade-in'
-import { TextReveal } from '@/app/components/anim/text-reveal'
-import { LineChart, Line, ResponsiveContainer, XAxis, YAxis, Tooltip } from 'recharts'
-import clsx from 'clsx'
+import React, { useRef, useState } from 'react';
+import Link from 'next/link';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import {
+  ArrowRight,
+  BarChart3,
+  Cpu,
+  Factory,
+  FileText,
+  Globe,
+  Layers,
+  LayoutDashboard,
+  MapPin,
+  Network,
+  ShieldCheck,
+  TrendingUp,
+  Users,
+  Zap
+} from 'lucide-react';
+import { FadeIn } from '@/app/components/anim/fade-in';
 
-import { IntelligenceWidget } from '@/app/components/intelligence-engine/widget'
-import { KPIDashboard } from '@/app/components/kpi-dashboard'
-
-// --- Components ---
-
-
-
-function IntelligenceEngine() {
-  const chartData = [
-    { name: 'W1', value: 20 },
-    { name: 'W2', value: 45 },
-    { name: 'W3', value: 75 },
-    { name: 'W4', value: 98 },
-  ]
-
-  return (
-    <section className="py-20 relative z-10">
-      <div className="container mx-auto px-4">
-        <div className="mb-12 flex items-end justify-between">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Powered by FNSG OS™</h2>
-            <p className="text-slate-400 max-w-xl">The Intelligence Engine driving workforce optimization.</p>
-          </div>
-          <div className="hidden md:block text-right">
-            <div className="text-xs font-mono text-cyan-500">SYSTEM_STATUS: OPTIMAL</div>
-            <div className="text-xs font-mono text-slate-500">UPTIME: 99.99%</div>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 grid-rows-2 h-auto md:h-[600px]">
-          {/* Compliance Card (Large) */}
-          <div className="md:col-span-1 md:row-span-2 bg-slate-900/50 backdrop-blur-sm border border-white/10 rounded-2xl p-8 flex flex-col relative overflow-hidden group hover:border-cyan-500/30 transition-colors">
-            <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-            <ShieldCheck className="w-12 h-12 text-emerald-400 mb-6" />
-            <h3 className="text-xl font-bold text-white mb-2">Risk Shield Active</h3>
-            <p className="text-slate-400 text-sm mb-8 flex-grow">
-              Comprehensive liability protection. Our W-2 model absorbs 100% of employer risk, backed by a $5M umbrella policy.
-            </p>
-            <div className="space-y-3">
-              <div className="flex items-center gap-3 text-sm text-slate-300">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                <span>MSPA Certified</span>
-              </div>
-              <div className="flex items-center gap-3 text-sm text-slate-300">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                <span>ACA Compliant</span>
-              </div>
-              <div className="flex items-center gap-3 text-sm text-slate-300">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                <span>E-Verify Integrated</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Tech Card (Tall/Wide depending on layout, here Top Right) */}
-          <div className="md:col-span-2 bg-slate-900/50 backdrop-blur-sm border border-white/10 rounded-2xl p-8 relative overflow-hidden group hover:border-blue-500/30 transition-colors">
-            <div className="absolute top-0 right-0 p-4 opacity-20">
-              <Cpu className="w-24 h-24 text-blue-500" />
-            </div>
-            <div className="relative z-10">
-              <div className="flex items-center gap-3 mb-4">
-                <Zap className="w-6 h-6 text-blue-400" />
-                <h3 className="text-xl font-bold text-white">eScreen Integration</h3>
-              </div>
-              <div className="flex items-center gap-8">
-                <div>
-                  <div className="text-4xl font-mono font-bold text-white mb-1">15<span className="text-lg text-slate-500 ml-1">min</span></div>
-                  <div className="text-xs text-slate-400 uppercase tracking-wider">Rapid Test Result</div>
-                </div>
-                <div className="h-12 w-px bg-white/10" />
-                <div>
-                  <div className="text-4xl font-mono font-bold text-white mb-1">100<span className="text-lg text-slate-500 ml-1">%</span></div>
-                  <div className="text-xs text-slate-400 uppercase tracking-wider">Digital Chain of Custody</div>
-                </div>
-              </div>
-              {/* Progress Bar Visual */}
-              <div className="mt-8 w-full bg-slate-800 rounded-full h-2 overflow-hidden">
-                <div className="bg-blue-500 h-full rounded-full w-[85%] shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
-              </div>
-            </div>
-          </div>
-
-          {/* Scale Card (Bottom Right) */}
-          <div className="md:col-span-2 bg-slate-900/50 backdrop-blur-sm border border-white/10 rounded-2xl p-8 relative overflow-hidden group hover:border-purple-500/30 transition-colors">
-            <div className="flex justify-between items-start mb-6">
-              <div>
-                <div className="flex items-center gap-3 mb-2">
-                  <Activity className="w-6 h-6 text-purple-400" />
-                  <h3 className="text-xl font-bold text-white">Deployment Velocity</h3>
-                </div>
-                <p className="text-sm text-slate-400">Ramp-up speed for high-volume orders.</p>
-              </div>
-            </div>
-            <div className="h-32 w-full">
-              <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={chartData}>
-                  <Line type="monotone" dataKey="value" stroke="#a855f7" strokeWidth={3} dot={{ r: 4, fill: '#a855f7' }} />
-                  <Tooltip
-                    contentStyle={{ backgroundColor: '#0f172a', border: '1px solid #334155', borderRadius: '8px' }}
-                    itemStyle={{ color: '#fff', fontFamily: 'monospace' }}
-                    labelStyle={{ display: 'none' }}
-                  />
-                </LineChart>
-              </ResponsiveContainer>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function MissionSelector() {
-  const [activeTab, setActiveTab] = useState('warehouse')
-
-  const industries = {
-    warehouse: {
-      label: 'Warehouse',
-      bg: 'bg-[url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80")]',
-      metrics: [
-        { label: 'Forklift Certs', value: 'Verified' },
-        { label: 'Safety Gear', value: 'Provided' },
-        { label: 'Shift Fill', value: '98%' }
-      ]
-    },
-    manufacturing: {
-      label: 'Manufacturing',
-      bg: 'bg-[url("https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80")]',
-      metrics: [
-        { label: 'GMP Training', value: 'Standard' },
-        { label: 'Shift Flexibility', value: '24/7' },
-        { label: 'Output Boost', value: '+15%' }
-      ]
-    },
-    hospitality: {
-      label: 'Hospitality',
-      bg: 'bg-[url("https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80")]',
-      metrics: [
-        { label: 'Appearance', value: 'Pro' },
-        { label: 'Background', value: 'Clear' },
-        { label: 'Event Ready', value: '100%' }
-      ]
-    },
-    healthcare: {
-      label: 'Healthcare',
-      bg: 'bg-[url("https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80")]',
-      metrics: [
-        { label: 'Credentialing', value: 'Auto' },
-        { label: 'Vaccinations', value: 'Tracked' },
-        { label: 'Compliance', value: 'Strict' }
-      ]
-    }
-  }
-
-  return (
-    <section className="relative py-24 overflow-hidden">
-      {/* Dynamic Background */}
-      <div className={`absolute inset-0 bg-cover bg-center transition-all duration-700 opacity-20 ${industries[activeTab as keyof typeof industries].bg}`} />
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/80 to-slate-950" />
-
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-12">
-          <h2 className="text-sm font-mono font-bold text-cyan-500 tracking-widest uppercase mb-4">Select Mission Sector</h2>
-          <div className="inline-flex p-1 bg-slate-900/80 backdrop-blur-md border border-white/10 rounded-full">
-            {Object.entries(industries).map(([key, data]) => (
-              <button
-                key={key}
-                onClick={() => setActiveTab(key)}
-                className={clsx(
-                  "px-6 py-2 rounded-full text-sm font-medium transition-all duration-300",
-                  activeTab === key
-                    ? "bg-cyan-600 text-white shadow-[0_0_20px_rgba(8,145,178,0.4)]"
-                    : "text-slate-400 hover:text-white"
-                )}
-              >
-                {data.label}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Metrics Display */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          {industries[activeTab as keyof typeof industries].metrics.map((metric, i) => (
-            <div key={i} className="bg-slate-900/60 backdrop-blur-md border border-white/5 p-6 rounded-xl text-center transform transition-all duration-500 hover:scale-105 hover:border-cyan-500/30">
-              <div className="text-xs font-mono text-slate-500 uppercase tracking-wider mb-2">{metric.label}</div>
-              <div className="text-2xl font-bold text-white">{metric.value}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function UnlockStrategyCTA() {
-  return (
-    <Link
-      href="/industries/manufacturing-production-staffing"
-      className="block w-full bg-gradient-to-r from-red-900/80 via-red-600/20 to-red-900/80 border-y border-red-500/30 py-6 relative z-20 group hover:bg-red-900/90 transition-all cursor-pointer overflow-hidden"
-    >
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-30 mix-blend-overlay"></div>
-      <div className="container mx-auto px-4 flex items-center justify-center gap-4 relative z-10">
-        <div className="w-2 h-2 rounded-full bg-red-500 animate-ping" />
-        <span className="font-mono text-red-200 font-bold tracking-widest uppercase text-sm md:text-base group-hover:text-white transition-colors">
-          System Alert: Market Data Unlocked
-        </span>
-        <span className="hidden md:inline-block text-red-400/50">|</span>
-        <span className="text-white font-bold text-lg md:text-xl flex items-center gap-2">
-          Click to Reveal Competitor Strategy <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-        </span>
-      </div>
-      {/* Glitch Effect Overlay */}
-      <div className="absolute inset-0 bg-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity animate-pulse" />
-    </Link>
-  )
-}
-
-// --- Main Page ---
+gsap.registerPlugin(ScrollTrigger);
 
 export default function HomePage() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
+  const [activeHub, setActiveHub] = useState<string | null>(null);
+
+  useGSAP(() => {
+    // Hero Parallax Effect
+    gsap.to('.hero-circuit-bg', {
+      yPercent: 30,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: heroRef.current,
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
+
+    // Floating Hubs Animation
+    gsap.to('.hub-dot', {
+      scale: 1.2,
+      opacity: 0.8,
+      duration: 1.5,
+      repeat: -1,
+      yoyo: true,
+      stagger: 0.2,
+      ease: 'power1.inOut'
+    });
+
+  }, { scope: containerRef });
+
+  const hubs = [
+    { id: 'gainesville', name: 'Gainesville', top: '20%', left: '60%', fillRate: '98.5%', attendance: '96%', risk: 'Low' },
+    { id: 'norcross', name: 'Norcross', top: '35%', left: '45%', fillRate: '97.2%', attendance: '94%', risk: 'Med' },
+    { id: 'duluth', name: 'Duluth', top: '32%', left: '50%', fillRate: '99.1%', attendance: '98%', risk: 'Low' },
+    { id: 'south-fulton', name: 'South Fulton', top: '55%', left: '40%', fillRate: '96.8%', attendance: '93%', risk: 'Low' }
+  ];
+
   return (
-    <main className="min-h-screen bg-slate-900 text-slate-200 selection:bg-cyan-500/30">
+    <main ref={containerRef} className="min-h-screen bg-slate-50 overflow-x-hidden font-sans selection:bg-blue-500 selection:text-white">
 
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        {/* Background Grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/90 via-slate-900/50 to-slate-900/90" />
+      {/* 🟩 SECTION 1 — HERO: “Workforce Operations Intelligence” */}
+      <section ref={heroRef} className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-brand-navy text-white pt-20">
+        {/* Backgrounds */}
+        <div className="absolute inset-0 bg-[#0f172a] z-0"></div>
+        <div className="hero-circuit-bg absolute inset-0 opacity-20 z-0 pointer-events-none"
+          style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)',
+            backgroundSize: '40px 40px'
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0f172a]/50 to-[#0f172a] z-0"></div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-            {/* Left: Copy */}
-            <div className="space-y-8">
-              <FadeIn delay={0.1}>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/30 border border-cyan-500/20 text-cyan-400 text-xs font-mono tracking-wider">
-                  <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
-                  SYSTEM OPERATIONAL • v2025.1
-                </div>
-              </FadeIn>
-
-              <FadeIn delay={0.2}>
-                <h1 className="text-5xl lg:text-7xl font-bold text-white tracking-tight leading-tight">
-                  Deploy Talent at the <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">
-                    Speed of Demand.
-                  </span>
-                </h1>
-              </FadeIn>
-
-              <FadeIn delay={0.3}>
-                <p className="text-lg text-slate-400 max-w-xl leading-relaxed">
-                  The first Workforce Operations Intelligence Platform built for Georgia's high-volume employers.
-                  Optimize headcount, mitigate risk, and scale instantly.
-                </p>
-              </FadeIn>
-
-              <FadeIn delay={0.4}>
-                <div className="flex flex-wrap gap-4">
-                  <Link
-                    href="/data-insights/return-on-staffing-roi-model"
-                    className="px-8 py-4 bg-cyan-600 hover:bg-cyan-500 text-white font-bold rounded-lg transition-all shadow-[0_0_20px_rgba(8,145,178,0.4)] hover:shadow-[0_0_30px_rgba(8,145,178,0.6)] flex items-center gap-2 group"
-                  >
-                    <Terminal className="w-5 h-5" />
-                    Initialize Audit
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                  <button className="px-8 py-4 bg-slate-900 border border-white/10 hover:border-white/20 text-white font-bold rounded-lg transition-all flex items-center gap-2">
-                    <Activity className="w-5 h-5 text-slate-400" />
-                    Watch System Demo
-                  </button>
-                </div>
-              </FadeIn>
+        <div className="container relative z-10 grid lg:grid-cols-2 gap-12 items-center h-full py-12">
+          {/* Left Content */}
+          <FadeIn className="space-y-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold tracking-wider uppercase">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+              </span>
+              FNSG OS v2.0 Live
             </div>
+            <h1 className="text-5xl lg:text-7xl font-bold tracking-tight leading-[1.1]">
+              Workforce <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+                Operations Intelligence
+              </span>
+              <br />
+              for Georgia Employers
+            </h1>
+            <p className="text-xl text-slate-400 max-w-xl leading-relaxed">
+              Stop guessing. Start engineering your workforce. The first operating system designed to stabilize industrial staffing through data, compliance, and local intelligence.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <Link href="/contact" className="group relative inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all duration-200 bg-blue-600 rounded-lg hover:bg-blue-500 hover:shadow-lg hover:shadow-blue-500/25 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600">
+                Request Strategy Session
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link href="/insights/city" className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-slate-300 transition-all duration-200 bg-slate-800/50 border border-slate-700 rounded-lg hover:bg-slate-800 hover:text-white hover:border-slate-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-700">
+                Explore Insights
+              </Link>
+            </div>
+          </FadeIn>
 
-            {/* Right: Widget */}
-            <FadeIn delay={0.5} className="w-full">
-              <IntelligenceWidget />
-            </FadeIn>
+          {/* Right Content: Georgia Map Visualization */}
+          <div className="relative h-[500px] w-full flex items-center justify-center">
+            <div className="relative w-full h-full max-w-md mx-auto">
+              {/* Abstract Georgia Map Shape (CSS/SVG) */}
+              <svg viewBox="0 0 400 500" className="w-full h-full drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+                <path
+                  d="M 80,40 L 280,20 L 320,150 L 380,250 L 350,450 L 50,450 L 20,200 Z" // Simplified abstract GA shape
+                  fill="rgba(30, 41, 59, 0.5)"
+                  stroke="rgba(59, 130, 246, 0.3)"
+                  strokeWidth="2"
+                  className="backdrop-blur-sm"
+                />
+                {/* Grid Lines on Map */}
+                <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(59, 130, 246, 0.1)" strokeWidth="0.5" />
+                </pattern>
+                <path
+                  d="M 80,40 L 280,20 L 320,150 L 380,250 L 350,450 L 50,450 L 20,200 Z"
+                  fill="url(#grid)"
+                />
+              </svg>
+
+              {/* Hubs */}
+              {hubs.map((hub) => (
+                <div
+                  key={hub.id}
+                  className="absolute group cursor-pointer"
+                  style={{ top: hub.top, left: hub.left }}
+                  onMouseEnter={() => setActiveHub(hub.id)}
+                  onMouseLeave={() => setActiveHub(null)}
+                >
+                  <div className="relative">
+                    <div className="hub-dot w-4 h-4 bg-blue-500 rounded-full shadow-[0_0_10px_#3b82f6]"></div>
+                    <div className="absolute -inset-2 bg-blue-500/20 rounded-full animate-ping"></div>
+                  </div>
+
+                  {/* Hover Card */}
+                  <div className={`absolute left-6 top-0 w-64 bg-slate-900/90 backdrop-blur-md border border-slate-700 p-4 rounded-lg shadow-xl transition-all duration-300 z-20 ${activeHub === hub.id ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4 pointer-events-none'}`}>
+                    <h4 className="text-white font-bold mb-2 flex items-center gap-2">
+                      <MapPin className="w-4 h-4 text-blue-400" />
+                      {hub.name} Hub
+                    </h4>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex justify-between text-slate-300">
+                        <span>Fill Rate</span>
+                        <span className="text-green-400 font-mono">{hub.fillRate}</span>
+                      </div>
+                      <div className="flex justify-between text-slate-300">
+                        <span>Attendance</span>
+                        <span className="text-blue-400 font-mono">{hub.attendance}</span>
+                      </div>
+                      <div className="flex justify-between text-slate-300">
+                        <span>Safety Risk</span>
+                        <span className="text-yellow-400 font-mono">{hub.risk}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Social Proof Ticker */}
-      {/* Social Proof Ticker / CTA */}
-      <UnlockStrategyCTA />
+      {/* 🟩 SECTION 2 — “The Industrial Workforce Stack” */}
+      <section className="relative z-20 -mt-20 pb-20">
+        <div className="container">
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                icon: <Users className="w-8 h-8 text-blue-400" />,
+                title: "Industrial Service Delivery",
+                desc: "On-site management and scalable staffing aligned with production cycles."
+              },
+              {
+                icon: <ShieldCheck className="w-8 h-8 text-teal-400" />,
+                title: "Embedded Compliance",
+                desc: "Automated E-Verify, OSHA training, and risk mitigation protocols."
+              },
+              {
+                icon: <Cpu className="w-8 h-8 text-purple-400" />,
+                title: "Operational Intelligence",
+                desc: "Real-time dashboards for fill rates, turnover, and labor costs."
+              }
+            ].map((card, idx) => (
+              <FadeIn key={idx} delay={idx * 0.1} className="bg-slate-900 border border-slate-800 p-8 rounded-xl shadow-2xl hover:border-blue-500/50 transition-colors group">
+                <div className="mb-6 p-3 bg-slate-800/50 rounded-lg w-fit group-hover:bg-blue-500/10 transition-colors">
+                  {card.icon}
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">{card.title}</h3>
+                <p className="text-slate-400 leading-relaxed">{card.desc}</p>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      {/* Bento Grid */}
-      <IntelligenceEngine />
+      {/* 🟩 SECTION 3 — Georgia Workforce Intelligence Map */}
+      <section className="py-24 bg-white">
+        <div className="container">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Georgia Workforce<br />Intelligence Map</h2>
+              <p className="text-slate-600 max-w-xl">
+                We track labor trends, wage benchmarks, and candidate availability across key industrial hubs in Georgia.
+              </p>
+            </div>
+            <Link href="/insights/city" className="text-blue-600 font-bold hover:text-blue-700 flex items-center gap-2 mt-4 md:mt-0">
+              Explore All Hubs <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
 
-      {/* Industry Selector */}
-      <MissionSelector />
+          <div className="grid lg:grid-cols-3 gap-8 items-start">
+            {/* Map Area */}
+            <div className="lg:col-span-2 bg-slate-50 rounded-2xl border border-slate-200 h-[500px] relative overflow-hidden flex items-center justify-center p-8">
+              {/* Light Mode Map */}
+              <svg viewBox="0 0 400 500" className="w-full h-full max-w-md drop-shadow-lg">
+                <path
+                  d="M 80,40 L 280,20 L 320,150 L 380,250 L 350,450 L 50,450 L 20,200 Z"
+                  fill="#e2e8f0"
+                  stroke="#cbd5e1"
+                  strokeWidth="2"
+                />
+                {hubs.map((hub) => (
+                  <circle key={hub.id} cx={parseFloat(hub.left) * 4} cy={parseFloat(hub.top) * 5} r="6" fill="#3b82f6" className="animate-pulse" />
+                ))}
+              </svg>
+              <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur p-4 rounded-lg border border-slate-200 shadow-sm text-xs text-slate-500">
+                <div className="flex items-center gap-2 mb-1"><span className="w-3 h-3 rounded-full bg-blue-500"></span> Active Hub</div>
+                <div className="flex items-center gap-2"><span className="w-3 h-3 rounded-full bg-slate-300"></span> Emerging Market</div>
+              </div>
+            </div>
 
-      {/* KPI Dashboard */}
-      <KPIDashboard />
+            {/* Sidebar Stats */}
+            <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="font-bold text-slate-900 flex items-center gap-2">
+                  <MapPin className="w-5 h-5 text-blue-600" />
+                  Norcross Hub
+                </h3>
+                <span className="text-xs font-mono bg-green-100 text-green-700 px-2 py-1 rounded">LIVE</span>
+              </div>
+
+              <div className="space-y-6">
+                <div>
+                  <div className="text-sm text-slate-500 mb-1">Avg. Industrial Wage</div>
+                  <div className="text-2xl font-bold text-slate-900">$18.50<span className="text-sm font-normal text-slate-400">/hr</span></div>
+                  <div className="w-full bg-slate-100 h-1.5 rounded-full mt-2 overflow-hidden">
+                    <div className="bg-blue-500 h-full w-[75%]"></div>
+                  </div>
+                </div>
+                <div>
+                  <div className="text-sm text-slate-500 mb-1">Candidate Availability</div>
+                  <div className="text-2xl font-bold text-slate-900">High</div>
+                  <div className="text-xs text-green-600 flex items-center gap-1 mt-1">
+                    <TrendingUp className="w-3 h-3" /> +12% vs last month
+                  </div>
+                </div>
+                <div>
+                  <div className="text-sm text-slate-500 mb-1">Top Industry</div>
+                  <div className="flex items-center gap-2 mt-1">
+                    <Factory className="w-4 h-4 text-slate-400" />
+                    <span className="font-medium text-slate-700">Electronics Mfg</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-slate-100">
+                <Link href="/insights/city/norcross" className="block w-full py-3 text-center bg-slate-900 text-white font-bold rounded-lg hover:bg-slate-800 transition-colors">
+                  View Full Market Report
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 🟩 SECTION 4 — Industry Systems */}
+      <section className="py-24 bg-slate-50">
+        <div className="container">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Industry Systems</h2>
+            <p className="text-slate-600">Specialized workforce stacks designed for the unique compliance and operational demands of your sector.</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              { title: "Warehouse & Logistics", icon: <Network />, slug: "logistics-distribution-staffing" },
+              { title: "Manufacturing", icon: <Factory />, slug: "manufacturing-staffing" },
+              { title: "Food Production", icon: <Zap />, slug: "food-beverage-production" },
+              { title: "Recycling & Waste", icon: <Layers />, slug: "recycling-waste-management-staffing" }
+            ].map((industry, idx) => (
+              <div key={idx} className="bg-white p-8 rounded-xl border border-slate-200 hover:shadow-lg transition-all group">
+                <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 transition-transform">
+                  {industry.icon}
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">{industry.title}</h3>
+                <p className="text-slate-500 mb-6">Specialized staffing, safety protocols, and productivity tracking.</p>
+                <div className="flex gap-4 text-sm font-bold">
+                  <Link href={`/industries/${industry.slug}`} className="text-blue-600 hover:text-blue-700">View Service Model</Link>
+                  <span className="text-slate-300">|</span>
+                  <Link href={`/insights/industry/${industry.slug}`} className="text-slate-600 hover:text-slate-900">Deep Dive</Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 🟩 SECTION 5 — Boardroom-Ready Intelligence */}
+      <section className="py-24 bg-white border-y border-slate-100">
+        <div className="container">
+          <div className="flex justify-between items-center mb-12">
+            <h2 className="text-3xl font-bold text-slate-900">Boardroom-Ready Intelligence</h2>
+            <Link href="/insights/reports" className="hidden md:flex items-center gap-2 text-blue-600 font-bold hover:underline">
+              View Library <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              "Georgia Industrial Workforce Benchmark Q4",
+              "Warehouse & Logistics 2025 Forecast",
+              "OSHA Risk Heatmap: Metro Atlanta"
+            ].map((report, idx) => (
+              <div key={idx} className="group cursor-pointer">
+                <div className="aspect-[3/4] bg-slate-100 rounded-lg border border-slate-200 mb-4 relative overflow-hidden shadow-sm group-hover:shadow-md transition-all">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <FileText className="w-16 h-16 text-slate-300 group-hover:text-blue-500 transition-colors" />
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 bg-white p-4 border-t border-slate-100">
+                    <div className="text-xs font-bold text-blue-600 mb-1">PDF REPORT</div>
+                    <div className="text-sm font-bold text-slate-900 line-clamp-2">{report}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 text-center md:hidden">
+            <Link href="/insights/reports" className="text-blue-600 font-bold">View Library</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 🟩 SECTION 6 — Why FNSG OS */}
+      <section className="py-24 bg-brand-navy text-white">
+        <div className="container">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why FNSG OS?</h2>
+            <p className="text-slate-400">Traditional staffing is reactive. We built an operating system that is predictive, compliant, and deeply integrated.</p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              { icon: <MapPin />, title: "Hyper-Local Intelligence", desc: "We know every bus route, wage shift, and competitor in your zip code." },
+              { icon: <ShieldCheck />, title: "Compliance as Code", desc: "Risk mitigation is baked into our hiring and onboarding workflows." },
+              { icon: <LayoutDashboard />, title: "Data Layered Staffing", desc: "Don't just get people. Get insights on retention and performance." },
+              { icon: <Globe />, title: "Bilingual Operations", desc: "Bridging the communication gap with a fully bilingual management layer." }
+            ].map((item, idx) => (
+              <div key={idx} className="text-center">
+                <div className="w-16 h-16 mx-auto bg-slate-800 rounded-full flex items-center justify-center text-blue-400 mb-6 border border-slate-700">
+                  {item.icon}
+                </div>
+                <h3 className="text-lg font-bold mb-3">{item.title}</h3>
+                <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 🟩 SECTION 7 — Case Study + Wire */}
+      <section className="py-24 bg-slate-50">
+        <div className="container">
+          <div className="grid lg:grid-cols-3 gap-12">
+            {/* Case Study */}
+            <div className="lg:col-span-2">
+              <h3 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-6">Featured Case Study</h3>
+              <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 flex flex-col md:flex-row">
+                <div className="bg-slate-900 md:w-1/3 p-8 flex flex-col justify-center text-white">
+                  <div className="text-5xl font-bold text-blue-400 mb-2">28%</div>
+                  <div className="text-lg font-medium leading-tight">Reduction in 3rd Shift Turnover</div>
+                </div>
+                <div className="p-8 md:w-2/3 flex flex-col justify-center">
+                  <h4 className="text-xl font-bold text-slate-900 mb-3">Gainesville Food Production Facility</h4>
+                  <p className="text-slate-600 mb-6">How we used wage benchmarking and shift-realignment to stabilize a critical production line.</p>
+                  <Link href="/insights/case-studies" className="text-blue-600 font-bold hover:underline">Read Case Study</Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Insights Wire */}
+            <div>
+              <h3 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-6">Intelligence Wire</h3>
+              <div className="space-y-6">
+                {[
+                  { type: "PRESS", title: "FNSG Launches New OS Dashboard", date: "2 days ago" },
+                  { type: "INSIGHT", title: "Q1 2025 Wage Inflation Alert", date: "1 week ago" },
+                  { type: "REPORT", title: "Savannah Port Logistics Impact", date: "2 weeks ago" }
+                ].map((item, idx) => (
+                  <div key={idx} className="flex gap-4 items-start group cursor-pointer">
+                    <div className="text-[10px] font-bold px-2 py-1 bg-slate-200 text-slate-600 rounded uppercase mt-1">{item.type}</div>
+                    <div>
+                      <h5 className="font-bold text-slate-900 group-hover:text-blue-600 transition-colors">{item.title}</h5>
+                      <div className="text-xs text-slate-400 mt-1">{item.date}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 🟩 SECTION 8 — Select Your Path */}
+      <section className="py-24 bg-blue-600 text-white">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold mb-4">Select Your Path</h2>
+            <p className="text-blue-100">Tailored resources for every stakeholder in the workforce ecosystem.</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { title: "Employers & Ops Leaders", btn: "Optimize Workforce", href: "/contact" },
+              { title: "HR & Compliance Heads", btn: "View Risk Solutions", href: "/risk-compliance" },
+              { title: "Talent & Job Seekers", btn: "Find a Job", href: "https://jobs.firstnationalstaffing.com" }
+            ].map((card, idx) => (
+              <div key={idx} className="bg-blue-700/50 border border-blue-500 p-8 rounded-xl text-center hover:bg-blue-700 transition-colors">
+                <h3 className="text-xl font-bold mb-6">{card.title}</h3>
+                <Link href={card.href} className="inline-block w-full py-3 bg-white text-blue-600 font-bold rounded hover:bg-blue-50 transition-colors">
+                  {card.btn}
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
     </main>
-  )
+  );
 }
