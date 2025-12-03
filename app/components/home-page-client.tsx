@@ -2,6 +2,7 @@
 
 import React, { useRef, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -25,7 +26,7 @@ import { FadeIn } from '@/app/components/anim/fade-in';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function HomePage() {
+export default function HomePageClient() {
   const containerRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
   const [activeHub, setActiveHub] = useState<string | null>(null);
@@ -70,12 +71,29 @@ export default function HomePage() {
       <section ref={heroRef} className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-brand-navy text-white pt-20">
         {/* Backgrounds */}
         <div className="absolute inset-0 bg-[#0f172a] z-0"></div>
-        <div className="hero-circuit-bg absolute inset-0 opacity-20 z-0 pointer-events-none"
-          style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)',
-            backgroundSize: '40px 40px'
-          }}
-        ></div>
+
+        {/* OG Asset Background */}
+        <div className="hero-circuit-bg absolute inset-0 opacity-30 z-0 pointer-events-none">
+          <Image
+            src="/og/homepage-bg.svg"
+            alt="Circuit Background"
+            fill
+            className="object-cover opacity-50"
+            priority
+          />
+        </div>
+
+        {/* Node Overlay */}
+        <div className="absolute top-0 right-0 w-1/2 h-full opacity-20 pointer-events-none z-0">
+          <Image
+            src="/og/homepage-nodes.svg"
+            alt="Nodes Overlay"
+            width={600}
+            height={600}
+            className="absolute top-20 right-20 animate-pulse"
+          />
+        </div>
+
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0f172a]/50 to-[#0f172a] z-0"></div>
 
         <div className="container relative z-10 grid lg:grid-cols-2 gap-12 items-center h-full py-12">
