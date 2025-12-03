@@ -23,7 +23,10 @@ import {
   Zap,
   Briefcase,
   Building2,
-  HardHat
+  HardHat,
+  Search,
+  Settings,
+  Activity
 } from 'lucide-react';
 import { FadeIn } from '@/app/components/anim/fade-in';
 
@@ -69,18 +72,29 @@ export default function HomePageClient() {
 
   }, { scope: containerRef });
 
-  const hubs = [
-    { id: 'gainesville', name: 'Gainesville', top: '20%', left: '60%', fillRate: '98.5%', attendance: '96%', risk: 'Low' },
-    { id: 'norcross', name: 'Norcross', top: '35%', left: '45%', fillRate: '97.2%', attendance: '94%', risk: 'Med' },
-    { id: 'duluth', name: 'Duluth', top: '32%', left: '50%', fillRate: '99.1%', attendance: '98%', risk: 'Low' },
-    { id: 'south-fulton', name: 'South Fulton', top: '55%', left: '40%', fillRate: '96.8%', attendance: '93%', risk: 'Low' }
+  // Extended list of 13 cities for the map
+  const cities = [
+    { id: 'gainesville', name: 'Gainesville', top: '15%', left: '65%', type: 'hub' },
+    { id: 'hall-county', name: 'Hall County', top: '18%', left: '68%', type: 'node' },
+    { id: 'jackson-county', name: 'Jackson County', top: '22%', left: '72%', type: 'node' },
+    { id: 'forsyth-county', name: 'Forsyth County', top: '20%', left: '55%', type: 'node' },
+    { id: 'norcross', name: 'Norcross', top: '30%', left: '50%', type: 'hub' },
+    { id: 'duluth', name: 'Duluth', top: '28%', left: '55%', type: 'hub' },
+    { id: 'barrow-county', name: 'Barrow County', top: '25%', left: '60%', type: 'node' },
+    { id: 'cobb-county', name: 'Cobb County', top: '35%', left: '40%', type: 'node' },
+    { id: 'dekalb-county', name: 'Dekalb County', top: '38%', left: '52%', type: 'node' },
+    { id: 'atlanta', name: 'Atlanta', top: '40%', left: '45%', type: 'hub' },
+    { id: 'south-fulton', name: 'South Fulton', top: '45%', left: '42%', type: 'hub' },
+    { id: 'clayton-county', name: 'Clayton County', top: '48%', left: '48%', type: 'node' },
+    { id: 'savannah', name: 'Savannah', top: '80%', left: '85%', type: 'hub' }
   ];
 
   return (
     <main ref={containerRef} className="min-h-screen bg-slate-50 overflow-x-hidden font-sans selection:bg-blue-500 selection:text-white">
 
       {/* 🟩 SECTION 1 — HERO: “Workforce Operations Intelligence” */}
-      <section ref={heroRef} className="relative w-full min-h-[95vh] flex items-center justify-center overflow-hidden bg-brand-navy text-white pt-20">
+      {/* Added mt-20 lg:mt-28 to fix header spacing */}
+      <section ref={heroRef} className="relative w-full min-h-[95vh] flex items-center justify-center overflow-hidden bg-brand-navy text-white pt-32 pb-20 lg:pt-40 lg:pb-32">
         {/* Backgrounds */}
         <div className="absolute inset-0 bg-[#0f172a] z-0"></div>
 
@@ -108,7 +122,7 @@ export default function HomePageClient() {
 
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0f172a]/60 to-[#0f172a] z-0"></div>
 
-        <div className="container relative z-10 grid lg:grid-cols-2 gap-16 items-center h-full py-16">
+        <div className="container relative z-10 grid lg:grid-cols-2 gap-16 items-center h-full">
           {/* Left Content */}
           <FadeIn className="space-y-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold tracking-wider uppercase backdrop-blur-sm">
@@ -129,109 +143,128 @@ export default function HomePageClient() {
             <p className="text-xl text-slate-300 max-w-xl leading-relaxed font-light">
               Stop guessing. Start engineering your workforce. The first operating system designed to stabilize industrial staffing through data, compliance, and local intelligence.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-6">
-              <Link href="/contact" className="group relative inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all duration-300 bg-blue-600 rounded-lg hover:bg-blue-500 hover:shadow-[0_0_20px_rgba(37,99,235,0.5)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600">
+            {/* Increased spacing below CTAs to avoid overlap */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-8 pb-12">
+              <Link href="/contact" className="group relative inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all duration-300 bg-blue-600 rounded-lg hover:bg-blue-500 hover:shadow-[0_0_20px_rgba(37,99,235,0.5)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 z-20">
                 Request Strategy Session
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link href="/insights/city" className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-slate-300 transition-all duration-300 bg-slate-800/50 border border-slate-700 rounded-lg hover:bg-slate-800 hover:text-white hover:border-slate-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-700 backdrop-blur-sm">
+              <Link href="/insights/city" className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-slate-300 transition-all duration-300 bg-slate-800/50 border border-slate-700 rounded-lg hover:bg-slate-800 hover:text-white hover:border-slate-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-700 backdrop-blur-sm z-20">
                 Explore Insights
               </Link>
             </div>
           </FadeIn>
 
-          {/* Right Content: Georgia Map Visualization */}
+          {/* Right Content: Georgia Map Visualization - Blueprint Style */}
           <div className="relative h-[600px] w-full flex items-center justify-center">
             <div className="relative w-full h-full max-w-lg mx-auto transform scale-110">
-              {/* Abstract Georgia Map Shape (CSS/SVG) */}
+              {/* Blueprint Map */}
               <svg viewBox="0 0 400 500" className="w-full h-full drop-shadow-[0_0_30px_rgba(59,130,246,0.4)]">
-                <path
-                  d="M 80,40 L 280,20 L 320,150 L 380,250 L 350,450 L 50,450 L 20,200 Z" // Simplified abstract GA shape
-                  fill="rgba(30, 41, 59, 0.8)"
-                  stroke="rgba(59, 130, 246, 0.5)"
-                  strokeWidth="2"
-                  className="backdrop-blur-md"
-                  strokeDasharray="4 4"
-                />
-                {/* Grid Lines on Map */}
-                <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
-                  <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(59, 130, 246, 0.15)" strokeWidth="1" />
-                </pattern>
+                {/* Grid Pattern */}
+                <defs>
+                  <pattern id="blueprint-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(59, 130, 246, 0.1)" strokeWidth="1" />
+                  </pattern>
+                  <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="3" result="blur" />
+                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                  </filter>
+                </defs>
+
+                {/* Abstract GA Shape */}
                 <path
                   d="M 80,40 L 280,20 L 320,150 L 380,250 L 350,450 L 50,450 L 20,200 Z"
-                  fill="url(#grid)"
+                  fill="rgba(15, 23, 42, 0.8)"
+                  stroke="rgba(59, 130, 246, 0.6)"
+                  strokeWidth="2"
+                  className="backdrop-blur-md"
+                  filter="url(#glow)"
                 />
+                <path
+                  d="M 80,40 L 280,20 L 320,150 L 380,250 L 350,450 L 50,450 L 20,200 Z"
+                  fill="url(#blueprint-grid)"
+                  className="opacity-50"
+                />
+
+                {/* Connecting Lines */}
+                <path d="M 200 150 L 180 200 L 220 220" stroke="rgba(59, 130, 246, 0.3)" strokeWidth="1" fill="none" />
+                <path d="M 260 75 L 200 150" stroke="rgba(59, 130, 246, 0.3)" strokeWidth="1" fill="none" />
               </svg>
 
-              {/* Hubs */}
-              {hubs.map((hub) => (
+              {/* Cities */}
+              {cities.map((city) => (
                 <div
-                  key={hub.id}
+                  key={city.id}
                   className="absolute group cursor-pointer"
-                  style={{ top: hub.top, left: hub.left }}
-                  onMouseEnter={() => setActiveHub(hub.id)}
+                  style={{ top: city.top, left: city.left }}
+                  onMouseEnter={() => setActiveHub(city.id)}
                   onMouseLeave={() => setActiveHub(null)}
                 >
-                  <div className="relative">
-                    <div className="hub-dot w-4 h-4 bg-blue-400 rounded-full shadow-[0_0_15px_#60a5fa] border-2 border-white"></div>
-                    <div className="absolute -inset-4 bg-blue-500/30 rounded-full animate-ping"></div>
-                  </div>
+                  <div className="relative flex items-center justify-center">
+                    {/* Node/Hub Marker */}
+                    <div className={`rounded-full border-2 transition-all duration-300 ${city.type === 'hub' ? 'w-4 h-4 bg-blue-500 border-white shadow-[0_0_15px_#3b82f6]' : 'w-2 h-2 bg-slate-400 border-slate-600 group-hover:bg-blue-400 group-hover:border-white'}`}></div>
 
-                  {/* Hover Card */}
-                  <div className={`kpi-card absolute left-8 top-0 w-72 bg-slate-900/95 backdrop-blur-xl border border-slate-600 p-5 rounded-xl shadow-2xl transition-all duration-300 z-20 ${activeHub === hub.id ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4 pointer-events-none'}`}>
-                    <h4 className="text-white font-bold mb-3 flex items-center gap-2 text-lg border-b border-slate-700 pb-2">
-                      <MapPin className="w-5 h-5 text-blue-400" />
-                      {hub.name} Hub
-                    </h4>
-                    <div className="space-y-3 text-sm">
-                      <div className="flex justify-between text-slate-300">
-                        <span>Fill Rate</span>
-                        <span className="text-green-400 font-mono font-bold bg-green-400/10 px-2 rounded">{hub.fillRate}</span>
-                      </div>
-                      <div className="flex justify-between text-slate-300">
-                        <span>Attendance</span>
-                        <span className="text-blue-400 font-mono font-bold bg-blue-400/10 px-2 rounded">{hub.attendance}</span>
-                      </div>
-                      <div className="flex justify-between text-slate-300">
-                        <span>Safety Risk</span>
-                        <span className="text-yellow-400 font-mono font-bold bg-yellow-400/10 px-2 rounded">{hub.risk}</span>
-                      </div>
+                    {/* Pulse Effect for Hubs */}
+                    {city.type === 'hub' && (
+                      <div className="absolute -inset-4 bg-blue-500/30 rounded-full animate-ping"></div>
+                    )}
+
+                    {/* City Label (Visible on Hover or always for major hubs if desired, keeping clean for now) */}
+                    <div className={`absolute left-6 top-1/2 -translate-y-1/2 bg-slate-900/90 px-2 py-1 rounded border border-slate-700 text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-30`}>
+                      {city.name}
                     </div>
                   </div>
                 </div>
               ))}
+
+              {/* Active Hub Info Card (Dynamic) */}
+              {activeHub && (
+                <div className="absolute bottom-10 right-0 w-64 bg-slate-900/95 backdrop-blur-xl border border-blue-500/30 p-4 rounded-xl shadow-2xl z-40 animate-in fade-in slide-in-from-bottom-4 duration-300">
+                  <div className="flex items-center gap-2 mb-2 border-b border-slate-700 pb-2">
+                    <MapPin className="w-4 h-4 text-blue-400" />
+                    <span className="font-bold text-white">{cities.find(c => c.id === activeHub)?.name}</span>
+                  </div>
+                  <div className="grid grid-cols-2 gap-2 text-xs">
+                    <div className="text-slate-400">Fill Rate</div>
+                    <div className="text-green-400 font-mono text-right">98.5%</div>
+                    <div className="text-slate-400">Active Workers</div>
+                    <div className="text-blue-400 font-mono text-right">1,240</div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
       </section>
 
       {/* 🟩 SECTION 2 — “The Industrial Workforce Stack” */}
-      <section className="relative z-20 -mt-24 pb-24">
+      {/* Added margin top to separate from Hero and prevent overlap */}
+      <section className="relative z-20 -mt-20 pb-24">
         <div className="container">
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: <Users className="w-10 h-10 text-blue-400" />,
+                icon: Users,
                 title: "Industrial Service Delivery",
                 desc: "On-site management and scalable staffing aligned with production cycles."
               },
               {
-                icon: <ShieldCheck className="w-10 h-10 text-teal-400" />,
+                icon: ShieldCheck,
                 title: "Embedded Compliance",
                 desc: "Automated E-Verify, OSHA training, and risk mitigation protocols."
               },
               {
-                icon: <Cpu className="w-10 h-10 text-purple-400" />,
+                icon: Activity,
                 title: "Operational Intelligence",
                 desc: "Real-time dashboards for fill rates, turnover, and labor costs."
               }
             ].map((card, idx) => (
-              <FadeIn key={idx} delay={idx * 0.1} className="bg-slate-900/80 backdrop-blur-md border border-slate-700/50 p-8 rounded-2xl shadow-2xl hover:border-blue-500/50 hover:shadow-[0_10px_40px_-10px_rgba(59,130,246,0.2)] hover:-translate-y-2 transition-all duration-300 group">
+              <FadeIn key={idx} delay={idx * 0.1} className="bg-slate-900/90 backdrop-blur-md border border-slate-700/50 p-8 rounded-2xl shadow-2xl hover:border-blue-500/50 hover:shadow-[0_0_25px_rgba(59,130,246,0.15)] hover:-translate-y-1 transition-all duration-300 group">
                 <div className="mb-6 p-4 bg-slate-800/50 rounded-xl w-fit group-hover:bg-blue-500/20 transition-colors ring-1 ring-white/5">
-                  {card.icon}
+                  <card.icon size={32} className="text-blue-400 group-hover:text-blue-300 transition-colors" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">{card.title}</h3>
-                <p className="text-slate-400 leading-relaxed text-base">{card.desc}</p>
+                <h3 className="text-xl font-bold text-white mb-3 tracking-tight">{card.title}</h3>
+                <p className="text-slate-400 leading-relaxed text-sm">{card.desc}</p>
               </FadeIn>
             ))}
           </div>
@@ -255,32 +288,32 @@ export default function HomePageClient() {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-12 items-start">
-            {/* Map Area */}
-            <div className="lg:col-span-2 bg-white rounded-3xl border border-slate-200 h-[600px] relative overflow-hidden flex items-center justify-center p-12 shadow-xl">
+            {/* Map Area - Increased Size */}
+            <div className="lg:col-span-2 bg-white rounded-3xl border border-slate-200 h-[700px] relative overflow-hidden flex items-center justify-center p-12 shadow-2xl">
               {/* Light Mode Map */}
-              <svg viewBox="0 0 400 500" className="w-full h-full max-w-md drop-shadow-2xl">
+              <svg viewBox="0 0 400 500" className="w-full h-full max-w-lg drop-shadow-xl">
                 <path
                   d="M 80,40 L 280,20 L 320,150 L 380,250 L 350,450 L 50,450 L 20,200 Z"
-                  fill="#f1f5f9"
+                  fill="#f8fafc"
                   stroke="#cbd5e1"
                   strokeWidth="3"
-                  strokeDasharray="6 6"
+                  strokeDasharray="8 8"
                 />
-                {hubs.map((hub) => (
-                  <g key={hub.id} className="group cursor-pointer">
-                    <circle cx={parseFloat(hub.left) * 4} cy={parseFloat(hub.top) * 5} r="8" fill="#3b82f6" className="group-hover:scale-125 transition-transform duration-300" />
-                    <circle cx={parseFloat(hub.left) * 4} cy={parseFloat(hub.top) * 5} r="14" fill="rgba(59,130,246,0.2)" className="animate-pulse" />
+                {cities.map((city) => (
+                  <g key={city.id} className="group cursor-pointer">
+                    <circle cx={parseFloat(city.left) * 4} cy={parseFloat(city.top) * 5} r={city.type === 'hub' ? 8 : 4} fill={city.type === 'hub' ? '#3b82f6' : '#94a3b8'} className="group-hover:scale-150 transition-transform duration-300" />
+                    {city.type === 'hub' && <circle cx={parseFloat(city.left) * 4} cy={parseFloat(city.top) * 5} r="16" fill="rgba(59,130,246,0.1)" className="animate-pulse" />}
                   </g>
                 ))}
               </svg>
               <div className="absolute bottom-8 left-8 bg-white/95 backdrop-blur p-5 rounded-xl border border-slate-200 shadow-lg text-sm text-slate-600">
                 <div className="flex items-center gap-3 mb-2"><span className="w-3 h-3 rounded-full bg-blue-500 shadow-[0_0_8px_#3b82f6]"></span> Active Hub</div>
-                <div className="flex items-center gap-3"><span className="w-3 h-3 rounded-full bg-slate-300"></span> Emerging Market</div>
+                <div className="flex items-center gap-3"><span className="w-3 h-3 rounded-full bg-slate-400"></span> Monitoring Node</div>
               </div>
             </div>
 
             {/* Sidebar Stats */}
-            <div className="bg-white border border-slate-200 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+            <div className="bg-white border border-slate-200 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300 h-full flex flex-col justify-center">
               <div className="flex items-center justify-between mb-8">
                 <h3 className="font-bold text-slate-900 flex items-center gap-3 text-xl">
                   <div className="p-2 bg-blue-50 rounded-lg">
@@ -291,7 +324,7 @@ export default function HomePageClient() {
                 <span className="text-xs font-bold font-mono bg-green-100 text-green-700 px-3 py-1 rounded-full border border-green-200">LIVE</span>
               </div>
 
-              <div className="space-y-8">
+              <div className="space-y-8 flex-1">
                 <div>
                   <div className="text-sm text-slate-500 mb-2 font-medium uppercase tracking-wide">Avg. Industrial Wage</div>
                   <div className="text-4xl font-bold text-slate-900 tracking-tight">$18.50<span className="text-lg font-normal text-slate-400 ml-1">/hr</span></div>
@@ -335,14 +368,16 @@ export default function HomePageClient() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {[
-              { title: "Warehouse & Logistics", icon: Network, slug: "logistics-distribution-staffing" },
-              { title: "Manufacturing", icon: Factory, slug: "manufacturing-staffing" },
-              { title: "Food Production", icon: Zap, slug: "food-beverage-production" },
-              { title: "Recycling & Waste", icon: Layers, slug: "recycling-waste-management-staffing" }
+              { title: "Warehouse & Logistics", icon: Network, slug: "logistics-distribution-staffing", color: "from-blue-500 to-cyan-400" },
+              { title: "Manufacturing", icon: Factory, slug: "manufacturing-staffing", color: "from-purple-500 to-pink-400" },
+              { title: "Food Production", icon: Zap, slug: "food-beverage-production", color: "from-orange-500 to-yellow-400" },
+              { title: "Recycling & Waste", icon: Layers, slug: "recycling-waste-management-staffing", color: "from-green-500 to-emerald-400" }
             ].map((industry, idx) => (
               <div key={idx} className="bg-white p-10 rounded-2xl border border-slate-200 hover:shadow-2xl transition-all duration-300 group relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-cyan-400 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-8 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-sm">
+                {/* Gradient Top Border */}
+                <div className={`absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r ${industry.color}`}></div>
+
+                <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-700 mb-8 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-sm border border-slate-100">
                   <industry.icon size={32} />
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-3">{industry.title}</h3>
@@ -437,14 +472,14 @@ export default function HomePageClient() {
       {/* 🟩 SECTION 7 — Case Study + Wire */}
       <section className="py-32 bg-slate-50">
         <div className="container">
-          <div className="grid lg:grid-cols-3 gap-12">
+          <div className="grid lg:grid-cols-3 gap-12 items-stretch">
             {/* Case Study */}
             <div className="lg:col-span-2 flex flex-col">
               <h3 className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-8 flex items-center gap-2">
                 <span className="w-8 h-[1px] bg-slate-400"></span>
                 Featured Case Study
               </h3>
-              <div className="bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-200 flex flex-col md:flex-row flex-1 hover:shadow-2xl transition-shadow duration-300 group">
+              <div className="bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-200 flex flex-col md:flex-row flex-1 hover:shadow-2xl transition-shadow duration-300 group h-full">
                 <div className="bg-slate-900 md:w-2/5 p-10 flex flex-col justify-center text-white relative overflow-hidden">
                   <div className="absolute inset-0 bg-blue-600/20 mix-blend-overlay"></div>
                   <div className="relative z-10">
@@ -468,8 +503,8 @@ export default function HomePageClient() {
                 <span className="w-8 h-[1px] bg-slate-400"></span>
                 Intelligence Wire
               </h3>
-              <div className="bg-white rounded-3xl border border-slate-200 p-8 shadow-lg flex-1">
-                <div className="space-y-8">
+              <div className="bg-white rounded-3xl border border-slate-200 p-8 shadow-lg flex-1 flex flex-col">
+                <div className="space-y-6 flex-1">
                   {[
                     { type: "PRESS", title: "FNSG Launches New OS Dashboard", date: "2 days ago" },
                     { type: "INSIGHT", title: "Q1 2025 Wage Inflation Alert", date: "1 week ago" },
