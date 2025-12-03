@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
         destination: 'https://firstnationalstaffing.com/:path*',
         permanent: true,
       },
+      {
+        source: '/locations/:slug*',
+        destination: '/insights/city/:slug*',
+        permanent: true,
+      },
     ];
   },
 };

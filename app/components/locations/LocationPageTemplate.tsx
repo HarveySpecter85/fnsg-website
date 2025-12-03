@@ -24,7 +24,7 @@ export function LocationPageTemplate({ city, description, stats, children }: Loc
                     {/* Main Content */}
                     <div className="flex-1">
                         <CompanyBreadcrumbs items={[
-                            { label: 'Locations', href: '/locations' },
+                            { label: 'Locations', href: '/insights/city' },
                             { label: city, href: '' }
                         ]} />
 

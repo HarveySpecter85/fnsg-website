@@ -8,6 +8,9 @@ import { SEOBlock } from '@/app/components/blog/shared';
 export const metadata = {
     title: "Savannah Logistics Staffing & Insights | First National Staffing",
     description: "Data-driven staffing solutions for Savannah, GA. Real-time labor market analytics, wage benchmarks, and workforce availability.",
+    alternates: {
+        canonical: '/insights/city/savannah-logistics-staffing',
+    },
 };
 
 export default function SavannahPage() {

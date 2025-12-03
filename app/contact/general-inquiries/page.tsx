@@ -123,7 +123,7 @@ export default function GeneralInquiriesPage() {
                                     <MapPin className="w-5 h-5 text-brand-primary shrink-0 mt-1" />
                                     {CONTACT_INFO.addresses.atlanta}
                                 </p>
-                                <Link href="/locations/atlanta-staffing-agency" className="text-brand-primary font-semibold hover:underline">
+                                <Link href="/insights/city/atlanta-staffing-agency" className="text-brand-primary font-semibold hover:underline">
                                     View Branch Details &rarr;
                                 </Link>
                             </div>
@@ -143,7 +143,7 @@ export default function GeneralInquiriesPage() {
                                     <MapPin className="w-5 h-5 text-brand-primary shrink-0 mt-1" />
                                     {CONTACT_INFO.addresses.gainesville}
                                 </p>
-                                <Link href="/locations/gwinnett-county-staffing-agency" className="text-brand-primary font-semibold hover:underline">
+                                <Link href="/insights/city/gwinnett-county-staffing-agency" className="text-brand-primary font-semibold hover:underline">
                                     View Branch Details &rarr;
                                 </Link>
                             </div>
@@ -163,7 +163,7 @@ export default function GeneralInquiriesPage() {
                                     <MapPin className="w-5 h-5 text-brand-primary shrink-0 mt-1" />
                                     {CONTACT_INFO.addresses.savannah}
                                 </p>
-                                <Link href="/locations/savannah-logistics-staffing" className="text-brand-primary font-semibold hover:underline">
+                                <Link href="/insights/city/savannah-logistics-staffing" className="text-brand-primary font-semibold hover:underline">
                                     View Branch Details &rarr;
                                 </Link>
                             </div>

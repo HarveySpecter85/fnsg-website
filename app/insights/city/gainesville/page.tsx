@@ -5,6 +5,9 @@ import Link from 'next/link';
 export const metadata = {
     title: "Gainesville Staffing Insights & Labor Trends – First National Staffing",
     description: "Local labor market intelligence for Gainesville, GA. Specializing in poultry processing, food manufacturing, and industrial workforce solutions.",
+    alternates: {
+        canonical: '/insights/city/gainesville',
+    },
     openGraph: {
         title: "Gainesville Staffing Insights",
         url: "https://firstnationalstaffing.com/insights/city/gainesville",

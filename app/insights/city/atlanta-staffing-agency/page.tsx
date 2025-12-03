@@ -8,6 +8,9 @@ import { SEOBlock } from '@/app/components/blog/shared';
 export const metadata = {
     title: "Atlanta Staffing Agency & Workforce Insights | First National Staffing",
     description: "Data-driven staffing solutions for Atlanta, GA. Real-time labor market analytics, wage benchmarks, and workforce availability.",
+    alternates: {
+        canonical: '/insights/city/atlanta-staffing-agency',
+    },
 };
 
 export default function AtlantaCityPage() {
