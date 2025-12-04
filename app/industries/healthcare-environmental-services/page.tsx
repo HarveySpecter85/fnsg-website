@@ -118,7 +118,7 @@ export default function HealthcareEVSPage() {
 
                             {/* How FNSG OS Solves These Problems */}
                             <section>
-                                <h2 className="text-2xl font-bold text-slate-900 mb-6">How FNSG OS Solves These EVS Challenges</h2>
+                                <h2 className="text-2xl font-bold text-slate-900 mb-6">How FNSG OS Solves These Problems</h2>
 
                                 <div className="space-y-8">
                                     <div className="flex gap-4">
