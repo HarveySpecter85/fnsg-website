@@ -45,9 +45,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/insights/industry/agriculture-nursery-staffing',
         '/insights/industry/food-production',
         '/insights/industry/healthcare-support-staffing',
-        '/insights/industry/hospitality',
+        '/insights/industry/hospitality-events',
         '/insights/industry/manufacturing',
         '/insights/industry/recycling',
+        '/insights/industry/healthcare-environmental-services',
         '/insights/industry/warehouse',
         // City Sub-pages
         '/insights/city/duluth/korean-workforce-opportunities',
