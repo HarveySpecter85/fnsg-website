@@ -1,355 +1,323 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import { TextReveal } from '@/app/components/anim/text-reveal'
-import { FadeIn } from '@/app/components/anim/fade-in'
-import { MagneticButton } from '@/app/components/anim/magnetic-button'
-import { RECYCLING_SORTER_WAGE, RECYCLING_SAFETY_RATE_FNSG, RECYCLING_SAFETY_RATE_AVG, RECYCLING_RETENTION, CURRENT_YEAR } from '@/lib/site-config'
-import { Recycle, ShieldAlert, Truck, HardHat, Syringe, FileCheck, Timer, Users, AlertTriangle, CheckCircle } from 'lucide-react'
-import { IntelligenceWidget } from '@/app/components/intelligence-engine/widget'
+import React from 'react';
+import { SeoSidebar } from '@/app/components/insights/SeoSidebar';
+import { Breadcrumbs } from '@/app/components/navigation/Breadcrumbs';
+import Link from 'next/link';
+import Script from 'next/script';
+import { AlertTriangle, ShieldAlert, Truck, HardHat, Recycle, TrendingUp, CheckCircle, Sun, CloudRain } from 'lucide-react';
 
-export const metadata: Metadata = {
-    title: "Recycling & Waste Management Staffing Georgia | OSHA Certified MRF Labor",
-    description: "Staffing for Material Recovery Facilities (MRF) & Transfer Stations in Atlanta. OSHA-10 trained Sorters, Balers, and Forklift Operators. Zero-Liability W-2 Workforce.",
-}
+export const metadata = {
+    title: "Recycling & Waste Management Staffing Solutions in Georgia | FNSG OS",
+    description: "Workforce Intelligence-driven staffing for recycling and waste management operations, including sorters, baler operators, forklift operators, landfill labor, and safety-monitored task teams.",
+    openGraph: {
+        title: "Recycling & Waste Management Staffing Solutions",
+        url: "https://firstnationalstaffing.com/industries/recycling-waste-management-staffing",
+        type: "website"
+    }
+};
 
-export default function RecyclingWasteManagementStaffingPage() {
-    const schema = {
+export default function RecyclingPage() {
+    const jsonLd = {
         "@context": "https://schema.org",
         "@type": "Service",
-        "serviceType": "Recycling Facility Staffing",
-        "name": "MRF & Waste Management Workforce",
+        "serviceType": "Recycling & Waste Management Staffing",
         "provider": {
             "@type": "Organization",
             "name": "First National Staffing Group",
-            "knowsAbout": [
-                "Material Recovery Facilities",
-                "OSHA 1910 Standards",
-                "Lockout Tagout",
-                "Hazardous Waste Operations"
-            ]
+            "url": "https://firstnationalstaffing.com"
         },
-        "areaServed": [
-            { "@type": "City", "name": "Atlanta" },
-            { "@type": "AdministrativeArea", "name": "Fulton County" },
-            { "@type": "AdministrativeArea", "name": "Gwinnett County" }
-        ],
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Recycling Roles",
-            "itemListElement": [
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "MRF Sorters" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Baler & Compactor Operators" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Heavy Equipment Operators" } }
-            ]
+        "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "Georgia"
         },
-        "audience": {
-            "@type": "BusinessAudience",
-            "audienceType": "MRF Plant Managers"
-        }
-    }
+        "description": "Workforce Intelligence-driven staffing for recycling and waste management operations, including sorters, baler operators, forklift operators, landfill labor, and safety-monitored task teams.",
+        "url": "https://firstnationalstaffing.com/industries/recycling-waste-management-staffing"
+    };
 
     return (
-        <main className="bg-white">
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+        <main className="bg-white min-h-screen py-12">
+            <Script
+                id="recycling-jsonld"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
 
-            {/* Hero Section */}
-            <section className="relative py-24 lg:py-32 overflow-hidden bg-slate-50 border-b border-slate-200">
-                <div className="container">
-                    <div className="max-w-4xl">
-                        <TextReveal as="h1" className="text-5xl md:text-7xl font-bold text-brand-navy mb-6 leading-tight">
-                            Recycling & Waste Management Workforce Solutions
-                        </TextReveal>
-                        <TextReveal as="h2" className="text-2xl md:text-3xl font-medium text-brand-secondary mb-10 block">
-                            Safety-First Labor for Georgia MRFs | OSHA Certified
-                        </TextReveal>
-                        <FadeIn delay={0.5}>
-                            <MagneticButton>
-                                <Link href="/contact" className="btn-primary text-lg px-8 py-4">
-                                    Request Safety-Vetted Staff
-                                </Link>
-                            </MagneticButton>
-                        </FadeIn>
-                    </div>
-                </div>
-            </section>
+            <div className="container mx-auto px-6 max-w-7xl">
+                <div className="flex flex-col lg:flex-row gap-12">
+                    <SeoSidebar />
+                    <div className="flex-1">
+                        <Breadcrumbs items={[
+                            { label: 'Industries', href: '/industries' },
+                            { label: 'Recycling & Waste Management', href: '/industries/recycling-waste-management-staffing' }
+                        ]} />
 
-            {/* Zero-Click Answer Block */}
-            <section className="py-20">
-                <div className="container">
-                    <FadeIn>
-                        <div className="bg-white border-l-8 border-brand-primary p-8 md:p-12 rounded-r-xl shadow-sm ring-1 ring-slate-100">
-                            <p className="text-lg md:text-xl text-slate-700 leading-relaxed">
-                                <strong className="text-brand-navy font-bold">First National Staffing Group</strong> provides specialized, OSHA-trained labor for Georgia&apos;s waste management and recycling sector. We staff <strong className="text-brand-navy font-bold">Material Recovery Facilities (MRF)</strong>, <strong className="text-brand-navy font-bold">Transfer Stations</strong>, and <strong className="text-brand-navy font-bold">Scrap Yards</strong> with W-2 personnel trained in <strong className="text-brand-navy font-bold">Lockout/Tagout</strong>, <strong className="text-brand-navy font-bold">PPE protocols</strong>, and <strong className="text-brand-navy font-bold">Hazardous Material identification</strong>. We offer a <strong className="text-brand-navy font-bold">24-hour fill guarantee</strong> for sorters and heavy equipment operators.
-                            </p>
-                        </div>
-                    </FadeIn>
-                </div>
-            </section>
+                        <div className="space-y-12 mt-8">
 
-            {/* Market Intelligence Widget */}
-            <section className="py-20 bg-slate-950 relative overflow-hidden">
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
-                <div className="container relative z-10">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                                Reduce Safety Incidents & Liability
-                            </h2>
-                            <p className="text-lg text-slate-400 mb-8">
-                                High turnover in MRFs leads to higher injury rates. Analyze your current safety exposure and see how our trained workforce reduces risk.
-                            </p>
-                            <ul className="space-y-4">
-                                <li className="flex items-center gap-3 text-slate-300">
-                                    <div className="w-2 h-2 rounded-full bg-cyan-500" />
-                                    Safety Incident Risk Score
-                                </li>
-                                <li className="flex items-center gap-3 text-slate-300">
-                                    <div className="w-2 h-2 rounded-full bg-cyan-500" />
-                                    Turnover Cost Analysis
-                                </li>
-                                <li className="flex items-center gap-3 text-slate-300">
-                                    <div className="w-2 h-2 rounded-full bg-cyan-500" />
-                                    Sorting Line Efficiency Model
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <IntelligenceWidget industry="Waste" defaultLocation="Atlanta, GA" />
-                        </div>
-                    </div>
-                </div>
-            </section>
+                            {/* H1 & Intro */}
+                            <section>
+                                <h1 className="text-4xl font-bold text-slate-900 mb-6">Recycling & Waste Management Staffing Solutions in Georgia — Powered by FNSG OS</h1>
+                                <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                                    Recycling and waste management operations require a highly resilient, safe, punctual, and trained workforce.
+                                </p>
+                                <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                                    This sector faces some of the biggest turnover and safety challenges in the industry, impacting: daily productivity, contract compliance, equipment safety, operating costs, sorting and baling efficiency, and OSHA compliance.
+                                </p>
+                                <p className="text-lg text-slate-700 leading-relaxed font-medium">
+                                    <span className="text-blue-600">FNSG OS provides the operational intelligence needed to stabilize these critical operations.</span>
+                                </p>
+                            </section>
 
-            {/* Stats Grid (Safety Index) */}
-            <section className="py-20 bg-slate-50">
-                <div className="container">
-                    <div className="mb-12">
-                        <h2 className="text-3xl font-bold text-brand-navy mb-4">Georgia Waste & Recycling Labor Index ({CURRENT_YEAR})</h2>
-                        <p className="text-brand-gray">Prioritizing safety to reduce liability and downtime.</p>
-                    </div>
-                    <FadeIn stagger={0.2} className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div className="card-standard bg-white border border-slate-200 shadow-sm">
-                            <div className="flex items-start justify-between mb-4">
-                                <div className="icon-wrapper bg-brand-light text-brand-primary">
-                                    <Users className="w-6 h-6" />
+                            {/* Operational Challenges */}
+                            <section>
+                                <h2 className="text-2xl font-bold text-slate-900 mb-6">Operational Challenges in Recycling & Waste Management</h2>
+
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div className="bg-red-50 p-6 rounded-lg border border-red-100">
+                                        <h3 className="font-bold text-red-900 flex items-center gap-2 mb-2">
+                                            <TrendingUp className="w-5 h-5" /> High Physical Demands → High Turnover
+                                        </h3>
+                                        <p className="text-red-800 text-sm">Sorting, baling, landfill cleanup, and material handling are some of the most physically demanding roles.</p>
+                                    </div>
+                                    <div className="bg-red-50 p-6 rounded-lg border border-red-100">
+                                        <h3 className="font-bold text-red-900 flex items-center gap-2 mb-2">
+                                            <Sun className="w-5 h-5" /> Outdoor & Harsh Work Environments
+                                        </h3>
+                                        <p className="text-red-800 text-sm">Affect attendance, stability, and retention.</p>
+                                    </div>
+                                    <div className="bg-red-50 p-6 rounded-lg border border-red-100">
+                                        <h3 className="font-bold text-red-900 flex items-center gap-2 mb-2">
+                                            <ShieldAlert className="w-5 h-5" /> OSHA-Intensive Operations
+                                        </h3>
+                                        <p className="text-red-800 text-sm">Common risks include cuts, pinch points, ergonomics, compaction machinery, forklifts, and heavy vehicle driving.</p>
+                                    </div>
+                                    <div className="bg-red-50 p-6 rounded-lg border border-red-100">
+                                        <h3 className="font-bold text-red-900 flex items-center gap-2 mb-2">
+                                            <CloudRain className="w-5 h-5" /> Attendance Issues (2nd & 3rd Shift)
+                                        </h3>
+                                        <p className="text-red-800 text-sm">High turnover due to weather, distance, fatigue, and work environment.</p>
+                                    </div>
+                                    <div className="bg-red-50 p-6 rounded-lg border border-red-100">
+                                        <h3 className="font-bold text-red-900 flex items-center gap-2 mb-2">
+                                            <Recycle className="w-5 h-5" /> Sorting Quality & Output Stability
+                                        </h3>
+                                        <p className="text-red-800 text-sm">Productivity depends on workforce consistency.</p>
+                                    </div>
+                                    <div className="bg-red-50 p-6 rounded-lg border border-red-100">
+                                        <h3 className="font-bold text-red-900 flex items-center gap-2 mb-2">
+                                            <Truck className="w-5 h-5" /> Equipment Operator Shortages
+                                        </h3>
+                                        <p className="text-red-800 text-sm">Bobcat, skid-steer, baler operators, and forklift drivers are in high demand.</p>
+                                    </div>
                                 </div>
-                                <span className="text-xs font-semibold bg-slate-100 text-brand-navy px-2 py-1 rounded">Wages</span>
-                            </div>
-                            <h3 className="text-4xl font-bold text-brand-navy mb-2">{RECYCLING_SORTER_WAGE}</h3>
-                            <p className="text-sm font-medium text-brand-secondary">Avg. Sorter Wage</p>
-                            <p className="text-sm text-brand-gray mt-2">Competitive pay for demanding roles.</p>
-                        </div>
+                            </section>
 
-                        <div className="card-standard bg-white border-2 border-yellow-400 shadow-md relative overflow-hidden">
-                            <div className="absolute top-0 right-0 bg-yellow-400 text-brand-navy text-xs font-bold px-2 py-1">SAFETY FOCUS</div>
-                            <div className="flex items-start justify-between mb-4">
-                                <div className="icon-wrapper bg-yellow-100 text-yellow-700">
-                                    <ShieldAlert className="w-6 h-6" />
+                            {/* How FNSG OS Solves These Problems */}
+                            <section>
+                                <h2 className="text-2xl font-bold text-slate-900 mb-6">How FNSG OS Solves These Problems</h2>
+
+                                <div className="space-y-8">
+                                    <div className="flex gap-4">
+                                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 text-blue-600 font-bold text-xl">1</div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-slate-900">Attendance Intelligence OS</h3>
+                                            <p className="text-slate-600 mt-2">
+                                                Predicts absences considering weather (very relevant in outdoors), fatigue, seasonal demand, location, and hour-by-hour metrics.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex gap-4">
+                                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 text-blue-600 font-bold text-xl">2</div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-slate-900">Safety & OSHA OS</h3>
+                                            <p className="text-slate-600 mt-2">
+                                                The most important component for this industry: PPE verification, hazard tracking, OSHA logs, baler/compactor safety, forklift safety audits, and incident trending.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex gap-4">
+                                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 text-blue-600 font-bold text-xl">3</div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-slate-900">On-Site Workforce Management Programs</h3>
+                                            <p className="text-slate-600 mt-2">
+                                                For sorting floors, baling lines, and landfill operations: direct supervision, safety compliance, operational coaching, and continuous training.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex gap-4">
+                                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 text-blue-600 font-bold text-xl">4</div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-slate-900">Pay Rate Intelligence</h3>
+                                            <p className="text-slate-600 mt-2">
+                                                Avoids leakage to warehouse, construction, landscaping, and metro ATL.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex gap-4">
+                                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 text-blue-600 font-bold text-xl">5</div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-slate-900">High-Velocity Ramp Ups</h3>
+                                            <p className="text-slate-600 mt-2">
+                                                Perfect for municipal contracts, temporary surge projects, and clean-up cycles.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex gap-4">
+                                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 text-blue-600 font-bold text-xl">6</div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-slate-900">Task-Based Worker Matching</h3>
+                                            <p className="text-slate-600 mt-2">
+                                                Staffing based on physical endurance, industrial environment tolerance, machinery experience, and OSHA history.
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <span className="text-xs font-semibold bg-yellow-100 text-yellow-800 px-2 py-1 rounded">Incident Rate</span>
-                            </div>
-                            <h3 className="text-2xl font-bold text-brand-navy mb-2">
-                                {RECYCLING_SAFETY_RATE_FNSG} <span className="text-sm font-normal text-slate-500">(vs Industry {RECYCLING_SAFETY_RATE_AVG})</span>
-                            </h3>
-                            <p className="text-sm font-medium text-brand-secondary">Safety Incident Rate</p>
-                            <p className="text-sm text-brand-gray mt-2">Drastically lower risk with FNSG.</p>
-                        </div>
+                            </section>
 
-                        <div className="card-standard bg-white border border-slate-200 shadow-sm">
-                            <div className="flex items-start justify-between mb-4">
-                                <div className="icon-wrapper bg-brand-light text-brand-primary">
-                                    <CheckCircle className="w-6 h-6" />
+                            {/* KPIs We Improve */}
+                            <section>
+                                <h2 className="text-2xl font-bold text-slate-900 mb-6">KPIs We Improve in Recycling & Waste Management</h2>
+                                <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                                    <table className="w-full text-left text-sm">
+                                        <thead className="bg-slate-900 text-white font-semibold">
+                                            <tr>
+                                                <th className="p-4 border-b border-slate-700">KPI</th>
+                                                <th className="p-4 border-b border-slate-700">Improvement with FNSG OS</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody className="divide-y divide-slate-100">
+                                            <tr><td className="p-4 font-medium text-slate-900">Attendance Reliability</td><td className="p-4 text-green-600 font-bold">+10–18%</td></tr>
+                                            <tr><td className="p-4 font-medium text-slate-900">Sorting Productivity</td><td className="p-4 text-green-600 font-bold">+12–25%</td></tr>
+                                            <tr><td className="p-4 font-medium text-slate-900">PPE Compliance</td><td className="p-4 text-green-600 font-bold">+25–45%</td></tr>
+                                            <tr><td className="p-4 font-medium text-slate-900">Safety Incident Reduction</td><td className="p-4 text-green-600 font-bold">-15–35%</td></tr>
+                                            <tr><td className="p-4 font-medium text-slate-900">Ramp-Up Time</td><td className="p-4 text-green-600 font-bold">24–72 hours</td></tr>
+                                            <tr><td className="p-4 font-medium text-slate-900">Operator Placement Reliability</td><td className="p-4 text-green-600 font-bold">+15–30%</td></tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                                <span className="text-xs font-semibold bg-slate-100 text-brand-navy px-2 py-1 rounded">Stability</span>
-                            </div>
-                            <h3 className="text-4xl font-bold text-brand-navy mb-2">{RECYCLING_RETENTION}</h3>
-                            <p className="text-sm font-medium text-brand-secondary">Retention Rate</p>
-                            <p className="text-sm text-brand-gray mt-2">Via On-Site Safety Leads.</p>
-                        </div>
-                    </FadeIn>
+                            </section>
 
-                    <div className="mt-8 text-center">
-                        <Link href="/data-insights" className="text-brand-primary font-semibold hover:underline inline-flex items-center gap-2">
-                            Download {CURRENT_YEAR} Recycling Safety & Wage Report <span aria-hidden="true">&rarr;</span>
-                        </Link>
-                    </div>
-                </div>
-            </section>
-
-            {/* Liability Shield */}
-            <section className="py-20 bg-white">
-                <div className="container">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                        <div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">Mitigating High-Risk Liability</h2>
-                            <p className="text-lg text-slate-600 mb-8">
-                                Recycling is a high-injury sector. We insulate your facility from risk with rigorous training and comprehensive coverage.
-                            </p>
-                            <ul className="space-y-6">
-                                <li className="flex items-start gap-4">
-                                    <div className="mt-1 bg-yellow-100 p-1 rounded-full shadow-sm text-yellow-700">
-                                        <ShieldAlert className="w-5 h-5" />
+                            {/* Roles We Staff */}
+                            <section>
+                                <h2 className="text-2xl font-bold text-slate-900 mb-6">Roles We Staff in Recycling & Waste Management</h2>
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                    <div className="bg-slate-50 p-6 rounded-lg">
+                                        <h3 className="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2">Sorting & Processing</h3>
+                                        <ul className="space-y-2 text-slate-700 text-sm">
+                                            <li>• Sorters</li>
+                                            <li>• Line Workers</li>
+                                            <li>• Material Recycling Workers</li>
+                                            <li>• Quality Sorting Staff</li>
+                                        </ul>
                                     </div>
-                                    <div>
-                                        <h4 className="font-bold text-brand-navy">OSHA 10/30 Training</h4>
-                                        <p className="text-slate-600">Every placement undergoes site-specific safety induction before stepping on the floor.</p>
+                                    <div className="bg-slate-50 p-6 rounded-lg">
+                                        <h3 className="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2">Machinery & Equipment</h3>
+                                        <ul className="space-y-2 text-slate-700 text-sm">
+                                            <li>• Forklift Operators</li>
+                                            <li>• Skid-Steer Operators</li>
+                                            <li>• Bobcat Operators</li>
+                                            <li>• Baler Operators</li>
+                                            <li>• Compactor Operators</li>
+                                        </ul>
                                     </div>
-                                </li>
-                                <li className="flex items-start gap-4">
-                                    <div className="mt-1 bg-brand-light p-1 rounded-full shadow-sm text-brand-teal">
-                                        <Syringe className="w-5 h-5" />
+                                    <div className="bg-slate-50 p-6 rounded-lg">
+                                        <h3 className="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2">Ground & Landfill</h3>
+                                        <ul className="space-y-2 text-slate-700 text-sm">
+                                            <li>• Cleanup Crews</li>
+                                            <li>• Grounds Workers</li>
+                                            <li>• Heavy-Labor Teams</li>
+                                        </ul>
                                     </div>
-                                    <div>
-                                        <h4 className="font-bold text-brand-navy">Hepatitis B & Tetanus</h4>
-                                        <p className="text-slate-600">Vaccination verification via our <Link href="/solutions/workforce-health-screening" className="text-brand-primary underline">Health Screening Network</Link>.</p>
+                                    <div className="bg-slate-50 p-6 rounded-lg">
+                                        <h3 className="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2">Support Roles</h3>
+                                        <ul className="space-y-2 text-slate-700 text-sm">
+                                            <li>• Shipping/Receiving</li>
+                                            <li>• Material Handlers</li>
+                                            <li>• Safety Assistants</li>
+                                        </ul>
                                     </div>
-                                </li>
-                                <li className="flex items-start gap-4">
-                                    <div className="mt-1 bg-brand-light p-1 rounded-full shadow-sm text-brand-teal">
-                                        <FileCheck className="w-5 h-5" />
-                                    </div>
-                                    <div>
-                                        <h4 className="font-bold text-brand-navy">Workers&apos; Comp Shield</h4>
-                                        <p className="text-slate-600">We carry full liability, protecting your experience modification rate (EMR).</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="relative">
-                            {/* Placeholder for visual */}
-                            <div className="aspect-square rounded-2xl bg-slate-50 border border-slate-200 p-8 flex items-center justify-center relative overflow-hidden">
-                                <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,transparent,transparent_10px,rgba(234,179,8,0.1)_10px,rgba(234,179,8,0.1)_20px)]"></div>
-                                <div className="text-center relative z-10">
-                                    <Recycle className="w-24 h-24 text-brand-primary mx-auto mb-4 opacity-80" />
-                                    <p className="text-brand-navy font-bold text-xl">Zero-Liability Workforce</p>
-                                    <p className="text-sm text-slate-500">Safety First</p>
                                 </div>
-                            </div>
+                            </section>
+
+                            {/* Compliance & Safety Layer */}
+                            <section className="bg-slate-900 text-white p-8 rounded-xl">
+                                <h2 className="text-2xl font-bold mb-4">Compliance & Safety Layer</h2>
+                                <p className="mb-6 text-slate-300">
+                                    Highest risk industry. FNSG OS complies and documents:
+                                </p>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div className="flex items-center gap-2">
+                                        <CheckCircle className="text-green-400 w-5 h-5" /> <span>OSHA 1910 subchapter N</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <CheckCircle className="text-green-400 w-5 h-5" /> <span>Compactors & balers regulations</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <CheckCircle className="text-green-400 w-5 h-5" /> <span>PPE high-risk enforcement</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <CheckCircle className="text-green-400 w-5 h-5" /> <span>Heat stress monitoring</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <CheckCircle className="text-green-400 w-5 h-5" /> <span>Ergonomic hazard mapping</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <CheckCircle className="text-green-400 w-5 h-5" /> <span>Incident prevention systems</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <CheckCircle className="text-green-400 w-5 h-5" /> <span>Daily safety briefings logs</span>
+                                    </div>
+                                </div>
+                            </section>
+
+                            {/* FAQs */}
+                            <section>
+                                <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
+                                <div className="space-y-4">
+                                    {[
+                                        { q: "Do you staff sorters, baler operators and landfill labor?", a: "Yes, with prior training and PPE compliance." },
+                                        { q: "How do you reduce turnover in recycling operations?", a: "Attendance OS + pay intelligence + onsite supervision." },
+                                        { q: "Can you staff in outdoor environments?", a: "Yes, matching based on physical tolerance and weather." },
+                                        { q: "How do you handle OSHA compliance?", a: "Safety OS + documentation + incident tracking + PPE enforcement." },
+                                        { q: "Can you support high-volume contracts?", a: "Yes, with ramp-ups of 20–80 workers in 24–72 hours." },
+                                        { q: "Do you offer bilingual teams?", a: "Yes, EN/ES." }
+                                    ].map((faq, index) => (
+                                        <details key={index} className="group border border-slate-200 rounded-lg p-4 open:bg-slate-50 transition-all">
+                                            <summary className="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
+                                                {faq.q}
+                                                <span className="transition group-open:rotate-180">▼</span>
+                                            </summary>
+                                            <p className="text-slate-600 mt-3 text-sm">{faq.a}</p>
+                                        </details>
+                                    ))}
+                                </div>
+                            </section>
+
+                            {/* CTA Section */}
+                            <section className="py-8 border-t border-slate-200">
+                                <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+                                    <Link
+                                        href="/contact?industry=recycling"
+                                        className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all shadow-lg hover:shadow-xl"
+                                    >
+                                        Request a Recycling Workforce Strategy Session
+                                    </Link>
+                                    <Link
+                                        href="/resources/reports/recycling-2025"
+                                        className="bg-white border-2 border-slate-200 hover:border-blue-600 text-slate-700 hover:text-blue-600 font-bold py-3 px-8 rounded-full transition-all"
+                                    >
+                                        Download the 2025 Recycling & Waste Management Workforce Intelligence Report
+                                    </Link>
+                                </div>
+                            </section>
+
                         </div>
                     </div>
                 </div>
-            </section>
-
-            {/* Operational Efficiency */}
-            <section className="py-20 bg-brand-light border-y border-brand-primary/10">
-                <div className="container">
-                    <div className="max-w-4xl mx-auto text-center">
-                        <div className="inline-flex items-center justify-center p-3 bg-white rounded-full shadow-sm mb-6 text-brand-primary">
-                            <Timer className="w-8 h-8" />
-                        </div>
-                        <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">Operational Efficiency</h2>
-                        <p className="text-xl text-slate-700 mb-8 leading-relaxed">
-                            Slow sorting lines kill profitability. Our <strong className="text-brand-navy">Bilingual On-Site Leads</strong> manage the line speed and quality control (contamination removal) so your supervisors can focus on plant logistics. We track <strong className="text-brand-navy">Picks-Per-Minute</strong> and attendance in real-time.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            {/* Roles Table */}
-            <section className="py-20 bg-white">
-                <div className="container">
-                    <div className="mb-10 text-center max-w-3xl mx-auto">
-                        <h2 className="text-3xl font-bold text-brand-navy mb-4">Roles & Capabilities</h2>
-                        <p className="text-slate-600">Trained personnel ready for high-volume processing.</p>
-                    </div>
-
-                    <div className="overflow-x-auto rounded-xl border border-slate-200 shadow-sm bg-white">
-                        <table className="w-full text-left border-collapse">
-                            <thead className="bg-slate-50">
-                                <tr>
-                                    <th className="p-4 font-bold text-brand-navy border-b border-slate-200">Role Category</th>
-                                    <th className="p-4 font-bold text-brand-navy border-b border-slate-200">Safety Certification</th>
-                                    <th className="p-4 font-bold text-brand-navy border-b border-slate-200">PPE Standard</th>
-                                    <th className="p-4 font-bold text-brand-navy border-b border-slate-200">Deployment Speed</th>
-                                    <th className="p-4 font-bold text-brand-navy border-b border-slate-200">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-slate-100">
-                                <tr className="hover:bg-slate-50 transition-colors">
-                                    <td className="p-4 font-medium text-brand-navy flex items-center gap-2">
-                                        <Recycle className="w-4 h-4 text-brand-teal" /> Sort Line Staff
-                                    </td>
-                                    <td className="p-4 text-slate-600">Sharps Awareness</td>
-                                    <td className="p-4 text-slate-600">Puncture-Resistant Gloves</td>
-                                    <td className="p-4 text-slate-600">24 Hours</td>
-                                    <td className="p-4"><Link href="/contact" className="text-brand-primary font-medium hover:underline">View Rates</Link></td>
-                                </tr>
-                                <tr className="hover:bg-slate-50 transition-colors">
-                                    <td className="p-4 font-medium text-brand-navy flex items-center gap-2">
-                                        <AlertTriangle className="w-4 h-4 text-brand-teal" /> Baler Operators
-                                    </td>
-                                    <td className="p-4 text-slate-600">Lockout/Tagout</td>
-                                    <td className="p-4 text-slate-600">Steel Toe / Vest / Eye</td>
-                                    <td className="p-4 text-slate-600">24-48 Hours</td>
-                                    <td className="p-4"><Link href="/contact" className="text-brand-primary font-medium hover:underline">View Rates</Link></td>
-                                </tr>
-                                <tr className="hover:bg-slate-50 transition-colors">
-                                    <td className="p-4 font-medium text-brand-navy flex items-center gap-2">
-                                        <Truck className="w-4 h-4 text-brand-teal" /> Clamp/Forklift
-                                    </td>
-                                    <td className="p-4 text-slate-600">OSHA Powered Truck</td>
-                                    <td className="p-4 text-slate-600">High-Vis / Hard Hat</td>
-                                    <td className="p-4 text-slate-600">24 Hours</td>
-                                    <td className="p-4"><Link href="/contact" className="text-brand-primary font-medium hover:underline">View Rates</Link></td>
-                                </tr>
-                                <tr className="hover:bg-slate-50 transition-colors">
-                                    <td className="p-4 font-medium text-brand-navy flex items-center gap-2">
-                                        <Truck className="w-4 h-4 text-brand-teal" /> Yard Jockeys
-                                    </td>
-                                    <td className="p-4 text-slate-600">CDL Class A (Yard)</td>
-                                    <td className="p-4 text-slate-600">Weather Gear</td>
-                                    <td className="p-4 text-slate-600">72 Hours</td>
-                                    <td className="p-4"><Link href="/contact" className="text-brand-primary font-medium hover:underline">View Rates</Link></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-
-            {/* Trust Signals */}
-            <section className="py-12 bg-white border-t border-slate-100">
-                <div className="container">
-                    <p className="text-center text-sm font-semibold text-brand-gray mb-8 uppercase tracking-wider">Trusted by Industry Leaders</p>
-                    <div className="flex flex-wrap justify-center gap-6 md:gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-                        <span className="font-bold text-xl text-brand-navy flex items-center gap-2"><CheckCircle className="w-5 h-5 text-brand-primary" /> NWRA Member</span>
-                        <span className="font-bold text-xl text-brand-navy flex items-center gap-2"><CheckCircle className="w-5 h-5 text-brand-primary" /> SWANA Member</span>
-                        <span className="font-bold text-xl text-brand-navy flex items-center gap-2"><HardHat className="w-5 h-5 text-brand-primary" /> OSHA 30 Certified</span>
-                        <span className="font-bold text-xl text-brand-navy flex items-center gap-2"><CheckCircle className="w-5 h-5 text-brand-primary" /> E-Verify</span>
-                    </div>
-                </div>
-            </section>
-
-            {/* FAQ */}
-            <section className="py-20 bg-brand-light/30">
-                <div className="container max-w-3xl mx-auto">
-                    <h2 className="text-3xl font-bold text-brand-navy mb-10 text-center">Frequently Asked Questions</h2>
-                    <div className="space-y-4">
-                        <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
-                            <h3 className="font-bold text-brand-navy text-lg mb-2">Do you provide PPE for recycling sorters?</h3>
-                            <p className="text-slate-600">Yes. We ensure all staff arrive with standard PPE (High-vis vests, steel-toe boots, safety glasses). Specialized cut-resistant gloves can be managed via your specific account protocols.</p>
-                        </div>
-                        <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
-                            <h3 className="font-bold text-brand-navy text-lg mb-2">How do you handle safety training for new recycling staff?</h3>
-                            <p className="text-slate-600">We conduct a digital &quot;Hazard Awareness&quot; module covering conveyor safety, lockout/tagout awareness, and biological hazards before they arrive at your MRF.</p>
-                        </div>
-                        <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
-                            <h3 className="font-bold text-brand-navy text-lg mb-2">Can you staff 2nd and 3rd shift sorting lines?</h3>
-                            <p className="text-slate-600">Yes. We specialize in 24/7 facility coverage and provide overnight on-site leads to ensure 3rd-shift attendance matches 1st-shift reliability.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Areas We Serve */}
-            <section className="py-20 bg-brand-navy text-white text-center">
-                <div className="container">
-                    <h2 className="text-3xl font-bold mb-6">Areas We Serve</h2>
-                    <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-                        Supporting waste hubs in <strong className="text-white">Atlanta</strong>, <strong className="text-white">Norcross (Gwinnett)</strong>, <strong className="text-white">Gainesville</strong>, and <strong className="text-white">Savannah Port Area</strong>.
-                    </p>
-                </div>
-            </section>
+            </div>
         </main>
-    )
+    );
 }
