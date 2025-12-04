@@ -1,373 +1,315 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import { TextReveal } from '@/app/components/anim/text-reveal'
-import { FadeIn } from '@/app/components/anim/fade-in'
-import { MagneticButton } from '@/app/components/anim/magnetic-button'
-import { HOSPITALITY_WAGE, HOSPITALITY_TURNOVER_FNSG, HOSPITALITY_CLEANING_TIME, CURRENT_YEAR } from '@/lib/site-config'
-import { BedDouble, Utensils, Shirt, Clock, ShieldCheck, Check, Users, Hotel, CalendarCheck } from 'lucide-react'
-import { IntelligenceWidget } from '@/app/components/intelligence-engine/widget'
+import React from 'react';
+import { SeoSidebar } from '@/app/components/insights/SeoSidebar';
+import { Breadcrumbs } from '@/app/components/navigation/Breadcrumbs';
+import Link from 'next/link';
+import Script from 'next/script';
+import { Users, CalendarClock, UserCheck, Star, TrendingUp, AlertTriangle, CheckCircle } from 'lucide-react';
 
-export const metadata: Metadata = {
-    title: "Hospitality & Event Staffing Georgia | 98% Shift Fulfillment Rate",
-    description: "Staffing for Hotels, Resorts, and Venues in Atlanta. Housekeeping, Banquet, and Kitchen staff with 24h replacement guarantee. Fully insured & W-2 compliant.",
-}
+export const metadata = {
+    title: "Hospitality & Events Staffing in Georgia | FNSG OS",
+    description: "Hospitality & Events staffing solutions powered by FNSG OS including banquet staff, bartenders, housekeeping, dishwashers, AV support, event setup crews, and onsite workforce management.",
+    openGraph: {
+        title: "Hospitality & Events Staffing",
+        url: "https://firstnationalstaffing.com/industries/hospitality-events-staffing",
+        type: "website"
+    }
+};
 
-export default function HospitalityEventsStaffingPage() {
-    const schema = {
+export default function HospitalityEventsPage() {
+    const jsonLd = {
         "@context": "https://schema.org",
         "@type": "Service",
-        "serviceType": "Hospitality Staffing",
-        "name": "Hotel & Event Workforce Solutions",
+        "serviceType": "Hospitality & Events Staffing",
         "provider": {
             "@type": "Organization",
             "name": "First National Staffing Group",
-            "knowsAbout": [
-                "Housekeeping Efficiency",
-                "Banquet Operations",
-                "Guest Service Gold",
-                "AHLA Standards"
-            ]
+            "url": "https://firstnationalstaffing.com"
         },
-        "areaServed": [
-            { "@type": "City", "name": "Atlanta" },
-            { "@type": "City", "name": "Savannah" },
-            { "@type": "AdministrativeArea", "name": "Fulton County" }
-        ],
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Hospitality Roles",
-            "itemListElement": [
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Room Attendants (Housekeeping)" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Banquet Servers" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dishwashers / Stewards" } }
-            ]
+        "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "Georgia"
         },
-        "audience": {
-            "@type": "BusinessAudience",
-            "audienceType": "Hotel General Managers"
-        }
-    }
+        "description": "Hospitality & Events staffing solutions powered by FNSG OS including banquet staff, bartenders, housekeeping, dishwashers, AV support, event setup crews, and onsite workforce management.",
+        "url": "https://firstnationalstaffing.com/industries/hospitality-events-staffing"
+    };
 
     return (
-        <main className="bg-white">
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+        <main className="bg-white min-h-screen py-12">
+            <Script
+                id="hospitality-events-jsonld"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
 
-            {/* Hero Section */}
-            <section className="relative py-24 lg:py-32 overflow-hidden bg-brand-light/20">
-                <div className="container">
-                    <div className="max-w-4xl">
-                        <TextReveal as="h1" className="text-5xl md:text-7xl font-bold text-brand-navy mb-6 leading-tight">
-                            Hospitality & Event Staffing Solutions
-                        </TextReveal>
-                        <TextReveal as="h2" className="text-2xl md:text-3xl font-medium text-brand-secondary mb-10 block">
-                            High-Volume Workforce for Georgia Venues | 98% Shift Fulfillment
-                        </TextReveal>
-                        <FadeIn delay={0.5}>
-                            <MagneticButton>
-                                <Link href="/contact" className="btn-primary text-lg px-8 py-4">
-                                    Request Staffing Rates
-                                </Link>
-                            </MagneticButton>
-                        </FadeIn>
-                    </div>
-                </div>
-            </section>
+            <div className="container mx-auto px-6 max-w-7xl">
+                <div className="flex flex-col lg:flex-row gap-12">
+                    <SeoSidebar />
+                    <div className="flex-1">
+                        <Breadcrumbs items={[
+                            { label: 'Industries', href: '/industries' },
+                            { label: 'Hospitality & Events', href: '/industries/hospitality-events-staffing' }
+                        ]} />
 
-            {/* Zero-Click Answer Block */}
-            <section className="py-20">
-                <div className="container">
-                    <FadeIn>
-                        <div className="bg-white border-l-8 border-brand-primary p-8 md:p-12 rounded-r-xl shadow-sm ring-1 ring-slate-100">
-                            <p className="text-lg md:text-xl text-slate-700 leading-relaxed">
-                                <strong className="text-brand-navy font-bold">First National Staffing Group</strong> provides scalable, W-2 hospitality talent for Georgia&apos;s hotel and event sector. We specialize in <strong className="text-brand-navy font-bold">Housekeeping (Rooms)</strong>, <strong className="text-brand-navy font-bold">Banquet Operations</strong>, and <strong className="text-brand-navy font-bold">Back-of-House Support</strong>, offering a <strong className="text-brand-navy font-bold">30-minute response time</strong> for urgent coverage and <strong className="text-brand-navy font-bold">100% liability insurance</strong>. Our teams are pre-screened for guest service etiquette and uniform compliance.
-                            </p>
-                        </div>
-                    </FadeIn>
-                </div>
-            </section>
+                        <div className="space-y-12 mt-8">
 
-            {/* Market Intelligence Widget */}
-            <section className="py-20 bg-slate-950 relative overflow-hidden">
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
-                <div className="container relative z-10">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                                Engineer the Perfect Guest Experience
-                            </h2>
-                            <p className="text-lg text-slate-400 mb-8">
-                                Model your event or hotel staffing needs. We calculate the optimal staff-to-guest ratio to maximize service quality while controlling labor costs.
-                            </p>
-                            <ul className="space-y-4">
-                                <li className="flex items-center gap-3 text-slate-300">
-                                    <div className="w-2 h-2 rounded-full bg-cyan-500" />
-                                    Event Volume Scaling
-                                </li>
-                                <li className="flex items-center gap-3 text-slate-300">
-                                    <div className="w-2 h-2 rounded-full bg-cyan-500" />
-                                    MPOR Efficiency Targets
-                                </li>
-                                <li className="flex items-center gap-3 text-slate-300">
-                                    <div className="w-2 h-2 rounded-full bg-cyan-500" />
-                                    Seasonal Demand Forecasting
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <IntelligenceWidget industry="Hospitality" defaultLocation="Atlanta, GA" />
-                        </div>
-                    </div>
-                </div>
-            </section>
+                            {/* H1 & Intro */}
+                            <section>
+                                <h1 className="text-4xl font-bold text-slate-900 mb-6">Hospitality & Events Staffing in Georgia — Powered by FNSG OS</h1>
+                                <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                                    The Hospitality & Events industry demands reliable, professional, and highly adaptable staff. From hotels and conventions to banquets and corporate events, operational success depends on: punctuality, presentation, professional attitude, speed of execution, interpersonal skills, and immediate availability.
+                                </p>
+                                <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                                    It is an environment where turnover is high, peaks are unpredictable, and demand changes by season, weather, and local calendar.
+                                </p>
+                                <p className="text-lg text-slate-700 leading-relaxed font-medium">
+                                    <span className="text-blue-600">FNSG OS offers trained, predictable, and audit-ready Hospitality & Events teams.</span>
+                                </p>
+                            </section>
 
-            {/* Stats Grid (Metrics) */}
-            <section className="py-20 bg-white">
-                <div className="container">
-                    <div className="mb-12">
-                        <h2 className="text-3xl font-bold text-brand-navy mb-4">Atlanta Hospitality Labor Metrics ({CURRENT_YEAR})</h2>
-                        <p className="text-brand-gray">Optimizing cost and quality for high-end venues.</p>
-                    </div>
-                    <FadeIn stagger={0.2} className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div className="card-standard">
-                            <div className="flex items-start justify-between mb-4">
-                                <div className="icon-wrapper">
-                                    <BedDouble className="w-6 h-6" />
+                            {/* Operational Challenges */}
+                            <section>
+                                <h2 className="text-2xl font-bold text-slate-900 mb-6">Operational Challenges in Hospitality & Events</h2>
+
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div className="bg-red-50 p-6 rounded-lg border border-red-100">
+                                        <h3 className="font-bold text-red-900 flex items-center gap-2 mb-2">
+                                            <AlertTriangle className="w-5 h-5" /> High Turnover + No-Show Rate
+                                        </h3>
+                                        <p className="text-red-800 text-sm">Hospitality is one of the industries with the highest NCNS (No-Call No-Show) rates in Georgia.</p>
+                                    </div>
+                                    <div className="bg-red-50 p-6 rounded-lg border border-red-100">
+                                        <h3 className="font-bold text-red-900 flex items-center gap-2 mb-2">
+                                            <CalendarClock className="w-5 h-5" /> Event-Based Demand (Inconsistent Hours)
+                                        </h3>
+                                        <p className="text-red-800 text-sm">Events require 10–200 people on schedules that change week to week.</p>
+                                    </div>
+                                    <div className="bg-red-50 p-6 rounded-lg border border-red-100">
+                                        <h3 className="font-bold text-red-900 flex items-center gap-2 mb-2">
+                                            <UserCheck className="w-5 h-5" /> Professional Presentation Required
+                                        </h3>
+                                        <p className="text-red-800 text-sm">Uniforms, grooming standards, etiquette → not all candidates comply.</p>
+                                    </div>
+                                    <div className="bg-red-50 p-6 rounded-lg border border-red-100">
+                                        <h3 className="font-bold text-red-900 flex items-center gap-2 mb-2">
+                                            <Users className="w-5 h-5" /> Customer-Facing Roles
+                                        </h3>
+                                        <p className="text-red-800 text-sm">It is not just operational staff. It is the face of the hotel or venue.</p>
+                                    </div>
+                                    <div className="bg-red-50 p-6 rounded-lg border border-red-100">
+                                        <h3 className="font-bold text-red-900 flex items-center gap-2 mb-2">
+                                            <TrendingUp className="w-5 h-5" /> Peak Season Volatility
+                                        </h3>
+                                        <p className="text-red-800 text-sm">Spring/Summer → weddings, festivals, concerts. Holidays → banquets, galas, receptions.</p>
+                                    </div>
+                                    <div className="bg-red-50 p-6 rounded-lg border border-red-100">
+                                        <h3 className="font-bold text-red-900 flex items-center gap-2 mb-2">
+                                            <Star className="w-5 h-5" /> Skill & Attitude Mismatch
+                                        </h3>
+                                        <p className="text-red-800 text-sm">Not all workers qualify emotionally or professionally.</p>
+                                    </div>
                                 </div>
-                                <span className="text-xs font-semibold bg-brand-light text-brand-navy px-2 py-1 rounded">Avg. Wage</span>
-                            </div>
-                            <h3 className="text-4xl font-bold text-brand-navy mb-2">{HOSPITALITY_WAGE}</h3>
-                            <p className="text-sm font-medium text-brand-secondary">Avg. Housekeeper Wage</p>
-                            <p className="text-sm text-brand-gray mt-2">Competitive rates for quality staff.</p>
-                        </div>
+                            </section>
 
-                        <div className="card-standard">
-                            <div className="flex items-start justify-between mb-4">
-                                <div className="icon-wrapper">
-                                    <Users className="w-6 h-6" />
+                            {/* How FNSG OS Solves These Challenges */}
+                            <section>
+                                <h2 className="text-2xl font-bold text-slate-900 mb-6">How FNSG OS Solves These Challenges</h2>
+
+                                <div className="space-y-8">
+                                    <div className="flex gap-4">
+                                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 text-blue-600 font-bold text-xl">1</div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-slate-900">Hospitality Talent Intelligence</h3>
+                                            <p className="text-slate-600 mt-2">
+                                                Intelligent matching based on: grooming & etiquette level, experience with banquet & event setups, operational pace, and customer interaction skills.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex gap-4">
+                                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 text-blue-600 font-bold text-xl">2</div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-slate-900">Attendance Intelligence OS</h3>
+                                            <p className="text-slate-600 mt-2">
+                                                Prediction of: no-shows, critical shifts, at-risk events, real workforce availability, and seasonal demand.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex gap-4">
+                                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 text-blue-600 font-bold text-xl">3</div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-slate-900">On-Site Workforce Management</h3>
+                                            <p className="text-slate-600 mt-2">
+                                                Ideal for hotels, event halls, convention centers, corporate banquets: check-in/out control, grooming inspections, role briefing, express training, and real-time assistance.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex gap-4">
+                                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 text-blue-600 font-bold text-xl">4</div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-slate-900">Pay Intelligence</h3>
+                                            <p className="text-slate-600 mt-2">
+                                                Avoids leakage to: warehouse pay spikes, gig economy, Uber/Lyft, and food delivery.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex gap-4">
+                                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 text-blue-600 font-bold text-xl">5</div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-slate-900">High-Velocity Event Ramp-Ups</h3>
+                                            <p className="text-slate-600 mt-2">
+                                                Coverage of 15–200 positions in 12–48 hours.
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <span className="text-xs font-semibold bg-brand-light text-brand-navy px-2 py-1 rounded">Retention</span>
-                            </div>
-                            <h3 className="text-2xl font-bold text-brand-navy mb-2">
-                                {HOSPITALITY_TURNOVER_FNSG} <span className="text-sm font-normal text-slate-500">(vs Industry 73%)</span>
-                            </h3>
-                            <p className="text-sm font-medium text-brand-secondary">Turnover Rate</p>
-                            <p className="text-sm text-brand-gray mt-2">Consistent teams build better guest experiences.</p>
-                        </div>
+                            </section>
 
-                        <div className="card-standard">
-                            <div className="flex items-start justify-between mb-4">
-                                <div className="icon-wrapper">
-                                    <Clock className="w-6 h-6" />
+                            {/* KPIs We Improve */}
+                            <section>
+                                <h2 className="text-2xl font-bold text-slate-900 mb-6">KPIs We Improve in Hospitality & Events</h2>
+                                <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                                    <table className="w-full text-left text-sm">
+                                        <thead className="bg-slate-900 text-white font-semibold">
+                                            <tr>
+                                                <th className="p-4 border-b border-slate-700">KPI</th>
+                                                <th className="p-4 border-b border-slate-700">Improvement with FNSG OS</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody className="divide-y divide-slate-100">
+                                            <tr><td className="p-4 font-medium text-slate-900">Attendance Reliability</td><td className="p-4 text-green-600 font-bold">+10–20%</td></tr>
+                                            <tr><td className="p-4 font-medium text-slate-900">Grooming Compliance</td><td className="p-4 text-green-600 font-bold">+25–50%</td></tr>
+                                            <tr><td className="p-4 font-medium text-slate-900">Customer Satisfaction (Venue Feedback)</td><td className="p-4 text-green-600 font-bold">+10–25%</td></tr>
+                                            <tr><td className="p-4 font-medium text-slate-900">NCNS Reduction</td><td className="p-4 text-green-600 font-bold">-15–30%</td></tr>
+                                            <tr><td className="p-4 font-medium text-slate-900">Ramp-Up Speed</td><td className="p-4 text-green-600 font-bold">12–48 hours</td></tr>
+                                            <tr><td className="p-4 font-medium text-slate-900">Event Productivity</td><td className="p-4 text-green-600 font-bold">+8–15%</td></tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                                <span className="text-xs font-semibold bg-brand-light text-brand-navy px-2 py-1 rounded">Efficiency</span>
-                            </div>
-                            <h3 className="text-4xl font-bold text-brand-navy mb-2">{HOSPITALITY_CLEANING_TIME}</h3>
-                            <p className="text-sm font-medium text-brand-secondary">Avg. Room Cleaning Time</p>
-                            <p className="text-sm text-brand-gray mt-2">Meeting MPOR targets consistently.</p>
-                        </div>
-                    </FadeIn>
+                            </section>
 
-                    <div className="mt-8 text-center">
-                        <Link href="/data-insights" className="text-brand-primary font-semibold hover:underline inline-flex items-center gap-2">
-                            Download {CURRENT_YEAR} Hospitality Wage & Labor Report <span aria-hidden="true">&rarr;</span>
-                        </Link>
-                    </div>
-                </div>
-            </section>
-
-            {/* MPOR Efficiency Model */}
-            <section className="py-20 bg-brand-gray/5 border-y border-slate-100">
-                <div className="container">
-                    <div className="max-w-4xl mx-auto text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-4">The &quot;MPOR&quot; Efficiency Model</h2>
-                        <p className="text-xl text-slate-600">We don&apos;t just send bodies; we optimize <strong className="text-brand-navy">Minutes Per Occupied Room (MPOR)</strong>.</p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div className="bg-white p-8 rounded-xl shadow-sm text-center">
-                            <div className="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center mx-auto mb-6 text-brand-primary">
-                                <Clock className="w-8 h-8" />
-                            </div>
-                            <h3 className="text-xl font-bold text-brand-navy mb-3">Monitor Pace</h3>
-                            <p className="text-slate-600">Our on-site leads ensure standard room cleaning times are met consistently.</p>
-                        </div>
-                        <div className="bg-white p-8 rounded-xl shadow-sm text-center">
-                            <div className="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center mx-auto mb-6 text-brand-primary">
-                                <Check className="w-8 h-8" />
-                            </div>
-                            <h3 className="text-xl font-bold text-brand-navy mb-3">Inspect Quality</h3>
-                            <p className="text-slate-600">Conducting random 10-point cleanliness checks to maintain brand standards.</p>
-                        </div>
-                        <div className="bg-white p-8 rounded-xl shadow-sm text-center">
-                            <div className="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center mx-auto mb-6 text-brand-primary">
-                                <CalendarCheck className="w-8 h-8" />
-                            </div>
-                            <h3 className="text-xl font-bold text-brand-navy mb-3">Manage Attendance</h3>
-                            <p className="text-slate-600">Covering call-outs instantly from our standby pool to ensure 100% fulfillment.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Risk & Liability Management */}
-            <section className="py-20 bg-white">
-                <div className="container">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                        <div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">Risk & Liability Management</h2>
-                            <p className="text-lg text-slate-600 mb-8">
-                                Hospitality creates high liability (slip-and-falls, theft). We insulate your property with comprehensive coverage and rigorous vetting.
-                            </p>
-                            <ul className="space-y-6">
-                                <li className="flex items-start gap-4">
-                                    <div className="mt-1 bg-brand-light p-1 rounded-full shadow-sm text-brand-teal">
-                                        <ShieldCheck className="w-5 h-5" />
+                            {/* Roles We Staff */}
+                            <section>
+                                <h2 className="text-2xl font-bold text-slate-900 mb-6">Roles We Staff in Hospitality & Events</h2>
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                    <div className="bg-slate-50 p-6 rounded-lg">
+                                        <h3 className="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2">Front of House</h3>
+                                        <ul className="space-y-2 text-slate-700 text-sm">
+                                            <li>• Banquet Servers</li>
+                                            <li>• Bartenders</li>
+                                            <li>• Hosts / Greeters</li>
+                                            <li>• Event Ambassadors</li>
+                                            <li>• Guest Service Staff</li>
+                                        </ul>
                                     </div>
-                                    <div>
-                                        <h4 className="font-bold text-brand-navy">Bonded & Insured</h4>
-                                        <p className="text-slate-600">Comprehensive coverage for theft and damage to property.</p>
+                                    <div className="bg-slate-50 p-6 rounded-lg">
+                                        <h3 className="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2">Back of House</h3>
+                                        <ul className="space-y-2 text-slate-700 text-sm">
+                                            <li>• Dishwashers</li>
+                                            <li>• Stewards</li>
+                                            <li>• Cooks / Prep Cooks</li>
+                                            <li>• Line Servers</li>
+                                            <li>• Buffet Attendants</li>
+                                        </ul>
                                     </div>
-                                </li>
-                                <li className="flex items-start gap-4">
-                                    <div className="mt-1 bg-brand-light p-1 rounded-full shadow-sm text-brand-teal">
-                                        <ShieldCheck className="w-5 h-5" />
+                                    <div className="bg-slate-50 p-6 rounded-lg">
+                                        <h3 className="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2">Housekeeping & Hotel Support</h3>
+                                        <ul className="space-y-2 text-slate-700 text-sm">
+                                            <li>• Housekeepers</li>
+                                            <li>• Laundry Attendants</li>
+                                            <li>• Room Inspectors</li>
+                                            <li>• Lobby Attendants</li>
+                                        </ul>
                                     </div>
-                                    <div>
-                                        <h4 className="font-bold text-brand-navy">Background Checks</h4>
-                                        <p className="text-slate-600">7-year criminal history check for all guest-facing staff.</p>
+                                    <div className="bg-slate-50 p-6 rounded-lg">
+                                        <h3 className="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2">Event Production & Leadership</h3>
+                                        <ul className="space-y-2 text-slate-700 text-sm">
+                                            <li>• Setup Crew</li>
+                                            <li>• Event Tear-Down Crew</li>
+                                            <li>• Stagehands</li>
+                                            <li>• AV Support (basic-level)</li>
+                                            <li>• Banquet Captains</li>
+                                            <li>• Event Leads</li>
+                                        </ul>
                                     </div>
-                                </li>
-                                <li className="flex items-start gap-4">
-                                    <div className="mt-1 bg-brand-light p-1 rounded-full shadow-sm text-brand-teal">
-                                        <ShieldCheck className="w-5 h-5" />
-                                    </div>
-                                    <div>
-                                        <h4 className="font-bold text-brand-navy">Chemical Safety</h4>
-                                        <p className="text-slate-600">Training on SDS and bloodborne pathogens for housekeeping staff.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="relative">
-                            {/* Placeholder for visual */}
-                            <div className="aspect-square rounded-2xl bg-brand-navy/5 p-8 flex items-center justify-center relative overflow-hidden">
-                                <div className="absolute inset-0 bg-gradient-to-br from-brand-light to-white opacity-80"></div>
-                                <div className="text-center relative z-10">
-                                    <Hotel className="w-24 h-24 text-brand-primary mx-auto mb-4 opacity-80" />
-                                    <p className="text-brand-navy font-bold text-xl">Guest Experience Protection</p>
-                                    <p className="text-sm text-slate-500">Insured & Vetted</p>
                                 </div>
-                            </div>
+                            </section>
+
+                            {/* Compliance & Professional Standards Layer */}
+                            <section className="bg-slate-900 text-white p-8 rounded-xl">
+                                <h2 className="text-2xl font-bold mb-4">Compliance & Professional Standards Layer</h2>
+                                <p className="mb-6 text-slate-300">
+                                    FNSG OS guarantees:
+                                </p>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div className="flex items-center gap-2">
+                                        <CheckCircle className="text-green-400 w-5 h-5" /> <span>Grooming & uniform checks</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <CheckCircle className="text-green-400 w-5 h-5" /> <span>Hospitality etiquette training</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <CheckCircle className="text-green-400 w-5 h-5" /> <span>Alcohol service compliance (basics)</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <CheckCircle className="text-green-400 w-5 h-5" /> <span>Customer-interaction training</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <CheckCircle className="text-green-400 w-5 h-5" /> <span>Safety practices (lifting, setups, tear-downs)</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <CheckCircle className="text-green-400 w-5 h-5" /> <span>Audit-ready documentation</span>
+                                    </div>
+                                </div>
+                            </section>
+
+                            {/* FAQs */}
+                            <section>
+                                <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
+                                <div className="space-y-4">
+                                    {[
+                                        { q: "What hospitality roles do you staff?", a: "Servers, bartenders, housekeeping, dishwashers, event crews, banquet leads." },
+                                        { q: "Can you support large events (50–200 people)?", a: "Yes, with rapid ramp-ups." },
+                                        { q: "Do you provide training on etiquette & presentation?", a: "Yes, via the Hospitality OS module." },
+                                        { q: "How do you reduce no-shows?", a: "Attendance Intelligence + grooming checks + on-site supervision." },
+                                        { q: "Do you offer bilingual teams?", a: "Yes, EN/ES." },
+                                        { q: "Do you support hotels, venues, and corporate events?", a: "Yes, all sectors." }
+                                    ].map((faq, index) => (
+                                        <details key={index} className="group border border-slate-200 rounded-lg p-4 open:bg-slate-50 transition-all">
+                                            <summary className="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
+                                                {faq.q}
+                                                <span className="transition group-open:rotate-180">▼</span>
+                                            </summary>
+                                            <p className="text-slate-600 mt-3 text-sm">{faq.a}</p>
+                                        </details>
+                                    ))}
+                                </div>
+                            </section>
+
+                            {/* CTA Section */}
+                            <section className="py-8 border-t border-slate-200">
+                                <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+                                    <Link
+                                        href="/contact?industry=hospitality"
+                                        className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all shadow-lg hover:shadow-xl"
+                                    >
+                                        Request a Hospitality Workforce Strategy Session
+                                    </Link>
+                                    <Link
+                                        href="/resources/reports/hospitality-2025"
+                                        className="bg-white border-2 border-slate-200 hover:border-blue-600 text-slate-700 hover:text-blue-600 font-bold py-3 px-8 rounded-full transition-all"
+                                    >
+                                        Download Hospitality & Events Workforce Intelligence Report (2025)
+                                    </Link>
+                                </div>
+                            </section>
+
                         </div>
                     </div>
                 </div>
-            </section>
-
-            {/* Roles Table */}
-            <section className="py-20 bg-brand-light/20">
-                <div className="container">
-                    <div className="mb-10 text-center max-w-3xl mx-auto">
-                        <h2 className="text-3xl font-bold text-brand-navy mb-4">Roles & Capabilities</h2>
-                        <p className="text-slate-600">Professional staff ready to represent your brand.</p>
-                    </div>
-
-                    <div className="overflow-x-auto rounded-xl border border-slate-200 shadow-sm bg-white">
-                        <table className="w-full text-left border-collapse">
-                            <thead className="bg-brand-light/50">
-                                <tr>
-                                    <th className="p-4 font-bold text-brand-navy border-b border-slate-200">Role Category</th>
-                                    <th className="p-4 font-bold text-brand-navy border-b border-slate-200">Experience Standard</th>
-                                    <th className="p-4 font-bold text-brand-navy border-b border-slate-200">Uniform Ready</th>
-                                    <th className="p-4 font-bold text-brand-navy border-b border-slate-200">Deployment Speed</th>
-                                    <th className="p-4 font-bold text-brand-navy border-b border-slate-200">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-slate-100">
-                                <tr className="hover:bg-slate-50 transition-colors">
-                                    <td className="p-4 font-medium text-brand-navy flex items-center gap-2">
-                                        <BedDouble className="w-4 h-4 text-brand-teal" /> Housekeeping
-                                    </td>
-                                    <td className="p-4 text-slate-600">30-min Turnaround</td>
-                                    <td className="p-4 text-slate-600">Black/Black or Scrub</td>
-                                    <td className="p-4 text-slate-600">24 Hours</td>
-                                    <td className="p-4"><Link href="/contact" className="text-brand-primary font-medium hover:underline">View Rates</Link></td>
-                                </tr>
-                                <tr className="hover:bg-slate-50 transition-colors">
-                                    <td className="p-4 font-medium text-brand-navy flex items-center gap-2">
-                                        <Utensils className="w-4 h-4 text-brand-teal" /> Banquet Servers
-                                    </td>
-                                    <td className="p-4 text-slate-600">Tray Service Trained</td>
-                                    <td className="p-4 text-slate-600">Bistro/Formal</td>
-                                    <td className="p-4 text-slate-600">48 Hours</td>
-                                    <td className="p-4"><Link href="/contact" className="text-brand-primary font-medium hover:underline">View Rates</Link></td>
-                                </tr>
-                                <tr className="hover:bg-slate-50 transition-colors">
-                                    <td className="p-4 font-medium text-brand-navy flex items-center gap-2">
-                                        <Shirt className="w-4 h-4 text-brand-teal" /> Dish/Utility
-                                    </td>
-                                    <td className="p-4 text-slate-600">High-Volume</td>
-                                    <td className="p-4 text-slate-600">Non-Slip Shoes</td>
-                                    <td className="p-4 text-slate-600">12-24 Hours</td>
-                                    <td className="p-4"><Link href="/contact" className="text-brand-primary font-medium hover:underline">View Rates</Link></td>
-                                </tr>
-                                <tr className="hover:bg-slate-50 transition-colors">
-                                    <td className="p-4 font-medium text-brand-navy flex items-center gap-2">
-                                        <Users className="w-4 h-4 text-brand-teal" /> Event Setup
-                                    </td>
-                                    <td className="p-4 text-slate-600">Heavy Lifting</td>
-                                    <td className="p-4 text-slate-600">Polo/Khaki</td>
-                                    <td className="p-4 text-slate-600">24 Hours</td>
-                                    <td className="p-4"><Link href="/contact" className="text-brand-primary font-medium hover:underline">View Rates</Link></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-
-            {/* Trust Signals */}
-            <section className="py-12 bg-white border-t border-slate-100">
-                <div className="container">
-                    <p className="text-center text-sm font-semibold text-brand-gray mb-8 uppercase tracking-wider">Trusted by Industry Leaders</p>
-                    <div className="flex flex-wrap justify-center gap-6 md:gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-                        <span className="font-bold text-xl text-brand-navy flex items-center gap-2"><Check className="w-5 h-5 text-brand-primary" /> AHLA Member</span>
-                        <span className="font-bold text-xl text-brand-navy flex items-center gap-2"><Check className="w-5 h-5 text-brand-primary" /> ServSafe Certified</span>
-                        <span className="font-bold text-xl text-brand-navy flex items-center gap-2"><Check className="w-5 h-5 text-brand-primary" /> E-Verify</span>
-                        <span className="font-bold text-xl text-brand-navy flex items-center gap-2"><Check className="w-5 h-5 text-brand-primary" /> Best of Staffing 2025</span>
-                    </div>
-                </div>
-            </section>
-
-            {/* FAQ */}
-            <section className="py-20 bg-brand-light/30">
-                <div className="container max-w-3xl mx-auto">
-                    <h2 className="text-3xl font-bold text-brand-navy mb-10 text-center">Frequently Asked Questions</h2>
-                    <div className="space-y-4">
-                        <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
-                            <h3 className="font-bold text-brand-navy text-lg mb-2">How do you handle call-outs for large banquet events?</h3>
-                            <p className="text-slate-600">We over-recruit by 10% for events over 50 staff (our &quot;Standby Buffer&quot;) to ensure you never have a gap in service, at no extra cost to you.</p>
-                        </div>
-                        <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
-                            <h3 className="font-bold text-brand-navy text-lg mb-2">Are your housekeepers trained on specific brand standards?</h3>
-                            <p className="text-slate-600">Yes. We tailor orientation to your brand (Marriott, Hilton, IHG standards) focusing on bed-making, amenity placement, and &quot;Do Not Disturb&quot; protocols.</p>
-                        </div>
-                        <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
-                            <h3 className="font-bold text-brand-navy text-lg mb-2">Do you provide uniforms for banquet staff?</h3>
-                            <p className="text-slate-600">We ensure staff arrive in standard bistro attire (black pants, black shoes, white/black button-down). Specialized uniforms can be managed through our on-site lead.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Areas We Serve */}
-            <section className="py-20 bg-brand-navy text-white text-center">
-                <div className="container">
-                    <h2 className="text-3xl font-bold mb-6">Areas We Serve</h2>
-                    <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-                        Serving major hospitality corridors: <strong className="text-white">Downtown Atlanta (Convention District)</strong>, <strong className="text-white">Buckhead</strong>, <strong className="text-white">Alpharetta</strong>, and <strong className="text-white">Savannah Resorts</strong>.
-                    </p>
-                </div>
-            </section>
+            </div>
         </main>
-    )
+    );
 }
