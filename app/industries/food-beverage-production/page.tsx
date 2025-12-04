@@ -1,347 +1,337 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import { TextReveal } from '@/app/components/anim/text-reveal'
-import { FadeIn } from '@/app/components/anim/fade-in'
-import { MagneticButton } from '@/app/components/anim/magnetic-button'
-import { FOOD_MIXER_RATE, FOOD_FILL_TIME, FOOD_RETENTION_RATE, COST_OF_VACANCY, CURRENT_YEAR } from '@/lib/site-config'
-import { ChefHat, Timer, Users, ShieldCheck, Check, AlertTriangle, ArrowRight, ClipboardCheck } from 'lucide-react'
-import { IntelligenceWidget } from '@/app/components/intelligence-engine/widget'
+import React from 'react';
+import { SeoSidebar } from '@/app/components/insights/SeoSidebar';
+import { Breadcrumbs } from '@/app/components/navigation/Breadcrumbs';
+import Link from 'next/link';
+import Script from 'next/script';
+import { AlertTriangle, ThermometerSnowflake, ShieldCheck, Clock, TrendingUp, Zap, CheckCircle } from 'lucide-react';
 
-export const metadata: Metadata = {
-    title: "GMP-Compliant Food Production Staffing Georgia | 98% Audit Score",
-    description: "Secure W-2 mixers, packers, and sanitation crews in Atlanta. 100% GMP & Allergen trained. 24h fill guarantee. Reduce liability with First National Staffing.",
-}
+export const metadata = {
+    title: "Food & Beverage Production Staffing Solutions in Georgia | FNSG OS",
+    description: "Intelligence-driven staffing for food production operations including line workers, machine operators, sanitation techs, and QA teams with HACCP, OSHA, and food safety compliance.",
+    openGraph: {
+        title: "Food & Beverage Production Staffing Solutions",
+        url: "https://firstnationalstaffing.com/industries/food-beverage-production",
+        type: "website"
+    }
+};
 
-export default function FoodBeverageProductionPage() {
-    const schema = {
+export default function FoodBeveragePage() {
+    const jsonLd = {
         "@context": "https://schema.org",
         "@type": "Service",
-        "serviceType": "Food Production Staffing",
-        "name": "GMP Compliant Bakery & Food Staffing",
+        "serviceType": "Food & Beverage Production Staffing",
         "provider": {
             "@type": "Organization",
             "name": "First National Staffing Group",
-            "knowsAbout": ["GMP Compliance", "HACCP", "Food Safety Audits", "AIB Standards"]
+            "url": "https://firstnationalstaffing.com"
         },
-        "areaServed": [
-            { "@type": "City", "name": "Atlanta" },
-            { "@type": "City", "name": "Gainesville" },
-            { "@type": "AdministrativeArea", "name": "Hall County" }
-        ],
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Production Roles",
-            "itemListElement": [
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Industrial Bakers & Mixers" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sanitation & Hygiene Crew" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cold Storage Forklift Operators" } }
-            ]
+        "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "Georgia"
         },
-        "audience": {
-            "@type": "BusinessAudience",
-            "audienceType": "Food Plant Managers"
-        }
-    }
+        "description": "Intelligence-driven staffing for food production operations including line workers, machine operators, sanitation techs, and QA teams with HACCP, OSHA, and food safety compliance.",
+        "url": "https://firstnationalstaffing.com/industries/food-beverage-production"
+    };
 
     return (
-        <main className="bg-white">
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+        <main className="bg-white min-h-screen py-12">
+            <Script
+                id="food-beverage-jsonld"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
 
-            {/* Hero Section */}
-            <section className="relative py-24 lg:py-32 overflow-hidden bg-brand-light/30">
-                <div className="container">
-                    <div className="max-w-4xl">
-                        <TextReveal as="h1" className="text-5xl md:text-7xl font-bold text-brand-navy mb-6 leading-tight">
-                            Food Production & Bakery Staffing in Georgia
-                        </TextReveal>
-                        <TextReveal as="h2" className="text-2xl md:text-3xl font-medium text-brand-secondary mb-10 block">
-                            Audit-Ready Workforce Solutions | GMP Compliant
-                        </TextReveal>
-                        <FadeIn delay={0.5}>
-                            <MagneticButton>
-                                <Link href="/contact" className="btn-primary text-lg px-8 py-4">
-                                    Request Rates & Availability
-                                </Link>
-                            </MagneticButton>
-                        </FadeIn>
-                    </div>
-                </div>
-            </section>
+            <div className="container mx-auto px-6 max-w-7xl">
+                <div className="flex flex-col lg:flex-row gap-12">
+                    <SeoSidebar />
+                    <div className="flex-1">
+                        <Breadcrumbs items={[
+                            { label: 'Industries', href: '/industries' },
+                            { label: 'Food & Beverage Production', href: '/industries/food-beverage-production' }
+                        ]} />
 
-            {/* Zero-Click Answer Block */}
-            <section className="py-20">
-                <div className="container">
-                    <FadeIn>
-                        <div className="bg-brand-light border-l-8 border-brand-primary p-8 md:p-12 rounded-r-xl shadow-sm">
-                            <p className="text-lg md:text-xl text-slate-700 leading-relaxed">
-                                <strong className="text-brand-navy font-bold">First National Staffing</strong> provides GMP-certified, W-2 production talent for Georgia&apos;s food & beverage sector. We specialize in <strong className="text-brand-navy font-bold">high-volume bakery</strong>, <strong className="text-brand-navy font-bold">meat processing</strong>, and <strong className="text-brand-navy font-bold">bottling operations</strong>, offering a <strong className="text-brand-navy font-bold">24-hour fill guarantee</strong> and 100% indemnification against compliance risks. All staff are pre-vetted for HACCP awareness and allergen control.
-                            </p>
-                        </div>
-                    </FadeIn>
-                </div>
-            </section>
+                        <div className="space-y-12 mt-8">
 
-            {/* Market Intelligence Widget */}
-            <section className="py-20 bg-slate-950 relative overflow-hidden">
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
-                <div className="container relative z-10">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                                Optimize Production Throughput
-                            </h2>
-                            <p className="text-lg text-slate-400 mb-8">
-                                Analyze your production line efficiency. We model the impact of "Hot-Standby" staffing on your overall yield and cost of vacancy.
-                            </p>
-                            <ul className="space-y-4">
-                                <li className="flex items-center gap-3 text-slate-300">
-                                    <div className="w-2 h-2 rounded-full bg-cyan-500" />
-                                    Cost of Vacancy Calculator
-                                </li>
-                                <li className="flex items-center gap-3 text-slate-300">
-                                    <div className="w-2 h-2 rounded-full bg-cyan-500" />
-                                    GMP Compliance Audit
-                                </li>
-                                <li className="flex items-center gap-3 text-slate-300">
-                                    <div className="w-2 h-2 rounded-full bg-cyan-500" />
-                                    Shift Coverage Analysis
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <IntelligenceWidget industry="FoodBev" defaultLocation="Gainesville, GA" />
-                        </div>
-                    </div>
-                </div>
-            </section>
+                            {/* H1 & Intro */}
+                            <section>
+                                <h1 className="text-4xl font-bold text-slate-900 mb-6">Food & Beverage Production Staffing Solutions in Georgia — Powered by FNSG OS</h1>
+                                <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                                    The food industry in Georgia continues to grow at historic rates: poultry, bakery, ready-to-eat, beverage manufacturing, cold storage, packaging, and fulfillment.
+                                </p>
+                                <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                                    However, this sector faces the biggest operational challenges of any industrial industry, due to high hygiene requirements, physical effort, extreme temperatures, and regulatory compliance.
+                                </p>
+                                <p className="text-lg text-slate-700 leading-relaxed font-medium">
+                                    Food & Beverage plants need stability, predictable attendance, trained workers, and impeccable OSHA + Food Safety compliance.
+                                    <span className="text-blue-600"> FNSG OS is the platform designed to achieve it.</span>
+                                </p>
+                            </section>
 
-            {/* Stats Grid (Market Pulse) */}
-            <section className="py-20 bg-white">
-                <div className="container">
-                    <div className="mb-12">
-                        <h2 className="text-3xl font-bold text-brand-navy mb-4">Atlanta Market Pulse (Q4 {CURRENT_YEAR})</h2>
-                        <p className="text-brand-gray">Real-time market data for informed hiring decisions.</p>
-                    </div>
-                    <FadeIn stagger={0.2} className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div className="card-standard">
-                            <div className="flex items-start justify-between mb-4">
-                                <div className="icon-wrapper">
-                                    <ChefHat className="w-6 h-6" />
+                            {/* Operational Challenges */}
+                            <section>
+                                <h2 className="text-2xl font-bold text-slate-900 mb-6">Operational Challenges in Food & Beverage Production</h2>
+
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div className="bg-red-50 p-6 rounded-lg border border-red-100">
+                                        <h3 className="font-bold text-red-900 flex items-center gap-2 mb-2">
+                                            <TrendingUp className="w-5 h-5" /> High Physical Strain → High Turnover
+                                        </h3>
+                                        <p className="text-red-800 text-sm">Food production demands constant repetition, heavy loads, difficult postures, wet or cold stations, and a fast pace. This increases physical wear and turnover.</p>
+                                    </div>
+                                    <div className="bg-red-50 p-6 rounded-lg border border-red-100">
+                                        <h3 className="font-bold text-red-900 flex items-center gap-2 mb-2">
+                                            <ThermometerSnowflake className="w-5 h-5" /> Cold & Wet Environments
+                                        </h3>
+                                        <p className="text-red-800 text-sm">34–45°F environments in poultry and RTE affect attendance and retention.</p>
+                                    </div>
+                                    <div className="bg-red-50 p-6 rounded-lg border border-red-100">
+                                        <h3 className="font-bold text-red-900 flex items-center gap-2 mb-2">
+                                            <ShieldCheck className="w-5 h-5" /> Strict Food Safety & OSHA Compliance
+                                        </h3>
+                                        <p className="text-red-800 text-sm">Includes mandatory PPE, hairnet/beardnet, gloves, HACCP documentation, continuous training, and internal audits.</p>
+                                    </div>
+                                    <div className="bg-red-50 p-6 rounded-lg border border-red-100">
+                                        <h3 className="font-bold text-red-900 flex items-center gap-2 mb-2">
+                                            <Clock className="w-5 h-5" /> Multi-Shift Operations
+                                        </h3>
+                                        <p className="text-red-800 text-sm">2nd and 3rd shifts are consistently unstable in 24/7 operations.</p>
+                                    </div>
+                                    <div className="bg-red-50 p-6 rounded-lg border border-red-100">
+                                        <h3 className="font-bold text-red-900 flex items-center gap-2 mb-2">
+                                            <Zap className="w-5 h-5" /> Seasonal Production Surges
+                                        </h3>
+                                        <p className="text-red-800 text-sm">Peaks in Q2, Q3, and Q4 require rapid ramp-ups of 20–200 people.</p>
+                                    </div>
+                                    <div className="bg-red-50 p-6 rounded-lg border border-red-100">
+                                        <h3 className="font-bold text-red-900 flex items-center gap-2 mb-2">
+                                            <AlertTriangle className="w-5 h-5" /> High Cost of Errors
+                                        </h3>
+                                        <p className="text-red-800 text-sm">A poorly trained worker can cause cross-contamination, line stoppages, audit failures, and product scrap.</p>
+                                    </div>
                                 </div>
-                                <span className="text-xs font-semibold bg-brand-light text-brand-navy px-2 py-1 rounded">Avg. Rate</span>
-                            </div>
-                            <h3 className="text-4xl font-bold text-brand-navy mb-2">{FOOD_MIXER_RATE}</h3>
-                            <p className="text-sm font-medium text-brand-secondary">Avg. Mixer Hourly Rate</p>
-                            <p className="text-sm text-brand-gray mt-2">Competitive baseline for skilled roles.</p>
-                        </div>
+                            </section>
 
-                        <div className="card-standard">
-                            <div className="flex items-start justify-between mb-4">
-                                <div className="icon-wrapper">
-                                    <Timer className="w-6 h-6" />
+                            {/* How FNSG OS Solves These Problems */}
+                            <section>
+                                <h2 className="text-2xl font-bold text-slate-900 mb-6">How FNSG OS Solves These Problems</h2>
+
+                                <div className="space-y-8">
+                                    <div className="flex gap-4">
+                                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 text-blue-600 font-bold text-xl">1</div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-slate-900">Attendance Intelligence OS</h3>
+                                            <p className="text-slate-600 mt-2">
+                                                Predicts absences by shift, weather, role, cold environment, seasonality, and distance. Perfect for high turnover environments.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex gap-4">
+                                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 text-blue-600 font-bold text-xl">2</div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-slate-900">Food Safety-Ready Workforce Matching</h3>
+                                            <p className="text-slate-600 mt-2">
+                                                Assigns staff based on cold tolerance, physical endurance, prior poultry/RTE/bakery experience, and OSHA history.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex gap-4">
+                                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 text-blue-600 font-bold text-xl">3</div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-slate-900">Pay Rate Intelligence</h3>
+                                            <p className="text-slate-600 mt-2">
+                                                Avoids talent leakage to Gainesville (poultry), Jackson County (advanced mfg), and Gwinnett (logistics).
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex gap-4">
+                                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 text-blue-600 font-bold text-xl">4</div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-slate-900">Sanitation & Compliance OS</h3>
+                                            <p className="text-slate-600 mt-2">
+                                                Includes HACCP awareness, PPE tracking, sanitation cycle documentation, and cross-contamination prevention logs.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex gap-4">
+                                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 text-blue-600 font-bold text-xl">5</div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-slate-900">On-Site Workforce Management</h3>
+                                            <p className="text-slate-600 mt-2">
+                                                We supervise attendance, PPE compliance, hygiene checkpoints, critical production lines, and continuous training.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex gap-4">
+                                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 text-blue-600 font-bold text-xl">6</div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-slate-900">High-Velocity Ramp-Up Engine</h3>
+                                            <p className="text-slate-600 mt-2">
+                                                To cover 20–200 workers in 24–72 hours.
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <span className="text-xs font-semibold bg-brand-light text-brand-navy px-2 py-1 rounded">Speed</span>
-                            </div>
-                            <h3 className="text-4xl font-bold text-brand-navy mb-2">{FOOD_FILL_TIME}</h3>
-                            <p className="text-sm font-medium text-brand-secondary">Time-to-Fill</p>
-                            <p className="text-sm text-brand-gray mt-2">Market Avg: 5 Days. We deliver in hours.</p>
-                        </div>
+                            </section>
 
-                        <div className="card-standard">
-                            <div className="flex items-start justify-between mb-4">
-                                <div className="icon-wrapper">
-                                    <Users className="w-6 h-6" />
+                            {/* KPIs We Improve */}
+                            <section>
+                                <h2 className="text-2xl font-bold text-slate-900 mb-6">KPIs We Improve in Food Production</h2>
+                                <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                                    <table className="w-full text-left text-sm">
+                                        <thead className="bg-slate-900 text-white font-semibold">
+                                            <tr>
+                                                <th className="p-4 border-b border-slate-700">KPI</th>
+                                                <th className="p-4 border-b border-slate-700">Improvement with FNSG OS</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody className="divide-y divide-slate-100">
+                                            <tr><td className="p-4 font-medium text-slate-900">Attendance Reliability</td><td className="p-4 text-green-600 font-bold">+12–20%</td></tr>
+                                            <tr><td className="p-4 font-medium text-slate-900">Sanitation Compliance</td><td className="p-4 text-green-600 font-bold">+15–35%</td></tr>
+                                            <tr><td className="p-4 font-medium text-slate-900">Turnover Reduction</td><td className="p-4 text-green-600 font-bold">-15–30%</td></tr>
+                                            <tr><td className="p-4 font-medium text-slate-900">Ramp-Up Time</td><td className="p-4 text-green-600 font-bold">24–72 hours</td></tr>
+                                            <tr><td className="p-4 font-medium text-slate-900">OSHA Incident Rate</td><td className="p-4 text-green-600 font-bold">-10–22%</td></tr>
+                                            <tr><td className="p-4 font-medium text-slate-900">Line Productivity Stability</td><td className="p-4 text-green-600 font-bold">+10–18%</td></tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                                <span className="text-xs font-semibold bg-brand-light text-brand-navy px-2 py-1 rounded">Retention</span>
-                            </div>
-                            <h3 className="text-4xl font-bold text-brand-navy mb-2">{FOOD_RETENTION_RATE}</h3>
-                            <p className="text-sm font-medium text-brand-secondary">90-Day Retention Rate</p>
-                            <p className="text-sm text-brand-gray mt-2">Consistent crews for consistent quality.</p>
-                        </div>
-                    </FadeIn>
+                            </section>
 
-                    <div className="mt-8 text-center">
-                        <Link href="/data-insights" className="text-brand-primary font-semibold hover:underline inline-flex items-center gap-2">
-                            Download {CURRENT_YEAR} Georgia Food Production Wage Guide <span aria-hidden="true">&rarr;</span>
-                        </Link>
-                    </div>
-                </div>
-            </section>
-
-            {/* Cost of Vacancy Section */}
-            <section className="py-20 bg-brand-primary/5">
-                <div className="container">
-                    <div className="max-w-4xl mx-auto text-center">
-                        <div className="inline-flex items-center justify-center p-3 bg-white rounded-full shadow-sm mb-6 text-brand-primary">
-                            <AlertTriangle className="w-8 h-8" />
-                        </div>
-                        <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">The Cost of Vacancy</h2>
-                        <p className="text-xl md:text-2xl text-brand-navy font-medium mb-8 leading-relaxed">
-                            A stopped packaging line costs an average of <span className="text-brand-primary font-bold bg-white px-2 py-1 rounded shadow-sm">{COST_OF_VACANCY}</span> in lost throughput.
-                        </p>
-                        <p className="text-lg text-slate-600 mb-10">
-                            Our <strong>&quot;Hot-Standby&quot; program</strong> ensures you have backup packers ready to deploy within 60 minutes of a call-out, protecting your yield and delivery timelines.
-                        </p>
-                        <Link href="/contact" className="btn-primary">
-                            Activate Hot-Standby Program
-                        </Link>
-                    </div>
-                </div>
-            </section>
-
-            {/* Mitigating Food Safety Risk */}
-            <section className="py-20 bg-white">
-                <div className="container">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                        <div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">Mitigating Food Safety Risk</h2>
-                            <p className="text-lg text-slate-600 mb-8">
-                                Don&apos;t let temporary labor fail your SQF or BRC audit. We integrate directly with your QA team to ensure full compliance.
-                            </p>
-                            <ul className="space-y-6">
-                                <li className="flex items-start gap-4">
-                                    <div className="mt-1 bg-brand-light p-1 rounded-full shadow-sm text-brand-teal">
-                                        <ShieldCheck className="w-5 h-5" />
+                            {/* Roles We Staff */}
+                            <section>
+                                <h2 className="text-2xl font-bold text-slate-900 mb-6">Roles We Staff in Food & Beverage Production</h2>
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                    <div className="bg-slate-50 p-6 rounded-lg">
+                                        <h3 className="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2">Line & Processing Roles</h3>
+                                        <ul className="space-y-2 text-slate-700 text-sm">
+                                            <li>• Production Line Workers</li>
+                                            <li>• Packers / Sorters</li>
+                                            <li>• Trimming / Cutting Operators</li>
+                                            <li>• Blending Operators</li>
+                                            <li>• Batch Mixing</li>
+                                            <li>• Oven Operators</li>
+                                            <li>• RTE Workers</li>
+                                        </ul>
                                     </div>
-                                    <div>
-                                        <h4 className="font-bold text-brand-navy">GMP Adherence</h4>
-                                        <p className="text-slate-600">Zero jewelry, proper hairnets, hand-washing protocols enforced before arrival.</p>
+                                    <div className="bg-slate-50 p-6 rounded-lg">
+                                        <h3 className="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2">Skilled Positions</h3>
+                                        <ul className="space-y-2 text-slate-700 text-sm">
+                                            <li>• Machine Operators</li>
+                                            <li>• Extrusion Operators</li>
+                                            <li>• Sanitation Technicians</li>
+                                            <li>• QA/QC Technicians</li>
+                                        </ul>
                                     </div>
-                                </li>
-                                <li className="flex items-start gap-4">
-                                    <div className="mt-1 bg-brand-light p-1 rounded-full shadow-sm text-brand-teal">
-                                        <ShieldCheck className="w-5 h-5" />
+                                    <div className="bg-slate-50 p-6 rounded-lg">
+                                        <h3 className="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2">Support Roles</h3>
+                                        <ul className="space-y-2 text-slate-700 text-sm">
+                                            <li>• Palletizing</li>
+                                            <li>• Shipping / Receiving</li>
+                                            <li>• Material Handling</li>
+                                            <li>• Cold Storage Labor</li>
+                                        </ul>
                                     </div>
-                                    <div>
-                                        <h4 className="font-bold text-brand-navy">Traceability</h4>
-                                        <p className="text-slate-600">All workers trained on lot coding and batch tracking procedures.</p>
+                                    <div className="bg-slate-50 p-6 rounded-lg">
+                                        <h3 className="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2">Leadership</h3>
+                                        <ul className="space-y-2 text-slate-700 text-sm">
+                                            <li>• Line Leads</li>
+                                            <li>• Supervisors</li>
+                                            <li>• Sanitation Leads</li>
+                                            <li>• Safety Coordinators</li>
+                                        </ul>
                                     </div>
-                                </li>
-                                <li className="flex items-start gap-4">
-                                    <div className="mt-1 bg-brand-light p-1 rounded-full shadow-sm text-brand-teal">
-                                        <ShieldCheck className="w-5 h-5" />
-                                    </div>
-                                    <div>
-                                        <h4 className="font-bold text-brand-navy">Sanitation</h4>
-                                        <p className="text-slate-600">Specialized crews for overnight deep-clean (COP/CIP support).</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="relative">
-                            {/* Placeholder for visual */}
-                            <div className="aspect-square rounded-2xl bg-brand-light border border-slate-100 p-8 flex items-center justify-center relative overflow-hidden">
-                                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-brand-light to-slate-100 opacity-50"></div>
-                                <div className="text-center relative z-10">
-                                    <ClipboardCheck className="w-24 h-24 text-brand-primary mx-auto mb-4 opacity-80" />
-                                    <p className="text-brand-navy font-bold text-xl">Audit-Ready Staff</p>
-                                    <p className="text-sm text-slate-500">SQF & BRC Compliant</p>
                                 </div>
-                            </div>
+                            </section>
+
+                            {/* Compliance & Safety Layer */}
+                            <section className="bg-slate-900 text-white p-8 rounded-xl">
+                                <h2 className="text-2xl font-bold mb-4">Compliance & Safety Layer</h2>
+                                <p className="mb-6 text-slate-300">
+                                    Food manufacturing requires strict adherence to:
+                                </p>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div className="flex items-center gap-2">
+                                        <CheckCircle className="text-green-400 w-5 h-5" /> <span>OSHA 1910 standards</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <CheckCircle className="text-green-400 w-5 h-5" /> <span>USDA Guidelines</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <CheckCircle className="text-green-400 w-5 h-5" /> <span>FDA Food Safety Modernization Act (FSMA)</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <CheckCircle className="text-green-400 w-5 h-5" /> <span>HACCP Protocols</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <CheckCircle className="text-green-400 w-5 h-5" /> <span>PPE enforcement</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <CheckCircle className="text-green-400 w-5 h-5" /> <span>Chemical handling compliance</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <CheckCircle className="text-green-400 w-5 h-5" /> <span>Sanitation logs</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <CheckCircle className="text-green-400 w-5 h-5" /> <span>Cross-contamination prevention</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <CheckCircle className="text-green-400 w-5 h-5" /> <span>Temperature exposure safety</span>
+                                    </div>
+                                </div>
+                                <p className="mt-6 text-slate-300 font-medium border-t border-slate-700 pt-4">
+                                    FNSG OS documents everything in an audit-ready format.
+                                </p>
+                            </section>
+
+                            {/* FAQs */}
+                            <section>
+                                <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
+                                <div className="space-y-4">
+                                    {[
+                                        { q: "What types of workers do you supply for food production?", a: "From line workers to sanitation, QA, and machine operators." },
+                                        { q: "How do you ensure food safety compliance?", a: "Through our Sanitation OS, PPE tracking, and standardized training." },
+                                        { q: "Can you support cold storage labor?", a: "Yes, with a workforce prepared for cold environments." },
+                                        { q: "Can you staff ramp-ups of 20–200 workers?", a: "Yes, typically within 24–72 hours." },
+                                        { q: "Do you offer bilingual staffing?", a: "Yes, we provide English/Spanish speakers for all roles." },
+                                        { q: "How do you reduce high turnover in food production?", a: "By using Attendance OS, pay intelligence, and standardized training." }
+                                    ].map((faq, index) => (
+                                        <details key={index} className="group border border-slate-200 rounded-lg p-4 open:bg-slate-50 transition-all">
+                                            <summary className="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
+                                                {faq.q}
+                                                <span className="transition group-open:rotate-180">▼</span>
+                                            </summary>
+                                            <p className="text-slate-600 mt-3 text-sm">{faq.a}</p>
+                                        </details>
+                                    ))}
+                                </div>
+                            </section>
+
+                            {/* CTA Section */}
+                            <section className="py-8 border-t border-slate-200">
+                                <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+                                    <Link
+                                        href="/contact?industry=food-beverage"
+                                        className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all shadow-lg hover:shadow-xl"
+                                    >
+                                        Request a Food Production Workforce Strategy Session
+                                    </Link>
+                                    <Link
+                                        href="/resources/reports/food-production-2025"
+                                        className="bg-white border-2 border-slate-200 hover:border-blue-600 text-slate-700 hover:text-blue-600 font-bold py-3 px-8 rounded-full transition-all"
+                                    >
+                                        Download the 2025 Food Production Workforce Intelligence Report
+                                    </Link>
+                                </div>
+                            </section>
+
                         </div>
                     </div>
                 </div>
-            </section>
-
-            {/* Solution Table */}
-            <section className="py-20 bg-brand-light/30">
-                <div className="container">
-                    <div className="mb-10 text-center max-w-3xl mx-auto">
-                        <h2 className="text-3xl font-bold text-brand-navy mb-4">Roles & Capabilities</h2>
-                        <p className="text-slate-600">Specialized talent for every stage of production.</p>
-                    </div>
-
-                    <div className="overflow-x-auto rounded-xl border border-brand-gray/20 shadow-sm bg-white">
-                        <table className="w-full text-left border-collapse">
-                            <thead className="bg-brand-light">
-                                <tr>
-                                    <th className="p-4 font-bold text-brand-navy border-b border-brand-gray/20">Role Category</th>
-                                    <th className="p-4 font-bold text-brand-navy border-b border-brand-gray/20">Certification Level</th>
-                                    <th className="p-4 font-bold text-brand-navy border-b border-brand-gray/20">Shift Availability</th>
-                                    <th className="p-4 font-bold text-brand-navy border-b border-brand-gray/20">Avg. Fill Time</th>
-                                    <th className="p-4 font-bold text-brand-navy border-b border-brand-gray/20">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-brand-gray/10">
-                                <tr className="hover:bg-brand-light/50 transition-colors">
-                                    <td className="p-4 font-medium text-brand-navy">Industrial Mixers</td>
-                                    <td className="p-4 text-slate-600">Batch Record Trained</td>
-                                    <td className="p-4 text-slate-600">1st / 2nd / 3rd</td>
-                                    <td className="p-4 text-slate-600">48 Hours</td>
-                                    <td className="p-4"><Link href="/contact" className="text-brand-primary font-medium hover:underline">Check Rates</Link></td>
-                                </tr>
-                                <tr className="hover:bg-brand-light/50 transition-colors">
-                                    <td className="p-4 font-medium text-brand-navy">Packaging Line</td>
-                                    <td className="p-4 text-slate-600">High-Speed / GMP</td>
-                                    <td className="p-4 text-slate-600">Scalable (10-50+)</td>
-                                    <td className="p-4 text-slate-600">24 Hours</td>
-                                    <td className="p-4"><Link href="/contact" className="text-brand-primary font-medium hover:underline">Check Rates</Link></td>
-                                </tr>
-                                <tr className="hover:bg-brand-light/50 transition-colors">
-                                    <td className="p-4 font-medium text-brand-navy">Sanitation Crew</td>
-                                    <td className="p-4 text-slate-600">Chemical Safety (SDS)</td>
-                                    <td className="p-4 text-slate-600">Overnight / Weekends</td>
-                                    <td className="p-4 text-slate-600">24 Hours</td>
-                                    <td className="p-4"><Link href="/contact" className="text-brand-primary font-medium hover:underline">Check Rates</Link></td>
-                                </tr>
-                                <tr className="hover:bg-brand-light/50 transition-colors">
-                                    <td className="p-4 font-medium text-brand-navy">QA Techs</td>
-                                    <td className="p-4 text-slate-600">HACCP Aware</td>
-                                    <td className="p-4 text-slate-600">All Shifts</td>
-                                    <td className="p-4 text-slate-600">72 Hours</td>
-                                    <td className="p-4"><Link href="/contact" className="text-brand-primary font-medium hover:underline">Check Rates</Link></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-
-            {/* Trust Signals */}
-            <section className="py-12 bg-white border-t border-slate-100">
-                <div className="container">
-                    <p className="text-center text-sm font-semibold text-brand-gray mb-8 uppercase tracking-wider">Trusted by Industry Leaders</p>
-                    <div className="flex flex-wrap justify-center gap-6 md:gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-                        {/* Text placeholders for logos as per instructions */}
-                        <span className="font-bold text-xl text-brand-navy flex items-center gap-2"><Check className="w-5 h-5 text-brand-primary" /> OSHA 30</span>
-                        <span className="font-bold text-xl text-brand-navy flex items-center gap-2"><Check className="w-5 h-5 text-brand-primary" /> AIB International</span>
-                        <span className="font-bold text-xl text-brand-navy flex items-center gap-2"><Check className="w-5 h-5 text-brand-primary" /> American Staffing Association</span>
-                        <span className="font-bold text-xl text-brand-navy flex items-center gap-2"><Check className="w-5 h-5 text-brand-primary" /> E-Verify</span>
-                        <span className="font-bold text-xl text-brand-navy flex items-center gap-2"><Check className="w-5 h-5 text-brand-primary" /> Georgia Safety Council</span>
-                    </div>
-                </div>
-            </section>
-
-            {/* FAQ */}
-            <section className="py-20 bg-brand-light">
-                <div className="container max-w-3xl mx-auto">
-                    <h2 className="text-3xl font-bold text-brand-navy mb-10 text-center">Frequently Asked Questions</h2>
-                    <div className="space-y-4">
-                        <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
-                            <h3 className="font-bold text-brand-navy text-lg mb-2">Are your temporary staff trained in GMP and Allergen control?</h3>
-                            <p className="text-slate-600">Yes. Every candidate undergoes a mandatory Food Safety Orientation covering GMPs, Allergen Awareness, and Personal Hygiene before entering your facility.</p>
-                        </div>
-                        <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
-                            <h3 className="font-bold text-brand-navy text-lg mb-2">Do you provide staffing for refrigerated or cold-storage environments?</h3>
-                            <p className="text-slate-600">Yes. We supply equipping and PPE-ready staff for cold chain, freezer, and refrigerated production environments across Atlanta and Gainesville.</p>
-                        </div>
-                        <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
-                            <h3 className="font-bold text-brand-navy text-lg mb-2">How do you handle high-volume seasonal spikes for holidays?</h3>
-                            <p className="text-slate-600">We utilize a &quot;Roster Management&quot; system, pre-screening hundreds of candidates 4 weeks prior to peak seasons (Thanksgiving/Christmas) to guarantee 100% line coverage.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Service Area */}
-            <section className="py-20 bg-brand-navy text-white text-center">
-                <div className="container">
-                    <h2 className="text-3xl font-bold mb-6">Service Area</h2>
-                    <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-                        Serving major food hubs in: <strong className="text-white">Atlanta (Fulton)</strong>, <strong className="text-white">Gainesville (Hall - Poultry Capital)</strong>, <strong className="text-white">Norcross (Gwinnett)</strong>, and <strong className="text-white">Savannah</strong>.
-                    </p>
-                </div>
-            </section>
+            </div>
         </main>
-    )
+    );
 }
