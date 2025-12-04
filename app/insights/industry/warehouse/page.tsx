@@ -13,6 +13,7 @@ export default function WarehouseIndustryPage() {
         "@type": "WebPage",
         "name": "Warehouse & Logistics Staffing Services",
         "url": "https://firstnationalstaffing.com/insights/industry/warehouse",
+        "image": "https://firstnationalstaffing.com/insights/industry/warehouse/opengraph-image",
         "description": "Specialized staffing solutions for warehouse, distribution, and logistics centers in Georgia.",
         "about": {
             "@type": "Thing",
@@ -46,19 +47,19 @@ export default function WarehouseIndustryPage() {
                     <div className="p-6 border border-slate-200 rounded-xl bg-slate-50">
                         <h3 className="font-bold text-slate-900 mb-2">Turnover & Retention</h3>
                         <p className="text-sm text-slate-500 mb-4">Analysis of retention rates in high-volume distribution centers.</p>
-                        <div className="h-32 bg-slate-200 rounded animate-pulse flex items-center justify-center text-slate-400 text-xs">Chart Placeholder</div>
+                        <div className="h-32 bg-slate-50 rounded flex items-center justify-center text-slate-400 text-xs border border-slate-100 italic">Insight module coming soon</div>
                     </div>
                     <div className="p-6 border border-slate-200 rounded-xl bg-slate-50">
                         <h3 className="font-bold text-slate-900 mb-2">Attendance Trends</h3>
                         <p className="text-sm text-slate-500 mb-4">Shift attendance patterns and absenteeism data.</p>
-                        <div className="h-32 bg-slate-200 rounded animate-pulse flex items-center justify-center text-slate-400 text-xs">Chart Placeholder</div>
+                        <div className="h-32 bg-slate-50 rounded flex items-center justify-center text-slate-400 text-xs border border-slate-100 italic">Insight module coming soon</div>
                     </div>
                 </div>
 
                 <div className="mb-12">
                     <h2 className="text-2xl font-bold text-slate-900 mb-4">Latest Warehouse Insights</h2>
                     <EmptyState message="Loading warehouse articles..." />
-                    {/* // TODO: Connect Supabase query for warehouse articles */}
+                    <EmptyState message="Loading warehouse articles..." />
                 </div>
 
                 {/* Cross-Silo Linking */}

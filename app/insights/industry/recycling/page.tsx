@@ -13,6 +13,7 @@ export default function RecyclingIndustryPage() {
         "@type": "WebPage",
         "name": "Recycling & Waste Management Staffing",
         "url": "https://firstnationalstaffing.com/insights/industry/recycling",
+        "image": "https://firstnationalstaffing.com/insights/industry/recycling/opengraph-image",
         "description": "Staffing for MRFs, recycling centers, and waste management operations.",
         "about": {
             "@type": "Thing",
@@ -45,19 +46,19 @@ export default function RecyclingIndustryPage() {
                     <div className="p-6 border border-slate-200 rounded-xl bg-slate-50">
                         <h3 className="font-bold text-slate-900 mb-2">Safety & PPE</h3>
                         <p className="text-sm text-slate-500 mb-4">Compliance in hazardous environments.</p>
-                        <div className="h-32 bg-slate-200 rounded animate-pulse flex items-center justify-center text-slate-400 text-xs">Data Placeholder</div>
+                        <div className="h-32 bg-slate-50 rounded flex items-center justify-center text-slate-400 text-xs border border-slate-100 italic">Insight module coming soon</div>
                     </div>
                     <div className="p-6 border border-slate-200 rounded-xl bg-slate-50">
                         <h3 className="font-bold text-slate-900 mb-2">Turnover Mitigation</h3>
                         <p className="text-sm text-slate-500 mb-4">Strategies for retention in tough jobs.</p>
-                        <div className="h-32 bg-slate-200 rounded animate-pulse flex items-center justify-center text-slate-400 text-xs">Data Placeholder</div>
+                        <div className="h-32 bg-slate-50 rounded flex items-center justify-center text-slate-400 text-xs border border-slate-100 italic">Insight module coming soon</div>
                     </div>
                 </div>
 
                 <div className="mb-12">
                     <h2 className="text-2xl font-bold text-slate-900 mb-4">Latest Recycling Insights</h2>
                     <EmptyState message="Loading recycling articles..." />
-                    {/* // TODO: Connect Supabase query */}
+                    <EmptyState message="Loading recycling articles..." />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 border-t border-slate-200 pt-8">

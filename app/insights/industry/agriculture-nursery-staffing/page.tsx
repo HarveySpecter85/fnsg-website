@@ -8,8 +8,26 @@ export const metadata = {
 };
 
 export default function AgInsightPage() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Agriculture & Nursery Staffing Insights",
+        "url": "https://firstnationalstaffing.com/insights/industry/agriculture-nursery-staffing",
+        "image": "https://firstnationalstaffing.com/insights/industry/agriculture-nursery-staffing/opengraph-image",
+        "description": "Labor trends, H-2A alternatives, and seasonal workforce strategies for Georgia agriculture.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "First National Staffing OS",
+            "url": "https://firstnationalstaffing.com"
+        }
+    };
+
     return (
         <main className="bg-white min-h-screen">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             <div className="container mx-auto px-6 py-12 max-w-7xl">
                 <div className="flex flex-col lg:flex-row gap-12">
                     <SeoSidebar />
@@ -27,7 +45,9 @@ export default function AgInsightPage() {
 
                         <div className="prose prose-lg max-w-none">
                             <h2>Seasonal Labor Challenges</h2>
-                            <p>Placeholder content for agricultural labor trends...</p>
+                            <div className="p-8 bg-slate-50 rounded-lg border border-slate-100 text-slate-500 italic text-center">
+                                Detailed agricultural labor market analysis coming soon.
+                            </div>
                         </div>
                     </div>
                 </div>
