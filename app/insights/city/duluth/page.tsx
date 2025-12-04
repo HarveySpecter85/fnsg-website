@@ -7,7 +7,7 @@ export const metadata = {
     title: "Duluth Manufacturing Staffing & Tech Insights – First National Staffing",
     description: "Workforce intelligence for Duluth's diverse industrial sector. Covering high-tech manufacturing, assembly, and skilled labor trends.",
     alternates: {
-        canonical: '/insights/city/duluth',
+        canonical: 'https://firstnationalstaffing.com/insights/city/duluth',
     },
     openGraph: {
         title: "Duluth Staffing Insights",

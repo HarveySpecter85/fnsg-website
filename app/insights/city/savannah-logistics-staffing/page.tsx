@@ -9,7 +9,7 @@ export const metadata = {
     title: "Savannah Logistics Staffing & Workforce Intelligence – First National Staffing",
     description: "Workforce insights for the Port of Savannah, Garden City, and Pooler. Data on port logistics, drayage, and heavy industrial labor trends.",
     alternates: {
-        canonical: '/insights/city/savannah-logistics-staffing',
+        canonical: 'https://firstnationalstaffing.com/insights/city/savannah-logistics-staffing',
     },
     openGraph: {
         title: "Savannah Staffing Insights",

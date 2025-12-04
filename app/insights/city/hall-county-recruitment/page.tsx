@@ -9,7 +9,7 @@ export const metadata = {
     title: "Hall County Staffing & Workforce Intelligence – First National Staffing",
     description: "Workforce insights for Gainesville, Oakwood, and the Poultry Capital. Data on food processing, cold storage, and industrial labor trends in Hall County.",
     alternates: {
-        canonical: '/insights/city/hall-county-recruitment',
+        canonical: 'https://firstnationalstaffing.com/insights/city/hall-county-recruitment',
     },
     openGraph: {
         title: "Hall County Staffing Insights",

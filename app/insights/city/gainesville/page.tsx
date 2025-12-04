@@ -7,7 +7,7 @@ export const metadata = {
     title: "Gainesville Staffing Insights & Labor Trends – First National Staffing",
     description: "Local labor market intelligence for Gainesville, GA. Specializing in poultry processing, food manufacturing, and industrial workforce solutions.",
     alternates: {
-        canonical: '/insights/city/gainesville',
+        canonical: 'https://firstnationalstaffing.com/insights/city/gainesville',
     },
     openGraph: {
         title: "Gainesville Staffing Insights",
@@ -57,7 +57,7 @@ export default function GainesvilleHub() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
-            
+
             <CityHubHeader
                 city="Gainesville"
                 intro="As the Poultry Capital of the World, Gainesville's industrial sector demands a specialized workforce. Our insights cover food safety compliance, high-volume processing staffing, and cold storage logistics."
@@ -72,14 +72,14 @@ export default function GainesvilleHub() {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mt-8">
                     {/* Main Content Column */}
                     <div className="lg:col-span-8 space-y-12">
-                        
+
                         {/* H1 & Intro */}
                         <section>
                             <h1 className="text-4xl font-bold text-slate-900 mb-6">Workforce Intelligence in Gainesville, GA — 2025 Edition</h1>
                             <p className="text-lg text-slate-700 leading-relaxed">
-                                Gainesville, Georgia, stands as a critical hub for the Southeast's food production and industrial sectors. 
-                                With a labor market defined by high-volume processing demands and a growing logistics footprint, 
-                                employers face unique challenges in retention and compliance. This report provides actionable 
+                                Gainesville, Georgia, stands as a critical hub for the Southeast's food production and industrial sectors.
+                                With a labor market defined by high-volume processing demands and a growing logistics footprint,
+                                employers face unique challenges in retention and compliance. This report provides actionable
                                 intelligence for navigating the Hall County workforce landscape in 2025.
                             </p>
                         </section>
@@ -89,7 +89,7 @@ export default function GainesvilleHub() {
                             <h2 className="text-2xl font-bold text-slate-900 mb-4">Labor Market Overview (Gainesville, GA)</h2>
                             <div className="prose prose-slate max-w-none">
                                 <p>
-                                    Hall County continues to exhibit tight labor conditions with unemployment rates consistently tracking below the state average. 
+                                    Hall County continues to exhibit tight labor conditions with unemployment rates consistently tracking below the state average.
                                     The "Poultry Capital" designation drives a constant demand for skilled line workers, sanitation specialists, and cold-chain logistics personnel.
                                     Competition for reliable talent is fierce, with major integrators and processing plants setting the pace for wage floors and benefit packages.
                                 </p>
@@ -205,15 +205,15 @@ export default function GainesvilleHub() {
                             <div>
                                 <h2 className="text-xl font-bold text-slate-900 mb-3">Workforce Composition</h2>
                                 <p className="text-slate-700 text-sm">
-                                    Gainesville's industrial workforce is diverse, with a strong Hispanic community presence. 
+                                    Gainesville's industrial workforce is diverse, with a strong Hispanic community presence.
                                     Bilingual supervision and safety training are not just "nice-to-haves" but operational necessities for effective management.
                                 </p>
                             </div>
                             <div>
                                 <h2 className="text-xl font-bold text-slate-900 mb-3">Seasonal Demand Patterns</h2>
                                 <p className="text-slate-700 text-sm">
-                                    <strong>Q4 Peak:</strong> Driven by holiday food production demands. <br/>
-                                    <strong>Summer Surge:</strong> Increased beverage and agricultural processing needs. <br/>
+                                    <strong>Q4 Peak:</strong> Driven by holiday food production demands. <br />
+                                    <strong>Summer Surge:</strong> Increased beverage and agricultural processing needs. <br />
                                     <strong>Strategy:</strong> Begin ramp-up recruiting 6 weeks prior to projected peaks.
                                 </p>
                             </div>
@@ -223,7 +223,7 @@ export default function GainesvilleHub() {
                         <section className="bg-slate-900 text-white p-8 rounded-xl">
                             <h2 className="text-2xl font-bold mb-4">How FNSG OS Improves Workforce Stability in Gainesville</h2>
                             <p className="mb-6 text-slate-300">
-                                First National Staffing Group Operating System (FNSG OS) integrates directly with your production goals. 
+                                First National Staffing Group Operating System (FNSG OS) integrates directly with your production goals.
                                 We don't just fill seats; we deploy a calibrated workforce optimized for the specific rigors of Gainesville's industrial environment.
                             </p>
                             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -287,14 +287,14 @@ export default function GainesvilleHub() {
                         {/* CTA Section */}
                         <section className="py-8 border-t border-slate-200">
                             <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-                                <Link 
-                                    href="/contact?location=gainesville" 
+                                <Link
+                                    href="/contact?location=gainesville"
                                     className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all shadow-lg hover:shadow-xl"
                                 >
                                     Request a Workforce Strategy Session
                                 </Link>
-                                <Link 
-                                    href="/resources/reports/gainesville-2025" 
+                                <Link
+                                    href="/resources/reports/gainesville-2025"
                                     className="bg-white border-2 border-slate-200 hover:border-blue-600 text-slate-700 hover:text-blue-600 font-bold py-3 px-8 rounded-full transition-all"
                                 >
                                     Get Gainesville Labor Intelligence Report

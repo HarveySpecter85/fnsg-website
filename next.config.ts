@@ -14,6 +14,11 @@ const nextConfig: NextConfig = {
         destination: '/insights/city/:slug*',
         permanent: true,
       },
+      {
+        source: '/insights/city/atlanta-staffing-agency',
+        destination: '/insights/city/atlanta',
+        permanent: true,
+      },
     ];
   },
 };

@@ -9,7 +9,7 @@ export const metadata = {
     title: "Jackson County Staffing & Workforce Intelligence – First National Staffing",
     description: "Workforce insights for Jefferson, Commerce, and the I-85 Logistics Corridor. Data on e-commerce, warehousing, and distribution labor trends.",
     alternates: {
-        canonical: '/insights/city/jackson-county-logistics-staffing',
+        canonical: 'https://firstnationalstaffing.com/insights/city/jackson-county-logistics-staffing',
     },
     openGraph: {
         title: "Jackson County Staffing Insights",

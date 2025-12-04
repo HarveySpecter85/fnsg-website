@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
-export const alt = 'First National Staffing OS - Atlanta Staffing Agency';
+export const alt = 'First National Staffing OS - Duluth';
 export const size = {
     width: 1200,
     height: 630,
@@ -61,7 +61,7 @@ export default async function Image() {
                             textAlign: 'center',
                         }}
                     >
-                        Atlanta Staffing Agency
+                        Staffing Guide 2025
                     </div>
                     <div
                         style={{
@@ -72,7 +72,7 @@ export default async function Image() {
                             lineHeight: 1.4,
                         }}
                     >
-                        Local Workforce Data
+                        Gainesville Workforce Insights
                     </div>
                 </div>
             </div>
@@ -82,3 +82,4 @@ export default async function Image() {
         }
     );
 }
+

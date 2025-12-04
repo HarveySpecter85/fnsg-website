@@ -7,7 +7,7 @@ export const metadata = {
     title: "Atlanta Staffing Agency & Workforce Intelligence – First National Staffing",
     description: "Data-driven staffing insights for Atlanta, GA. Covering logistics, hospitality, and light industrial labor trends near Hartsfield-Jackson and I-285.",
     alternates: {
-        canonical: '/insights/city/atlanta',
+        canonical: 'https://firstnationalstaffing.com/insights/city/atlanta',
     },
     openGraph: {
         title: "Atlanta Staffing Insights",

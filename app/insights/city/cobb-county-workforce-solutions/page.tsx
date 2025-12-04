@@ -9,7 +9,7 @@ export const metadata = {
     title: "Cobb County Staffing & Workforce Intelligence – First National Staffing",
     description: "Workforce insights for Marietta, Kennesaw, and Smyrna. Data on skilled trades, corporate admin, and light industrial labor trends in Cobb County.",
     alternates: {
-        canonical: '/insights/city/cobb-county-workforce-solutions',
+        canonical: 'https://firstnationalstaffing.com/insights/city/cobb-county-workforce-solutions',
     },
     openGraph: {
         title: "Cobb County Staffing Insights",

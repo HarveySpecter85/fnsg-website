@@ -9,7 +9,7 @@ export const metadata = {
     title: "South Fulton Industrial Staffing & Airport Logistics – First National Staffing",
     description: "Labor insights for South Fulton's heavy industrial and airport logistics sectors. Covering 3rd shift staffing, recycling operations, and transportation.",
     alternates: {
-        canonical: '/insights/city/south-fulton',
+        canonical: 'https://firstnationalstaffing.com/insights/city/south-fulton',
     },
     openGraph: {
         title: "South Fulton Staffing Insights",

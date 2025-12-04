@@ -9,7 +9,7 @@ export const metadata = {
     title: "Clayton County Staffing & Workforce Intelligence – First National Staffing",
     description: "Workforce insights for the Airport Logistics District. Data on air cargo, warehousing, and food production labor trends in Clayton County.",
     alternates: {
-        canonical: '/insights/city/clayton-county-staffing',
+        canonical: 'https://firstnationalstaffing.com/insights/city/clayton-county-staffing',
     },
     openGraph: {
         title: "Clayton County Staffing Insights",

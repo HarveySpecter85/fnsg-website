@@ -9,7 +9,7 @@ export const metadata = {
     title: "Forsyth County Staffing & Workforce Intelligence – First National Staffing",
     description: "Workforce insights for Cumming, Alpharetta, and the GA-400 Tech Corridor. Data on advanced manufacturing, med-tech, and skilled labor trends.",
     alternates: {
-        canonical: '/insights/city/forsyth-county-staffing',
+        canonical: 'https://firstnationalstaffing.com/insights/city/forsyth-county-staffing',
     },
     openGraph: {
         title: "Forsyth County Staffing Insights",

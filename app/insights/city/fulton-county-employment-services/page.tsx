@@ -9,7 +9,7 @@ export const metadata = {
     title: "Fulton County Employment Services & Workforce Intelligence – First National Staffing",
     description: "Workforce insights for Fulton County, GA. Data on logistics, manufacturing, and corporate staffing trends across Atlanta, Alpharetta, and South Fulton.",
     alternates: {
-        canonical: '/insights/city/fulton-county-employment-services',
+        canonical: 'https://firstnationalstaffing.com/insights/city/fulton-county-employment-services',
     },
     openGraph: {
         title: "Fulton County Staffing Insights",

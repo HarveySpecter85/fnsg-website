@@ -7,7 +7,7 @@ export const metadata = {
     title: "Norcross Logistics Staffing & Warehouse Insights – First National Staffing",
     description: "Expert analysis on Norcross labor trends. Focusing on 3PL distribution, bilingual workforce strategies, and warehouse safety.",
     alternates: {
-        canonical: '/insights/city/norcross',
+        canonical: 'https://firstnationalstaffing.com/insights/city/norcross',
     },
     openGraph: {
         title: "Norcross Staffing Insights",

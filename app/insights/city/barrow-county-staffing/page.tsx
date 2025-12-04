@@ -9,7 +9,7 @@ export const metadata = {
     title: "Barrow County Staffing & Workforce Intelligence – First National Staffing",
     description: "Workforce insights for Winder, Auburn, and the Hwy 316 corridor. Data on manufacturing labor, pay rates, and industrial growth in Barrow County.",
     alternates: {
-        canonical: '/insights/city/barrow-county-staffing',
+        canonical: 'https://firstnationalstaffing.com/insights/city/barrow-county-staffing',
     },
     openGraph: {
         title: "Barrow County Staffing Insights",
