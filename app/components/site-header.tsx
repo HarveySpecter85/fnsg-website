@@ -44,7 +44,12 @@ const navigation = {
     dataInsights: [
         { title: 'Workforce KPIs', href: '/insights/kpis/' },
         { title: 'Labor Market Trends', href: '/insights/labor-market/' },
-        { title: 'Reports & Forecasts', href: '/insights/reports/' },
+
+        { title: 'GA Industrial Workforce 2025', href: '/insights/reports/georgia-industrial-workforce-2025' },
+        { title: 'Warehouse Forecast 2025', href: '/insights/reports/warehouse-logistics-forecast-2025' },
+        { title: 'Manufacturing Turnover 2025', href: '/insights/reports/manufacturing-turnover-2025' },
+        { title: 'Healthcare & EVS 2025', href: '/insights/reports/healthcare-evs-2025' },
+        { title: 'Reports Hub', href: '/insights/reports/' },
         { title: 'City Insights', href: '/insights/city/' },
         { title: 'Industry Deep Dives', href: '/insights/industry/' },
     ],

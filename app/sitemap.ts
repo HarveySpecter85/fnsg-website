@@ -65,7 +65,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/insights/city/south-fulton/3rd-shift-analysis',
         '/insights/city/south-fulton/airport-logistics-staffing',
         '/insights/city/south-fulton/local-pack',
-        '/insights/city/south-fulton/local-pack',
         '/insights/city/south-fulton/recycling-staffing-crisis',
         // Solutions
         '/solutions/workforce-diagnostic-os',
@@ -75,6 +74,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/solutions/high-volume-ramp-up-os',
         '/solutions/peak-season-deployment-os',
         '/solutions/payroll-compliance-administration-os',
+        // Reports OS
         '/insights/reports',
         '/insights/reports/georgia-industrial-workforce-2025',
         '/insights/reports/warehouse-logistics-forecast-2025',
