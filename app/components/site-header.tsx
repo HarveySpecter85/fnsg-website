@@ -61,7 +61,7 @@ const navigation = {
         { title: 'Blog', href: '/company/blog' },
     ],
     locations: [
-        { title: 'Atlanta Staffing Agency', href: '/insights/city/atlanta-staffing-agency' },
+        { title: 'Atlanta Staffing Agency', href: '/insights/city/atlanta' },
         { title: 'Fulton County Employment', href: '/insights/city/fulton-county-employment-services' },
 
         { title: 'DeKalb County Staffing', href: '/insights/city/dekalb-county-staffing' },
@@ -291,6 +291,9 @@ export function SiteHeader() {
                         </div>
                     </div>
 
+                    <Link href="/os-demo" className="text-sm font-semibold leading-6 text-white bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        OS Demo Dashboard
+                    </Link>
                     <Link href="/contact/request-workforce" className="text-sm font-semibold leading-6 text-white bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
                         Request Workforce
                     </Link>
@@ -428,6 +431,9 @@ export function SiteHeader() {
                         <div className="pt-6 border-t border-slate-100">
                             <Link href="/contact/request-workforce" onClick={() => setMobileMenuOpen(false)} className="block mt-4 py-3 text-center text-base font-semibold leading-7 text-white bg-blue-600 rounded-lg">
                                 Request Workforce
+                            </Link>
+                            <Link href="/os-demo" onClick={() => setMobileMenuOpen(false)} className="block mt-4 py-3 text-center text-base font-semibold leading-7 text-white bg-blue-600 rounded-lg">
+                                OS Demo Dashboard
                             </Link>
                         </div>
                     </div>
