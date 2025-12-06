@@ -75,6 +75,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/solutions/high-volume-ramp-up-os',
         '/solutions/peak-season-deployment-os',
         '/solutions/payroll-compliance-administration-os',
+        '/insights/reports',
+        '/insights/reports/georgia-industrial-workforce-2025',
+        '/insights/reports/warehouse-logistics-forecast-2025',
+        '/insights/reports/manufacturing-turnover-2025',
+        '/insights/reports/healthcare-evs-2025',
     ];
 
     return routes.map((route) => ({
