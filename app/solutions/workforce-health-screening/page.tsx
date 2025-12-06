@@ -8,6 +8,18 @@ import { Activity, Clock, MapPin, FileCheck, TestTube, Stethoscope, Syringe } fr
 export const metadata: Metadata = {
     title: "Workforce Health Screening | Drug Testing & Physicals",
     description: "Integrated drug and medical testing services. Reduce time-to-start by 48 hours with our nationwide Labcorp and eScreen network.",
+    alternates: {
+        canonical: 'https://firstnationalstaffing.com/solutions/workforce-health-screening',
+    },
+    openGraph: {
+        title: "Workforce Health Screening | Drug Testing & Physicals",
+        description: "Integrated drug and medical testing services. Reduce time-to-start by 48 hours with our nationwide Labcorp and eScreen network.",
+        url: 'https://firstnationalstaffing.com/solutions/workforce-health-screening',
+        images: ['/solutions/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 }
 
 export default function HealthScreeningHubPage() {

@@ -8,6 +8,18 @@ import { Stethoscope, Activity, Scale, Ear, Truck } from 'lucide-react'
 export const metadata: Metadata = {
     title: "Occupational Physicals | DOT Exams & FCEs",
     description: "Comprehensive occupational health exams including DOT physicals, Functional Capacity Evaluations (FCEs), and lift assessments.",
+    alternates: {
+        canonical: 'https://firstnationalstaffing.com/solutions/workforce-health-screening/occupational-physicals',
+    },
+    openGraph: {
+        title: "Occupational Physicals | DOT Exams & FCEs",
+        description: "Comprehensive occupational health exams including DOT physicals, Functional Capacity Evaluations (FCEs), and lift assessments.",
+        url: 'https://firstnationalstaffing.com/solutions/workforce-health-screening/occupational-physicals',
+        images: ['/solutions/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 }
 
 export default function OccupationalPhysicalsPage() {

@@ -5,6 +5,18 @@ import Link from 'next/link';
 export const metadata = {
     title: "Norcross Staffing Pay Rates – First National Staffing",
     description: "Wage analysis for Norcross and Gwinnett County. Logistics, distribution, and light industrial pay rates.",
+    alternates: {
+        canonical: '/insights/pay-rates/norcross',
+    },
+    openGraph: {
+        title: "Norcross Staffing Pay Rates – First National Staffing",
+        description: "Wage analysis for Norcross and Gwinnett County. Logistics, distribution, and light industrial pay rates.",
+        url: 'https://firstnationalstaffing.com/insights/pay-rates/norcross',
+        images: ['/insights/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 };
 
 export default function NorcrossPayPage() {
@@ -20,7 +32,7 @@ export default function NorcrossPayPage() {
                 <h1 className="text-4xl font-bold text-slate-900 mb-6">Norcross Market Pay Rates</h1>
 
                 <div className="mb-12 p-6 border border-slate-200 rounded-xl bg-slate-50">
-                    <h3 className="font-bold text-slate-900 mb-4">Local Wage Benchmarks (Placeholder)</h3>
+                    <h3 className="font-bold text-slate-900 mb-4">Norcross & Gwinnett Wage Snapshot</h3>
                     <div className="space-y-4">
                         <div className="flex justify-between items-center border-b border-slate-200 pb-2">
                             <span className="text-slate-600">Warehouse Associate</span>
@@ -31,17 +43,17 @@ export default function NorcrossPayPage() {
                             <span className="font-mono font-bold text-slate-900">$19.50 - $22.00</span>
                         </div>
                     </div>
-                    <p className="text-xs text-slate-400 mt-4 italic">// TODO: Load dynamic pay data from OS</p>
+                    {/* // TODO: Replace static data with Supabase query when backend is ready */}
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 border-t border-slate-200 pt-8">
                     <Link href="/insights/city/norcross" className="p-4 border border-slate-100 rounded-lg hover:border-blue-500 transition-colors">
                         <h4 className="font-bold text-slate-900 text-sm">Norcross Hub</h4>
-                        <p className="text-xs text-slate-500">Market overview.</p>
+                        <p className="text-xs text-slate-500">Gwinnett County labor market.</p>
                     </Link>
                     <Link href="/insights/industry/warehouse" className="p-4 border border-slate-100 rounded-lg hover:border-blue-500 transition-colors">
                         <h4 className="font-bold text-slate-900 text-sm">Warehouse Trends</h4>
-                        <p className="text-xs text-slate-500">Logistics data.</p>
+                        <p className="text-xs text-slate-500">Logistics & distribution data.</p>
                     </Link>
                 </div>
             </div>

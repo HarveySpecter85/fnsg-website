@@ -5,6 +5,18 @@ import Link from 'next/link';
 export const metadata = {
     title: "Manufacturing Pay Rates & Salary Trends – First National Staffing",
     description: "Wage analysis for manufacturing roles. Assemblers, machine operators, welders, and quality control inspectors.",
+    alternates: {
+        canonical: '/insights/pay-rates/manufacturing',
+    },
+    openGraph: {
+        title: "Manufacturing Pay Rates & Salary Trends – First National Staffing",
+        description: "Wage analysis for manufacturing roles. Assemblers, machine operators, welders, and quality control inspectors.",
+        url: 'https://firstnationalstaffing.com/insights/pay-rates/manufacturing',
+        images: ['/insights/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 };
 
 export default function ManufacturingPayPage() {

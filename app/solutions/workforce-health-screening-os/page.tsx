@@ -9,6 +9,15 @@ export const metadata: Metadata = {
     alternates: {
         canonical: 'https://firstnationalstaffing.com/solutions/workforce-health-screening-os',
     },
+    openGraph: {
+        title: "Workforce Health Screening OS — Reduce Risk, Accelerate Hiring, and Improve Workforce Readiness",
+        description: "Health screening and compliance automation for workforce onboarding. Accelerates hiring, reduces errors, and prepares candidates for production through Workforce Intelligence OS.",
+        url: 'https://firstnationalstaffing.com/solutions/workforce-health-screening-os',
+        images: ['/solutions/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 };
 
 export default function WorkforceHealthScreeningPage() {

@@ -8,6 +8,18 @@ import { Calculator, FileText, Server, ShieldCheck, CheckCircle2 } from 'lucide-
 export const metadata: Metadata = {
     title: "Payroll Administration & Compliance | Employer of Record",
     description: "Comprehensive payroll administration and compliance. We act as the Employer of Record (EOR), handling tax withholdings, garnishments, and W-2 issuance.",
+    alternates: {
+        canonical: 'https://firstnationalstaffing.com/solutions/payroll-compliance-administration',
+    },
+    openGraph: {
+        title: "Payroll Administration & Compliance | Employer of Record",
+        description: "Comprehensive payroll administration and compliance. We act as the Employer of Record (EOR), handling tax withholdings, garnishments, and W-2 issuance.",
+        url: 'https://firstnationalstaffing.com/solutions/payroll-compliance-administration',
+        images: ['/solutions/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 }
 
 export default function PayrollCompliancePage() {

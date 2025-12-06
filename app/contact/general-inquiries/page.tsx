@@ -9,6 +9,18 @@ import { Briefcase, UserPlus, FileText, MapPin, Phone, Facebook, Linkedin, Insta
 export const metadata: Metadata = {
     title: "Contact First National Staffing | Locations & Directory",
     description: "Contact FNSG for staffing solutions, job opportunities, or payroll inquiries. Visit our branches in Atlanta, Gainesville, and Savannah.",
+    alternates: {
+        canonical: '/contact/general-inquiries',
+    },
+    openGraph: {
+        title: "Contact First National Staffing | Locations & Directory",
+        description: "Contact FNSG for staffing solutions, job opportunities, or payroll inquiries.",
+        url: 'https://firstnationalstaffing.com/contact/general-inquiries',
+        images: ['/contact/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'website',
+    },
 }
 
 export default function GeneralInquiriesPage() {

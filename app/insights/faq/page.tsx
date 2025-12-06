@@ -5,6 +5,18 @@ import Link from 'next/link';
 export const metadata = {
     title: "Staffing & Employment FAQ – First National Staffing",
     description: "Frequently asked questions about industrial staffing, temporary labor, and employment in Georgia.",
+    alternates: {
+        canonical: '/insights/faq',
+    },
+    openGraph: {
+        title: "Staffing & Employment FAQ – First National Staffing",
+        description: "Frequently asked questions about industrial staffing, temporary labor, and employment in Georgia.",
+        url: 'https://firstnationalstaffing.com/insights/faq',
+        images: ['/insights/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'website',
+    },
 };
 
 export default function FAQHubPage() {

@@ -5,6 +5,18 @@ import Link from 'next/link';
 export const metadata = {
     title: "Warehouse Jobs & Staffing FAQ – First National Staffing",
     description: "FAQ for warehouse workers and employers. Safety gear, shift schedules, and certification requirements.",
+    alternates: {
+        canonical: '/insights/faq/warehouse',
+    },
+    openGraph: {
+        title: "Warehouse Jobs & Staffing FAQ – First National Staffing",
+        description: "FAQ for warehouse workers and employers. Safety gear, shift schedules, and certification requirements.",
+        url: 'https://firstnationalstaffing.com/insights/faq/warehouse',
+        images: ['/insights/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 };
 
 export default function WarehouseFAQPage() {

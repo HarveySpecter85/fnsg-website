@@ -63,7 +63,7 @@ export default function InsightsPage() {
                     {/* Main Content Column */}
                     <div className="flex-1">
                         <Breadcrumbs items={[
-                            { label: 'Insights', href: '#' }
+                            { label: 'Insights', href: '/insights' }
                         ]} />
 
                         <div className="mb-10">

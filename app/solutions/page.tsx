@@ -13,6 +13,7 @@ export const metadata: Metadata = {
         title: "FNSG Workforce Intelligence OS Solutions",
         description: "Explore all FNSG OS solutions including Diagnostic OS, On-Site Workforce Management, Health Screening OS, Direct Hire OS, Ramp-Up OS, Peak Season OS, and Payroll & Compliance OS.",
         url: 'https://firstnationalstaffing.com/solutions',
+        images: ['/solutions/opengraph-image'],
         siteName: 'First National Staffing Group',
         locale: 'en_US',
         type: 'website',

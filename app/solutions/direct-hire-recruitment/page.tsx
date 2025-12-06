@@ -8,6 +8,18 @@ import { Briefcase, Search, DollarSign, Award } from 'lucide-react'
 export const metadata: Metadata = {
     title: "Direct Hire Recruitment | Executive & Technical Search",
     description: "Direct hire and executive search services on a contingency fee basis. We specialize in technical roles, maintenance leadership, and QA management.",
+    alternates: {
+        canonical: 'https://firstnationalstaffing.com/solutions/direct-hire-recruitment',
+    },
+    openGraph: {
+        title: "Direct Hire Recruitment | Executive & Technical Search",
+        description: "Direct hire and executive search services on a contingency fee basis. We specialize in technical roles, maintenance leadership, and QA management.",
+        url: 'https://firstnationalstaffing.com/solutions/direct-hire-recruitment',
+        images: ['/solutions/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 }
 
 export default function DirectHirePage() {

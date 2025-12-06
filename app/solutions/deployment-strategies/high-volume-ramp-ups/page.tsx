@@ -4,6 +4,18 @@ import { Breadcrumbs } from '@/app/components/navigation/Breadcrumbs';
 export const metadata = {
     title: "High-Volume Ramp Ups – Deployment Strategies | First National Staffing",
     description: "Rapid workforce deployment strategies for new facility launches and major expansion projects.",
+    alternates: {
+        canonical: 'https://firstnationalstaffing.com/solutions/deployment-strategies/high-volume-ramp-ups',
+    },
+    openGraph: {
+        title: "High-Volume Ramp Ups – Deployment Strategies | First National Staffing",
+        description: "Rapid workforce deployment strategies for new facility launches and major expansion projects.",
+        url: 'https://firstnationalstaffing.com/solutions/deployment-strategies/high-volume-ramp-ups',
+        images: ['/solutions/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 };
 
 export default function HighVolumeRampUpsPage() {

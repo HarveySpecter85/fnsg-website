@@ -10,6 +10,18 @@ import { CompanyBreadcrumbs } from '@/app/components/navigation/CompanyBreadcrum
 export const metadata: Metadata = {
     title: "Our Story | First National Staffing Group",
     description: "Learn about FNSG's mission to provide enterprise-grade staffing solutions with a client-first approach. Serving Atlanta, Savannah, and beyond since 2005.",
+    alternates: {
+        canonical: '/company/our-story',
+    },
+    openGraph: {
+        title: "Our Story | First National Staffing Group",
+        description: "Learn about FNSG's mission to provide enterprise-grade staffing solutions with a client-first approach.",
+        url: 'https://firstnationalstaffing.com/company/our-story',
+        images: ['/company/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 }
 
 export default function OurStoryPage() {

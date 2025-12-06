@@ -9,6 +9,15 @@ export const metadata: Metadata = {
     alternates: {
         canonical: 'https://firstnationalstaffing.com/solutions/direct-hire-recruitment-os',
     },
+    openGraph: {
+        title: "Direct Hire Recruitment OS — Precision Hiring Powered by Workforce Intelligence",
+        description: "Intelligence-driven Direct Hire solution using Workforce OS modules for predicting stability, matching skills, calibrating pay, evaluating culture fit, and improving hiring accuracy.",
+        url: 'https://firstnationalstaffing.com/solutions/direct-hire-recruitment-os',
+        images: ['/solutions/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 };
 
 export default function DirectHireRecruitmentPage() {

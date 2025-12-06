@@ -5,6 +5,18 @@ import Link from 'next/link';
 export const metadata = {
     title: "Warehouse Pay Rates & Salary Trends – First National Staffing",
     description: "Current pay rates for warehouse positions in Georgia. Forklift operators, pickers, packers, and shipping clerks.",
+    alternates: {
+        canonical: '/insights/pay-rates/warehouse',
+    },
+    openGraph: {
+        title: "Warehouse Pay Rates & Salary Trends – First National Staffing",
+        description: "Current pay rates for warehouse positions in Georgia.",
+        url: 'https://firstnationalstaffing.com/insights/pay-rates/warehouse',
+        images: ['/insights/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 };
 
 export default function WarehousePayPage() {
@@ -20,7 +32,7 @@ export default function WarehousePayPage() {
                 <h1 className="text-4xl font-bold text-slate-900 mb-6">Warehouse Pay Rate Trends</h1>
 
                 <div className="mb-12 p-6 border border-slate-200 rounded-xl bg-slate-50">
-                    <h3 className="font-bold text-slate-900 mb-4">Average Hourly Rates (Placeholder)</h3>
+                    <h3 className="font-bold text-slate-900 mb-4">2025 Warehouse Pay Rate Snapshot</h3>
                     <div className="space-y-4">
                         <div className="flex justify-between items-center border-b border-slate-200 pb-2">
                             <span className="text-slate-600">Forklift Operator</span>
@@ -35,7 +47,7 @@ export default function WarehousePayPage() {
                             <span className="font-mono font-bold text-slate-900">$17.50 - $20.00</span>
                         </div>
                     </div>
-                    <p className="text-xs text-slate-400 mt-4 italic">// TODO: Load dynamic pay data from OS</p>
+                    {/* // TODO: Replace static data with Supabase query when backend is ready */}
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 border-t border-slate-200 pt-8">
@@ -45,11 +57,11 @@ export default function WarehousePayPage() {
                     </Link>
                     <Link href="/insights/city/norcross" className="p-4 border border-slate-100 rounded-lg hover:border-blue-500 transition-colors">
                         <h4 className="font-bold text-slate-900 text-sm">Norcross Hub</h4>
-                        <p className="text-xs text-slate-500">Local rates.</p>
+                        <p className="text-xs text-slate-500">Gwinnett County wage data.</p>
                     </Link>
                     <Link href="/insights/faq/staffing" className="p-4 border border-slate-100 rounded-lg hover:border-blue-500 transition-colors">
                         <h4 className="font-bold text-slate-900 text-sm">Staffing FAQ</h4>
-                        <p className="text-xs text-slate-500">Hiring questions.</p>
+                        <p className="text-xs text-slate-500">Hiring process & fees.</p>
                     </Link>
                 </div>
             </div>

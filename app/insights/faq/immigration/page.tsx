@@ -5,6 +5,18 @@ import Link from 'next/link';
 export const metadata = {
     title: "Immigration & I-9 Compliance FAQ – First National Staffing",
     description: "FAQ on E-Verify, I-9 compliance, and work authorization for Georgia employers.",
+    alternates: {
+        canonical: '/insights/faq/immigration',
+    },
+    openGraph: {
+        title: "Immigration & I-9 Compliance FAQ – First National Staffing",
+        description: "FAQ on E-Verify, I-9 compliance, and work authorization for Georgia employers.",
+        url: 'https://firstnationalstaffing.com/insights/faq/immigration',
+        images: ['/insights/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 };
 
 export default function ImmigrationFAQPage() {

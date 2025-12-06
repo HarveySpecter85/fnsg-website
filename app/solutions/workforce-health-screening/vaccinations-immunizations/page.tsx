@@ -8,6 +8,18 @@ import { Syringe, ShieldCheck, HeartPulse } from 'lucide-react'
 export const metadata: Metadata = {
     title: "Vaccinations & Immunizations | Healthcare Compliance",
     description: "Clinical immunization services for healthcare and food safety. TB testing, Hep B titers, and flu vaccines.",
+    alternates: {
+        canonical: 'https://firstnationalstaffing.com/solutions/workforce-health-screening/vaccinations-immunizations',
+    },
+    openGraph: {
+        title: "Vaccinations & Immunizations | Healthcare Compliance",
+        description: "Clinical immunization services for healthcare and food safety. TB testing, Hep B titers, and flu vaccines.",
+        url: 'https://firstnationalstaffing.com/solutions/workforce-health-screening/vaccinations-immunizations',
+        images: ['/solutions/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 }
 
 export default function VaccinationsPage() {

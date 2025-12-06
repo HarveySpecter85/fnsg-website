@@ -9,6 +9,15 @@ export const metadata: Metadata = {
     alternates: {
         canonical: 'https://firstnationalstaffing.com/solutions/on-site-workforce-management-os',
     },
+    openGraph: {
+        title: "On-Site Workforce Management OS — Stabilize Your Operation With Embedded Intelligence",
+        description: "Embedded workforce management solution that stabilizes attendance, improves safety compliance, optimizes production floors, and provides real-time workforce intelligence via FNSG OS.",
+        url: 'https://firstnationalstaffing.com/solutions/on-site-workforce-management-os',
+        images: ['/solutions/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 };
 
 export default function OnSiteWorkforceManagementPage() {

@@ -8,6 +8,18 @@ import { TestTube, FlaskConical, CheckCircle2, AlertTriangle } from 'lucide-reac
 export const metadata: Metadata = {
     title: "Drug & Alcohol Screening Services | 5 to 12-Panel Testing",
     description: "Comprehensive drug testing services including 5, 10, and 12-panel screens. Rapid results via eCup/xCup technology.",
+    alternates: {
+        canonical: 'https://firstnationalstaffing.com/solutions/workforce-health-screening/drug-alcohol-testing',
+    },
+    openGraph: {
+        title: "Drug & Alcohol Screening Services | 5 to 12-Panel Testing",
+        description: "Comprehensive drug testing services including 5, 10, and 12-panel screens.",
+        url: 'https://firstnationalstaffing.com/solutions/workforce-health-screening/drug-alcohol-testing',
+        images: ['/solutions/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 }
 
 export default function DrugTestingPage() {

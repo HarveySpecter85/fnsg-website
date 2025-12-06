@@ -5,6 +5,18 @@ import Link from 'next/link';
 export const metadata = {
     title: "Duluth Staffing Pay Rates – First National Staffing",
     description: "Wage trends for Duluth's tech and manufacturing sectors. Skilled assembly, machine operation, and production pay.",
+    alternates: {
+        canonical: '/insights/pay-rates/duluth',
+    },
+    openGraph: {
+        title: "Duluth Staffing Pay Rates – First National Staffing",
+        description: "Wage trends for Duluth's tech and manufacturing sectors.",
+        url: 'https://firstnationalstaffing.com/insights/pay-rates/duluth',
+        images: ['/insights/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 };
 
 export default function DuluthPayPage() {

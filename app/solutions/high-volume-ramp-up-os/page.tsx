@@ -9,6 +9,15 @@ export const metadata: Metadata = {
     alternates: {
         canonical: 'https://firstnationalstaffing.com/solutions/high-volume-ramp-up-os',
     },
+    openGraph: {
+        title: "High-Volume Ramp-Up OS — Deploy 20–200 Workers in 24–72 Hours",
+        description: "Deploy 20–200 workers in 24–72 hours using FNSG Workforce Intelligence OS, combining prediction, on-site command, screening automation, and stability analysis for peak performance.",
+        url: 'https://firstnationalstaffing.com/solutions/high-volume-ramp-up-os',
+        images: ['/solutions/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 };
 
 export default function HighVolumeRampUpPage() {

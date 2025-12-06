@@ -9,6 +9,18 @@ import { Clock, ShieldCheck, FileCheck, PhoneCall, ArrowRight, CheckCircle2 } fr
 export const metadata: Metadata = {
     title: "Request Workforce | 24-72h Staffing Fulfillment Georgia",
     description: "Start your staffing order with First National Staffing Group. High-volume, W-2 industrial staffing with a 24-hour replacement guarantee.",
+    alternates: {
+        canonical: '/contact/request-workforce',
+    },
+    openGraph: {
+        title: "Request Workforce | 24-72h Staffing Fulfillment Georgia",
+        description: "Start your staffing order with First National Staffing Group. High-volume, W-2 industrial staffing.",
+        url: 'https://firstnationalstaffing.com/contact/request-workforce',
+        images: ['/contact/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'website',
+    },
 }
 
 export default function RequestWorkforcePage() {

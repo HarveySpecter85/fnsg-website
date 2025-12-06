@@ -9,6 +9,15 @@ export const metadata: Metadata = {
     alternates: {
         canonical: 'https://firstnationalstaffing.com/solutions/payroll-compliance-administration-os',
     },
+    openGraph: {
+        title: "Payroll & Compliance Administration OS — Reduce Risk, Automate Accuracy",
+        description: "Payroll & Compliance OS automates accuracy, reduces regulatory risk, centralizes documentation, and provides real-time payroll and compliance intelligence for workforce operations.",
+        url: 'https://firstnationalstaffing.com/solutions/payroll-compliance-administration-os',
+        images: ['/solutions/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 };
 
 export default function PayrollCompliancePage() {

@@ -9,6 +9,15 @@ export const metadata: Metadata = {
     alternates: {
         canonical: 'https://firstnationalstaffing.com/solutions/workforce-diagnostic-os',
     },
+    openGraph: {
+        title: "Workforce Diagnostic OS — Workforce Intelligence for Operational Leaders",
+        description: "Operational Workforce Diagnostic powered by FNSG OS to assess labor risk, predict attendance, benchmark pay, analyze turnover, and identify root causes impacting productivity and OSHA compliance.",
+        url: 'https://firstnationalstaffing.com/solutions/workforce-diagnostic-os',
+        images: ['/solutions/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 };
 
 export default function WorkforceDiagnosticOSPage() {

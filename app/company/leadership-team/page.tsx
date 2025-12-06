@@ -10,6 +10,18 @@ import { CompanyBreadcrumbs } from '@/app/components/navigation/CompanyBreadcrum
 export const metadata: Metadata = {
     title: "Leadership Team | First National Staffing Group",
     description: "Meet the executives driving FNSG's vision of enterprise-grade staffing and client-first compliance.",
+    alternates: {
+        canonical: '/company/leadership-team',
+    },
+    openGraph: {
+        title: "Leadership Team | First National Staffing Group",
+        description: "Meet the executives driving FNSG's vision of enterprise-grade staffing and client-first compliance.",
+        url: 'https://firstnationalstaffing.com/company/leadership-team',
+        images: ['/company/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 }
 
 export default function LeadershipTeamPage() {

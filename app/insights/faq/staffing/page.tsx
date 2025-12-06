@@ -5,6 +5,18 @@ import Link from 'next/link';
 export const metadata = {
     title: "Staffing Services FAQ – First National Staffing",
     description: "Questions about hiring temp staff, temp-to-perm conversion, and staffing agency fees.",
+    alternates: {
+        canonical: '/insights/faq/staffing',
+    },
+    openGraph: {
+        title: "Staffing Services FAQ – First National Staffing",
+        description: "Questions about hiring temp staff, temp-to-perm conversion, and staffing agency fees.",
+        url: 'https://firstnationalstaffing.com/insights/faq/staffing',
+        images: ['/insights/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 };
 
 export default function StaffingFAQPage() {
@@ -20,8 +32,7 @@ export default function StaffingFAQPage() {
                 <h1 className="text-4xl font-bold text-slate-900 mb-6">Staffing Services FAQ</h1>
 
                 <div className="mb-12">
-                    <EmptyState message="Loading Staffing FAQs..." />
-                    {/* // TODO: Connect Supabase query */}
+                    {/* // TODO: Replace static data with Supabase query when backend is ready */}
                     {/* // TODO: Add FAQ JSON-LD schema */}
                 </div>
 
@@ -32,7 +43,7 @@ export default function StaffingFAQPage() {
                     </Link>
                     <Link href="/insights/industry/warehouse" className="p-4 border border-slate-100 rounded-lg hover:border-blue-500 transition-colors">
                         <h4 className="font-bold text-slate-900 text-sm">Warehouse Staffing</h4>
-                        <p className="text-xs text-slate-500">Specifics.</p>
+                        <p className="text-xs text-slate-500">Logistics & distribution roles.</p>
                     </Link>
                 </div>
             </div>

@@ -4,6 +4,18 @@ import { Breadcrumbs } from '@/app/components/navigation/Breadcrumbs';
 export const metadata = {
     title: "Peak Season Deployment – Deployment Strategies | First National Staffing",
     description: "Scalable workforce solutions for Q4 peak season and seasonal demand surges.",
+    alternates: {
+        canonical: 'https://firstnationalstaffing.com/solutions/deployment-strategies/peak-season-deployment',
+    },
+    openGraph: {
+        title: "Peak Season Deployment – Deployment Strategies | First National Staffing",
+        description: "Scalable workforce solutions for Q4 peak season and seasonal demand surges.",
+        url: 'https://firstnationalstaffing.com/solutions/deployment-strategies/peak-season-deployment',
+        images: ['/solutions/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 };
 
 export default function PeakSeasonDeploymentPage() {

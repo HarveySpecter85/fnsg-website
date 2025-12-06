@@ -9,6 +9,15 @@ export const metadata: Metadata = {
     alternates: {
         canonical: 'https://firstnationalstaffing.com/solutions/peak-season-deployment-os',
     },
+    openGraph: {
+        title: "Peak Season Deployment OS — Predict, Prepare, and Execute",
+        description: "Peak Season Deployment OS helps companies execute high-demand seasons with predictive workforce intelligence, attendance forecasting, surge pay modeling, and on-site stabilization teams.",
+        url: 'https://firstnationalstaffing.com/solutions/peak-season-deployment-os',
+        images: ['/solutions/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 };
 
 export default function PeakSeasonDeploymentPage() {
