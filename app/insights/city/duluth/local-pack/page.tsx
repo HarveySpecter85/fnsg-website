@@ -1,6 +1,7 @@
 import React from 'react';
 import { Breadcrumbs, SEOBlock } from '@/app/components/blog/shared';
 import Link from 'next/link';
+import DemoLineChart from '@/app/components/charts/DemoLineChart';
 
 export const metadata = {
     title: "Duluth Local Workforce Snapshot – Reports & Insights",
@@ -71,12 +72,25 @@ export default function DuluthLocalPackPage() {
                     <div className="p-8 border border-slate-200 rounded-xl bg-slate-50">
                         <h3 className="text-xl font-bold text-slate-900 mb-4">Local Pay Rates</h3>
                         <p className="text-slate-500 mb-4">Current market rates for key positions.</p>
-                        <div className="h-32 bg-slate-200 rounded flex items-center justify-center text-slate-400 text-sm font-bold">Table Placeholder</div>
+                        <div className="overflow-x-auto">
+                            <table className="w-full text-left text-sm text-slate-600">
+                                <thead className="border-b border-slate-200">
+                                    <tr>
+                                        <th className="pb-2 font-semibold text-slate-900">Role</th>
+                                        <th className="pb-2 font-semibold text-slate-900">Avg Rate</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr className="border-b border-slate-100"><td className="py-2">Assembler</td><td className="py-2">$17.50</td></tr>
+                                    <tr className="border-b border-slate-100"><td className="py-2">CNC Op</td><td className="py-2">$24.00</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                     <div className="p-8 border border-slate-200 rounded-xl bg-slate-50">
                         <h3 className="text-xl font-bold text-slate-900 mb-4">Shift Attendance</h3>
                         <p className="text-slate-500 mb-4">Reliability trends by shift.</p>
-                        <div className="h-32 bg-slate-200 rounded flex items-center justify-center text-slate-400 text-sm font-bold">Chart Placeholder</div>
+                        <div className="h-64 mt-4 bg-white border border-slate-200 rounded-lg p-2"><DemoLineChart /></div>
                     </div>
                 </div>
 

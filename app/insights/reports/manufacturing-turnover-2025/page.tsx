@@ -2,6 +2,7 @@ import React from 'react';
 import { Breadcrumbs } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import { Metadata } from 'next';
+import DemoLineChart from '@/app/components/charts/DemoLineChart';
 
 export const metadata: Metadata = {
     title: "Manufacturing Turnover & Stability Report 2025 | FNSG",
@@ -254,19 +255,28 @@ export default function ManufacturingTurnoverReport() {
                     <div className="chart-card bg-white p-6 rounded-xl border border-slate-200 shadow-sm h-72 flex flex-col">
                         <span className="text-slate-500 text-sm font-bold uppercase tracking-wider mb-4">KPI Index Analysis</span>
                         <div className="flex-1 bg-slate-50 rounded border border-dashed border-slate-200 flex items-center justify-center text-slate-400 text-xs">
-                            [Bar Chart Placeholder]
+                            <div className="mt-4 border border-slate-200 rounded-lg p-4 bg-white">
+                                <h4 className="text-xs font-bold text-slate-500 mb-2 uppercase tracking-wider">Turnover Rate Analysis</h4>
+                                <DemoLineChart />
+                            </div>
                         </div>
                     </div>
                     <div className="chart-card bg-white p-6 rounded-xl border border-slate-200 shadow-sm h-72 flex flex-col">
                         <span className="text-slate-500 text-sm font-bold uppercase tracking-wider mb-4">GA County Metrics</span>
                         <div className="flex-1 bg-slate-50 rounded border border-dashed border-slate-200 flex items-center justify-center text-slate-400 text-xs">
-                            [Map Graph Placeholder]
+                            <div className="mt-4 border border-slate-200 rounded-lg p-4 bg-white">
+                                <h4 className="text-xs font-bold text-slate-500 mb-2 uppercase tracking-wider">Regional Turnover Map</h4>
+                                <DemoLineChart />
+                            </div>
                         </div>
                     </div>
                     <div className="chart-card bg-white p-6 rounded-xl border border-slate-200 shadow-sm h-72 flex flex-col">
                         <span className="text-slate-500 text-sm font-bold uppercase tracking-wider mb-4">Turnover vs Wage Trend</span>
                         <div className="flex-1 bg-slate-50 rounded border border-dashed border-slate-200 flex items-center justify-center text-slate-400 text-xs">
-                            [Scatter Plot Placeholder]
+                            <div className="mt-4 border border-slate-200 rounded-lg p-4 bg-white">
+                                <h4 className="text-xs font-bold text-slate-500 mb-2 uppercase tracking-wider">Retention vs. Pay</h4>
+                                <DemoLineChart />
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { SEOBlock } from '@/app/components/blog/shared';
 import { Breadcrumbs } from '@/app/components/navigation/Breadcrumbs';
 import { SeoSidebar } from '@/app/components/insights/SeoSidebar';
+import DemoLineChart from '@/app/components/charts/DemoLineChart';
 
 export const metadata = {
     title: "Labor Market Trends – Data Insights | First National Staffing",
@@ -81,8 +82,8 @@ export default function LaborMarketTrendsPage() {
                                         Machine Operator: $20.00 - $24.00/hr
                                     </li>
                                 </ul>
-                                <div className="h-48 bg-slate-200 rounded flex items-center justify-center text-slate-400 font-bold uppercase tracking-wider">
-                                    Chart Placeholder
+                                <div className="h-64 bg-slate-50 border border-slate-200 rounded-lg p-2">
+                                    <DemoLineChart />
                                 </div>
                             </div>
                             <div className="p-8 border border-slate-200 rounded-xl bg-slate-50">
@@ -104,8 +105,8 @@ export default function LaborMarketTrendsPage() {
                                         South Fulton: High Supply / Moderate Demand
                                     </li>
                                 </ul>
-                                <div className="h-48 bg-slate-200 rounded flex items-center justify-center text-slate-400 font-bold uppercase tracking-wider">
-                                    Chart Placeholder
+                                <div className="h-64 bg-slate-50 border border-slate-200 rounded-lg p-2">
+                                    <DemoLineChart />
                                 </div>
                             </div>
                         </div>

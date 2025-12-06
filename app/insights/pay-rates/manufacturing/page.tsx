@@ -32,22 +32,33 @@ export default function ManufacturingPayPage() {
                 <h1 className="text-4xl font-bold text-slate-900 mb-6">Manufacturing Pay Rate Trends</h1>
 
                 <div className="mb-12 p-6 border border-slate-200 rounded-xl bg-slate-50">
-                    <h3 className="font-bold text-slate-900 mb-4">Average Hourly Rates (Placeholder)</h3>
-                    <div className="space-y-4">
-                        <div className="flex justify-between items-center border-b border-slate-200 pb-2">
-                            <span className="text-slate-600">Machine Operator</span>
-                            <span className="font-mono font-bold text-slate-900">$17.00 - $21.00</span>
-                        </div>
-                        <div className="flex justify-between items-center border-b border-slate-200 pb-2">
-                            <span className="text-slate-600">Assembler</span>
-                            <span className="font-mono font-bold text-slate-900">$15.50 - $17.50</span>
-                        </div>
-                        <div className="flex justify-between items-center">
-                            <span className="text-slate-600">Welder (MIG/TIG)</span>
-                            <span className="font-mono font-bold text-slate-900">$22.00 - $28.00</span>
-                        </div>
+                    <h3 className="font-bold text-slate-900 mb-4">2025 Pay Rate Snapshot – Manufacturing</h3>
+                    {/* // TODO: Replace payRates with live Supabase pay-rate tables once backend sync is ready. */}
+                    <div className="overflow-x-auto">
+                        <table className="w-full text-left text-sm text-slate-600">
+                            <thead className="border-b border-slate-200">
+                                <tr>
+                                    <th className="pb-2 font-semibold text-slate-900">Role</th>
+                                    <th className="pb-2 font-semibold text-slate-900">Avg</th>
+                                    <th className="pb-2 font-semibold text-slate-900">Range</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {[
+                                    { role: "Machine Operator", avg: 19.50, range: "18.00 – 21.00" },
+                                    { role: "Assembly Tech", avg: 17.25, range: "16.50 – 18.00" },
+                                    { role: "Quality Inspector", avg: 20.00, range: "19.00 – 22.00" },
+                                    { role: "Maintenance Tech", avg: 28.00, range: "25.00 – 32.00" }
+                                ].map((rate, i) => (
+                                    <tr key={i} className="border-b border-slate-100 last:border-0 hover:bg-slate-100 transition-colors">
+                                        <td className="py-2 font-medium text-slate-900">{rate.role}</td>
+                                        <td className="py-2">${rate.avg.toFixed(2)}</td>
+                                        <td className="py-2 text-slate-500">{rate.range}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
                     </div>
-                    <p className="text-xs text-slate-400 mt-4 italic">// TODO: Load dynamic pay data from OS</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 border-t border-slate-200 pt-8">

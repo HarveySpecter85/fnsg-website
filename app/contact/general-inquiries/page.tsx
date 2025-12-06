@@ -245,9 +245,9 @@ export default function GeneralInquiriesPage() {
                                     <p className="text-slate-700 italic mb-4">&quot;FNSG helped us ramp up for peak season with zero headaches. Their on-site team is fantastic.&quot;</p>
                                     <p className="text-sm font-bold text-brand-navy">- Mike T., Logistics Manager</p>
                                 </div>
-                                <a href="#" className="inline-block text-brand-primary font-semibold hover:underline">
-                                    Read more on Google Business &rarr;
-                                </a>
+                                <span className="inline-block text-brand-primary/50 font-semibold cursor-not-allowed">
+                                    Read more on Google Business (Coming Soon)
+                                </span>
                             </div>
                         </FadeIn>
                     </div>

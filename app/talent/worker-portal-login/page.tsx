@@ -40,9 +40,9 @@ export default function WorkerPortalPage() {
                             </div>
                             <h2 className="text-2xl font-bold text-brand-navy mb-3">Webcenter Portal</h2>
                             <p className="text-slate-600 mb-8">View your weekly paystubs, access W-2s, and check your timecard history.</p>
-                            <a href="#" className="inline-block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl transition-colors">
-                                Login to Webcenter
-                            </a>
+                            <span className="inline-block w-full bg-blue-600/50 text-white font-bold py-4 rounded-xl cursor-not-allowed">
+                                Login to Webcenter (Coming Soon)
+                            </span>
                         </FadeIn>
 
                         <FadeIn delay={0.2} className="bg-white p-8 rounded-2xl shadow-xl border border-slate-100 text-center hover:border-green-500 transition-colors group">
@@ -51,9 +51,9 @@ export default function WorkerPortalPage() {
                             </div>
                             <h2 className="text-2xl font-bold text-brand-navy mb-3">Onboarding Hub</h2>
                             <p className="text-slate-600 mb-8">Complete your new hire paperwork, I-9 verification, and safety acknowledgments.</p>
-                            <a href="#" className="inline-block w-full bg-brand-navy hover:bg-slate-800 text-white font-bold py-4 rounded-xl transition-colors">
-                                Complete Onboarding
-                            </a>
+                            <span className="inline-block w-full bg-brand-navy/50 text-white font-bold py-4 rounded-xl cursor-not-allowed">
+                                Complete Onboarding (Coming Soon)
+                            </span>
                         </FadeIn>
                     </div>
                 </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Breadcrumbs } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import { Metadata } from 'next';
+import DemoLineChart from '@/app/components/charts/DemoLineChart';
 
 export const metadata: Metadata = {
     title: "Workforce Intelligence Reports — Georgia 2025 | FNSG",
@@ -176,17 +177,17 @@ export default function ReportsHubPage() {
                         {/* Placeholder Chart 1 */}
                         <div className="chart-card bg-slate-50 border border-slate-200 rounded-lg p-4 h-64 flex items-center justify-center relative">
                             <div className="absolute top-4 left-4 font-bold text-sm text-slate-700">NCNS vs. Seasonality</div>
-                            <div className="text-slate-400 text-sm italic">[Trend Line Chart Placeholder]</div>
+                            <div className="border border-slate-200 rounded p-2 bg-slate-50"><DemoLineChart /></div>
                         </div>
                         {/* Placeholder Chart 2 */}
                         <div className="chart-card bg-slate-50 border border-slate-200 rounded-lg p-4 h-64 flex items-center justify-center relative">
                             <div className="absolute top-4 left-4 font-bold text-sm text-slate-700">Wage Pressure vs. Turnover</div>
-                            <div className="text-slate-400 text-sm italic">[Scatter Plot Chart Placeholder]</div>
+                            <div className="border border-slate-200 rounded p-2 bg-slate-50"><DemoLineChart /></div>
                         </div>
                         {/* Placeholder Chart 3 */}
                         <div className="chart-card bg-slate-50 border border-slate-200 rounded-lg p-4 h-64 flex items-center justify-center relative">
                             <div className="absolute top-4 left-4 font-bold text-sm text-slate-700">Shift Reliability Score</div>
-                            <div className="text-slate-400 text-sm italic">[Gauge Chart Placeholder]</div>
+                            <div className="border border-slate-200 rounded p-2 bg-slate-50"><DemoLineChart /></div>
                         </div>
                     </div>
                 </section>

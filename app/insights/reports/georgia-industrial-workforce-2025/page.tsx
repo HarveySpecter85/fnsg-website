@@ -2,6 +2,7 @@ import React from 'react';
 import { Breadcrumbs } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import { Metadata } from 'next';
+import DemoLineChart from '@/app/components/charts/DemoLineChart';
 
 export const metadata: Metadata = {
     title: "Georgia Industrial Workforce Benchmark Report 2025 | FNSG",
@@ -45,8 +46,8 @@ const MetricCard = ({ label, value, trend, color = "blue", icon }: { label: stri
         </div>
         {trend && (
             <div className={`mt-2 text-xs font-bold px-2 py-1 rounded inline-block w-max ${trend === 'up' ? 'bg-red-50 text-red-600' :
-                    trend === 'down' ? 'bg-green-50 text-green-600' :
-                        'bg-slate-100 text-slate-600'
+                trend === 'down' ? 'bg-green-50 text-green-600' :
+                    'bg-slate-100 text-slate-600'
                 }`}>
                 {trend === 'up' ? '▲ Trending Up' : trend === 'down' ? '▼ Trending Down' : '● Stable'}
             </div>
@@ -140,19 +141,28 @@ export default function GeorgiaIndustrialReport() {
                     <div className="chart-card bg-white p-6 rounded-xl border border-slate-200 shadow-sm h-72 flex flex-col">
                         <span className="text-slate-500 text-sm font-bold uppercase tracking-wider mb-4">Turnover vs Wage Correlation</span>
                         <div className="flex-1 bg-slate-50 rounded border border-dashed border-slate-200 flex items-center justify-center text-slate-400 text-xs">
-                            [Interactive Scatter Plot Placeholder]
+                            <div className="mt-4 border border-slate-200 rounded-lg p-4 bg-white">
+                                <h4 className="text-xs font-bold text-slate-500 mb-2 uppercase tracking-wider">Interactive Scatter Plot</h4>
+                                <DemoLineChart />
+                            </div>
                         </div>
                     </div>
                     <div className="chart-card bg-white p-6 rounded-xl border border-slate-200 shadow-sm h-72 flex flex-col">
                         <span className="text-slate-500 text-sm font-bold uppercase tracking-wider mb-4">County Composite Score</span>
                         <div className="flex-1 bg-slate-50 rounded border border-dashed border-slate-200 flex items-center justify-center text-slate-400 text-xs">
-                            [Bar Graph Placeholder]
+                            <div className="mt-4 border border-slate-200 rounded-lg p-4 bg-white">
+                                <h4 className="text-xs font-bold text-slate-500 mb-2 uppercase tracking-wider">Sector Performance</h4>
+                                <DemoLineChart />
+                            </div>
                         </div>
                     </div>
                     <div className="chart-card bg-white p-6 rounded-xl border border-slate-200 shadow-sm h-72 flex flex-col">
                         <span className="text-slate-500 text-sm font-bold uppercase tracking-wider mb-4">Labor Demand Trend (12 Months)</span>
                         <div className="flex-1 bg-slate-50 rounded border border-dashed border-slate-200 flex items-center justify-center text-slate-400 text-xs">
-                            [Trend Line Chart Placeholder]
+                            <div className="mt-4 border border-slate-200 rounded-lg p-4 bg-white">
+                                <h4 className="text-xs font-bold text-slate-500 mb-2 uppercase tracking-wider">Statewide Labor Trend</h4>
+                                <DemoLineChart />
+                            </div>
                         </div>
                     </div>
                 </div>
