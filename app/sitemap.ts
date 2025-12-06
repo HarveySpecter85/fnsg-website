@@ -65,7 +65,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/insights/city/south-fulton/3rd-shift-analysis',
         '/insights/city/south-fulton/airport-logistics-staffing',
         '/insights/city/south-fulton/local-pack',
+        '/insights/city/south-fulton/local-pack',
         '/insights/city/south-fulton/recycling-staffing-crisis',
+        // Solutions
+        '/solutions/workforce-diagnostic-os',
+        '/solutions/on-site-workforce-management-os',
+        '/solutions/workforce-health-screening-os',
+        '/solutions/direct-hire-recruitment-os',
+        '/solutions/high-volume-ramp-up-os',
+        '/solutions/peak-season-deployment-os',
+        '/solutions/payroll-compliance-administration-os',
     ];
 
     return routes.map((route) => ({

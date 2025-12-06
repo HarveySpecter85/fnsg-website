@@ -50,21 +50,21 @@ export const COMPANY_METRICS = {
 export const LEADERSHIP_TEAM = [
     {
         name: "Harvey Rodelo",
-        role: "President",
+        role: "Business Development & Operations",
         bio: "Strategic architect focused on enterprise scalability and operational excellence. Champion of 'Client-First' compliance structures.",
         linkedin: "https://www.linkedin.com/in/harveyrodelo/",
         image: "/images/team/harvey-rodelo.jpg" // Placeholder
     },
     {
         name: "Daniel Celis",
-        role: "Business Development Executive",
+        role: "Finance Director",
         bio: "Primary architect for On-Site Management programs. Specializes in high-volume labor solutions for logistics and manufacturing.",
         linkedin: "https://www.linkedin.com/in/daniel-celis-a925053a/",
         image: "/images/team/daniel-celis.jpg" // Placeholder
     },
     {
         name: "Nancy Gallegos",
-        role: "Operations & Recruiting Leadership",
+        role: "CEO & Recruiting Leadership",
         bio: "Expert in bilingual workforce deployment and community relations. Ensures a steady pipeline of qualified talent.",
         linkedin: "https://www.linkedin.com/in/nancy-gallegos-92281616/",
         image: "/images/team/nancy-gallegos.jpg" // Placeholder
