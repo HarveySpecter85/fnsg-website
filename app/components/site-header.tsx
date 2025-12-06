@@ -13,9 +13,9 @@ function cn(...inputs: ClassValue[]) {
 const navigation = {
     solutions: {
         outcomeBased: [
-            { title: 'Workforce Health Screening', href: '/solutions/workforce-health-screening', description: 'Drug testing, physicals, and immunizations.' },
-            { title: 'On-Site Management', href: '/solutions/on-site-workforce-management', description: 'Embedded performance teams.' },
-            { title: 'Payroll & Compliance', href: '/solutions/payroll-compliance-administration', description: 'EOR services and tax handling.' },
+            { title: 'Workforce Health Screening', href: '/solutions/workforce-health-screening-os', description: 'Drug testing, physicals, and immunizations.' },
+            { title: 'On-Site Management', href: '/solutions/on-site-workforce-management-os', description: 'Embedded performance teams.' },
+            { title: 'Payroll & Compliance', href: '/solutions/payroll-compliance-administration-os', description: 'EOR services and tax handling.' },
             { title: 'Direct Hire', href: '/solutions/direct-hire-recruitment', description: 'Executive and technical search.' },
             { title: 'Farm Labor Contracting', href: '/solutions/farm-labor-contracting', description: 'Licensed agricultural staffing.' },
         ],
@@ -42,8 +42,8 @@ const navigation = {
         { title: 'Safety Training Protocols', href: '/risk-compliance/safety-training-protocols' },
     ],
     dataInsights: [
-        { title: 'Workforce KPIs', href: '/insights/kpis/' },
-        { title: 'Labor Market Trends', href: '/insights/labor-market/' },
+        { title: 'Workforce KPIs', href: '/insights/kpis' },
+        { title: 'Labor Market Trends', href: '/insights/labor-market' },
 
         { title: 'GA Industrial Workforce 2025', href: '/insights/reports/georgia-industrial-workforce-2025' },
         { title: 'Warehouse Forecast 2025', href: '/insights/reports/warehouse-logistics-forecast-2025' },
@@ -54,16 +54,16 @@ const navigation = {
         { title: 'Industry Deep Dives', href: '/insights/industry/' },
     ],
     company: [
-        { title: 'Performance Metrics', href: '/company/performance-metrics/' },
-        { title: 'Leadership Team', href: '/company/leadership-team/' },
-        { title: 'Our Story', href: '/company/our-story/' },
-        { title: 'Press & Media', href: '/company/press-media/' },
-        { title: 'Blog', href: '/company/blog/' },
+        { title: 'Performance Metrics', href: '/company/performance-metrics' },
+        { title: 'Leadership Team', href: '/company/leadership-team' },
+        { title: 'Our Story', href: '/company/our-story' },
+        { title: 'Press & Media', href: '/company/press-media' },
+        { title: 'Blog', href: '/company/blog' },
     ],
     locations: [
         { title: 'Atlanta Staffing Agency', href: '/insights/city/atlanta-staffing-agency' },
         { title: 'Fulton County Employment', href: '/insights/city/fulton-county-employment-services' },
-        { title: 'Gwinnett County Staffing', href: '/insights/city/gwinnett-county-staffing-agency' },
+
         { title: 'DeKalb County Staffing', href: '/insights/city/dekalb-county-staffing' },
         { title: 'Clayton County Staffing', href: '/insights/city/clayton-county-staffing' },
         { title: 'Cobb County Workforce', href: '/insights/city/cobb-county-workforce-solutions' },
