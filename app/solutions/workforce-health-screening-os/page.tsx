@@ -2,6 +2,8 @@ import React from 'react';
 import { Breadcrumbs } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import { Metadata } from 'next';
+import ScreeningDashboardPreview from "@/app/components/screens/ScreeningDashboardPreview";
+import ScreeningOSFinalCTA from "@/app/components/cta/ScreeningOSFinalCTA";
 
 export const metadata: Metadata = {
     title: "Workforce Health Screening OS — Reduce Risk, Accelerate Hiring, and Improve Workforce Readiness",
@@ -119,9 +121,7 @@ export default function WorkforceHealthScreeningPage() {
 
                 {/* Visual Preview Placeholder */}
                 <div className="py-8">
-                    <div className="os-visual-preview bg-slate-200 h-64 rounded-xl flex items-center justify-center border-2 border-dashed border-slate-300">
-                        <p className="text-slate-500 font-medium">Real-Time Screening Dashboard Preview</p>
-                    </div>
+                    <ScreeningDashboardPreview />
                 </div>
 
                 {/* H2 - How FNSG OS Solves It (Modules Grid) */}
@@ -274,26 +274,7 @@ export default function WorkforceHealthScreeningPage() {
                 </section>
 
                 {/* CTA Final */}
-                <div className="mt-16 p-10 bg-slate-900 rounded-2xl text-center">
-                    <h2 className="text-3xl font-bold text-white mb-6">Ready to Accelerate Your Hiring?</h2>
-                    <p className="text-slate-300 mb-10 max-w-2xl mx-auto text-lg">
-                        Stop letting screening delays kill your production momentum. Get the data-driven speed you need.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                        <Link
-                            href="/contact"
-                            className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-bold rounded-lg text-slate-900 bg-white hover:bg-slate-50 transition-all transform hover:scale-105"
-                        >
-                            Request a Health Screening OS Strategy Session
-                        </Link>
-                        <Link
-                            href="/contact"
-                            className="inline-flex items-center justify-center px-8 py-4 border border-white text-lg font-bold rounded-lg text-white hover:bg-slate-800 transition-all"
-                        >
-                            Download the Screening Pipeline Efficiency Brief
-                        </Link>
-                    </div>
-                </div>
+                <ScreeningOSFinalCTA />
             </div>
         </main>
     );
