@@ -170,24 +170,80 @@ export default function OnSiteWorkforceManagementPage() {
                     </div>
                 </section>
 
-                {/* H2 - OS Modules Used in This Solution (Grid Layout) */}
+                {/* H2 - Integrated Workforce Training & Operational Support Framework */}
                 <section className="py-12">
-                    <h2 className="text-3xl font-bold text-slate-900 mb-10">OS Modules Used in This Solution</h2>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        {[
-                            "Attendance OS",
-                            "Pay Intelligence OS",
-                            "Risk & Safety OS",
-                            "Workforce Diagnostic OS",
-                            "Skill Match Engine",
-                            "Shift Stability Forecast",
-                            "Performance Tracking OS",
-                            "Compliance OS"
-                        ].map((module, idx) => (
-                            <div key={idx} className="bg-slate-900 text-white p-4 rounded-lg text-center font-medium shadow-lg flex items-center justify-center h-24 border border-slate-700">
-                                {module}
-                            </div>
-                        ))}
+                    <h2 className="text-3xl font-bold text-slate-900 mb-4">Integrated Workforce Training & Operational Support Framework</h2>
+                    <p className="text-lg text-slate-700 mb-10 max-w-4xl">
+                        A high-performance workforce requires more than supervision. It requires the integration of Training Excellence and Operational Support. This framework unites skill development with on-floor execution to create a self-reinforcing cycle of performance.
+                    </p>
+
+                    {/* Row 1: The Dual Challenge */}
+                    <h3 className="text-xl font-bold text-slate-900 mb-4">The Dual Challenge</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                        <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                            <h4 className="text-lg font-bold text-blue-600 mb-3">Build Employee Capability</h4>
+                            <ul className="space-y-2 text-slate-600">
+                                <li className="flex items-start"><span className="text-blue-400 mr-2">•</span> Practical skill development</li>
+                                <li className="flex items-start"><span className="text-blue-400 mr-2">•</span> On-site workforce training</li>
+                                <li className="flex items-start"><span className="text-blue-400 mr-2">•</span> Developing capable, adaptive employees</li>
+                                <li className="flex items-start"><span className="text-blue-400 mr-2">•</span> Fostering engagement and readiness</li>
+                            </ul>
+                        </div>
+                        <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                            <h4 className="text-lg font-bold text-blue-600 mb-3">Maintain Operational Excellence</h4>
+                            <ul className="space-y-2 text-slate-600">
+                                <li className="flex items-start"><span className="text-blue-400 mr-2">•</span> Streamlined execution</li>
+                                <li className="flex items-start"><span className="text-blue-400 mr-2">•</span> Strong coordination and structure</li>
+                                <li className="flex items-start"><span className="text-blue-400 mr-2">•</span> Reliable workflow and process discipline</li>
+                                <li className="flex items-start"><span className="text-blue-400 mr-2">•</span> Ensuring consistent daily performance</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    {/* Row 2: The Two Strategic Pillars */}
+                    <h3 className="text-xl font-bold text-slate-900 mb-4">The Two Strategic Pillars</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                        <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                            <h4 className="text-lg font-bold text-slate-900 mb-3">Pillar I – Training Excellence</h4>
+                            <ul className="space-y-2 text-slate-600">
+                                <li className="flex items-start"><span className="text-green-500 mr-2">✔</span> On-site workforce training</li>
+                                <li className="flex items-start"><span className="text-green-500 mr-2">✔</span> Practical skill development</li>
+                                <li className="flex items-start"><span className="text-green-500 mr-2">✔</span> Building capable employees</li>
+                                <li className="flex items-start"><span className="text-green-500 mr-2">✔</span> Increasing engagement</li>
+                            </ul>
+                        </div>
+                        <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                            <h4 className="text-lg font-bold text-slate-900 mb-3">Pillar II – Robust Operational Support</h4>
+                            <ul className="space-y-2 text-slate-600">
+                                <li className="flex items-start"><span className="text-green-500 mr-2">✔</span> Efficient, streamlined operations</li>
+                                <li className="flex items-start"><span className="text-green-500 mr-2">✔</span> Coordinated execution</li>
+                                <li className="flex items-start"><span className="text-green-500 mr-2">✔</span> Supportive infrastructure</li>
+                                <li className="flex items-start"><span className="text-green-500 mr-2">✔</span> Maintaining high performance</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    {/* Row 3: The Strategic Outcomes */}
+                    <h3 className="text-xl font-bold text-slate-900 mb-4">The Strategic Outcomes</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                            <h4 className="text-lg font-bold text-slate-900 mb-3">Sustained Growth</h4>
+                            <p className="text-sm text-slate-600 mb-2">Adaptable workforce ready for new technologies</p>
+                            <p className="text-sm text-slate-600 mb-2">Scalable operations without sacrificing quality</p>
+                            <p className="text-sm text-slate-600">Capturing opportunities through capability + execution</p>
+                        </div>
+                        <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                            <h4 className="text-lg font-bold text-slate-900 mb-3">Improved Performance</h4>
+                            <p className="text-sm text-slate-600 mb-2">Higher quality output and fewer errors</p>
+                            <p className="text-sm text-slate-600 mb-2">Elimination of bottlenecks</p>
+                            <p className="text-sm text-slate-600">Stronger productivity indicators</p>
+                        </div>
+                        <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                            <h4 className="text-lg font-bold text-slate-900 mb-3">Stronger Employee Loyalty</h4>
+                            <p className="text-sm text-slate-600 mb-2">Training creates growth pathways</p>
+                            <p className="text-sm text-slate-600 mb-2">Operational support reduces frustration</p>
+                            <p className="text-sm text-slate-600">Dual investment leads to higher retention</p>
+                        </div>
                     </div>
                 </section>
 
