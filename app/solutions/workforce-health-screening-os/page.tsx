@@ -166,6 +166,16 @@ export default function WorkforceHealthScreeningPage() {
                     </div>
                 </section>
 
+                <div className="w-full mt-10 mb-14 flex justify-center">
+                    <video
+                        controls
+                        className="rounded-xl shadow-lg w-full max-w-4xl border border-gray-200"
+                    >
+                        <source src="https://res.cloudinary.com/dr7fov4v4/video/upload/v1765305901/Video_agqhqe.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
                 {/* Task 3: Full Screening Services Catalog */}
                 <ScreeningServicesCatalog />
 
@@ -255,12 +265,26 @@ export default function WorkforceHealthScreeningPage() {
                     <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
                     <div className="space-y-4 max-w-3xl mx-auto">
                         {[
-                            { q: "What types of screenings are supported?", a: "We support physicals, drug screens, vaccination verification, and specialized medical clearances." },
-                            { q: "How fast can workers be medically cleared?", a: "Our Rapid Clearance Processing typically accelerates the process by 35-50% compared to traditional vendors." },
-                            { q: "Does this work for multi-site hiring?", a: "Yes, our team provides centralized coordination across unlimited locations." },
-                            { q: "Can clearance delays really reduce production output?", a: "Absolutely. Every delayed worker is a vacant station. We close that gap." },
-                            { q: "Does FNSG manage medical documentation?", a: "Yes, securely and in full compliance with HIPAA and employment laws." },
-                            { q: "Is this integrated with On-Site services?", a: "Seamlessly. Once cleared, workers flow directly into the On-Site management system." }
+                            { q: "What is included in workforce health screening services?", a: "Workforce screening includes occupational health exams, drug and alcohol testing, and background checks. Each service confirms a different part of a candidate’s fitness, safety, and compliance before entering the workplace." },
+                            { q: "Why do companies need pre-employment medical screening?", a: "Pre-employment exams ensure candidates can safely perform job duties, reducing injury, workers’ comp claims, and production delays." },
+                            { q: "What does a typical pre-employment physical exam include?", a: "These exams evaluate medical history, vital signs, musculoskeletal function, vision, hearing, and may include job-specific physical tests or respirator fit testing." },
+                            { q: "What are job-specific occupational health screenings?", a: "Depending on the role, candidates may need DOT physicals, respirator fit tests, pulmonary function tests, titers, TB testing, or X-rays." },
+                            { q: "What is the difference between pre-employment screening and health surveillance?", a: "Pre-employment screening evaluates new hires. Health surveillance is ongoing monitoring for employees exposed to workplace hazards such as noise, chemicals, vibration, or airborne contaminants." },
+                            { q: "How does a drug test work?", a: "A drug test includes sample collection, an initial screen, MRO confirmation for positives, and final results typically returned within 1–3 days." },
+                            { q: "What types of drug testing programs exist?", a: "Employers may use pre-employment, random, reasonable suspicion, post-accident, annual, or return-to-duty testing depending on role and regulatory needs." },
+                            { q: "How long do background checks take?", a: "Most background checks take 2–7 business days, though deeper county or federal searches can take longer." },
+                            { q: "What is included in a background check?", a: "A background check may include identity verification, SSN trace, criminal searches, sex offender checks, employment and education verification, and optional MVR or credit checks." },
+                            { q: "Can candidates dispute inaccurate background check results?", a: "Yes. Under FCRA, applicants may dispute any inaccurate information. The screening provider must reinvestigate at no cost." },
+                            { q: "What laws govern workforce screening?", a: "Screenings must comply with FCRA (background checks), HIPAA (health info), ADA (accommodations), DOT rules, OSHA requirements, and state drug testing laws." },
+                            { q: "How long does the entire screening process take?", a: "Background checks: 2–7 days. Drug tests: 1–3 days. Physical exams: 1–2 weeks. FNSG accelerates timelines by coordinating each step and following up with candidates." },
+                            { q: "How does FNSG manage documentation and compliance?", a: "We store all screening documents in an audit-ready structure including medical exam results, drug test reports, fit test certificates, titers, and background screening data." },
+                            { q: "What information must candidates provide for screenings?", a: "Legal name, SSN (for authorization), DOB, 7-year address history, photo ID, medical history, and consent forms." },
+                            { q: "Where are screenings performed?", a: "At occupational health clinics, urgent care centers, LabCorp/eScreen sites, mobile units, or onsite employer facilities depending on the program." },
+                            { q: "Why do screening delays impact operations so much?", a: "Every uncleared worker = a vacant station, slowed production, overtime for others, and uncertainty for supervisors." },
+                            { q: "What does “Ready to Work” mean?", a: "The candidate has completed all screenings, passed all required tests, and all documentation has been verified as compliant." },
+                            { q: "Can FNSG create customized screening panels per client?", a: "Yes. Panels can be customized by job role, exposure risk, client requirements, or industry regulations." },
+                            { q: "Do candidates receive copies of their results?", a: "Yes. Workers may request copies of medical records, drug test results, fit test certifications, or X-ray reports under HIPAA." },
+                            { q: "What happens if a candidate fails a test?", a: "Drug test positives go through MRO review; background issues are evaluated by the employer; physical exam findings may require accommodations or disqualification based on safety risk." }
                         ].map((faq, idx) => (
                             <div key={idx} className="border border-slate-200 rounded-lg p-4">
                                 <h3 className="font-bold text-slate-900 text-lg mb-2">{faq.q}</h3>
