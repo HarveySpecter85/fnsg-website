@@ -299,13 +299,13 @@ export default function OnSiteWorkforceManagementPage() {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-6 justify-center">
                         <Link
-                            href="/contact"
+                            href="/contact/general-inquiries"
                             className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-bold rounded-lg text-slate-900 bg-white hover:bg-slate-50 transition-all transform hover:scale-105"
                         >
                             Request an On-Site Workforce OS Strategy Session
                         </Link>
                         <Link
-                            href="/contact"
+                            href="/contact/general-inquiries"
                             className="inline-flex items-center justify-center px-8 py-4 border border-white text-lg font-bold rounded-lg text-white hover:bg-slate-800 transition-all"
                         >
                             Download the On-Site Workforce OS Implementation Guide

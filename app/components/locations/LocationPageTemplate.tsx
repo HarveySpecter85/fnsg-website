@@ -41,7 +41,7 @@ export function LocationPageTemplate({ city, description, stats, children }: Loc
                             <p className="text-slate-600 mb-8">
                                 Contact our local team today for immediate workforce support.
                             </p>
-                            <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-blue-600 rounded-full hover:bg-blue-700">
+                            <Link href="/contact/general-inquiries" className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-blue-600 rounded-full hover:bg-blue-700">
                                 Contact {city} Office <ArrowRight className="w-5 h-5 ml-2" />
                             </Link>
                         </div>

@@ -325,7 +325,7 @@ export default function GainesvilleHub() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/contact" className="text-blue-600 hover:underline flex items-center gap-2">
+                                    <Link href="/contact/general-inquiries" className="text-blue-600 hover:underline flex items-center gap-2">
                                         <span>📍</span> Find Our Office
                                     </Link>
                                 </li>

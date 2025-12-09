@@ -352,13 +352,13 @@ export default function RecyclingDeepDivePage() {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Link
-                                href="/contact"
+                                href="/contact/general-inquiries"
                                 className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-slate-900 bg-white hover:bg-slate-50 transition-colors"
                             >
                                 Download the Recycling Workforce Intelligence Report 2025
                             </Link>
                             <Link
-                                href="/contact"
+                                href="/contact/general-inquiries"
                                 className="inline-flex items-center justify-center px-6 py-3 border border-white text-base font-medium rounded-md text-white hover:bg-slate-800 transition-colors"
                             >
                                 Request a Recycling Operations OS Strategy Session

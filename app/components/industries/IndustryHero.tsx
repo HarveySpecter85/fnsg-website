@@ -34,7 +34,7 @@ export function IndustryHero({ title, subtitle, sector, bgImage }: IndustryHeroP
                     </TextReveal>
                     <FadeIn delay={0.5}>
                         <MagneticButton>
-                            <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-blue-600 rounded-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600">
+                            <Link href="/contact/general-inquiries" className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-blue-600 rounded-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600">
                                 Request Workforce
                             </Link>
                         </MagneticButton>

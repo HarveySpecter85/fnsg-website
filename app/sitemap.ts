@@ -31,6 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/insights/city/norcross',
         '/insights/city/savannah-logistics-staffing',
         '/insights/city/south-fulton',
+        '/insights/city/gwinnett-county-staffing-agency',
         // Industry Service Pages
         '/industries/agriculture-nursery-staffing',
         '/industries/food-beverage-production',

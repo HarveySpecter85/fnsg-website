@@ -101,10 +101,10 @@ export default function OSDemoPage() {
                             </h1>
                         </div>
                         <div className="flex gap-3">
-                            <Link href="/contact" className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white text-sm font-bold rounded-lg border border-slate-700 transition-colors">
+                            <Link href="/contact/general-inquiries" className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white text-sm font-bold rounded-lg border border-slate-700 transition-colors">
                                 Download 2025 Reports
                             </Link>
-                            <Link href="/contact" className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold rounded-lg transition-colors shadow-lg shadow-blue-900/20">
+                            <Link href="/contact/general-inquiries" className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold rounded-lg transition-colors shadow-lg shadow-blue-900/20">
                                 Request Live Walkthrough
                             </Link>
                         </div>
@@ -267,7 +267,7 @@ export default function OSDemoPage() {
                             <p className="text-blue-100 text-sm mb-6 leading-relaxed">
                                 Connect your own facility metrics to the OS. Track attendance, turnover, and safety risk in real-time.
                             </p>
-                            <Link href="/contact" className="block w-full py-3 bg-white text-blue-900 font-bold text-sm rounded-lg hover:bg-blue-50 transition-colors">
+                            <Link href="/contact/general-inquiries" className="block w-full py-3 bg-white text-blue-900 font-bold text-sm rounded-lg hover:bg-blue-50 transition-colors">
                                 Activate Your Dashboard
                             </Link>
                         </div>
@@ -281,10 +281,10 @@ export default function OSDemoPage() {
                         This demo uses sample data across Georgia's key sectors. FNSG Workforce Intelligence OS can be connected to your facility's real metrics—attendance, turnover, safety incidents, and pay rates—to give you a predictive command center.
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <Link href="/contact" className="px-8 py-4 bg-white text-slate-900 font-bold rounded-lg hover:bg-slate-200 transition-colors">
+                        <Link href="/contact/general-inquiries" className="px-8 py-4 bg-white text-slate-900 font-bold rounded-lg hover:bg-slate-200 transition-colors">
                             Request Strategy Session
                         </Link>
-                        <Link href="/contact" className="px-8 py-4 border border-slate-600 text-slate-300 font-bold rounded-lg hover:bg-slate-800 hover:text-white transition-colors">
+                        <Link href="/contact/general-inquiries" className="px-8 py-4 border border-slate-600 text-slate-300 font-bold rounded-lg hover:bg-slate-800 hover:text-white transition-colors">
                             Get Custom Demo
                         </Link>
                     </div>

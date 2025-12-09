@@ -77,7 +77,7 @@ export function SeoSidebar() {
             <div className="bg-slate-900 text-white p-4 rounded-lg">
                 <h4 className="font-bold text-sm mb-2">Need Custom Data?</h4>
                 <p className="text-xs text-slate-300 mb-3">Get a tailored workforce analysis for your facility.</p>
-                <Link href="/contact" className="block w-full text-center bg-blue-600 hover:bg-blue-500 text-xs font-bold py-2 rounded transition-colors">
+                <Link href="/contact/general-inquiries" className="block w-full text-center bg-blue-600 hover:bg-blue-500 text-xs font-bold py-2 rounded transition-colors">
                     Request Report
                 </Link>
             </div>

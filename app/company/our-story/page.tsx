@@ -48,7 +48,7 @@ export default function OurStoryPage() {
                         <FadeIn delay={0.5}>
                             <div className="flex flex-wrap gap-4">
                                 <MagneticButton>
-                                    <Link href="/contact" className="btn-primary text-lg px-8 py-4">
+                                    <Link href="/contact/general-inquiries" className="btn-primary text-lg px-8 py-4">
                                         Partner With Us
                                     </Link>
                                 </MagneticButton>

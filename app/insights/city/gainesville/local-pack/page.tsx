@@ -97,7 +97,7 @@ export default function GainesvilleLocalPackPage() {
                 <div className="bg-blue-600 text-white p-8 rounded-xl text-center">
                     <h2 className="text-2xl font-bold mb-4">Need Gainesville Talent?</h2>
                     <p className="mb-6 opacity-90">Let's discuss a custom workforce strategy for your facility.</p>
-                    <Link href="/contact" className="inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-lg hover:bg-blue-50 transition-colors">
+                    <Link href="/contact/general-inquiries" className="inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-lg hover:bg-blue-50 transition-colors">
                         Request Strategy Session
                     </Link>
                 </div>

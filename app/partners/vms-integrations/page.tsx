@@ -29,7 +29,7 @@ export default function VMSIntegrationsPage() {
                         </TextReveal>
                         <FadeIn delay={0.5}>
                             <MagneticButton>
-                                <Link href="/contact" className="btn-primary text-lg px-8 py-4">
+                                <Link href="/contact/general-inquiries" className="btn-primary text-lg px-8 py-4">
                                     Connect Your VMS
                                 </Link>
                             </MagneticButton>

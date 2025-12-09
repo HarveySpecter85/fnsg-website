@@ -7,13 +7,13 @@ import { Activity, Clock, MapPin, FileCheck, TestTube, Stethoscope, Syringe } fr
 
 export const metadata: Metadata = {
     title: "Workforce Health Screening | Drug Testing & Physicals",
-    description: "Integrated drug and medical testing services. Reduce time-to-start by 48 hours with our nationwide Labcorp and eScreen network.",
+    description: "Integrated drug and medical testing services for industrial workforces. Reduce time-to-start by 48 hours with our nationwide Labcorp and eScreen network. Paperless, fast, and compliant.",
     alternates: {
         canonical: 'https://firstnationalstaffing.com/solutions/workforce-health-screening',
     },
     openGraph: {
         title: "Workforce Health Screening | Drug Testing & Physicals",
-        description: "Integrated drug and medical testing services. Reduce time-to-start by 48 hours with our nationwide Labcorp and eScreen network.",
+        description: "Integrated drug and medical testing services for industrial workforces. Reduce time-to-start by 48 hours with our nationwide Labcorp and eScreen network. Paperless, fast, and compliant.",
         url: 'https://firstnationalstaffing.com/solutions/workforce-health-screening',
         images: ['/solutions/opengraph-image'],
         siteName: 'First National Staffing Group',
@@ -41,7 +41,7 @@ export default function HealthScreeningHubPage() {
                         </TextReveal>
                         <FadeIn delay={0.5}>
                             <MagneticButton>
-                                <Link href="/contact" className="btn-primary text-lg px-8 py-4">
+                                <Link href="/contact/general-inquiries" className="btn-primary text-lg px-8 py-4">
                                     Start Screening
                                 </Link>
                             </MagneticButton>

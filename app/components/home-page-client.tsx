@@ -145,7 +145,7 @@ export default function HomePageClient() {
             </p>
             {/* Increased spacing below CTAs to avoid overlap */}
             <div className="flex flex-col sm:flex-row gap-4 pt-8 pb-12">
-              <Link href="/contact" className="group relative inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all duration-300 bg-blue-600 rounded-lg hover:bg-blue-500 hover:shadow-[0_0_20px_rgba(37,99,235,0.5)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 z-20">
+              <Link href="/contact/general-inquiries" className="group relative inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all duration-300 bg-blue-600 rounded-lg hover:bg-blue-500 hover:shadow-[0_0_20px_rgba(37,99,235,0.5)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 z-20">
                 Request Strategy Session
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>

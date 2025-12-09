@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import ScreeningDashboardPreview from "@/app/components/screens/ScreeningDashboardPreview";
 import ScreeningOSFinalCTA from "@/app/components/cta/ScreeningOSFinalCTA";
+import ScreeningOSModulesVideo from "@/app/components/videos/ScreeningOSModulesVideo";
 
 export const metadata: Metadata = {
     title: "Workforce Health Screening OS — Reduce Risk, Accelerate Hiring, and Improve Workforce Readiness",
@@ -163,25 +164,7 @@ export default function WorkforceHealthScreeningPage() {
                     </div>
                 </section>
 
-                {/* H2 - OS Modules Used in This Solution (Grid Layout) */}
-                <section className="py-12">
-                    <h2 className="text-3xl font-bold text-slate-900 mb-10">OS Modules Used in This Solution</h2>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        {[
-                            "Compliance OS",
-                            "Document Intelligence OS",
-                            "Workforce Readiness Engine",
-                            "Fast Deployment OS",
-                            "Attendance OS (Post-Hire)",
-                            "Pay Intelligence",
-                            "Identity Verification OS"
-                        ].map((module, idx) => (
-                            <div key={idx} className="bg-slate-900 text-white p-4 rounded-lg text-center font-medium shadow-lg flex items-center justify-center h-24 border border-slate-700">
-                                {module}
-                            </div>
-                        ))}
-                    </div>
-                </section>
+                <ScreeningOSModulesVideo />
 
                 {/* H2 - KPIs We Improve */}
                 <section className="py-12">
