@@ -247,6 +247,23 @@ export default function OnSiteWorkforceManagementPage() {
                     </div>
                 </section>
 
+                {/* PDF Download Block */}
+                <div className="w-full my-12 p-8 bg-gray-50 rounded-xl border border-gray-200">
+                    <h3 className="text-2xl font-semibold mb-3">
+                        Download the Integrated Workforce Advantage Framework
+                    </h3>
+                    <p className="text-gray-600 mb-6">
+                        Access the full strategic guide detailing how Training Excellence and Operational Support combine to create a powerful, self-reinforcing cycle of workforce performance and productivity.
+                    </p>
+                    <a
+                        href="/downloads/integrated-workforce-advantage.pdf"
+                        download
+                        className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition"
+                    >
+                        Download PDF
+                    </a>
+                </div>
+
                 {/* H2 - KPIs We Improve */}
                 <section className="py-12">
                     <h2 className="text-3xl font-bold text-slate-900 mb-6">KPIs We Improve</h2>
