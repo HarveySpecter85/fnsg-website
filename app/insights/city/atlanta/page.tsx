@@ -277,7 +277,7 @@ export default function AtlantaHub() {
                                     Request a Workforce Strategy Session
                                 </Link>
                                 <Link
-                                    href="/resources/reports/atlanta-2025"
+                                    href="/insights/reports/atlanta-2025"
                                     className="bg-white border-2 border-slate-200 hover:border-blue-600 text-slate-700 hover:text-blue-600 font-bold py-3 px-8 rounded-full transition-all"
                                 >
                                     Download Atlanta Workforce Intelligence Report
@@ -293,17 +293,17 @@ export default function AtlantaHub() {
                             <h3 className="font-bold text-slate-900 mb-4">Atlanta Quick Links</h3>
                             <ul className="space-y-3 text-sm">
                                 <li>
-                                    <Link href="/insights/industry/logistics" className="text-blue-600 hover:underline flex items-center gap-2">
+                                    <Link href="/industries/warehouse-logistics-staffing" className="text-blue-600 hover:underline flex items-center gap-2">
                                         <span>🚛</span> Logistics Staffing
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/insights/pay-rates/atlanta" className="text-blue-600 hover:underline flex items-center gap-2">
+                                    <Link href="/insights/pay-rates" className="text-blue-600 hover:underline flex items-center gap-2">
                                         <span>💰</span> Local Wage Data
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/insights/osha/heat-stress" className="text-blue-600 hover:underline flex items-center gap-2">
+                                    <Link href="/insights/osha" className="text-blue-600 hover:underline flex items-center gap-2">
                                         <span>☀️</span> Heat Safety
                                     </Link>
                                 </li>

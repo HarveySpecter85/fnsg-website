@@ -5,6 +5,7 @@ import { Metadata } from 'next';
 import ScreeningServicesCatalog from "@/app/components/services/ScreeningServicesCatalog";
 import ScreeningServicesBanner from "@/app/components/banners/ScreeningServicesBanner";
 import ScreeningServicesCTA from "@/app/components/cta/ScreeningServicesCTA";
+import PremiumCTA from "@/app/components/PremiumCTA";
 
 export const metadata: Metadata = {
     title: "Workforce Health Screening Services — Reduce Risk, Accelerate Hiring and Protect Your Workforce",
@@ -296,8 +297,11 @@ export default function WorkforceHealthScreeningPage() {
 
                 {/* Task 10/11: Final CTA */}
                 <ScreeningServicesCTA />
+
+                <div className="container mx-auto px-6">
+                    <PremiumCTA />
+                </div>
             </div>
         </main>
     );
 }
-

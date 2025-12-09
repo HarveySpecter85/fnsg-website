@@ -2,6 +2,7 @@ import React from 'react';
 import { Breadcrumbs } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import { Metadata } from 'next';
+import PremiumCTA from '@/app/components/PremiumCTA';
 
 export const metadata: Metadata = {
     title: "High-Volume Ramp-Up OS — Deploy 20–200 Workers in 24–72 Hours",
@@ -298,6 +299,10 @@ export default function HighVolumeRampUpPage() {
                         </Link>
                     </div>
                 </div>
+            </div>
+
+            <div className="container mx-auto px-6">
+                <PremiumCTA />
             </div>
         </main>
     );

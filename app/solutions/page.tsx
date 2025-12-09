@@ -1,5 +1,7 @@
 import React from 'react';
 import { Breadcrumbs } from '@/app/components/blog/shared';
+import { TrendingUp, Users, Shield, Zap, ArrowRight, CheckCircle2, BarChart3, Database, Globe } from 'lucide-react';
+import PremiumCTA from '@/app/components/PremiumCTA';
 import Link from 'next/link';
 import { Metadata } from 'next';
 
@@ -235,26 +237,7 @@ export default function SolutionsHubPage() {
                 </section>
 
                 {/* CTA Final */}
-                <div className="mt-16 p-10 bg-slate-900 rounded-2xl text-center">
-                    <h2 className="text-3xl font-bold text-white mb-6">Ready to Upgrade Your Operation?</h2>
-                    <p className="text-slate-300 mb-10 max-w-2xl mx-auto text-lg">
-                        Move beyond traditional staffing. Implement the Workforce Intelligence OS today.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                        <Link
-                            href="/contact/general-inquiries"
-                            className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-bold rounded-lg text-slate-900 bg-white hover:bg-slate-50 transition-all transform hover:scale-105"
-                        >
-                            Request an OS Strategy Session
-                        </Link>
-                        <Link
-                            href="/contact/general-inquiries"
-                            className="inline-flex items-center justify-center px-8 py-4 border border-white text-lg font-bold rounded-lg text-white hover:bg-slate-800 transition-all"
-                        >
-                            Download the Full Solutions Overview
-                        </Link>
-                    </div>
-                </div>
+                <PremiumCTA />
             </div>
         </main>
     );

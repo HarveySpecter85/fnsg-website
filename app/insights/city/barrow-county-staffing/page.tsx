@@ -275,7 +275,7 @@ export default function BarrowCountyPage() {
                                         Request a Workforce Strategy Session
                                     </Link>
                                     <Link
-                                        href="/resources/reports/barrow-2025"
+                                        href="/insights/reports/barrow-2025"
                                         className="bg-white border-2 border-slate-200 hover:border-blue-600 text-slate-700 hover:text-blue-600 font-bold py-3 px-8 rounded-full transition-all"
                                     >
                                         Download Barrow Workforce Intelligence Report

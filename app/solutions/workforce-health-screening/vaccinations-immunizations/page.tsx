@@ -4,6 +4,7 @@ import { TextReveal } from '@/app/components/anim/text-reveal'
 import { FadeIn } from '@/app/components/anim/fade-in'
 import { MagneticButton } from '@/app/components/anim/magnetic-button'
 import { Syringe, ShieldCheck, HeartPulse } from 'lucide-react'
+import PremiumCTA from '@/app/components/PremiumCTA'
 
 export const metadata: Metadata = {
     title: "Vaccinations & Immunizations | Healthcare Compliance",
@@ -102,6 +103,10 @@ export default function VaccinationsPage() {
                     </div>
                 </div>
             </section>
-        </main>
+
+            <div className="container py-12">
+                <PremiumCTA />
+            </div>
+        </main >
     )
 }

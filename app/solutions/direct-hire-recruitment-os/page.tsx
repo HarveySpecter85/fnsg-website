@@ -2,6 +2,7 @@ import React from 'react';
 import { Breadcrumbs } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import { Metadata } from 'next';
+import PremiumCTA from '@/app/components/PremiumCTA';
 
 export const metadata: Metadata = {
     title: "Direct Hire Recruitment OS — Precision Hiring Powered by Workforce Intelligence",
@@ -296,6 +297,10 @@ export default function DirectHireRecruitmentPage() {
                         </Link>
                     </div>
                 </div>
+            </div>
+
+            <div className="container mx-auto px-6">
+                <PremiumCTA />
             </div>
         </main>
     );

@@ -4,6 +4,7 @@ import { TextReveal } from '@/app/components/anim/text-reveal'
 import { FadeIn } from '@/app/components/anim/fade-in'
 import { MagneticButton } from '@/app/components/anim/magnetic-button'
 import { TestTube, FlaskConical, CheckCircle2, AlertTriangle } from 'lucide-react'
+import PremiumCTA from '@/app/components/PremiumCTA';
 
 export const metadata: Metadata = {
     title: "Drug & Alcohol Screening Services | 5 to 12-Panel Testing",
@@ -150,6 +151,10 @@ export default function DrugTestingPage() {
                     </div>
                 </div>
             </section>
-        </main>
+
+            <div className="container py-12">
+                <PremiumCTA />
+            </div>
+        </main >
     )
 }

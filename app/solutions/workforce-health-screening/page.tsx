@@ -4,6 +4,7 @@ import { TextReveal } from '@/app/components/anim/text-reveal'
 import { FadeIn } from '@/app/components/anim/fade-in'
 import { MagneticButton } from '@/app/components/anim/magnetic-button'
 import { Activity, Clock, MapPin, FileCheck, TestTube, Stethoscope, Syringe } from 'lucide-react'
+import PremiumCTA from '@/app/components/PremiumCTA'
 
 export const metadata: Metadata = {
     title: "Workforce Health Screening | Drug Testing & Physicals",
@@ -150,6 +151,11 @@ export default function HealthScreeningHubPage() {
                             </div>
                         </Link>
                     </div>
+                </div>
+            </section>
+            <section className="py-20 bg-white">
+                <div className="container">
+                    <PremiumCTA />
                 </div>
             </section>
         </main>

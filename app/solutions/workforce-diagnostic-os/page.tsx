@@ -2,6 +2,7 @@ import React from 'react';
 import { Breadcrumbs } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import { Metadata } from 'next';
+import PremiumCTA from '@/app/components/PremiumCTA';
 
 export const metadata: Metadata = {
     title: "Workforce Diagnostic OS — Workforce Intelligence for Operational Leaders",
@@ -312,6 +313,10 @@ export default function WorkforceDiagnosticOSPage() {
                     </div>
                 </div>
             </div>
-        </main>
+
+            <div className="container mx-auto px-6">
+                <PremiumCTA />
+            </div>
+        </main >
     );
 }

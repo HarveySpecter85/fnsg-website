@@ -2,6 +2,7 @@ import React from 'react';
 import { Breadcrumbs } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import { Metadata } from 'next';
+import PremiumCTA from '@/app/components/PremiumCTA';
 
 export const metadata: Metadata = {
     title: "Peak Season Deployment OS — Predict, Prepare, and Execute",
@@ -306,7 +307,10 @@ export default function PeakSeasonDeploymentPage() {
                         </Link>
                     </div>
                 </div>
+
+                <PremiumCTA />
             </div>
-        </main>
+
+        </main >
     );
 }

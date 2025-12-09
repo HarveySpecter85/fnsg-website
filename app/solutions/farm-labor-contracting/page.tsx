@@ -4,6 +4,7 @@ import { TextReveal } from '@/app/components/anim/text-reveal'
 import { FadeIn } from '@/app/components/anim/fade-in'
 import { MagneticButton } from '@/app/components/anim/magnetic-button'
 import { Tractor, Bus, FileCheck, Sprout } from 'lucide-react'
+import PremiumCTA from '@/app/components/PremiumCTA'
 
 export const metadata: Metadata = {
     title: "Farm Labor Contracting (FLC) | Agricultural Staffing",
@@ -108,6 +109,11 @@ export default function FLCPage() {
                             </p>
                         </FadeIn>
                     </div>
+                </div>
+            </section>
+            <section className="py-20 bg-white">
+                <div className="container">
+                    <PremiumCTA />
                 </div>
             </section>
         </main>

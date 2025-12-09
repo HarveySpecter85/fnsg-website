@@ -1,5 +1,6 @@
 import React from 'react';
 import { Breadcrumbs } from '@/app/components/navigation/Breadcrumbs';
+import PremiumCTA from '@/app/components/PremiumCTA';
 
 export const metadata = {
     title: "High-Volume Ramp Ups – Deployment Strategies | First National Staffing",
@@ -34,6 +35,10 @@ export default function HighVolumeRampUpsPage() {
                         Our specialized deployment teams are engineered to handle large-scale workforce ramp-ups for new facility launches and major expansions. We combine on-site management with rapid recruitment protocols to deliver hundreds of qualified associates within tight timelines, ensuring your operations hit the ground running.
                     </p>
                 </div>
+            </div>
+
+            <div className="container mx-auto px-6">
+                <PremiumCTA />
             </div>
         </main>
     );

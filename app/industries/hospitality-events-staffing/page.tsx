@@ -4,6 +4,7 @@ import { Breadcrumbs } from '@/app/components/navigation/Breadcrumbs';
 import Link from 'next/link';
 import Script from 'next/script';
 import { Users, CalendarClock, UserCheck, Star, TrendingUp, AlertTriangle, CheckCircle } from 'lucide-react';
+import PremiumCTA from '@/app/components/PremiumCTA';
 
 export const metadata = {
     title: "Hospitality & Events Staffing in Georgia | FNSG OS",
@@ -289,22 +290,7 @@ export default function HospitalityEventsPage() {
                             </section>
 
                             {/* CTA Section */}
-                            <section className="py-8 border-t border-slate-200">
-                                <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-                                    <Link
-                                        href="/contact?industry=hospitality"
-                                        className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all shadow-lg hover:shadow-xl"
-                                    >
-                                        Request a Hospitality Workforce Strategy Session
-                                    </Link>
-                                    <Link
-                                        href="/resources/reports/hospitality-2025"
-                                        className="bg-white border-2 border-slate-200 hover:border-blue-600 text-slate-700 hover:text-blue-600 font-bold py-3 px-8 rounded-full transition-all"
-                                    >
-                                        Download Hospitality & Events Workforce Intelligence Report (2025)
-                                    </Link>
-                                </div>
-                            </section>
+                            <PremiumCTA />
 
                         </div>
                     </div>

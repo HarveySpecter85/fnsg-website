@@ -490,7 +490,7 @@ export default function HomePageClient() {
                 <div className="p-10 md:w-3/5 flex flex-col justify-center">
                   <h4 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">Gainesville Food Production Facility</h4>
                   <p className="text-slate-600 mb-8 text-lg leading-relaxed">How we used wage benchmarking and shift-realignment to stabilize a critical production line.</p>
-                  <Link href="/insights/case-studies" className="text-blue-600 font-bold hover:underline flex items-center gap-2">
+                  <Link href="/insights" className="text-blue-600 font-bold hover:underline flex items-center gap-2">
                     Read Case Study <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>

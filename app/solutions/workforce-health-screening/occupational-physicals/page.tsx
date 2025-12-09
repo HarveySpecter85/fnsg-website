@@ -4,6 +4,7 @@ import { TextReveal } from '@/app/components/anim/text-reveal'
 import { FadeIn } from '@/app/components/anim/fade-in'
 import { MagneticButton } from '@/app/components/anim/magnetic-button'
 import { Stethoscope, Activity, Scale, Ear, Truck } from 'lucide-react'
+import PremiumCTA from '@/app/components/PremiumCTA';
 
 export const metadata: Metadata = {
     title: "Occupational Physicals | DOT Exams & FCEs",
@@ -100,6 +101,10 @@ export default function OccupationalPhysicalsPage() {
                     </div>
                 </div>
             </section>
-        </main>
+
+            <div className="container py-12">
+                <PremiumCTA />
+            </div>
+        </main >
     )
 }

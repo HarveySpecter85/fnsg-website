@@ -2,6 +2,7 @@ import React from 'react';
 import { Breadcrumbs } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import { Metadata } from 'next';
+import PremiumCTA from '@/app/components/PremiumCTA';
 
 export const metadata: Metadata = {
     title: "Payroll & Compliance Administration OS — Reduce Risk, Automate Accuracy",
@@ -296,7 +297,8 @@ export default function PayrollCompliancePage() {
                         </Link>
                     </div>
                 </div>
+                <PremiumCTA />
             </div>
-        </main>
+        </main >
     );
 }

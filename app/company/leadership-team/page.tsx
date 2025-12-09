@@ -94,7 +94,7 @@ export default function LeadershipTeamPage() {
                         We are always looking for talented individuals to join our internal corporate team. If you are passionate about workforce solutions, we want to hear from you.
                     </p>
                     <MagneticButton>
-                        <Link href="/careers" className="inline-flex items-center gap-2 text-brand-primary font-bold text-lg hover:gap-4 transition-all">
+                        <Link href="/contact" className="inline-flex items-center gap-2 text-brand-primary font-bold text-lg hover:gap-4 transition-all">
                             View Internal Openings <ArrowRight className="w-5 h-5" />
                         </Link>
                     </MagneticButton>

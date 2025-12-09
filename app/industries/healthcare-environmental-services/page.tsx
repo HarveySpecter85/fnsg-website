@@ -3,7 +3,8 @@ import { SeoSidebar } from '@/app/components/insights/SeoSidebar';
 import { Breadcrumbs } from '@/app/components/navigation/Breadcrumbs';
 import Link from 'next/link';
 import Script from 'next/script';
-import { ShieldAlert, Stethoscope, CheckCircle, Clock, HeartPulse, UserCheck, AlertTriangle } from 'lucide-react';
+import { Trash2, Heart, ShieldCheck, Clock, TrendingUp, Sparkles, Building2, CheckCircle } from 'lucide-react';
+import PremiumCTA from '@/app/components/PremiumCTA';
 
 export const metadata = {
     title: "Healthcare Environmental Services (EVS) Staffing in Georgia | FNSG OS",
@@ -73,7 +74,7 @@ export default function HealthcareEVSPage() {
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="bg-red-50 p-6 rounded-lg border border-red-100">
                                         <h3 className="font-bold text-red-900 flex items-center gap-2 mb-2">
-                                            <ShieldAlert className="w-5 h-5" /> Infection Control is Non-Negotiable
+                                            <ShieldCheck className="w-5 h-5" /> Infection Control is Non-Negotiable
                                         </h3>
                                         <p className="text-red-800 text-sm">Micro-errors generate biological risk: MRSA, C. diff, viral spreads, and surface contamination.</p>
                                     </div>
@@ -85,7 +86,7 @@ export default function HealthcareEVSPage() {
                                     </div>
                                     <div className="bg-red-50 p-6 rounded-lg border border-red-100">
                                         <h3 className="font-bold text-red-900 flex items-center gap-2 mb-2">
-                                            <AlertTriangle className="w-5 h-5" /> Healthcare Audits (Joint Commission / DNV / AHCA)
+                                            <Building2 className="w-5 h-5" /> Healthcare Audits (Joint Commission / DNV / AHCA)
                                         </h3>
                                         <p className="text-red-800 text-sm">EVS failures can cause: citations, fines, and loss of accreditation.</p>
                                     </div>
@@ -97,19 +98,19 @@ export default function HealthcareEVSPage() {
                                     </div>
                                     <div className="bg-red-50 p-6 rounded-lg border border-red-100">
                                         <h3 className="font-bold text-red-900 flex items-center gap-2 mb-2">
-                                            <HeartPulse className="w-5 h-5" /> Emotional & Psychological Load
+                                            <Heart className="w-5 h-5" /> Emotional & Psychological Load
                                         </h3>
                                         <p className="text-red-800 text-sm">Areas exposed to critical patients lead to high burnout.</p>
                                     </div>
                                     <div className="bg-red-50 p-6 rounded-lg border border-red-100">
                                         <h3 className="font-bold text-red-900 flex items-center gap-2 mb-2">
-                                            <UserCheck className="w-5 h-5" /> Security + Patient Interaction Sensitivity
+                                            <Sparkles className="w-5 h-5" /> Security + Patient Interaction Sensitivity
                                         </h3>
                                         <p className="text-red-800 text-sm">Staff must be trustworthy, professional, and trained.</p>
                                     </div>
                                     <div className="bg-red-50 p-6 rounded-lg border border-red-100">
                                         <h3 className="font-bold text-red-900 flex items-center gap-2 mb-2">
-                                            <Stethoscope className="w-5 h-5" /> Staffing Shortages
+                                            <TrendingUp className="w-5 h-5" /> Staffing Shortages
                                         </h3>
                                         <p className="text-red-800 text-sm">EVS is one of the HARDEST positions to recruit in hospitals.</p>
                                     </div>
@@ -287,22 +288,7 @@ export default function HealthcareEVSPage() {
                             </section>
 
                             {/* CTA Section */}
-                            <section className="py-8 border-t border-slate-200">
-                                <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-                                    <Link
-                                        href="/contact?industry=healthcare-evs"
-                                        className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all shadow-lg hover:shadow-xl"
-                                    >
-                                        Request an EVS Workforce Strategy Session
-                                    </Link>
-                                    <Link
-                                        href="/resources/reports/healthcare-evs-2025"
-                                        className="bg-white border-2 border-slate-200 hover:border-blue-600 text-slate-700 hover:text-blue-600 font-bold py-3 px-8 rounded-full transition-all"
-                                    >
-                                        Download the 2025 Healthcare EVS Workforce Intelligence Report
-                                    </Link>
-                                </div>
-                            </section>
+                            <PremiumCTA />
 
                         </div>
                     </div>

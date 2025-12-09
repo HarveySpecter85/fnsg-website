@@ -1,6 +1,9 @@
 "use client";
 
 export default function ScreeningOSModulesVideo() {
+    // Video temporarily removed due to broken link
+    return null;
+    /*
     return (
         <div className="w-full mt-12 mb-16">
             <video
@@ -14,4 +17,5 @@ export default function ScreeningOSModulesVideo() {
             </video>
         </div>
     );
+    */
 }

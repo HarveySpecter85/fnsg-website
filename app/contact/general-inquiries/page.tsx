@@ -4,7 +4,8 @@ import { TextReveal } from '@/app/components/anim/text-reveal'
 import { FadeIn } from '@/app/components/anim/fade-in'
 import { MagneticButton } from '@/app/components/anim/magnetic-button'
 import { CONTACT_INFO } from '@/lib/site-config'
-import { Briefcase, UserPlus, FileText, MapPin, Phone, Facebook, Linkedin, Instagram, Star, MessageCircle } from 'lucide-react'
+import { Briefcase, UserPlus, FileText, MapPin, Phone, Facebook, Linkedin, Instagram, Star, MessageCircle } from 'lucide-react';
+import PremiumCTA from '@/app/components/PremiumCTA';
 
 export const metadata: Metadata = {
     title: "Contact First National Staffing | Locations & Directory",
@@ -135,7 +136,7 @@ export default function GeneralInquiriesPage() {
                                     <MapPin className="w-5 h-5 text-brand-primary shrink-0 mt-1" />
                                     {CONTACT_INFO.addresses.atlanta}
                                 </p>
-                                <Link href="/insights/city/atlanta-staffing-agency" className="text-brand-primary font-semibold hover:underline">
+                                <Link href="/insights/city/atlanta" className="text-brand-primary font-semibold hover:underline">
                                     View Branch Details &rarr;
                                 </Link>
                             </div>
@@ -253,6 +254,10 @@ export default function GeneralInquiriesPage() {
                     </div>
                 </div>
             </section>
+
+            <div className="container py-12">
+                <PremiumCTA />
+            </div>
         </main>
     )
 }

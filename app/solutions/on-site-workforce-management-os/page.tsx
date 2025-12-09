@@ -2,6 +2,7 @@ import React from 'react';
 import { Breadcrumbs } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import { Metadata } from 'next';
+import PremiumCTA from '@/app/components/PremiumCTA';
 
 export const metadata: Metadata = {
     title: "On-Site Workforce Management OS — Stabilize Your Operation With Embedded Intelligence",
@@ -385,6 +386,7 @@ export default function OnSiteWorkforceManagementPage() {
                         </Link>
                     </div>
                 </div>
+                <PremiumCTA />
             </div>
         </main>
     );
