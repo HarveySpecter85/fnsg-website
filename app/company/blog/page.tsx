@@ -1,7 +1,7 @@
 import { getAllPosts, getFeaturedPost } from "@/lib/get-posts";
 import Link from "next/link";
 import { CompanyBreadcrumbs } from '@/app/components/navigation/CompanyBreadcrumbs';
-import { BlogSidebar } from '@/app/components/blog/BlogSidebar';
+import BlogCategorySidebar from '@/app/components/blog/BlogCategorySidebar';
 
 export const metadata = {
     title: "Company Blog – First National Staffing OS",
@@ -89,7 +89,7 @@ export default async function BlogPage() {
 
                     {/* Sidebar Column */}
                     <div className="lg:col-span-1">
-                        <BlogSidebar className="sticky top-24" />
+                        <BlogCategorySidebar />
                     </div>
                 </div>
             </div>

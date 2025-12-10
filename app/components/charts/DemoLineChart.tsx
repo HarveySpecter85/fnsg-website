@@ -13,7 +13,7 @@ const sampleData = [
 export default function DemoLineChart({ data = sampleData }: { data?: any[] }) {
     return (
         <div style={{ width: "100%", height: 260 }}>
-            <ResponsiveContainer>
+            <ResponsiveContainer width="100%" height={300}>
                 <LineChart data={data}>
                     <XAxis dataKey="month" style={{ fontSize: '12px' }} />
                     <YAxis style={{ fontSize: '12px' }} />

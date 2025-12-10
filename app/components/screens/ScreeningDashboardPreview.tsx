@@ -48,7 +48,7 @@ export default function ScreeningDashboardPreview() {
             <div className="grid grid-cols-2 gap-6">
                 <div className="h-56 bg-neutral-900 rounded-lg border border-neutral-800 p-4">
                     <p className="text-sm text-neutral-400 mb-2">Clearances Per Hour (24h)</p>
-                    <ResponsiveContainer>
+                    <ResponsiveContainer width="100%" height={200}>
                         <LineChart data={lineData}>
                             <XAxis dataKey="hour" stroke="#444" />
                             <YAxis stroke="#444" />
@@ -60,7 +60,7 @@ export default function ScreeningDashboardPreview() {
 
                 <div className="h-56 bg-neutral-900 rounded-lg border border-neutral-800 p-4">
                     <p className="text-sm text-neutral-400 mb-2">Clearance Outcome Split</p>
-                    <ResponsiveContainer>
+                    <ResponsiveContainer width="100%" height={200}>
                         <PieChart>
                             <Pie
                                 data={pieData}
