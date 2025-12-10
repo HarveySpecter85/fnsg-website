@@ -12,6 +12,18 @@ export default async function BlogPage() {
     const posts = getAllPosts();
     const featured = getFeaturedPost();
 
+    const formatDate = (date: string) => {
+        try {
+            return new Date(date).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+            });
+        } catch {
+            return date;
+        }
+    };
+
     return (
         <main className="bg-white min-h-screen">
             <div className="container mx-auto px-6 py-12 max-w-7xl">
@@ -35,7 +47,7 @@ export default async function BlogPage() {
                         {/* Featured Article */}
                         {featured && (
                             <section className="mb-16">
-                                <h2 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-6">Featured Article</h2>
+                                <h2 className="text-lg font-semibold mb-4 text-slate-500 uppercase tracking-wider">Featured Article</h2>
                                 <Link
                                     href={`/company/blog/${featured.slug}`}
                                     className="block p-6 rounded-xl border bg-white shadow-sm hover:shadow-lg transition group"
@@ -45,14 +57,14 @@ export default async function BlogPage() {
                                     </p>
                                     <h3 className="text-2xl font-bold group-hover:text-blue-600 transition-colors">{featured.title}</h3>
                                     <p className="text-gray-600 mt-2 line-clamp-2">{featured.description}</p>
-                                    <p className="text-gray-400 text-sm mt-4">{featured.date}</p>
+                                    <p className="text-gray-400 text-sm mt-4">{formatDate(featured.date)}</p>
                                 </Link>
                             </section>
                         )}
 
                         {/* All Articles */}
                         <section>
-                            <h2 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-6">Latest Articles</h2>
+                            <h2 className="text-lg font-semibold mb-4 text-slate-500 uppercase tracking-wider">Latest Articles</h2>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 {posts
@@ -68,7 +80,7 @@ export default async function BlogPage() {
                                             </p>
                                             <h3 className="text-xl font-bold group-hover:text-blue-600 transition-colors mb-2">{post.title}</h3>
                                             <p className="text-gray-600 text-sm mb-4 line-clamp-3 flex-grow">{post.description}</p>
-                                            <p className="text-gray-400 text-xs mt-auto">{post.date}</p>
+                                            <p className="text-gray-400 text-xs mt-auto">{formatDate(post.date)}</p>
                                         </Link>
                                     ))}
                             </div>
