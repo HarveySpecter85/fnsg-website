@@ -36,17 +36,26 @@ export const tocItems = [
 ];
 
 /* =========================
-   PAGE RENDER
+   LAYOUT EXPORT (STANDARD MDX PATTERN)
    ========================= */
+export default function Layout({ children }) {
+  return (
+    <BlogPostShell
+      title="Smart Employment Solutions for Growing Your Workforce"
+      description="Explore how modern employment solutions help organizations scale through technology, flexibility, engagement, and data-driven workforce planning."
+      category="Industry Insights"
+      date="2025-12-14"
+      slug="smart-employment-solutions-growing-workforce"
+      toc={tocItems}
+    >
+      {children}
+    </BlogPostShell>
+  );
+}
 
-<BlogPostShell
-  title="Smart Employment Solutions for Growing Your Workforce"
-  description="Explore how modern employment solutions help organizations scale through technology, flexibility, engagement, and data-driven workforce planning."
-  category="Industry Insights"
-  date="2025-12-14"
-  slug="smart-employment-solutions-growing-workforce"
-  toc={tocItems}
->
+/* =========================
+   MDX CONTENT
+   ========================= */
 
 ## Leveraging Technology for Recruitment Efficiency
 
@@ -211,5 +220,3 @@ Focus on what differentiates your business and let experts handle the rest.
 Successful outsourcing requires cultural alignment, transparency, and measurable outcomes.
 
 Outsourcing can reduce costs by up to 30% while improving operational efficiency.
-
-</BlogPostShell>
