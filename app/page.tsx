@@ -15,6 +15,9 @@ export const metadata: Metadata = {
             },
         ],
     },
+    alternates: {
+        canonical: 'https://firstnationalstaffing.com',
+    },
     twitter: {
         card: "summary_large_image",
         title: "First National Staffing OS",

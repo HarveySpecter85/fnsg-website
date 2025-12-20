@@ -69,8 +69,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/insights/city/south-fulton/recycling-staffing-crisis',
         // Solutions
         '/solutions/workforce-diagnostic-os',
+        '/solutions/workforce-diagnostic', // Interactive Tool
+        '/solutions/farm-labor-contracting', // Niche Service
         '/solutions/on-site-workforce-management-os',
         '/solutions/workforce-health-screening-os',
+        // Health Screening Internal Pages
+        '/solutions/workforce-health-screening/drug-alcohol-testing',
+        '/solutions/workforce-health-screening/occupational-physicals',
+        '/solutions/workforce-health-screening/vaccinations-immunizations',
         '/solutions/direct-hire-recruitment-os',
         '/solutions/high-volume-ramp-up-os',
         '/solutions/peak-season-deployment-os',

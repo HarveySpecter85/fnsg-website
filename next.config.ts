@@ -38,6 +38,37 @@ const nextConfig: NextConfig = {
         destination: '/insights/city/atlanta',
         permanent: true,
       },
+      // Legacy Solutions Redirects
+      {
+        source: '/solutions/on-site-workforce-management',
+        destination: '/solutions/on-site-workforce-management-os',
+        permanent: true,
+      },
+      {
+        source: '/solutions/direct-hire-recruitment',
+        destination: '/solutions/direct-hire-recruitment-os',
+        permanent: true,
+      },
+      {
+        source: '/solutions/payroll-compliance-administration',
+        destination: '/solutions/payroll-compliance-administration-os',
+        permanent: true,
+      },
+      {
+        source: '/solutions/deployment-strategies/peak-season-deployment',
+        destination: '/solutions/peak-season-deployment-os',
+        permanent: true,
+      },
+      {
+        source: '/solutions/deployment-strategies/high-volume-ramp-ups',
+        destination: '/solutions/high-volume-ramp-up-os',
+        permanent: true,
+      },
+      {
+        source: '/solutions/workforce-health-screening',
+        destination: '/solutions/workforce-health-screening-os',
+        permanent: true,
+      },
     ];
   },
 };
