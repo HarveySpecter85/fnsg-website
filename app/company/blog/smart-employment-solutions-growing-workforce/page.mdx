@@ -1,8 +1,5 @@
 import BlogPostShell from "@/app/components/blog/BlogPostShell";
 
-/* =========================
-   METADATA (SEO + OG)
-   ========================= */
 export const metadata = {
   title: "Smart Employment Solutions for Growing Your Workforce",
   description:
@@ -22,9 +19,6 @@ export const metadata = {
   },
 };
 
-/* =========================
-   TABLE OF CONTENTS (SAFE)
-   ========================= */
 export const tocItems = [
   { id: "leveraging-technology", label: "Leveraging Technology for Recruitment Efficiency" },
   { id: "gig-economy", label: "Building a Flexible Workforce with Gig Economy Integration" },
@@ -35,27 +29,14 @@ export const tocItems = [
   { id: "outsourcing", label: "Outsourcing Non-Core Functions to Focus on Strategic Growth" },
 ];
 
-/* =========================
-   LAYOUT EXPORT (STANDARD MDX PATTERN)
-   ========================= */
-export default function Layout({ children }) {
-  return (
-    <BlogPostShell
-      title="Smart Employment Solutions for Growing Your Workforce"
-      description="Explore how modern employment solutions help organizations scale through technology, flexibility, engagement, and data-driven workforce planning."
-      category="Industry Insights"
-      date="2025-12-14"
-      slug="smart-employment-solutions-growing-workforce"
-      toc={tocItems}
-    >
-      {children}
-    </BlogPostShell>
-  );
-}
-
-/* =========================
-   MDX CONTENT
-   ========================= */
+<BlogPostShell
+  title="Smart Employment Solutions for Growing Your Workforce"
+  description="Explore how modern employment solutions help organizations scale through technology, flexibility, engagement, and data-driven workforce planning."
+  category="Industry Insights"
+  date="2025-12-14"
+  slug="smart-employment-solutions-growing-workforce"
+  toc={tocItems}
+>
 
 ## Leveraging Technology for Recruitment Efficiency
 
@@ -220,3 +201,5 @@ Focus on what differentiates your business and let experts handle the rest.
 Successful outsourcing requires cultural alignment, transparency, and measurable outcomes.
 
 Outsourcing can reduce costs by up to 30% while improving operational efficiency.
+
+</BlogPostShell>
