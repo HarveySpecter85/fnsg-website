@@ -409,28 +409,40 @@ export default function HomePageClient() {
 
           <div className="grid md:grid-cols-3 gap-10">
             {[
-              "Georgia Industrial Workforce Benchmark Q4",
-              "Warehouse & Logistics 2025 Forecast",
-              "OSHA Risk Heatmap: Metro Atlanta"
+              { title: "Georgia Industrial Workforce Benchmark Q4" },
+              { title: "Warehouse & Logistics 2025 Forecast" },
+              { title: "OSHA Risk Heatmap: Metro Atlanta", image: "/images/reports/risk-heatmap-metro-atlanta.png" }
             ].map((report, idx) => (
               <div key={idx} className="group cursor-pointer perspective-1000">
                 <div className="aspect-[3/4] bg-slate-50 rounded-xl border border-slate-200 mb-6 relative overflow-hidden shadow-md group-hover:shadow-2xl group-hover:-translate-y-2 transition-all duration-500 transform-style-3d">
-                  {/* Report Cover Mockup */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-slate-100"></div>
-                  <div className="absolute top-0 left-0 w-full h-2 bg-blue-600"></div>
-                  <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
-                    <div className="w-20 h-20 bg-white rounded-full shadow-lg flex items-center justify-center mb-6">
-                      <FileText className="w-10 h-10 text-blue-600" />
-                    </div>
-                    <h4 className="font-serif text-xl font-bold text-slate-800 mb-2">{report}</h4>
-                    <p className="text-xs text-slate-400 uppercase tracking-widest mt-4">Confidential Report</p>
-                  </div>
+                  {/* Report Cover Mockup or Image */}
+                  {report.image ? (
+                    <Image
+                      src={report.image}
+                      alt={report.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  ) : (
+                    <>
+                      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-slate-100"></div>
+                      <div className="absolute top-0 left-0 w-full h-2 bg-blue-600"></div>
+                      <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
+                        <div className="w-20 h-20 bg-white rounded-full shadow-lg flex items-center justify-center mb-6">
+                          <FileText className="w-10 h-10 text-blue-600" />
+                        </div>
+                        <h4 className="font-serif text-xl font-bold text-slate-800 mb-2">{report.title}</h4>
+                        <p className="text-xs text-slate-400 uppercase tracking-widest mt-4">Confidential Report</p>
+                      </div>
+                    </>
+                  )}
 
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-blue-900/0 group-hover:bg-blue-900/10 transition-colors duration-300"></div>
                 </div>
                 <div className="text-center">
                   <span className="inline-block px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-full mb-2">PDF DOWNLOAD</span>
+                  {report.image && <h4 className="font-bold text-slate-900 mt-2 px-4 text-lg">{report.title}</h4>}
                 </div>
               </div>
             ))}
