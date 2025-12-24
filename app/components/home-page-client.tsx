@@ -29,6 +29,7 @@ import {
   Activity
 } from 'lucide-react';
 import { FadeIn } from '@/app/components/anim/fade-in';
+import HumanSideSection from '@/app/components/home/human-side-section';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -539,6 +540,9 @@ export default function HomePageClient() {
           </div>
         </div>
       </section>
+
+      {/* 🟩 SECTION 7.5 — Behind the Numbers (Human Side) */}
+      <HumanSideSection />
 
       {/* 🟩 SECTION 8 — Select Your Path */}
       <section className="py-32 bg-gradient-to-br from-blue-600 to-indigo-700 text-white">

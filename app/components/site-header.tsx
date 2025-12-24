@@ -264,10 +264,6 @@ export function SiteHeader() {
                         <div className="hidden xl:flex items-center border border-slate-300 rounded-l-full rounded-r-none px-4 py-1.5 h-12 bg-white/50 backdrop-blur-sm mr-px">
                             <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mr-3">For Clients:</span>
                             <div className="flex items-center gap-3 text-sm font-semibold text-slate-700">
-                                <Link href="/os-demo" className="hover:text-blue-600 transition-colors">
-                                    OS Demo Dashboard
-                                </Link>
-                                <span className="text-slate-300">|</span>
                                 <Link href="/contact/request-workforce" className="hover:text-blue-600 transition-colors">
                                     Request Workforce
                                 </Link>
@@ -426,9 +422,6 @@ export function SiteHeader() {
                         <div className="pt-6 border-t border-slate-100">
                             <Link href="/contact/request-workforce" onClick={() => setMobileMenuOpen(false)} className="block mt-4 py-3 text-center text-base font-semibold leading-7 text-white bg-blue-600 rounded-lg">
                                 Request Workforce
-                            </Link>
-                            <Link href="/os-demo" onClick={() => setMobileMenuOpen(false)} className="block mt-4 py-3 text-center text-base font-semibold leading-7 text-slate-700 border border-slate-200 rounded-lg">
-                                OS Demo Dashboard
                             </Link>
                         </div>
                     </div>
