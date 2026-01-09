@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
 import { Loader2, CheckCircle, AlertCircle } from 'lucide-react'
+import { submitQuoteRequest } from '@/app/actions'
 
 const formSchema = z.object({
     companyName: z.string().min(2, "Company name is required"),
@@ -44,11 +45,13 @@ export function RequestQuoteForm() {
         setIsSubmitting(true)
         setError(null)
 
-        // Simulate API call
         try {
-            await new Promise(resolve => setTimeout(resolve, 1500))
-            console.log("Form Data:", data)
-            setIsSuccess(true)
+            const result = await submitQuoteRequest(data)
+            if (result.success) {
+                setIsSuccess(true)
+            } else {
+                setError(result.error || "Something went wrong. Please try again.")
+            }
         } catch (err) {
             setError("Something went wrong. Please try again.")
         } finally {

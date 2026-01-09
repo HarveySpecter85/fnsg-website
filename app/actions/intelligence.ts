@@ -2,7 +2,8 @@
 
 export async function submitMarketScan(data: any) {
     try {
-        const response = await fetch('https://specterharvey.app.n8n.cloud/webhook/market/scan', {
+        const webhookUrl = process.env.N8N_WEBHOOK_URL!
+        const response = await fetch(webhookUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

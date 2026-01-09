@@ -17,10 +17,10 @@ export const metadata = {
             "name": "First National Staffing – Gainesville",
             "image": "https://firstnationalstaffing.com/assets/gainesville.jpg",
             "url": "https://firstnationalstaffing.com/insights/city/gainesville",
-            "telephone": "+1-XXX-XXX-XXXX",
+            "telephone": "+1-470-470-4243",
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "YOUR ADDRESS",
+                "streetAddress": "100 Main St SW",
                 "addressLocality": "Gainesville",
                 "addressRegion": "GA",
                 "postalCode": "30501",

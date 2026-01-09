@@ -5,10 +5,8 @@ import { cookies } from 'next/headers'
 export async function createClient() {
     const cookieStore = await cookies()
 
-    // PEGA TUS CLAVES AQUÍ DENTRO DE LAS COMILLAS
-    // ⚠️ Cuidado: No borres las comillas.
-    const supabaseUrl = "https://hshpnefplxbhjhvqkfiu.supabase.co"
-    const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhzaHBuZWZwbHhiaGpodnFrZml1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQwNDg0NjAsImV4cCI6MjA3OTYyNDQ2MH0.MXDEpRleOpwPT4OneTylSbUDQe9l45PQKPGmBylLzM4"
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
+    const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 
     return createServerClient(
         supabaseUrl,

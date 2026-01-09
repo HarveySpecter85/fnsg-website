@@ -1,7 +1,14 @@
 'use server'
 
 import { createClient } from '@/utils/supabase/server'
-import { redirect } from 'next/navigation'
+
+function getErrorMessage(error: unknown): string {
+  if (error instanceof Error) return error.message
+  if (typeof error === 'object' && error !== null && 'message' in error) {
+    return String((error as { message: unknown }).message)
+  }
+  return 'An unexpected error occurred'
+}
 
 export async function saveInitialCalculation(formData: FormData) {
   // 1. Inicializamos Supabase (ahora con await)
@@ -67,6 +74,50 @@ export async function submitDiagnostic(formPayload: any) {
           contact_info,
           general,
           industry_specific
+        }
+      }
+    ])
+    .select('id')
+    .single()
+
+  if (error) {
+    console.error("❌ Error Supabase:", error)
+    return { success: false, error: error.message }
+  }
+
+  return { success: true, id: data.id }
+}
+
+export async function submitQuoteRequest(formData: {
+  companyName: string
+  contactName: string
+  email: string
+  phone: string
+  industry: string
+  volume: string
+  shift: string
+  urgency: string
+  details?: string
+}) {
+  const supabase = await createClient()
+
+  const { data, error } = await supabase
+    .from('workforce_audits')
+    .insert([
+      {
+        target_industry: formData.industry,
+        target_role: 'Quote Request',
+        target_location: 'Georgia',
+        status: 'quote_requested',
+        company_name: formData.companyName,
+        contact_name: formData.contactName,
+        contact_email: formData.email,
+        contact_phone: formData.phone,
+        details: {
+          volume: formData.volume,
+          shift: formData.shift,
+          urgency: formData.urgency,
+          additional_details: formData.details || ''
         }
       }
     ])

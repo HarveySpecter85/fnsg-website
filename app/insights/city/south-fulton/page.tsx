@@ -17,13 +17,13 @@ export const metadata = {
             "name": "First National Staffing – South Fulton",
             "image": "https://firstnationalstaffing.com/assets/south-fulton.jpg",
             "url": "https://firstnationalstaffing.com/insights/city/south-fulton",
-            "telephone": "+1-XXX-XXX-XXXX",
+            "telephone": "+1-470-470-4243",
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "YOUR ADDRESS",
-                "addressLocality": "South Fulton",
+                "streetAddress": "730 Peachtree St NE #570",
+                "addressLocality": "Atlanta",
                 "addressRegion": "GA",
-                "postalCode": "30349",
+                "postalCode": "30308",
                 "addressCountry": "US"
             },
             "aggregateRating": {

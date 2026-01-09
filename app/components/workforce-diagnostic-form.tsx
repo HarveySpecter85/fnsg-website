@@ -180,7 +180,12 @@ type FormData = z.infer<typeof formSchema>
 
 // --- Components ---
 
-const Input = ({ label, error, ...props }: any) => (
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+    label: string
+    error?: { message?: string }
+}
+
+const Input = ({ label, error, ...props }: InputProps) => (
     <div className="space-y-1">
         <label className="block text-sm font-medium text-slate-700">{label}</label>
         <input
@@ -194,7 +199,13 @@ const Input = ({ label, error, ...props }: any) => (
     </div>
 )
 
-const Select = ({ label, options, error, ...props }: any) => (
+interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
+    label: string
+    options: string[]
+    error?: { message?: string }
+}
+
+const Select = ({ label, options, error, ...props }: SelectProps) => (
     <div className="space-y-1">
         <label className="block text-sm font-medium text-slate-700">{label}</label>
         <select
@@ -213,7 +224,14 @@ const Select = ({ label, options, error, ...props }: any) => (
     </div>
 )
 
-const CheckboxGroup = ({ label, options, register, name }: any) => (
+interface CheckboxGroupProps {
+    label: string
+    options: string[]
+    register: ReturnType<typeof useForm<FormData>>['register']
+    name: Parameters<ReturnType<typeof useForm<FormData>>['register']>[0]
+}
+
+const CheckboxGroup = ({ label, options, register, name }: CheckboxGroupProps) => (
     <div className="space-y-2">
         <label className="block text-sm font-medium text-slate-700">{label}</label>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -249,6 +267,7 @@ export default function WorkforceDiagnosticForm() {
         watch,
         formState: { errors },
     } = useForm<FormData>({
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         resolver: zodResolver(formSchema) as any,
         defaultValues: {
             contact_info: {
