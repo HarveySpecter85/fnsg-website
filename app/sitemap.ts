@@ -70,19 +70,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/insights/city/south-fulton/local-pack',
         '/insights/city/south-fulton/recycling-staffing-crisis',
         // Solutions
-        '/solutions/workforce-diagnostic-os',
-        '/solutions/workforce-diagnostic', // Interactive Tool
-        '/solutions/farm-labor-contracting', // Niche Service
-        '/solutions/on-site-workforce-management-os',
-        '/solutions/workforce-health-screening-os',
-        // Health Screening Internal Pages
+        '/solutions/workforce-diagnostic',
+        '/solutions/farm-labor-contracting',
+        '/solutions/on-site-workforce-management',
+        '/solutions/workforce-health-screening',
         '/solutions/workforce-health-screening/drug-alcohol-testing',
         '/solutions/workforce-health-screening/occupational-physicals',
         '/solutions/workforce-health-screening/vaccinations-immunizations',
-        '/solutions/direct-hire-recruitment-os',
-        '/solutions/high-volume-ramp-up-os',
-        '/solutions/peak-season-deployment-os',
-        '/solutions/payroll-compliance-administration-os',
+        '/solutions/direct-hire-recruitment',
+        '/solutions/high-volume-ramp-up',
+        '/solutions/peak-season-deployment',
+        '/solutions/payroll-compliance-administration',
         // Reports OS
         '/insights/reports',
         '/insights/reports/georgia-industrial-workforce-2025',

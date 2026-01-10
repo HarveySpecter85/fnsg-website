@@ -43,35 +43,40 @@ const nextConfig: NextConfig = {
         destination: '/insights/city/atlanta',
         permanent: true,
       },
-      // Legacy Solutions Redirects
+      // Legacy -os URL Redirects (redirect old -os URLs to clean URLs)
       {
-        source: '/solutions/on-site-workforce-management',
-        destination: '/solutions/on-site-workforce-management-os',
+        source: '/solutions/on-site-workforce-management-os',
+        destination: '/solutions/on-site-workforce-management',
         permanent: true,
       },
       {
-        source: '/solutions/direct-hire-recruitment',
-        destination: '/solutions/direct-hire-recruitment-os',
+        source: '/solutions/direct-hire-recruitment-os',
+        destination: '/solutions/direct-hire-recruitment',
         permanent: true,
       },
       {
-        source: '/solutions/payroll-compliance-administration',
-        destination: '/solutions/payroll-compliance-administration-os',
+        source: '/solutions/payroll-compliance-administration-os',
+        destination: '/solutions/payroll-compliance-administration',
         permanent: true,
       },
       {
-        source: '/solutions/deployment-strategies/peak-season-deployment',
-        destination: '/solutions/peak-season-deployment-os',
+        source: '/solutions/peak-season-deployment-os',
+        destination: '/solutions/peak-season-deployment',
         permanent: true,
       },
       {
-        source: '/solutions/deployment-strategies/high-volume-ramp-ups',
-        destination: '/solutions/high-volume-ramp-up-os',
+        source: '/solutions/high-volume-ramp-up-os',
+        destination: '/solutions/high-volume-ramp-up',
         permanent: true,
       },
       {
-        source: '/solutions/workforce-health-screening',
-        destination: '/solutions/workforce-health-screening-os',
+        source: '/solutions/workforce-health-screening-os',
+        destination: '/solutions/workforce-health-screening',
+        permanent: true,
+      },
+      {
+        source: '/solutions/workforce-diagnostic-os',
+        destination: '/solutions/workforce-diagnostic',
         permanent: true,
       },
     ];

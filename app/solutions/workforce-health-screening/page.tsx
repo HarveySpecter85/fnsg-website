@@ -1,163 +1,307 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import { TextReveal } from '@/app/components/anim/text-reveal'
-import { FadeIn } from '@/app/components/anim/fade-in'
-import { MagneticButton } from '@/app/components/anim/magnetic-button'
-import { Activity, Clock, MapPin, FileCheck, TestTube, Stethoscope, Syringe } from 'lucide-react'
-import PremiumCTA from '@/app/components/PremiumCTA'
+import React from 'react';
+import { Breadcrumbs } from '@/app/components/blog/shared';
+import Link from 'next/link';
+import { Metadata } from 'next';
+import ScreeningServicesCatalog from "@/app/components/services/ScreeningServicesCatalog";
+import ScreeningServicesBanner from "@/app/components/banners/ScreeningServicesBanner";
+import ScreeningServicesCTA from "@/app/components/cta/ScreeningServicesCTA";
+import PremiumCTA from "@/app/components/PremiumCTA";
 
 export const metadata: Metadata = {
-    title: "Workforce Health Screening | Drug Testing & Physicals",
-    description: "Integrated drug and medical testing services for industrial workforces. Reduce time-to-start by 48 hours with our nationwide Labcorp and eScreen network. Paperless, fast, and compliant.",
+    title: "Workforce Health Screening Services — Reduce Risk, Accelerate Hiring and Protect Your Workforce",
+    description: "FNSG manages pre-employment medical and screening requirements. Drug screens, physicals, vaccines, and OSHA compliance for Georgia locations.",
     alternates: {
-        canonical: 'https://firstnationalstaffing.com/solutions/workforce-health-screening',
+        canonical: 'https://firstnationalstaffing.com/solutions/workforce-health-screening-os',
     },
     openGraph: {
-        title: "Workforce Health Screening | Drug Testing & Physicals",
-        description: "Integrated drug and medical testing services for industrial workforces. Reduce time-to-start by 48 hours with our nationwide Labcorp and eScreen network. Paperless, fast, and compliant.",
-        url: 'https://firstnationalstaffing.com/solutions/workforce-health-screening',
+        title: "Workforce Health Screening Services — Reduce Risk, Accelerate Hiring and Protect Your Workforce",
+        description: "FNSG manages pre-employment medical and screening requirements. Drug screens, physicals, vaccines, and OSHA compliance for Georgia locations.",
+        url: 'https://firstnationalstaffing.com/solutions/workforce-health-screening-os',
         images: ['/solutions/opengraph-image'],
         siteName: 'First National Staffing Group',
         locale: 'en_US',
         type: 'article',
     },
-}
+};
 
-export default function HealthScreeningHubPage() {
+export default function WorkforceHealthScreeningPage() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Workforce Health Screening Services",
+        "provider": {
+            "@type": "Organization",
+            "name": "First National Staffing Group",
+            "url": "https://firstnationalstaffing.com"
+        },
+        "areaServed": "Georgia",
+        "description": "Full-service workforce health screening. Pre-employment medical, drug testing, and vaccination coordination managed by FNSG for rapid hiring. Includes Drug Panels, Physicals, Vaccinations, and OSHA testing.",
+        "url": "https://firstnationalstaffing.com/solutions/workforce-health-screening-os",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Health Screening Services",
+            "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Drug Screening Services" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Physical Exams" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vaccinations" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "OSHA & Respiratory Testing" } }
+            ]
+        }
+    };
+
     return (
-        <main className="bg-white">
-            {/* Hero Section */}
-            <section className="relative py-24 lg:py-32 overflow-hidden bg-slate-50 border-b border-slate-200">
-                <div className="container">
-                    <div className="max-w-4xl">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-bold mb-6">
-                            <Activity className="w-4 h-4" />
-                            <span>Integrated Occupational Health</span>
-                        </div>
-                        <TextReveal as="h1" className="text-5xl md:text-7xl font-bold text-brand-navy mb-6 leading-tight">
-                            Workforce Health Screening
-                        </TextReveal>
-                        <TextReveal as="h2" className="text-2xl md:text-3xl font-medium text-brand-secondary mb-10 block">
-                            Integrated Drug & Medical Testing
-                        </TextReveal>
-                        <FadeIn delay={0.5}>
-                            <MagneticButton>
-                                <Link href="/contact/general-inquiries" className="btn-primary text-lg px-8 py-4">
-                                    Start Screening
+        <main className="bg-slate-50 min-h-screen">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+
+            {/* Task 1: Hero Section */}
+            <div className="bg-slate-900 text-white relative overflow-hidden">
+                <div className="absolute inset-0 opacity-10 bg-[url('/grid-pattern.svg')]"></div>
+                <div className="container mx-auto px-6 py-20 relative z-10 max-w-6xl">
+                    <div className="grid md:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <div className="mb-6">
+                                <span className="text-blue-400 font-bold tracking-widest text-sm uppercase">FNSG Workforce Health Screening Services</span>
+                            </div>
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6">
+                                Workforce Health Screening Services: <br />
+                                <span className="text-blue-500">Reduce Risk, Accelerate Hiring</span> and Protect Your Workforce
+                            </h1>
+                            <p className="text-lg text-slate-300 leading-relaxed mb-6">
+                                FNSG manages every step of your pre employment medical and screening requirements, so your teams stay focused on production while we handle clearances, documentation and compliance.
+                            </p>
+                            <ul className="space-y-3 mb-8 text-slate-300">
+                                <li className="flex items-start">
+                                    <span className="text-blue-500 mr-2 mt-1">✔</span>
+                                    <span>Pre employment and ongoing screening for warehouse, food production, logistics and EVS</span>
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="text-blue-500 mr-2 mt-1">✔</span>
+                                    <span>Coordination of drug screens, physicals, vaccines, titers and OSHA tests</span>
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="text-blue-500 mr-2 mt-1">✔</span>
+                                    <span>Centralized documentation and audit ready records for Georgia locations</span>
+                                </li>
+                            </ul>
+                            <div className="flex flex-col sm:flex-row gap-4">
+                                <Link
+                                    href="/contact/general-inquiries?subject=Request Screening Services"
+                                    className="px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold shadow-lg transition text-center"
+                                >
+                                    Request Screening Services
                                 </Link>
-                            </MagneticButton>
-                        </FadeIn>
+                                <Link
+                                    href="/contact/general-inquiries?subject=Add Screening Services to Workforce Plan"
+                                    className="px-6 py-3 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white font-medium shadow-lg transition text-center"
+                                >
+                                    Add Screening Services to Your Workforce Plan
+                                </Link>
+                            </div>
+                        </div>
+                        <div className="hidden md:block">
+                            {/* Right side illustration placeholder - clean visual as per wireframe */}
+                            <ScreeningServicesBanner />
+                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
 
-            {/* Zero-Click Answer Block */}
-            <section className="py-20">
-                <div className="container">
-                    <FadeIn>
-                        <div className="bg-white border-l-8 border-brand-primary p-8 md:p-12 rounded-r-xl shadow-sm ring-1 ring-slate-100">
-                            <p className="text-lg md:text-xl text-slate-700 leading-relaxed">
-                                <strong className="text-brand-navy font-bold">First National Staffing Group</strong> streamlines the hiring lifecycle... Leveraging the nationwide <strong className="text-brand-navy font-bold">Labcorp and eScreen network</strong>... reducing &apos;Time-to-Start&apos; by an average of 48 hours.
+            <div className="container mx-auto px-6 py-12 max-w-5xl">
+                <Breadcrumbs items={[
+                    { label: 'Solutions', href: '/solutions' },
+                    { label: 'Workforce Health Screening Services', href: '/solutions/workforce-health-screening-os' }
+                ]} />
+
+                {/* Task 2: Problem Grid */}
+                <section className="py-12">
+                    <h2 className="text-3xl font-bold text-slate-900 mb-10 text-center">Operational Challenges We Solve</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {[
+                            {
+                                title: "Slow Screening Pipelines",
+                                desc: "Our team coordinates labs and documentation to reduce time to start."
+                            },
+                            {
+                                title: "Manual Verification Errors",
+                                desc: "We verify IDs, medical forms, vaccines and OSHA compliance before start."
+                            },
+                            {
+                                title: "Unprepared Workforce",
+                                desc: "We ensure workers meet all role-specific health requirements."
+                            },
+                            {
+                                title: "Lack of Ready Visibility",
+                                desc: "Supervisors receive clear ready or pending updates."
+                            },
+                            {
+                                title: "Vendor Latency",
+                                desc: "We align clinic and lab workflows to your hiring speed."
+                            },
+                            {
+                                title: "Incomplete Compliance",
+                                desc: "We organize all documentation in an audit ready structure."
+                            }
+                        ].map((problem, idx) => (
+                            <div key={idx} className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                                <div className="h-2 w-12 bg-red-500 rounded mb-4"></div>
+                                <h3 className="text-xl font-bold text-slate-900 mb-3">{problem.title}</h3>
+                                <p className="text-slate-600">{problem.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* Why This Happens (Full Content Band) */}
+                <section className="py-12 bg-slate-100 -mx-6 px-6 md:rounded-3xl mb-12">
+                    <h2 className="text-3xl font-bold text-slate-900 mb-6">Why These Problems Exist</h2>
+                    <div className="prose prose-lg text-slate-700 max-w-none">
+                        <p>
+                            In traditional staffing, medical screening is a fragmented mess of vendors, manual emails, and paper forms. There is no structured pipeline connecting screening to onboarding.
+                        </p>
+                        <p className="font-bold text-slate-900">
+                            Without managed coordination, screening delays shut down ramp-ups and leave Operations guessing who will actually show up.
+                        </p>
+                    </div>
+                </section>
+
+                <div className="w-full mt-10 mb-14 flex justify-center">
+                    <video
+                        controls
+                        className="rounded-xl shadow-lg w-full max-w-4xl border border-gray-200"
+                    >
+                        <source src="https://res.cloudinary.com/dr7fov4v4/video/upload/v1765305901/Video_agqhqe.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                {/* Task 3: Full Screening Services Catalog */}
+                <ScreeningServicesCatalog />
+
+                {/* Task 4: How Our Managed Screening Services Work */}
+                <section className="py-12">
+                    <h2 className="text-3xl font-bold text-slate-900 mb-10 text-center">How Our Managed Screening Services Work</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        {[
+                            { step: 1, title: "Requirements Mapping", desc: "We map your specific medical and vaccine protocols." },
+                            { step: 2, title: "Candidate Scheduling and Follow Up", desc: "Our team schedules appointments and chases no-shows." },
+                            { step: 3, title: "Result Verification and Documentation", desc: "We validate every result against your standards." },
+                            { step: 4, title: "Ready to Work Status Updates", desc: "You get a clear 'GO' when the worker is fully cleared." }
+                        ].map((item, idx) => (
+                            <div key={idx} className="bg-white p-6 rounded-lg border border-slate-200 shadow-sm relative overflow-hidden">
+                                <div className="text-6xl font-bold text-slate-100 absolute top-[-10px] right-[-10px]">{item.step}</div>
+                                <h3 className="text-lg font-bold text-slate-900 mb-2 relative z-10">{item.title}</h3>
+                                <p className="text-sm text-slate-600 relative z-10">{item.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* Task 5: KPIs and Implementation */}
+                <div className="grid lg:grid-cols-2 gap-12 py-12">
+                    <section>
+                        <h2 className="text-2xl font-bold text-slate-900 mb-6">Key Performance Indicators</h2>
+                        <div className="overflow-x-auto shadow-sm border border-slate-200 rounded-lg">
+                            <table className="min-w-full bg-white text-left">
+                                <thead className="bg-slate-50 text-slate-900">
+                                    <tr>
+                                        <th className="px-6 py-4 font-bold border-b">KPI</th>
+                                        <th className="px-6 py-4 font-bold border-b text-green-700">Improvement</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="divide-y divide-slate-100">
+                                    <tr><td className="px-6 py-4">Time to Start</td><td className="px-6 py-4 font-bold text-green-700">-35% to -55%</td></tr>
+                                    <tr><td className="px-6 py-4">Screening Errors</td><td className="px-6 py-4 font-bold text-green-700">-60% to -80%</td></tr>
+                                    <tr><td className="px-6 py-4">Pending Clearances</td><td className="px-6 py-4 font-bold text-green-700">-25% to -50%</td></tr>
+                                    <tr><td className="px-6 py-4">Turnover Risk</td><td className="px-6 py-4 font-bold text-green-700">-10% to -20%</td></tr>
+                                    <tr><td className="px-6 py-4">Compliance Alignment</td><td className="px-6 py-4 font-bold text-green-700">+20% to +40%</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2 className="text-2xl font-bold text-slate-900 mb-6">Implementation Framework</h2>
+                        <div className="space-y-4">
+                            {[
+                                "Diagnostic Assessment",
+                                "Service Plan and Panel Design",
+                                "Vendor and Clinic Alignment",
+                                "Candidate Scheduling and Communication",
+                                "Result Review and Documentation",
+                                "Weekly Optimization and Reporting"
+                            ].map((step, idx) => (
+                                <div key={idx} className="flex items-center">
+                                    <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold mr-4 text-sm">{idx + 1}</div>
+                                    <span className="text-slate-700 font-medium">{step}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+                </div>
+
+                {/* Task 6: Case Study */}
+                <section className="py-12 bg-white border border-slate-200 rounded-xl p-8 shadow-sm mb-12">
+                    <h2 className="text-2xl font-bold text-slate-900 mb-6">Case Study Information</h2>
+                    <div className="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 className="font-bold text-red-600 mb-2">The Challenge</h4>
+                            <p className="text-slate-700 mb-4">
+                                A food production facility in Hall County faced a 27 percent screening backlog and 3–5 day ramp up delays.
                             </p>
                         </div>
-                    </FadeIn>
-                </div>
-            </section>
-
-            {/* Data Hook: Speed Metrics */}
-            <section className="py-20 bg-slate-50">
-                <div className="container">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <FadeIn delay={0.1} className="bg-white p-8 rounded-xl shadow-sm border border-slate-200 text-center">
-                            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 text-blue-600">
-                                <FileCheck className="w-8 h-8" />
-                            </div>
-                            <h3 className="text-4xl font-bold text-brand-navy mb-2">100%</h3>
-                            <p className="text-sm font-bold text-slate-500 uppercase tracking-wider">Paperless eCCF</p>
-                            <p className="text-slate-600 mt-4 text-sm">Digital Chain of Custody eliminates lost forms and data entry errors.</p>
-                        </FadeIn>
-
-                        <FadeIn delay={0.2} className="bg-white p-8 rounded-xl shadow-sm border border-slate-200 text-center">
-                            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-green-600">
-                                <Clock className="w-8 h-8" />
-                            </div>
-                            <h3 className="text-4xl font-bold text-brand-navy mb-2">&lt; 1 Hour</h3>
-                            <p className="text-sm font-bold text-slate-500 uppercase tracking-wider">Instant Turnaround</p>
-                            <p className="text-slate-600 mt-4 text-sm">Negative results for rapid drug screens delivered immediately.</p>
-                        </FadeIn>
-
-                        <FadeIn delay={0.3} className="bg-white p-8 rounded-xl shadow-sm border border-slate-200 text-center">
-                            <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6 text-purple-600">
-                                <MapPin className="w-8 h-8" />
-                            </div>
-                            <h3 className="text-4xl font-bold text-brand-navy mb-2">4,000+</h3>
-                            <p className="text-sm font-bold text-slate-500 uppercase tracking-wider">Locations</p>
-                            <p className="text-slate-600 mt-4 text-sm">Extensive clinic network ensuring candidates are never far from a site.</p>
-                        </FadeIn>
+                        <div>
+                            <h4 className="font-bold text-green-600 mb-2">The Solution & Result</h4>
+                            <p className="text-slate-700">
+                                After FNSG implemented a managed screening program coordinating drug tests, physicals and vaccinations, screening delays dropped by more than fifty percent and ramp ups returned to on time performance.
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            {/* Service Ecosystem */}
-            <section className="py-20 bg-white">
-                <div className="container">
-                    <h2 className="text-3xl font-bold text-brand-navy mb-12 text-center">Comprehensive Health Services</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {/* Drug Testing */}
-                        <Link href="/solutions/workforce-health-screening/drug-alcohol-testing" className="group block h-full">
-                            <div className="bg-slate-50 rounded-2xl p-8 h-full border border-slate-200 transition-all hover:border-brand-primary hover:shadow-lg">
-                                <div className="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-brand-primary mb-6 group-hover:scale-110 transition-transform">
-                                    <TestTube className="w-7 h-7" />
-                                </div>
-                                <h3 className="text-xl font-bold text-brand-navy mb-3 group-hover:text-brand-primary transition-colors">Drug & Alcohol Testing</h3>
-                                <p className="text-slate-600 text-sm mb-6">
-                                    5 to 12-panel rapid screens, DOT compliance, and hair follicle testing.
-                                </p>
-                                <span className="text-brand-primary font-bold text-sm flex items-center gap-2">
-                                    View Panels &rarr;
-                                </span>
+                {/* Task 7: FAQ */}
+                <section className="py-12">
+                    <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
+                    <div className="space-y-4 max-w-3xl mx-auto">
+                        {[
+                            { q: "What is included in workforce health screening services?", a: "Workforce screening includes occupational health exams, drug and alcohol testing, and background checks. Each service confirms a different part of a candidate’s fitness, safety, and compliance before entering the workplace." },
+                            { q: "Why do companies need pre-employment medical screening?", a: "Pre-employment exams ensure candidates can safely perform job duties, reducing injury, workers’ comp claims, and production delays." },
+                            { q: "What does a typical pre-employment physical exam include?", a: "These exams evaluate medical history, vital signs, musculoskeletal function, vision, hearing, and may include job-specific physical tests or respirator fit testing." },
+                            { q: "What are job-specific occupational health screenings?", a: "Depending on the role, candidates may need DOT physicals, respirator fit tests, pulmonary function tests, titers, TB testing, or X-rays." },
+                            { q: "What is the difference between pre-employment screening and health surveillance?", a: "Pre-employment screening evaluates new hires. Health surveillance is ongoing monitoring for employees exposed to workplace hazards such as noise, chemicals, vibration, or airborne contaminants." },
+                            { q: "How does a drug test work?", a: "A drug test includes sample collection, an initial screen, MRO confirmation for positives, and final results typically returned within 1–3 days." },
+                            { q: "What types of drug testing programs exist?", a: "Employers may use pre-employment, random, reasonable suspicion, post-accident, annual, or return-to-duty testing depending on role and regulatory needs." },
+                            { q: "How long do background checks take?", a: "Most background checks take 2–7 business days, though deeper county or federal searches can take longer." },
+                            { q: "What is included in a background check?", a: "A background check may include identity verification, SSN trace, criminal searches, sex offender checks, employment and education verification, and optional MVR or credit checks." },
+                            { q: "Can candidates dispute inaccurate background check results?", a: "Yes. Under FCRA, applicants may dispute any inaccurate information. The screening provider must reinvestigate at no cost." },
+                            { q: "What laws govern workforce screening?", a: "Screenings must comply with FCRA (background checks), HIPAA (health info), ADA (accommodations), DOT rules, OSHA requirements, and state drug testing laws." },
+                            { q: "How long does the entire screening process take?", a: "Background checks: 2–7 days. Drug tests: 1–3 days. Physical exams: 1–2 weeks. FNSG accelerates timelines by coordinating each step and following up with candidates." },
+                            { q: "How does FNSG manage documentation and compliance?", a: "We store all screening documents in an audit-ready structure including medical exam results, drug test reports, fit test certificates, titers, and background screening data." },
+                            { q: "What information must candidates provide for screenings?", a: "Legal name, SSN (for authorization), DOB, 7-year address history, photo ID, medical history, and consent forms." },
+                            { q: "Where are screenings performed?", a: "At occupational health clinics, urgent care centers, LabCorp/eScreen sites, mobile units, or onsite employer facilities depending on the program." },
+                            { q: "Why do screening delays impact operations so much?", a: "Every uncleared worker = a vacant station, slowed production, overtime for others, and uncertainty for supervisors." },
+                            { q: "What does “Ready to Work” mean?", a: "The candidate has completed all screenings, passed all required tests, and all documentation has been verified as compliant." },
+                            { q: "Can FNSG create customized screening panels per client?", a: "Yes. Panels can be customized by job role, exposure risk, client requirements, or industry regulations." },
+                            { q: "Do candidates receive copies of their results?", a: "Yes. Workers may request copies of medical records, drug test results, fit test certifications, or X-ray reports under HIPAA." },
+                            { q: "What happens if a candidate fails a test?", a: "Drug test positives go through MRO review; background issues are evaluated by the employer; physical exam findings may require accommodations or disqualification based on safety risk." }
+                        ].map((faq, idx) => (
+                            <div key={idx} className="border border-slate-200 rounded-lg p-4">
+                                <h3 className="font-bold text-slate-900 text-lg mb-2">{faq.q}</h3>
+                                <p className="text-slate-600">{faq.a}</p>
                             </div>
-                        </Link>
-
-                        {/* Physicals */}
-                        <Link href="/solutions/workforce-health-screening/occupational-physicals" className="group block h-full">
-                            <div className="bg-slate-50 rounded-2xl p-8 h-full border border-slate-200 transition-all hover:border-brand-primary hover:shadow-lg">
-                                <div className="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-brand-primary mb-6 group-hover:scale-110 transition-transform">
-                                    <Stethoscope className="w-7 h-7" />
-                                </div>
-                                <h3 className="text-xl font-bold text-brand-navy mb-3 group-hover:text-brand-primary transition-colors">Occupational Physicals</h3>
-                                <p className="text-slate-600 text-sm mb-6">
-                                    DOT exams, Functional Capacity Evaluations (FCEs), and lift assessments.
-                                </p>
-                                <span className="text-brand-primary font-bold text-sm flex items-center gap-2">
-                                    View Exam Types &rarr;
-                                </span>
-                            </div>
-                        </Link>
-
-                        {/* Vaccines */}
-                        <Link href="/solutions/workforce-health-screening/vaccinations-immunizations" className="group block h-full">
-                            <div className="bg-slate-50 rounded-2xl p-8 h-full border border-slate-200 transition-all hover:border-brand-primary hover:shadow-lg">
-                                <div className="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-brand-primary mb-6 group-hover:scale-110 transition-transform">
-                                    <Syringe className="w-7 h-7" />
-                                </div>
-                                <h3 className="text-xl font-bold text-brand-navy mb-3 group-hover:text-brand-primary transition-colors">Vaccinations & Immunizations</h3>
-                                <p className="text-slate-600 text-sm mb-6">
-                                    TB testing, Hep B titers, and flu shots for healthcare and food safety compliance.
-                                </p>
-                                <span className="text-brand-primary font-bold text-sm flex items-center gap-2">
-                                    View Clinic Services &rarr;
-                                </span>
-                            </div>
-                        </Link>
+                        ))}
                     </div>
-                </div>
-            </section>
-            <section className="py-20 bg-white">
-                <div className="container">
+                </section>
+
+                {/* Task 10/11: Final CTA */}
+                <ScreeningServicesCTA />
+
+                <div className="container mx-auto px-6">
                     <PremiumCTA />
                 </div>
-            </section>
+            </div>
         </main>
-    )
+    );
 }
