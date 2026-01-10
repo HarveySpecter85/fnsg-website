@@ -4,10 +4,23 @@ import { TextReveal } from '@/app/components/anim/text-reveal'
 import { FadeIn } from '@/app/components/anim/fade-in'
 import { MagneticButton } from '@/app/components/anim/magnetic-button'
 import { TestTube, FlaskConical, CheckCircle2, AlertTriangle } from 'lucide-react'
+import PremiumCTA from '@/app/components/PremiumCTA';
 
 export const metadata: Metadata = {
     title: "Drug & Alcohol Screening Services | 5 to 12-Panel Testing",
-    description: "Comprehensive drug testing services including 5, 10, and 12-panel screens. Rapid results via eCup/xCup technology.",
+    description: "Comprehensive drug testing services including 5, 10, and 12-panel screens. Rapid results via eCup/xCup technology for immediate hiring decisions and full DOT compliance.",
+    alternates: {
+        canonical: 'https://firstnationalstaffing.com/solutions/workforce-health-screening/drug-alcohol-testing',
+    },
+    openGraph: {
+        title: "Drug & Alcohol Screening Services | 5 to 12-Panel Testing",
+        description: "Comprehensive drug testing services including 5, 10, and 12-panel screens. Rapid results via eCup/xCup technology for immediate hiring decisions and full DOT compliance.",
+        url: 'https://firstnationalstaffing.com/solutions/workforce-health-screening/drug-alcohol-testing',
+        images: ['/solutions/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 }
 
 export default function DrugTestingPage() {
@@ -29,7 +42,7 @@ export default function DrugTestingPage() {
                         </TextReveal>
                         <FadeIn delay={0.5}>
                             <MagneticButton>
-                                <Link href="/contact" className="btn-primary text-lg px-8 py-4">
+                                <Link href="/contact/general-inquiries" className="btn-primary text-lg px-8 py-4">
                                     Configure Your Panel
                                 </Link>
                             </MagneticButton>
@@ -138,6 +151,10 @@ export default function DrugTestingPage() {
                     </div>
                 </div>
             </section>
-        </main>
+
+            <div className="container py-12">
+                <PremiumCTA />
+            </div>
+        </main >
     )
 }

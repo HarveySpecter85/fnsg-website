@@ -4,10 +4,23 @@ import { TextReveal } from '@/app/components/anim/text-reveal'
 import { FadeIn } from '@/app/components/anim/fade-in'
 import { MagneticButton } from '@/app/components/anim/magnetic-button'
 import { Syringe, ShieldCheck, HeartPulse } from 'lucide-react'
+import PremiumCTA from '@/app/components/PremiumCTA'
 
 export const metadata: Metadata = {
     title: "Vaccinations & Immunizations | Healthcare Compliance",
-    description: "Clinical immunization services for healthcare and food safety. TB testing, Hep B titers, and flu vaccines.",
+    description: "Comprehensive clinical immunization services for healthcare and industrial environments, including TB testing, Hep B titers, flu vaccines, and readiness compliance.",
+    alternates: {
+        canonical: 'https://firstnationalstaffing.com/solutions/workforce-health-screening/vaccinations-immunizations',
+    },
+    openGraph: {
+        title: "Vaccinations & Immunizations | Healthcare Compliance",
+        description: "Comprehensive clinical immunization services for healthcare and industrial environments, including TB testing, Hep B titers, flu vaccines, and readiness compliance.",
+        url: 'https://firstnationalstaffing.com/solutions/workforce-health-screening/vaccinations-immunizations',
+        images: ['/solutions/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 }
 
 export default function VaccinationsPage() {
@@ -29,7 +42,7 @@ export default function VaccinationsPage() {
                         </TextReveal>
                         <FadeIn delay={0.5}>
                             <MagneticButton>
-                                <Link href="/contact" className="btn-primary text-lg px-8 py-4">
+                                <Link href="/contact/general-inquiries" className="btn-primary text-lg px-8 py-4">
                                     Request Clinical Services
                                 </Link>
                             </MagneticButton>
@@ -90,6 +103,10 @@ export default function VaccinationsPage() {
                     </div>
                 </div>
             </section>
-        </main>
+
+            <div className="container py-12">
+                <PremiumCTA />
+            </div>
+        </main >
     )
 }

@@ -1,14 +1,29 @@
-import React from 'react';
+import { getAllPosts, getFeaturedPost } from "@/lib/get-posts";
+import Link from "next/link";
 import { CompanyBreadcrumbs } from '@/app/components/navigation/CompanyBreadcrumbs';
-import { BlogCard } from '@/app/components/blog/BlogCard';
-import { BlogSidebar } from '@/app/components/blog/BlogSidebar';
+import BlogCategorySidebar from '@/app/components/blog/BlogCategorySidebar';
 
 export const metadata = {
     title: "Company Blog – First National Staffing OS",
     description: "Articles, insights and workforce intelligence from First National Staffing OS.",
 };
 
-export default function CompanyBlogPage() {
+export default async function BlogPage() {
+    const posts = getAllPosts();
+    const featured = getFeaturedPost();
+
+    const formatDate = (date: string) => {
+        try {
+            return new Date(date).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+            });
+        } catch {
+            return date;
+        }
+    };
+
     return (
         <main className="bg-white min-h-screen">
             <div className="container mx-auto px-6 py-12 max-w-7xl">
@@ -29,53 +44,52 @@ export default function CompanyBlogPage() {
                     {/* Main Content Column */}
                     <div className="lg:col-span-3 space-y-12">
 
-                        {/* Featured Post Section */}
-                        <section>
-                            <h2 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-6">Featured Article</h2>
-                            <div className="h-[400px]"> {/* Fixed height for featured card to look substantial */}
-                                <BlogCard
-                                    title="How Workforce Intelligence Transforms Staffing Operations in Georgia"
-                                    excerpt="Moving beyond 'fill rate' to predictive retention modeling and quality analytics. An executive-level overview of how workforce intelligence improves decision-making in Georgia industrial staffing."
-                                    href="/company/blog/sample-post"
-                                    date="Jan 01, 2025"
-                                    category="Labor Market"
-                                    cta="Read Full Article"
-                                />
-                            </div>
-                        </section>
+                        {/* Featured Article */}
+                        {featured && (
+                            <section className="mb-16">
+                                <h2 className="text-lg font-semibold mb-4 text-slate-500 uppercase tracking-wider">Featured Article</h2>
+                                <Link
+                                    href={`/company/blog/${featured.slug}`}
+                                    className="block p-6 rounded-xl border bg-white shadow-sm hover:shadow-lg transition group"
+                                >
+                                    <p className="text-sm uppercase text-blue-600 mb-2 font-bold">
+                                        {featured.category}
+                                    </p>
+                                    <h3 className="text-2xl font-bold group-hover:text-blue-600 transition-colors">{featured.title}</h3>
+                                    <p className="text-gray-600 mt-2 line-clamp-2">{featured.description}</p>
+                                    <p className="text-gray-400 text-sm mt-4">{formatDate(featured.date)}</p>
+                                </Link>
+                            </section>
+                        )}
 
-                        {/* Coming Soon Grid */}
+                        {/* All Articles */}
                         <section>
-                            <h2 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-6">Upcoming Analysis</h2>
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                <BlogCard
-                                    title="The State of Industrial Labor in Gainesville (2025)"
-                                    excerpt="A deep look at labor patterns shaping North Georgia’s industrial corridor and poultry processing hubs."
-                                    href=""
-                                    category="Market Report"
-                                    cta="Coming Soon"
-                                />
-                                <BlogCard
-                                    title="Why 2nd Shift Fails in Manufacturing Plants"
-                                    excerpt="Understanding structural retention issues affecting high-speed operations and how to fix them."
-                                    href=""
-                                    category="Operations"
-                                    cta="Coming Soon"
-                                />
-                                <BlogCard
-                                    title="Warehouse Pay Rate Benchmarks – Georgia 2025"
-                                    excerpt="A statewide analysis of compensation competitiveness across warehouse and logistics roles."
-                                    href=""
-                                    category="Compensation"
-                                    cta="Coming Soon"
-                                />
+                            <h2 className="text-lg font-semibold mb-4 text-slate-500 uppercase tracking-wider">Latest Articles</h2>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                {posts
+                                    .filter((p) => p.slug !== featured?.slug)
+                                    .map((post) => (
+                                        <Link
+                                            key={post.slug}
+                                            href={`/company/blog/${post.slug}`}
+                                            className="p-6 rounded-xl border bg-white shadow-sm hover:shadow-lg transition group h-full flex flex-col"
+                                        >
+                                            <p className="text-sm uppercase text-blue-600 mb-2 font-bold">
+                                                {post.category}
+                                            </p>
+                                            <h3 className="text-xl font-bold group-hover:text-blue-600 transition-colors mb-2">{post.title}</h3>
+                                            <p className="text-gray-600 text-sm mb-4 line-clamp-3 flex-grow">{post.description}</p>
+                                            <p className="text-gray-400 text-xs mt-auto">{formatDate(post.date)}</p>
+                                        </Link>
+                                    ))}
                             </div>
                         </section>
                     </div>
 
                     {/* Sidebar Column */}
                     <div className="lg:col-span-1">
-                        <BlogSidebar className="sticky top-24" />
+                        <BlogCategorySidebar />
                     </div>
                 </div>
             </div>

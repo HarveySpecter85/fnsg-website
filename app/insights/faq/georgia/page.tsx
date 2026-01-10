@@ -5,6 +5,18 @@ import Link from 'next/link';
 export const metadata = {
     title: "Georgia Employment Law FAQ – First National Staffing",
     description: "Common questions about Georgia employment laws, workers comp, and right-to-work status.",
+    alternates: {
+        canonical: '/insights/faq/georgia',
+    },
+    openGraph: {
+        title: "Georgia Employment Law FAQ – First National Staffing",
+        description: "Common questions about Georgia employment laws, workers comp, and right-to-work status.",
+        url: 'https://firstnationalstaffing.com/insights/faq/georgia',
+        images: ['/insights/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 };
 
 export default function GeorgiaFAQPage() {

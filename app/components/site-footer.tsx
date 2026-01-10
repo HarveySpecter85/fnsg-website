@@ -9,9 +9,9 @@ const navigation = {
         { name: 'Direct Hire', href: '/solutions/direct-hire-recruitment' },
     ],
     company: [
-        { name: 'About Us', href: '/company/about-us' },
-        { name: 'Leadership', href: '/company/leadership' },
-        { name: 'Locations', href: '/locations' },
+        { name: 'About Us', href: '/company/our-story' },
+        { name: 'Leadership', href: '/company/leadership-team' },
+        { name: 'Locations', href: '/insights/city' },
         { name: 'Contact', href: '/contact/general-inquiries' },
     ],
     legal: [

@@ -4,11 +4,24 @@ import { TextReveal } from '@/app/components/anim/text-reveal'
 import { FadeIn } from '@/app/components/anim/fade-in'
 import { MagneticButton } from '@/app/components/anim/magnetic-button'
 import { CONTACT_INFO } from '@/lib/site-config'
-import { Briefcase, UserPlus, FileText, MapPin, Phone, Facebook, Linkedin, Instagram, Star, MessageCircle } from 'lucide-react'
+import { Briefcase, UserPlus, FileText, MapPin, Phone, Facebook, Linkedin, Instagram, Star, MessageCircle } from 'lucide-react';
+import PremiumCTA from '@/app/components/PremiumCTA';
 
 export const metadata: Metadata = {
     title: "Contact First National Staffing | Locations & Directory",
     description: "Contact FNSG for staffing solutions, job opportunities, or payroll inquiries. Visit our branches in Atlanta, Gainesville, and Savannah.",
+    alternates: {
+        canonical: '/contact/general-inquiries',
+    },
+    openGraph: {
+        title: "Contact First National Staffing | Locations & Directory",
+        description: "Contact FNSG for staffing solutions, job opportunities, or payroll inquiries.",
+        url: 'https://firstnationalstaffing.com/contact/general-inquiries',
+        images: ['/contact/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'website',
+    },
 }
 
 export default function GeneralInquiriesPage() {
@@ -123,7 +136,7 @@ export default function GeneralInquiriesPage() {
                                     <MapPin className="w-5 h-5 text-brand-primary shrink-0 mt-1" />
                                     {CONTACT_INFO.addresses.atlanta}
                                 </p>
-                                <Link href="/locations/atlanta-staffing-agency" className="text-brand-primary font-semibold hover:underline">
+                                <Link href="/insights/city/atlanta" className="text-brand-primary font-semibold hover:underline">
                                     View Branch Details &rarr;
                                 </Link>
                             </div>
@@ -143,7 +156,7 @@ export default function GeneralInquiriesPage() {
                                     <MapPin className="w-5 h-5 text-brand-primary shrink-0 mt-1" />
                                     {CONTACT_INFO.addresses.gainesville}
                                 </p>
-                                <Link href="/locations/gwinnett-county-staffing-agency" className="text-brand-primary font-semibold hover:underline">
+                                <Link href="/insights/city/gwinnett-county-staffing-agency" className="text-brand-primary font-semibold hover:underline">
                                     View Branch Details &rarr;
                                 </Link>
                             </div>
@@ -163,7 +176,7 @@ export default function GeneralInquiriesPage() {
                                     <MapPin className="w-5 h-5 text-brand-primary shrink-0 mt-1" />
                                     {CONTACT_INFO.addresses.savannah}
                                 </p>
-                                <Link href="/locations/savannah-logistics-staffing" className="text-brand-primary font-semibold hover:underline">
+                                <Link href="/insights/city/savannah-logistics-staffing" className="text-brand-primary font-semibold hover:underline">
                                     View Branch Details &rarr;
                                 </Link>
                             </div>
@@ -233,14 +246,18 @@ export default function GeneralInquiriesPage() {
                                     <p className="text-slate-700 italic mb-4">&quot;FNSG helped us ramp up for peak season with zero headaches. Their on-site team is fantastic.&quot;</p>
                                     <p className="text-sm font-bold text-brand-navy">- Mike T., Logistics Manager</p>
                                 </div>
-                                <a href="#" className="inline-block text-brand-primary font-semibold hover:underline">
-                                    Read more on Google Business &rarr;
-                                </a>
+                                <span className="inline-block text-brand-primary/50 font-semibold cursor-not-allowed">
+                                    Read more on Google Business (Coming Soon)
+                                </span>
                             </div>
                         </FadeIn>
                     </div>
                 </div>
             </section>
+
+            <div className="container py-12">
+                <PremiumCTA />
+            </div>
         </main>
     )
 }

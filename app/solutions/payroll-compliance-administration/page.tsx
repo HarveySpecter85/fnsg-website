@@ -4,10 +4,23 @@ import { TextReveal } from '@/app/components/anim/text-reveal'
 import { FadeIn } from '@/app/components/anim/fade-in'
 import { MagneticButton } from '@/app/components/anim/magnetic-button'
 import { Calculator, FileText, Server, ShieldCheck, CheckCircle2 } from 'lucide-react'
+import PremiumCTA from '@/app/components/PremiumCTA'
 
 export const metadata: Metadata = {
     title: "Payroll Administration & Compliance | Employer of Record",
     description: "Comprehensive payroll administration and compliance. We act as the Employer of Record (EOR), handling tax withholdings, garnishments, and W-2 issuance.",
+    alternates: {
+        canonical: 'https://firstnationalstaffing.com/solutions/payroll-compliance-administration',
+    },
+    openGraph: {
+        title: "Payroll Administration & Compliance | Employer of Record",
+        description: "Comprehensive payroll administration and compliance. We act as the Employer of Record (EOR), handling tax withholdings, garnishments, and W-2 issuance.",
+        url: 'https://firstnationalstaffing.com/solutions/payroll-compliance-administration',
+        images: ['/solutions/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 }
 
 export default function PayrollCompliancePage() {
@@ -102,6 +115,11 @@ export default function PayrollCompliancePage() {
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
+            <section className="py-20 bg-white">
+                <div className="container">
+                    <PremiumCTA />
                 </div>
             </section>
         </main>

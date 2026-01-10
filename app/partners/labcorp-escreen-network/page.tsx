@@ -130,7 +130,7 @@ export default function LabcorpNetworkPage() {
                         <p className="text-lg text-slate-600 mb-8">
                             With thousands of collection sites across the US, we can support your workforce whether they are local to Georgia or distributed nationally.
                         </p>
-                        <Link href="/contact" className="text-brand-primary font-bold hover:underline text-lg">
+                        <Link href="/contact/general-inquiries" className="text-brand-primary font-bold hover:underline text-lg">
                             Find a Collection Site Near You &rarr;
                         </Link>
                     </div>

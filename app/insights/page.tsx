@@ -63,7 +63,7 @@ export default function InsightsPage() {
                     {/* Main Content Column */}
                     <div className="flex-1">
                         <Breadcrumbs items={[
-                            { label: 'Insights', href: '#' }
+                            { label: 'Insights', href: '/insights' }
                         ]} />
 
                         <div className="mb-10">
@@ -76,15 +76,14 @@ export default function InsightsPage() {
                         </div>
 
                         {/* Search Bar */}
-                        <div className="relative mb-12">
+                        {/* Search Bar - Option A (Disabled) */}
+                        <div className="relative mb-12 opacity-70">
                             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                 <Search className="h-5 w-5 text-slate-400" />
                             </div>
-                            <input
-                                type="text"
-                                placeholder="Search city workforce insights..."
-                                className="w-full pl-12 pr-4 py-4 bg-white border border-slate-200 rounded-xl shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-slate-900 placeholder-slate-400"
-                            />
+                            <div className="w-full pl-12 pr-4 py-4 bg-slate-50 border border-slate-200 rounded-xl text-slate-500 italic cursor-not-allowed select-none flex items-center">
+                                Search across Insights coming soon...
+                            </div>
                         </div>
 
                         {/* Regional Sections */}
@@ -187,13 +186,37 @@ export default function InsightsPage() {
                         </div>
 
                         {/* Latest Articles (Placeholder) */}
+                        {/* Latest Analysis */}
                         <div className="space-y-8">
                             <h2 className="text-2xl font-bold text-slate-900 border-b border-slate-200 pb-4">Latest Analysis</h2>
 
-                            {/* Empty State for now */}
-                            {/* <EmptyState message="Latest articles syncing from N8N..." /> */}
-                            <div className="p-8 text-center bg-slate-50 rounded-xl border border-slate-200">
-                                <p className="text-slate-500 italic">Latest articles syncing from N8N...</p>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                {[
+                                    {
+                                        title: "2025 Georgia Warehouse Logistics Forecast",
+                                        href: "/insights/reports/warehouse-logistics-forecast-2025",
+                                        category: "Deep Dive",
+                                        desc: "Predictive analysis of turnovers and demand."
+                                    },
+                                    {
+                                        title: "Gainesville Pay Rate Trends & Snapshot",
+                                        href: "/insights/pay-rates/gainesville",
+                                        category: "Pay Rates",
+                                        desc: "Local industrial wage benchmarks."
+                                    },
+                                    {
+                                        title: "Manufacturing Stability Report 2025",
+                                        href: "/insights/reports/manufacturing-turnover-2025",
+                                        category: "Analysis",
+                                        desc: "Turnover, risk, and retention KPIs."
+                                    }
+                                ].map((item, idx) => (
+                                    <Link key={idx} href={item.href} className="group p-5 border border-slate-200 rounded-xl bg-white hover:border-blue-500 hover:shadow-md transition-all">
+                                        <div className="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2">{item.category}</div>
+                                        <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-600 line-clamp-2">{item.title}</h3>
+                                        <p className="text-sm text-slate-500 line-clamp-2">{item.desc}</p>
+                                    </Link>
+                                ))}
                             </div>
                         </div>
                     </div>

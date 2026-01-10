@@ -4,10 +4,23 @@ import { TextReveal } from '@/app/components/anim/text-reveal'
 import { FadeIn } from '@/app/components/anim/fade-in'
 import { MagneticButton } from '@/app/components/anim/magnetic-button'
 import { Tractor, Bus, FileCheck, Sprout } from 'lucide-react'
+import PremiumCTA from '@/app/components/PremiumCTA'
 
 export const metadata: Metadata = {
     title: "Farm Labor Contracting (FLC) | Agricultural Staffing",
     description: "Registered Farm Labor Contractor (FLC). We handle recruitment, transportation, and payroll for seasonal agricultural workers.",
+    alternates: {
+        canonical: 'https://firstnationalstaffing.com/solutions/farm-labor-contracting',
+    },
+    openGraph: {
+        title: "Farm Labor Contracting (FLC) | Agricultural Staffing",
+        description: "Registered Farm Labor Contractor (FLC). We handle recruitment, transportation, and payroll for seasonal agricultural workers.",
+        url: 'https://firstnationalstaffing.com/solutions/farm-labor-contracting',
+        images: ['/solutions/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 }
 
 export default function FLCPage() {
@@ -96,6 +109,11 @@ export default function FLCPage() {
                             </p>
                         </FadeIn>
                     </div>
+                </div>
+            </section>
+            <section className="py-20 bg-white">
+                <div className="container">
+                    <PremiumCTA />
                 </div>
             </section>
         </main>

@@ -4,10 +4,23 @@ import { TextReveal } from '@/app/components/anim/text-reveal'
 import { FadeIn } from '@/app/components/anim/fade-in'
 import { MagneticButton } from '@/app/components/anim/magnetic-button'
 import { Briefcase, Search, DollarSign, Award } from 'lucide-react'
+import PremiumCTA from '@/app/components/PremiumCTA'
 
 export const metadata: Metadata = {
     title: "Direct Hire Recruitment | Executive & Technical Search",
     description: "Direct hire and executive search services on a contingency fee basis. We specialize in technical roles, maintenance leadership, and QA management.",
+    alternates: {
+        canonical: 'https://firstnationalstaffing.com/solutions/direct-hire-recruitment',
+    },
+    openGraph: {
+        title: "Direct Hire Recruitment | Executive & Technical Search",
+        description: "Direct hire and executive search services on a contingency fee basis. We specialize in technical roles, maintenance leadership, and QA management.",
+        url: 'https://firstnationalstaffing.com/solutions/direct-hire-recruitment',
+        images: ['/solutions/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 }
 
 export default function DirectHirePage() {
@@ -85,6 +98,11 @@ export default function DirectHirePage() {
                             </p>
                         </FadeIn>
                     </div>
+                </div>
+            </section>
+            <section className="py-20 bg-white">
+                <div className="container">
+                    <PremiumCTA />
                 </div>
             </section>
         </main>

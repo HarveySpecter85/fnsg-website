@@ -1,358 +1,284 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import { TextReveal } from '@/app/components/anim/text-reveal'
-import { FadeIn } from '@/app/components/anim/fade-in'
-import { MagneticButton } from '@/app/components/anim/magnetic-button'
-import { LOGISTICS_FORKLIFT_WAGE, LOGISTICS_FILL_RATE, LOGISTICS_TURNOVER_RED, CURRENT_YEAR } from '@/lib/site-config'
-import { Truck, Package, Timer, Barcode, ShieldCheck, Users, TrendingDown, Rocket, CheckSquare, Warehouse } from 'lucide-react'
-import { IntelligenceWidget } from '@/app/components/intelligence-engine/widget'
+import React from 'react';
+import { SeoSidebar } from '@/app/components/insights/SeoSidebar';
+import { Breadcrumbs } from '@/app/components/navigation/Breadcrumbs';
+import Link from 'next/link';
+import Script from 'next/script';
+import { PackageCheck, Truck, Clock, Users, ShieldCheck, Box, BarChart3, CheckCircle, AlertTriangle, TrendingUp, Shield } from 'lucide-react';
+import PremiumCTA from '@/app/components/PremiumCTA';
 
-export const metadata: Metadata = {
-    title: "Warehouse Logistics Staffing Georgia | 24-72h Fill & Risk Management",
-    description: "High-volume warehouse workforce solutions in Atlanta. W-2 Forklift Operators, Pickers, and Leads. 100% Liability Insured. Reduce turnover with On-Site Management.",
-}
+export const metadata = {
+    title: "Warehouse & Logistics Staffing Solutions in Georgia | FNSG OS",
+    description: "Workforce Intelligence-driven staffing for warehouse, distribution, and 3PL operations. Reduce turnover and improve fill rates with FNSG OS.",
+    openGraph: {
+        title: "Warehouse & Logistics Staffing Solutions",
+        url: "https://firstnationalstaffing.com/industries/warehouse-logistics-staffing",
+        type: "website"
+    }
+};
 
-export default function WarehouseLogisticsStaffingPage() {
-    const schema = {
+export default function WarehouseLogisticsPage() {
+    const jsonLd = {
         "@context": "https://schema.org",
         "@type": "Service",
-        "serviceType": "Warehouse Staffing",
-        "name": "Logistics & Distribution Workforce",
+        "serviceType": "Warehouse & Logistics Staffing",
         "provider": {
             "@type": "Organization",
             "name": "First National Staffing Group",
-            "knowsAbout": [
-                "3PL Operations",
-                "OSHA Forklift Safety",
-                "Inventory Control",
-                "High-Volume Staffing"
-            ]
+            "url": "https://firstnationalstaffing.com"
         },
-        "areaServed": [
-            { "@type": "City", "name": "Atlanta" },
-            { "@type": "City", "name": "Savannah" },
-            { "@type": "AdministrativeArea", "name": "Fulton County" },
-            { "@type": "AdministrativeArea", "name": "Gwinnett County" }
-        ],
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Logistics Roles",
-            "itemListElement": [
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Forklift Operators (Sit/Stand)" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Order Pickers" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Distribution Supervisors" } }
-            ]
+        "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "Georgia"
         },
-        "audience": {
-            "@type": "BusinessAudience",
-            "audienceType": "Logistics Managers"
-        }
-    }
+        "description": "Workforce Intelligence-driven staffing solutions for warehouse and logistics operations including forklift operators, pickers, packers, shipping, receiving, and on-site workforce management.",
+        "url": "https://firstnationalstaffing.com/industries/warehouse-logistics-staffing"
+    };
 
     return (
-        <main className="bg-white">
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+        <main className="bg-white min-h-screen py-12">
+            <Script
+                id="warehouse-jsonld"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
 
-            {/* Hero Section */}
-            <section className="relative py-24 lg:py-32 overflow-hidden bg-slate-50 border-b border-slate-200">
-                <div className="container">
-                    <div className="max-w-4xl">
-                        <TextReveal as="h1" className="text-5xl md:text-7xl font-bold text-brand-navy mb-6 leading-tight">
-                            Warehouse & Logistics Workforce Solutions
-                        </TextReveal>
-                        <TextReveal as="h2" className="text-2xl md:text-3xl font-medium text-brand-secondary mb-10 block">
-                            Operational Continuity for Georgia Hubs | 24-72h Fill
-                        </TextReveal>
-                        <FadeIn delay={0.5}>
-                            <MagneticButton>
-                                <Link href="/contact" className="btn-primary text-lg px-8 py-4">
-                                    Request Workforce Proposal
-                                </Link>
-                            </MagneticButton>
-                        </FadeIn>
-                    </div>
-                </div>
-            </section>
+            <div className="container mx-auto px-6 max-w-7xl">
+                <div className="flex flex-col lg:flex-row gap-12">
+                    <SeoSidebar />
+                    <div className="flex-1">
+                        <Breadcrumbs items={[
+                            { label: 'Industries', href: '/industries' },
+                            { label: 'Warehouse & Logistics', href: '/industries/warehouse-logistics-staffing' }
+                        ]} />
 
-            {/* Zero-Click Answer Block */}
-            <section className="py-20">
-                <div className="container">
-                    <FadeIn>
-                        <div className="bg-white border-l-8 border-brand-primary p-8 md:p-12 rounded-r-xl shadow-sm ring-1 ring-slate-100">
-                            <p className="text-lg md:text-xl text-slate-700 leading-relaxed">
-                                <strong className="text-brand-navy font-bold">First National Staffing Group</strong> provides enterprise-grade, W-2 labor solutions for Georgia&apos;s logistics sector. We specialize in <strong className="text-brand-navy font-bold">high-volume fulfillment</strong>, <strong className="text-brand-navy font-bold">distribution centers (DC)</strong>, and <strong className="text-brand-navy font-bold">3PL operations</strong>, offering a <strong className="text-brand-navy font-bold">24-hour replacement guarantee</strong> and fully bilingual on-site management. All placements are screened via <strong className="text-brand-navy font-bold">eScreen (10-Panel)</strong> and verified for OSHA compliance.
-                            </p>
-                        </div>
-                    </FadeIn>
-                </div>
-            </section>
+                        <div className="space-y-12 mt-8">
 
-            {/* Market Intelligence Widget */}
-            <section className="py-20 bg-slate-950 relative overflow-hidden">
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
-                <div className="container relative z-10">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                                Calibrate Your Logistics Workforce
-                            </h2>
-                            <p className="text-lg text-slate-400 mb-8">
-                                Use our AI-driven intelligence engine to analyze local wage benchmarks, turnover risks, and candidate availability for your specific distribution hub.
-                            </p>
-                            <ul className="space-y-4">
-                                <li className="flex items-center gap-3 text-slate-300">
-                                    <div className="w-2 h-2 rounded-full bg-cyan-500" />
-                                    Real-time Wage Analysis
-                                </li>
-                                <li className="flex items-center gap-3 text-slate-300">
-                                    <div className="w-2 h-2 rounded-full bg-cyan-500" />
-                                    Competitor Headcount Scanning
-                                </li>
-                                <li className="flex items-center gap-3 text-slate-300">
-                                    <div className="w-2 h-2 rounded-full bg-cyan-500" />
-                                    Instant Shift Coverage Estimates
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <IntelligenceWidget industry="Logistics" defaultLocation="Atlanta, GA" />
-                        </div>
-                    </div>
-                </div>
-            </section>
+                            {/* H1 & Intro */}
+                            <section>
+                                <h1 className="text-4xl font-bold text-slate-900 mb-6">Warehouse & Logistics Staffing Solutions in Georgia — Powered by FNSG OS</h1>
+                                <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                                    Georgia's supply chain is undergoing an accelerated transformation.
+                                    The pressure on warehouse, distribution, and fulfillment operations continues to increase due to turnover, absenteeism, aggressive wage shifts, demand peaks, operator shortages, and growing operational complexity.
+                                </p>
+                                <p className="text-lg text-slate-700 leading-relaxed font-medium">
+                                    In this environment, companies relying on warehouse & logistics need stability, predictability, and compliance.
+                                    <span className="text-blue-600"> FNSG OS is the platform designed to achieve it.</span>
+                                </p>
+                            </section>
 
-            {/* Stats Grid (Pulse) */}
-            <section className="py-20 bg-slate-50">
-                <div className="container">
-                    <div className="mb-12">
-                        <h2 className="text-3xl font-bold text-brand-navy mb-4">Atlanta Logistics Labor Pulse ({CURRENT_YEAR})</h2>
-                        <p className="text-brand-gray">Data-driven insights for high-velocity supply chains.</p>
-                    </div>
-                    <FadeIn stagger={0.2} className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div className="card-standard bg-white border border-slate-200 shadow-sm">
-                            <div className="flex items-start justify-between mb-4">
-                                <div className="icon-wrapper bg-brand-light text-brand-primary">
-                                    <Truck className="w-6 h-6" />
-                                </div>
-                                <span className="text-xs font-semibold bg-slate-100 text-brand-navy px-2 py-1 rounded">Wages</span>
-                            </div>
-                            <h3 className="text-4xl font-bold text-brand-navy mb-2">{LOGISTICS_FORKLIFT_WAGE}</h3>
-                            <p className="text-sm font-medium text-brand-secondary">Avg. Forklift Wage</p>
-                            <p className="text-sm text-brand-gray mt-2">Attract certified talent.</p>
-                        </div>
+                            {/* Operational Challenges */}
+                            <section>
+                                <h2 className="text-2xl font-bold text-slate-900 mb-6">Operational Challenges in Warehouse & Logistics</h2>
+                                <p className="text-slate-600 mb-6">Warehouse and logistics companies face structural issues that affect productivity and profitability:</p>
 
-                        <div className="card-standard bg-white border border-slate-200 shadow-sm">
-                            <div className="flex items-start justify-between mb-4">
-                                <div className="icon-wrapper bg-brand-light text-brand-primary">
-                                    <Timer className="w-6 h-6" />
-                                </div>
-                                <span className="text-xs font-semibold bg-slate-100 text-brand-navy px-2 py-1 rounded">Speed</span>
-                            </div>
-                            <h3 className="text-4xl font-bold text-brand-navy mb-2">{LOGISTICS_FILL_RATE}</h3>
-                            <p className="text-sm font-medium text-brand-secondary">Fill-Rate (within 48h)</p>
-                            <p className="text-sm text-brand-gray mt-2">Rapid deployment for peak seasons.</p>
-                        </div>
-
-                        <div className="card-standard bg-white border border-slate-200 shadow-sm">
-                            <div className="flex items-start justify-between mb-4">
-                                <div className="icon-wrapper bg-brand-light text-brand-primary">
-                                    <TrendingDown className="w-6 h-6" />
-                                </div>
-                                <span className="text-xs font-semibold bg-slate-100 text-brand-navy px-2 py-1 rounded">Retention</span>
-                            </div>
-                            <h3 className="text-4xl font-bold text-brand-navy mb-2">{LOGISTICS_TURNOVER_RED}</h3>
-                            <p className="text-sm font-medium text-brand-secondary">Turnover Reduction</p>
-                            <p className="text-sm text-brand-gray mt-2">With On-Site Program implementation.</p>
-                        </div>
-                    </FadeIn>
-
-                    <div className="mt-8 text-center">
-                        <Link href="/data-insights" className="text-brand-primary font-semibold hover:underline inline-flex items-center gap-2">
-                            Download {CURRENT_YEAR} Warehouse Wage & Retention Guide <span aria-hidden="true">&rarr;</span>
-                        </Link>
-                    </div>
-                </div>
-            </section>
-
-            {/* Cost of Vacancy */}
-            <section className="py-20 bg-white">
-                <div className="container">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                        <div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">The &quot;Cost of Vacancy&quot;</h2>
-                            <p className="text-lg text-slate-600 mb-8">
-                                Empty forklift seats create bottlenecks. Our <strong className="text-brand-navy">&quot;Hot-Standby&quot; Roster</strong> ensures you have pre-vetted operators ready to deploy. We reduce your <strong className="text-brand-navy">Cost-Per-Hire</strong> by absorbing all recruitment, screening, and payroll liability expenses.
-                            </p>
-                            <ul className="space-y-6">
-                                <li className="flex items-start gap-4">
-                                    <div className="mt-1 bg-brand-light p-1 rounded-full shadow-sm text-brand-teal">
-                                        <Users className="w-5 h-5" />
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div className="bg-red-50 p-6 rounded-lg border border-red-100">
+                                        <h3 className="font-bold text-red-900 flex items-center gap-2 mb-2">
+                                            <AlertTriangle className="w-5 h-5" /> High Turnover + Low Retention
+                                        </h3>
+                                        <p className="text-red-800 text-sm">Entry-level and physically demanding roles face extreme turnover cycles, disrupting workflow continuity.</p>
                                     </div>
-                                    <div>
-                                        <h4 className="font-bold text-brand-navy">Hot-Standby Roster</h4>
-                                        <p className="text-slate-600">Pre-screened candidates ready for immediate deployment.</p>
+                                    <div className="bg-red-50 p-6 rounded-lg border border-red-100">
+                                        <h3 className="font-bold text-red-900 flex items-center gap-2 mb-2">
+                                            <Clock className="w-5 h-5" /> Attendance Instability
+                                        </h3>
+                                        <p className="text-red-800 text-sm">NCNS (No-Call, No-Show) impacts daily productivity, order fulfillment, and drives unplanned overtime costs, especially on 2nd & 3rd shifts.</p>
                                     </div>
-                                </li>
-                                <li className="flex items-start gap-4">
-                                    <div className="mt-1 bg-brand-light p-1 rounded-full shadow-sm text-brand-teal">
-                                        <ShieldCheck className="w-5 h-5" />
+                                    <div className="bg-red-50 p-6 rounded-lg border border-red-100">
+                                        <h3 className="font-bold text-red-900 flex items-center gap-2 mb-2">
+                                            <TrendingUp className="w-5 h-5" /> Pay Rate Competitiveness
+                                        </h3>
+                                        <p className="text-red-800 text-sm">Wage differences of just $0.25–$0.75/hr can cause immediate talent leakage to neighboring facilities.</p>
                                     </div>
-                                    <div>
-                                        <h4 className="font-bold text-brand-navy">Liability Absorption</h4>
-                                        <p className="text-slate-600">We handle all payroll, taxes, and workers&apos; comp claims.</p>
+                                    <div className="bg-red-50 p-6 rounded-lg border border-red-100">
+                                        <h3 className="font-bold text-red-900 flex items-center gap-2 mb-2">
+                                            <Shield className="w-5 h-5" /> OSHA Incidents
+                                        </h3>
+                                        <p className="text-red-800 text-sm">High-traffic warehouses face elevated risks: forklift collisions, slips/falls, improper lifting, and equipment misuse.</p>
                                     </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="relative">
-                            {/* Placeholder for visual */}
-                            <div className="aspect-square rounded-2xl bg-slate-50 border border-slate-200 p-8 flex items-center justify-center relative overflow-hidden">
-                                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-brand-light/50 via-transparent to-transparent"></div>
-                                <div className="text-center relative z-10">
-                                    <Warehouse className="w-24 h-24 text-brand-primary mx-auto mb-4 opacity-80" />
-                                    <p className="text-brand-navy font-bold text-xl">Zero Downtime</p>
-                                    <p className="text-sm text-slate-500">Continuous Operations</p>
                                 </div>
-                            </div>
+                                <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div className="bg-red-50 p-6 rounded-lg border border-red-100">
+                                        <h3 className="font-bold text-red-900 flex items-center gap-2 mb-2">
+                                            <Users className="w-5 h-5" /> Limited Supervision
+                                        </h3>
+                                        <p className="text-red-800 text-sm">Internal supervisors often lack the capacity to train, measure, and audit temporary staff effectively.</p>
+                                    </div>
+                                    <div className="bg-red-50 p-6 rounded-lg border border-red-100">
+                                        <h3 className="font-bold text-red-900 flex items-center gap-2 mb-2">
+                                            <TrendingUp className="w-5 h-5" /> Peak Season Breakdowns
+                                        </h3>
+                                        <p className="text-red-800 text-sm">Q4 and production surges generate burnout, absences, explosive demand, and urgency in ramp-ups.</p>
+                                    </div>
+                                </div>
+                            </section>
+
+                            {/* How FNSG OS Solves These Problems */}
+                            <section>
+                                <h2 className="text-2xl font-bold text-slate-900 mb-6">How FNSG OS Solves These Problems</h2>
+                                <p className="text-lg text-slate-700 mb-8 italic border-l-4 border-blue-600 pl-4">
+                                    The difference is NO longer just "sending people". It's managing the operation with intelligence.
+                                </p>
+
+                                <div className="space-y-8">
+                                    <div className="flex gap-4">
+                                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 text-blue-600 font-bold text-xl">1</div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-slate-900">Attendance Intelligence OS</h3>
+                                            <p className="text-slate-600 mt-2">
+                                                Predicts who will miss work, on which shift, on which day, which role is at risk, and how operations are impacted.
+                                                This proactive approach reduces NCNS and improves weekly stability.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex gap-4">
+                                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 text-blue-600 font-bold text-xl">2</div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-slate-900">Workforce Stability Modeling</h3>
+                                            <p className="text-slate-600 mt-2">
+                                                Proprietary modeling for warehouse environments: analyzing behavior by shift, patterns by county, sensitivity to peaks, risk by role, and providing dynamic wage recommendations.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex gap-4">
+                                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 text-blue-600 font-bold text-xl">3</div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-slate-900">Pay Rate Intelligence</h3>
+                                            <p className="text-slate-600 mt-2">
+                                                Tells you in real-time if your rate is lagging the market, in which county and why, identifies flight risk, and offers recommendations to avoid turnover.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex gap-4">
+                                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 text-blue-600 font-bold text-xl">4</div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-slate-900">On-Site Workforce Management Programs</h3>
+                                            <p className="text-slate-600 mt-2">
+                                                FNSG OS manages attendance, replacements, training, safety, OSHA compliance, and daily reporting.
+                                                Ideal for operations with 20–200 workers.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex gap-4">
+                                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 text-blue-600 font-bold text-xl">5</div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-slate-900">Compliance OS</h3>
+                                            <p className="text-slate-600 mt-2">
+                                                Includes I-9 with validation, E-Verify, PPE enforcement, OSHA documentation, labor audits, and safety protocols for forklifts and equipment.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex gap-4">
+                                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 text-blue-600 font-bold text-xl">6</div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-slate-900">High-Velocity Ramp-Ups</h3>
+                                            <p className="text-slate-600 mt-2">
+                                                Specialized deployment for operations needing 10–200 workers in 24–72 hours.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            {/* KPIs We Improve */}
+                            <section>
+                                <h2 className="text-2xl font-bold text-slate-900 mb-6">KPIs We Improve in Warehouse & Logistics</h2>
+                                <div className="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                                    <table className="w-full text-left text-sm">
+                                        <thead className="bg-slate-900 text-white font-semibold">
+                                            <tr>
+                                                <th className="p-4 border-b border-slate-700">KPI</th>
+                                                <th className="p-4 border-b border-slate-700">Improvement with FNSG OS</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody className="divide-y divide-slate-100">
+                                            <tr><td className="p-4 font-medium text-slate-900">Attendance Reliability</td><td className="p-4 text-green-600 font-bold">+8–15%</td></tr>
+                                            <tr><td className="p-4 font-medium text-slate-900">Turnover Reduction</td><td className="p-4 text-green-600 font-bold">-12–25%</td></tr>
+                                            <tr><td className="p-4 font-medium text-slate-900">Ramp-Up Speed</td><td className="p-4 text-green-600 font-bold">24–72 hours</td></tr>
+                                            <tr><td className="p-4 font-medium text-slate-900">PPE Compliance</td><td className="p-4 text-green-600 font-bold">+20–40%</td></tr>
+                                            <tr><td className="p-4 font-medium text-slate-900">Training Completion Rate</td><td className="p-4 text-green-600 font-bold">+30–50%</td></tr>
+                                            <tr><td className="p-4 font-medium text-slate-900">Productivity Stability</td><td className="p-4 text-green-600 font-bold">+10–18%</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </section>
+
+                            {/* Roles We Staff */}
+                            <section>
+                                <h2 className="text-2xl font-bold text-slate-900 mb-6">Roles We Staff in Warehouse & Logistics</h2>
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                    <div className="bg-slate-50 p-6 rounded-lg">
+                                        <h3 className="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2">Operations</h3>
+                                        <ul className="space-y-2 text-slate-700 text-sm">
+                                            <li>• Warehouse Associates</li>
+                                            <li>• Pickers / Packers</li>
+                                            <li>• Material Handlers</li>
+                                            <li>• Inventory Control</li>
+                                        </ul>
+                                    </div>
+                                    <div className="bg-slate-50 p-6 rounded-lg">
+                                        <h3 className="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2">Equipment</h3>
+                                        <ul className="space-y-2 text-slate-700 text-sm">
+                                            <li>• Forklift Operators (Sit-Down / Stand-Up / Reach / Order Picker)</li>
+                                            <li>• Clamp Truck Operators</li>
+                                            <li>• Pallet Jack (Manual & Electric)</li>
+                                        </ul>
+                                    </div>
+                                    <div className="bg-slate-50 p-6 rounded-lg">
+                                        <h3 className="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2">Shipping & Receiving</h3>
+                                        <ul className="space-y-2 text-slate-700 text-sm">
+                                            <li>• Loaders / Unloaders</li>
+                                            <li>• Pallet Builders</li>
+                                            <li>• Dock Workers</li>
+                                            <li>• Shipping Clerks</li>
+                                        </ul>
+                                    </div>
+                                    <div className="bg-slate-50 p-6 rounded-lg md:col-span-3">
+                                        <h3 className="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2">Leadership</h3>
+                                        <div className="flex flex-wrap gap-4 text-slate-700 text-sm">
+                                            <span>• Line Leads</span>
+                                            <span>• Shift Supervisors</span>
+                                            <span>• QC / QA Technicians</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            {/* FAQs */}
+                            <section>
+                                <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
+                                <div className="space-y-4">
+                                    {[
+                                        { q: "How fast can FNSG OS staff a warehouse?", a: "Between 24–72 hours depending on the volume required." },
+                                        { q: "How do you stabilize 2nd & 3rd shift?", a: "Through our Attendance OS, targeted incentives, and risk prediction modeling." },
+                                        { q: "Do you provide forklift-certified operators?", a: "Yes, with both internal validations and client-specific practical assessments." },
+                                        { q: "Can you support peak season ramp-ups?", a: "Yes, this is an OS specialty: supporting Q4 logistics peaks and Q2/Q3 production surges." },
+                                        { q: "How do you reduce turnover?", a: "By using predictive models, pay rate intelligence, and dedicated on-site supervision." },
+                                        { q: "Do you offer bilingual staff?", a: "Yes, we provide English/Spanish speakers for warehouse roles and can staff entire bilingual teams." }
+                                    ].map((faq, index) => (
+                                        <details key={index} className="group border border-slate-200 rounded-lg p-4 open:bg-slate-50 transition-all">
+                                            <summary className="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
+                                                {faq.q}
+                                                <span className="transition group-open:rotate-180">▼</span>
+                                            </summary>
+                                            <p className="text-slate-600 mt-3 text-sm">{faq.a}</p>
+                                        </details>
+                                    ))}
+                                </div>
+                            </section>
+
+                            {/* CTA Section */}
+                            <PremiumCTA />
+
                         </div>
                     </div>
                 </div>
-            </section>
-
-            {/* Accelerated Onboarding */}
-            <section className="py-20 bg-brand-light border-y border-brand-primary/10">
-                <div className="container">
-                    <div className="max-w-4xl mx-auto text-center">
-                        <div className="inline-flex items-center justify-center p-3 bg-white rounded-full shadow-sm mb-6 text-brand-primary">
-                            <Rocket className="w-8 h-8" />
-                        </div>
-                        <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">Accelerated Onboarding</h2>
-                        <p className="text-xl text-slate-700 mb-8 leading-relaxed">
-                            Leveraging our <Link href="/solutions/workforce-health-screening" className="text-brand-primary font-semibold hover:underline">Labcorp/eScreen Network</Link>, we process drug screens and background checks in hours, not days, ensuring your shift quotas are met faster.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            {/* Roles Table */}
-            <section className="py-20 bg-white">
-                <div className="container">
-                    <div className="mb-10 text-center max-w-3xl mx-auto">
-                        <h2 className="text-3xl font-bold text-brand-navy mb-4">Roles & Capabilities</h2>
-                        <p className="text-slate-600">Scalable workforce solutions for every logistics function.</p>
-                    </div>
-
-                    <div className="overflow-x-auto rounded-xl border border-slate-200 shadow-sm bg-white">
-                        <table className="w-full text-left border-collapse">
-                            <thead className="bg-slate-50">
-                                <tr>
-                                    <th className="p-4 font-bold text-brand-navy border-b border-slate-200">Role Category</th>
-                                    <th className="p-4 font-bold text-brand-navy border-b border-slate-200">Screening Standard</th>
-                                    <th className="p-4 font-bold text-brand-navy border-b border-slate-200">Shift Availability</th>
-                                    <th className="p-4 font-bold text-brand-navy border-b border-slate-200">Scale Capacity</th>
-                                    <th className="p-4 font-bold text-brand-navy border-b border-slate-200">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-slate-100">
-                                <tr className="hover:bg-slate-50 transition-colors">
-                                    <td className="p-4 font-medium text-brand-navy flex items-center gap-2">
-                                        <Truck className="w-4 h-4 text-brand-teal" /> Forklift / Clamp
-                                    </td>
-                                    <td className="p-4 text-slate-600">OSHA Certified + Practical</td>
-                                    <td className="p-4 text-slate-600">1st / 2nd / 3rd</td>
-                                    <td className="p-4 text-slate-600">1-50 Operators</td>
-                                    <td className="p-4"><Link href="/contact" className="text-brand-primary font-medium hover:underline">Check Rates</Link></td>
-                                </tr>
-                                <tr className="hover:bg-slate-50 transition-colors">
-                                    <td className="p-4 font-medium text-brand-navy flex items-center gap-2">
-                                        <Barcode className="w-4 h-4 text-brand-teal" /> Pick / Pack
-                                    </td>
-                                    <td className="p-4 text-slate-600">Accuracy Tested</td>
-                                    <td className="p-4 text-slate-600">High-Volume</td>
-                                    <td className="p-4 text-slate-600">10-200 Staff</td>
-                                    <td className="p-4"><Link href="/contact" className="text-brand-primary font-medium hover:underline">Check Rates</Link></td>
-                                </tr>
-                                <tr className="hover:bg-slate-50 transition-colors">
-                                    <td className="p-4 font-medium text-brand-navy flex items-center gap-2">
-                                        <Package className="w-4 h-4 text-brand-teal" /> Material Handlers
-                                    </td>
-                                    <td className="p-4 text-slate-600">Lift Test (50lbs)</td>
-                                    <td className="p-4 text-slate-600">All Shifts</td>
-                                    <td className="p-4 text-slate-600">Scalable</td>
-                                    <td className="p-4"><Link href="/contact" className="text-brand-primary font-medium hover:underline">Check Rates</Link></td>
-                                </tr>
-                                <tr className="hover:bg-slate-50 transition-colors">
-                                    <td className="p-4 font-medium text-brand-navy flex items-center gap-2">
-                                        <Users className="w-4 h-4 text-brand-teal" /> Logistics Leads
-                                    </td>
-                                    <td className="p-4 text-slate-600">Bilingual / WMS Exp</td>
-                                    <td className="p-4 text-slate-600">Fixed Shift</td>
-                                    <td className="p-4 text-slate-600">Individual</td>
-                                    <td className="p-4"><Link href="/contact" className="text-brand-primary font-medium hover:underline">Check Rates</Link></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-
-            {/* Risk Management */}
-            <section className="py-20 bg-slate-50">
-                <div className="container max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl font-bold text-brand-navy mb-6">Mitigating Co-Employment Risk</h2>
-                    <p className="text-lg text-slate-600 mb-8">
-                        We act as the primary employer of record, shielding you from compliance headaches.
-                    </p>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-                        <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                            <CheckSquare className="w-8 h-8 text-brand-primary mb-4" />
-                            <h3 className="font-bold text-brand-navy mb-2">ACA & Benefits</h3>
-                            <p className="text-slate-600 text-sm">We manage all Affordable Care Act compliance and reporting.</p>
-                        </div>
-                        <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                            <ShieldCheck className="w-8 h-8 text-brand-primary mb-4" />
-                            <h3 className="font-bold text-brand-navy mb-2">Workers Comp</h3>
-                            <p className="text-slate-600 text-sm">Fully insured to protect your facility&apos;s EMR rating.</p>
-                        </div>
-                        <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                            <Users className="w-8 h-8 text-brand-primary mb-4" />
-                            <h3 className="font-bold text-brand-navy mb-2">Safety Audits</h3>
-                            <p className="text-slate-600 text-sm">Our on-site leads conduct weekly PPE and safety walk-throughs.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* FAQ */}
-            <section className="py-20 bg-white">
-                <div className="container max-w-3xl mx-auto">
-                    <h2 className="text-3xl font-bold text-brand-navy mb-10 text-center">Frequently Asked Questions</h2>
-                    <div className="space-y-4">
-                        <div className="bg-slate-50 p-6 rounded-xl border border-slate-100 shadow-sm">
-                            <h3 className="font-bold text-brand-navy text-lg mb-2">How fast can you ramp up for Q4 peak season?</h3>
-                            <p className="text-slate-600">We begin &quot;Peak Planning&quot; 6 weeks in advance, building a &quot;Warm Bench&quot; of candidates equal to 150% of your projected requirement to guarantee fulfillment.</p>
-                        </div>
-                        <div className="bg-slate-50 p-6 rounded-xl border border-slate-100 shadow-sm">
-                            <h3 className="font-bold text-brand-navy text-lg mb-2">Do you verify forklift certifications?</h3>
-                            <p className="text-slate-600">Yes. We verify existing certifications and can coordinate on-site practical assessments to ensure operators meet your facility&apos;s specific safety standards.</p>
-                        </div>
-                        <div className="bg-slate-50 p-6 rounded-xl border border-slate-100 shadow-sm">
-                            <h3 className="font-bold text-brand-navy text-lg mb-2">What WMS systems are your staff familiar with?</h3>
-                            <p className="text-slate-600">Our candidate pool includes workers experienced with SAP, Oracle, NetSuite, and RF Scanner handhelds.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Areas We Serve */}
-            <section className="py-20 bg-brand-navy text-white text-center">
-                <div className="container">
-                    <h2 className="text-3xl font-bold mb-6">Areas We Serve</h2>
-                    <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-                        Serving major logistics corridors: <strong className="text-white">Fulton Industrial Blvd</strong>, <strong className="text-white">Gwinnett Distribution Hubs</strong>, <strong className="text-white">Savannah Port Logistics</strong>, and <strong className="text-white">Gainesville Manufacturing</strong>.
-                    </p>
-                </div>
-            </section>
+            </div>
         </main>
-    )
+    );
 }

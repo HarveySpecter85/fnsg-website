@@ -4,7 +4,8 @@ import { TextReveal } from '@/app/components/anim/text-reveal'
 import { FadeIn } from '@/app/components/anim/fade-in'
 import { MagneticButton } from '@/app/components/anim/magnetic-button'
 import { HEALTH_TURNOVER_MARKET, HEALTH_TURNOVER_FNSG, HEALTH_FILL_TIME, HEALTH_COMPLIANCE_SCORE, CURRENT_YEAR } from '@/lib/site-config'
-import { Shield, Clock, CheckCircle, Activity, FileCheck, Stethoscope, Syringe, UserCheck, Building2 } from 'lucide-react'
+import { Stethoscope, HeartPulse, UserCheck, ShieldCheck, Clock, Building2, FileCheck, Shield, Activity, Syringe, CheckCircle } from 'lucide-react';
+import PremiumCTA from '@/app/components/PremiumCTA';
 import { IntelligenceWidget } from '@/app/components/intelligence-engine/widget'
 
 export const metadata: Metadata = {
@@ -64,7 +65,7 @@ export default function HealthcareSupportStaffingPage() {
                         </TextReveal>
                         <FadeIn delay={0.5}>
                             <MagneticButton>
-                                <Link href="/contact" className="btn-primary text-lg px-8 py-4">
+                                <Link href="/contact/general-inquiries" className="btn-primary text-lg px-8 py-4">
                                     Request Staffing Proposal
                                 </Link>
                             </MagneticButton>
@@ -370,6 +371,10 @@ export default function HealthcareSupportStaffingPage() {
                     </p>
                 </div>
             </section>
+
+            <div className="container py-12">
+                <PremiumCTA />
+            </div>
         </main>
     )
 }

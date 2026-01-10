@@ -8,8 +8,26 @@ export const metadata = {
 };
 
 export default function HealthcareInsightPage() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Healthcare Support Staffing Insights",
+        "url": "https://firstnationalstaffing.com/insights/industry/healthcare-support-staffing",
+        "image": "https://firstnationalstaffing.com/insights/industry/healthcare-support-staffing/opengraph-image",
+        "description": "EVS, non-clinical support, and hospital logistics staffing trends in Georgia.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "First National Staffing OS",
+            "url": "https://firstnationalstaffing.com"
+        }
+    };
+
     return (
         <main className="bg-white min-h-screen">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             <div className="container mx-auto px-6 py-12 max-w-7xl">
                 <div className="flex flex-col lg:flex-row gap-12">
                     <SeoSidebar />
@@ -27,7 +45,9 @@ export default function HealthcareInsightPage() {
 
                         <div className="prose prose-lg max-w-none">
                             <h2>EVS & Support Staff Trends</h2>
-                            <p>Placeholder content for healthcare support staffing...</p>
+                            <div className="p-8 bg-slate-50 rounded-lg border border-slate-100 text-slate-500 italic text-center">
+                                Detailed healthcare support labor market analysis coming soon.
+                            </div>
                         </div>
                     </div>
                 </div>

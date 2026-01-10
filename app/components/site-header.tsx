@@ -13,9 +13,9 @@ function cn(...inputs: ClassValue[]) {
 const navigation = {
     solutions: {
         outcomeBased: [
-            { title: 'Workforce Health Screening', href: '/solutions/workforce-health-screening', description: 'Drug testing, physicals, and immunizations.' },
-            { title: 'On-Site Management', href: '/solutions/on-site-workforce-management', description: 'Embedded performance teams.' },
-            { title: 'Payroll & Compliance', href: '/solutions/payroll-compliance-administration', description: 'EOR services and tax handling.' },
+            { title: 'Workforce Health Screening', href: '/solutions/workforce-health-screening-os', description: 'Drug testing, physicals, and immunizations.' },
+            { title: 'On-Site Management', href: '/solutions/on-site-workforce-management-os', description: 'Embedded performance teams.' },
+            { title: 'Payroll & Compliance', href: '/solutions/payroll-compliance-administration-os', description: 'EOR services and tax handling.' },
             { title: 'Direct Hire', href: '/solutions/direct-hire-recruitment', description: 'Executive and technical search.' },
             { title: 'Farm Labor Contracting', href: '/solutions/farm-labor-contracting', description: 'Licensed agricultural staffing.' },
         ],
@@ -42,31 +42,37 @@ const navigation = {
         { title: 'Safety Training Protocols', href: '/risk-compliance/safety-training-protocols' },
     ],
     dataInsights: [
-        { title: 'Workforce KPIs', href: '/insights/kpis/' },
-        { title: 'Labor Market Trends', href: '/insights/labor-market/' },
-        { title: 'Reports & Forecasts', href: '/insights/reports/' },
-        { title: 'City Insights', href: '/insights/city/' },
-        { title: 'Industry Deep Dives', href: '/insights/industry/' },
+        { title: 'Workforce Economics', href: '/insights/kpis' },
+        { title: 'ROI Model – Return on Staffing', href: '/data-insights/return-on-staffing-roi-model' },
+        { title: 'Labor Market Intelligence', href: '/insights/labor-market' },
+
+        { title: 'GA Industrial Workforce 2025', href: '/insights/reports/georgia-industrial-workforce-2025' },
+        { title: 'Warehouse Forecast 2025', href: '/insights/reports/warehouse-logistics-forecast-2025' },
+        { title: 'Manufacturing Turnover 2025', href: '/insights/reports/manufacturing-turnover-2025' },
+        { title: 'Healthcare & EVS 2025', href: '/insights/reports/healthcare-evs-2025' },
+        { title: 'Workforce Intelligence Hub', href: '/insights/reports/' },
+        { title: 'Regional Intelligence', href: '/insights/city/' },
+        { title: 'Sector Analytics', href: '/insights/industry/' },
     ],
     company: [
-        { title: 'Performance Metrics', href: '/company/performance-metrics/' },
-        { title: 'Leadership Team', href: '/company/leadership-team/' },
-        { title: 'Our Story', href: '/company/our-story/' },
-        { title: 'Press & Media', href: '/company/press-media/' },
-        { title: 'Blog', href: '/company/blog/' },
+        { title: 'Performance Metrics', href: '/company/performance-metrics' },
+        { title: 'Leadership Team', href: '/company/leadership-team' },
+        { title: 'Our Story', href: '/company/our-story' },
+        { title: 'Press & Media', href: '/company/press-media' },
+        { title: 'Blog', href: '/company/blog' },
     ],
     locations: [
-        { title: 'Atlanta Staffing Agency', href: '/locations/atlanta-staffing-agency' },
-        { title: 'Fulton County Employment', href: '/locations/fulton-county-employment-services' },
-        { title: 'Gwinnett County Staffing', href: '/locations/gwinnett-county-staffing-agency' },
-        { title: 'DeKalb County Staffing', href: '/locations/dekalb-county-staffing' },
-        { title: 'Clayton County Staffing', href: '/locations/clayton-county-staffing' },
-        { title: 'Cobb County Workforce', href: '/locations/cobb-county-workforce-solutions' },
-        { title: 'Hall County Recruitment', href: '/locations/hall-county-recruitment' },
-        { title: 'Barrow County Staffing', href: '/locations/barrow-county-staffing' },
-        { title: 'Jackson County Logistics', href: '/locations/jackson-county-logistics-staffing' },
-        { title: 'Forsyth County Staffing', href: '/locations/forsyth-county-staffing' },
-        { title: 'Savannah Logistics Staffing', href: '/locations/savannah-logistics-staffing' },
+        { title: 'Atlanta Staffing Agency', href: '/insights/city/atlanta' },
+        { title: 'Fulton County Employment', href: '/insights/city/fulton-county-employment-services' },
+
+        { title: 'DeKalb County Staffing', href: '/insights/city/dekalb-county-staffing' },
+        { title: 'Clayton County Staffing', href: '/insights/city/clayton-county-staffing' },
+        { title: 'Cobb County Workforce', href: '/insights/city/cobb-county-workforce-solutions' },
+        { title: 'Hall County Recruitment', href: '/insights/city/hall-county-recruitment' },
+        { title: 'Barrow County Staffing', href: '/insights/city/barrow-county-staffing' },
+        { title: 'Jackson County Logistics', href: '/insights/city/jackson-county-logistics-staffing' },
+        { title: 'Forsyth County Staffing', href: '/insights/city/forsyth-county-staffing' },
+        { title: 'Savannah Logistics Staffing', href: '/insights/city/savannah-logistics-staffing' },
     ],
     partners: [
         { title: 'Labcorp & eScreen Network', href: '/partners/labcorp-escreen-network' },
@@ -252,43 +258,42 @@ export function SiteHeader() {
                         Contact
                     </Link>
 
-                    {/* Talent Dropdown */}
-                    <div className="group relative flex items-center gap-x-1 text-sm font-semibold leading-6 text-slate-900 cursor-pointer py-2">
-                        For Talent
-                        <ChevronDown className="h-4 w-4 flex-none text-slate-400 transition-transform group-hover:rotate-180" aria-hidden="true" />
-                        <div className="absolute right-0 top-full z-10 mt-3 w-64 overflow-hidden rounded-xl bg-white shadow-lg ring-1 ring-slate-900/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-2 group-hover:translate-y-0">
-                            <div className="p-4">
-                                <div className="group/item relative flex gap-x-6 rounded-lg p-2 hover:bg-slate-50">
-                                    <Link href="/talent/job-board" className="block text-sm font-semibold leading-6 text-slate-900">
-                                        Job Board
-                                        <span className="absolute inset-0" />
-                                    </Link>
-                                </div>
-                                <div className="group/item relative flex gap-x-6 rounded-lg p-2 hover:bg-slate-50">
-                                    <Link href="/talent/employee-benefits" className="block text-sm font-semibold leading-6 text-slate-900">
-                                        Employee Benefits
-                                        <span className="absolute inset-0" />
-                                    </Link>
-                                </div>
-                                <div className="group/item relative flex gap-x-6 rounded-lg p-2 hover:bg-slate-50">
-                                    <Link href="/talent/submit-resume" className="block text-sm font-semibold leading-6 text-slate-900">
-                                        Submit Resume
-                                        <span className="absolute inset-0" />
-                                    </Link>
-                                </div>
-                                <div className="group/item relative flex gap-x-6 rounded-lg p-2 hover:bg-slate-50">
-                                    <Link href="/talent/worker-portal-login" className="block text-sm font-semibold leading-6 text-slate-900">
-                                        Worker Portal Login
-                                        <span className="absolute inset-0" />
-                                    </Link>
-                                </div>
+                    {/* Right Side Actions - Desktop */}
+                    <div className="flex items-center ml-4">
+                        {/* For Clients Pill */}
+                        <div className="hidden xl:flex items-center border border-slate-300 rounded-l-full rounded-r-none px-4 py-1.5 h-12 bg-white/50 backdrop-blur-sm mr-px">
+                            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mr-3">For Clients:</span>
+                            <div className="flex items-center gap-3 text-sm font-semibold text-slate-700">
+                                <Link href="/contact/request-workforce" className="hover:text-blue-600 transition-colors">
+                                    Request Workforce
+                                </Link>
                             </div>
                         </div>
-                    </div>
 
-                    <Link href="/contact/request-workforce" className="text-sm font-semibold leading-6 text-white bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                        Request Workforce
-                    </Link>
+                        {/* For Talent Pill */}
+                        <div className="hidden xl:flex items-center bg-blue-600 rounded-r-full rounded-l-none px-5 py-1.5 h-12 text-white shadow-md shadow-blue-600/20 border border-blue-600">
+                            <span className="text-[10px] font-bold text-blue-200 uppercase tracking-widest mr-3">For Talent:</span>
+                            <div className="flex items-center gap-3 text-sm font-semibold">
+                                <Link href="/talent/submit-resume" className="hover:text-white transition-colors">
+                                    Apply Now
+                                </Link>
+                                <span className="text-blue-400">|</span>
+                                <Link href="/talent/job-board" className="hover:text-white transition-colors">
+                                    Job Board
+                                </Link>
+                            </div>
+                        </div>
+
+                        {/* Tablet/Laptop Fallback (Space saving) */}
+                        <div className="hidden lg:flex xl:hidden gap-2">
+                            <Link href="/contact/request-workforce" className="text-sm font-semibold leading-6 text-slate-700 border border-slate-200 px-3 py-2 rounded-lg hover:bg-slate-50">
+                                Clients
+                            </Link>
+                            <Link href="/talent/submit-resume" className="text-sm font-semibold leading-6 text-white bg-blue-600 px-3 py-2 rounded-lg hover:bg-blue-700">
+                                Apply
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </nav>
 
@@ -401,17 +406,11 @@ export function SiteHeader() {
                         <div>
                             <h3 className="font-bold text-slate-900 mb-2">For Talent</h3>
                             <div className="pl-4 space-y-2 border-l-2 border-slate-100">
+                                <Link href="/talent/submit-resume" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-sm text-slate-700 font-semibold text-blue-600">
+                                    Apply Now
+                                </Link>
                                 <Link href="/talent/job-board" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-sm text-slate-700">
                                     Job Board
-                                </Link>
-                                <Link href="/talent/employee-benefits" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-sm text-slate-700">
-                                    Employee Benefits
-                                </Link>
-                                <Link href="/talent/submit-resume" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-sm text-slate-700">
-                                    Submit Resume
-                                </Link>
-                                <Link href="/talent/worker-portal-login" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-sm text-slate-700">
-                                    Worker Portal Login
                                 </Link>
                             </div>
                         </div>

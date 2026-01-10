@@ -2,13 +2,25 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { TextReveal } from '@/app/components/anim/text-reveal'
 import { FadeIn } from '@/app/components/anim/fade-in'
-import { RequestQuoteForm } from '@/app/components/forms/request-quote-form'
+import GHLLeadForm from '@/app/components/GHLLeadForm'
 import { CONTACT_INFO } from '@/lib/site-config'
 import { Clock, ShieldCheck, FileCheck, PhoneCall, ArrowRight, CheckCircle2 } from 'lucide-react'
 
 export const metadata: Metadata = {
     title: "Request Workforce | 24-72h Staffing Fulfillment Georgia",
     description: "Start your staffing order with First National Staffing Group. High-volume, W-2 industrial staffing with a 24-hour replacement guarantee.",
+    alternates: {
+        canonical: '/contact/request-workforce',
+    },
+    openGraph: {
+        title: "Request Workforce | 24-72h Staffing Fulfillment Georgia",
+        description: "Start your staffing order with First National Staffing Group. High-volume, W-2 industrial staffing.",
+        url: 'https://firstnationalstaffing.com/contact/request-workforce',
+        images: ['/contact/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'website',
+    },
 }
 
 export default function RequestWorkforcePage() {
@@ -51,7 +63,7 @@ export default function RequestWorkforcePage() {
                                     <span className="flex items-center justify-center w-8 h-8 rounded-full bg-brand-primary text-white text-sm">1</span>
                                     Tell Us Your Requirements
                                 </h2>
-                                <RequestQuoteForm />
+                                <GHLLeadForm />
                             </div>
                         </FadeIn>
 

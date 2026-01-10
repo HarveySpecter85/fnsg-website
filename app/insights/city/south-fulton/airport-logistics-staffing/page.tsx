@@ -36,7 +36,7 @@ export default function SouthFultonLogistics() {
                     <h3 className="font-bold text-slate-900 mb-4">Related Insights</h3>
                     <ul className="space-y-2">
                         <li><Link href="/insights/city/south-fulton/3rd-shift-analysis" className="text-blue-600 hover:underline">3rd Shift Analysis</Link></li>
-                        <li><Link href="/locations/fulton-county-employment-services" className="text-blue-600 hover:underline">Fulton County Services</Link></li>
+                        <li><Link href="/insights/city/south-fulton" className="text-blue-600 hover:underline">Fulton County Services</Link></li>
                     </ul>
                 </div>
 

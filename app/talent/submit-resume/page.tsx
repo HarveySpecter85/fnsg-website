@@ -6,7 +6,7 @@ import { MagneticButton } from '@/app/components/anim/magnetic-button'
 import { FileText, CheckSquare, Upload } from 'lucide-react'
 
 export const metadata: Metadata = {
-    title: "Submit Resume | Join Our Talent Network",
+    title: "Apply Now | Join Our Talent Network",
     description: "Join the First National Staffing Talent Network. Submit your profile for unadvertised 'Hidden Market' jobs in industrial and hospitality sectors.",
 }
 
@@ -22,7 +22,7 @@ export default function SubmitResumePage() {
                             <span>General Application</span>
                         </div>
                         <TextReveal as="h1" className="text-5xl md:text-7xl font-bold text-brand-navy mb-6 leading-tight">
-                            Join Our Talent Network
+                            Apply Now
                         </TextReveal>
                         <p className="text-xl text-slate-600 mb-10 max-w-2xl">
                             Don't see the perfect job listed? Submit your profile and let our recruiters find the right match for you.
@@ -93,10 +93,16 @@ export default function SubmitResumePage() {
                             </div>
 
                             {/* Resume Upload */}
-                            <div className="border-2 border-dashed border-slate-300 rounded-xl p-8 text-center hover:bg-slate-50 transition-colors cursor-pointer">
-                                <Upload className="w-10 h-10 text-slate-400 mx-auto mb-4" />
-                                <p className="text-slate-900 font-medium mb-1">Upload your Resume</p>
-                                <p className="text-sm text-slate-500">PDF, DOCX, or RTF (Max 5MB)</p>
+                            <div className="space-y-2">
+                                <label className="text-sm font-medium text-slate-700">
+                                    Attach Your Resume (PDF or DOC)
+                                </label>
+                                <input
+                                    type="file"
+                                    name="resume"
+                                    accept=".pdf,.doc,.docx"
+                                    className="block w-full rounded-md border border-slate-300 bg-white px-3 py-3 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500 hover:border-blue-400 transition-colors shadow-sm"
+                                />
                             </div>
 
                             <div className="pt-4">

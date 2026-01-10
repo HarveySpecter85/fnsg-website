@@ -5,6 +5,18 @@ import Link from 'next/link';
 export const metadata = {
     title: "Temp Labor Rights & FAQ – First National Staffing",
     description: "Questions about temporary employment rights, benefits, and safety in Georgia.",
+    alternates: {
+        canonical: '/insights/faq/temp-labor',
+    },
+    openGraph: {
+        title: "Temp Labor Rights & FAQ – First National Staffing",
+        description: "Questions about temporary employment rights, benefits, and safety in Georgia.",
+        url: 'https://firstnationalstaffing.com/insights/faq/temp-labor',
+        images: ['/insights/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 };
 
 export default function TempLaborFAQPage() {

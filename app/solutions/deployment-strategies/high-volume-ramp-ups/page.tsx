@@ -1,9 +1,22 @@
 import React from 'react';
 import { Breadcrumbs } from '@/app/components/navigation/Breadcrumbs';
+import PremiumCTA from '@/app/components/PremiumCTA';
 
 export const metadata = {
     title: "High-Volume Ramp Ups – Deployment Strategies | First National Staffing",
     description: "Rapid workforce deployment strategies for new facility launches and major expansion projects.",
+    alternates: {
+        canonical: 'https://firstnationalstaffing.com/solutions/deployment-strategies/high-volume-ramp-ups',
+    },
+    openGraph: {
+        title: "High-Volume Ramp Ups – Deployment Strategies | First National Staffing",
+        description: "Rapid workforce deployment strategies for new facility launches and major expansion projects.",
+        url: 'https://firstnationalstaffing.com/solutions/deployment-strategies/high-volume-ramp-ups',
+        images: ['/solutions/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 };
 
 export default function HighVolumeRampUpsPage() {
@@ -22,6 +35,10 @@ export default function HighVolumeRampUpsPage() {
                         Our specialized deployment teams are engineered to handle large-scale workforce ramp-ups for new facility launches and major expansions. We combine on-site management with rapid recruitment protocols to deliver hundreds of qualified associates within tight timelines, ensuring your operations hit the ground running.
                     </p>
                 </div>
+            </div>
+
+            <div className="container mx-auto px-6">
+                <PremiumCTA />
             </div>
         </main>
     );

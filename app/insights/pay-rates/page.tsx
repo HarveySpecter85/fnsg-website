@@ -5,6 +5,18 @@ import Link from 'next/link';
 export const metadata = {
     title: "Industrial Pay Rate Trends & Wage Analysis – First National Staffing",
     description: "Current wage data for Georgia's industrial sector. Pay rate trends for warehouse, manufacturing, and logistics roles.",
+    alternates: {
+        canonical: '/insights/pay-rates',
+    },
+    openGraph: {
+        title: "Industrial Pay Rate Trends & Wage Analysis – First National Staffing",
+        description: "Current wage data for Georgia's industrial sector. Pay rate trends for warehouse, manufacturing, and logistics roles.",
+        url: 'https://firstnationalstaffing.com/insights/pay-rates',
+        images: ['/insights/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'website',
+    },
 };
 
 export default function PayRatesHubPage() {

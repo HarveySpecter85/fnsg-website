@@ -4,10 +4,23 @@ import { TextReveal } from '@/app/components/anim/text-reveal'
 import { FadeIn } from '@/app/components/anim/fade-in'
 import { MagneticButton } from '@/app/components/anim/magnetic-button'
 import { Activity, Clock, MapPin, FileCheck, TestTube, Stethoscope, Syringe } from 'lucide-react'
+import PremiumCTA from '@/app/components/PremiumCTA'
 
 export const metadata: Metadata = {
     title: "Workforce Health Screening | Drug Testing & Physicals",
-    description: "Integrated drug and medical testing services. Reduce time-to-start by 48 hours with our nationwide Labcorp and eScreen network.",
+    description: "Integrated drug and medical testing services for industrial workforces. Reduce time-to-start by 48 hours with our nationwide Labcorp and eScreen network. Paperless, fast, and compliant.",
+    alternates: {
+        canonical: 'https://firstnationalstaffing.com/solutions/workforce-health-screening',
+    },
+    openGraph: {
+        title: "Workforce Health Screening | Drug Testing & Physicals",
+        description: "Integrated drug and medical testing services for industrial workforces. Reduce time-to-start by 48 hours with our nationwide Labcorp and eScreen network. Paperless, fast, and compliant.",
+        url: 'https://firstnationalstaffing.com/solutions/workforce-health-screening',
+        images: ['/solutions/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 }
 
 export default function HealthScreeningHubPage() {
@@ -29,7 +42,7 @@ export default function HealthScreeningHubPage() {
                         </TextReveal>
                         <FadeIn delay={0.5}>
                             <MagneticButton>
-                                <Link href="/contact" className="btn-primary text-lg px-8 py-4">
+                                <Link href="/contact/general-inquiries" className="btn-primary text-lg px-8 py-4">
                                     Start Screening
                                 </Link>
                             </MagneticButton>
@@ -138,6 +151,11 @@ export default function HealthScreeningHubPage() {
                             </div>
                         </Link>
                     </div>
+                </div>
+            </section>
+            <section className="py-20 bg-white">
+                <div className="container">
+                    <PremiumCTA />
                 </div>
             </section>
         </main>

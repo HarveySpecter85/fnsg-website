@@ -1,9 +1,22 @@
 import React from 'react';
 import { Breadcrumbs } from '@/app/components/navigation/Breadcrumbs';
+import PremiumCTA from '@/app/components/PremiumCTA';
 
 export const metadata = {
     title: "Peak Season Deployment – Deployment Strategies | First National Staffing",
     description: "Scalable workforce solutions for Q4 peak season and seasonal demand surges.",
+    alternates: {
+        canonical: 'https://firstnationalstaffing.com/solutions/deployment-strategies/peak-season-deployment',
+    },
+    openGraph: {
+        title: "Peak Season Deployment – Deployment Strategies | First National Staffing",
+        description: "Scalable workforce solutions for Q4 peak season and seasonal demand surges.",
+        url: 'https://firstnationalstaffing.com/solutions/deployment-strategies/peak-season-deployment',
+        images: ['/solutions/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 };
 
 export default function PeakSeasonDeploymentPage() {
@@ -22,6 +35,10 @@ export default function PeakSeasonDeploymentPage() {
                         Navigate seasonal demand surges with confidence. Our Peak Season Deployment model provides flexible, scalable workforce solutions designed specifically for Q4 logistics and manufacturing spikes. We proactively build talent pools ahead of demand to ensure you have the coverage you need without sacrificing quality or safety.
                     </p>
                 </div>
+            </div>
+
+            <div className="container mx-auto px-6">
+                <PremiumCTA />
             </div>
         </main>
     );

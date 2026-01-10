@@ -4,10 +4,23 @@ import { TextReveal } from '@/app/components/anim/text-reveal'
 import { FadeIn } from '@/app/components/anim/fade-in'
 import { MagneticButton } from '@/app/components/anim/magnetic-button'
 import { Stethoscope, Activity, Scale, Ear, Truck } from 'lucide-react'
+import PremiumCTA from '@/app/components/PremiumCTA';
 
 export const metadata: Metadata = {
     title: "Occupational Physicals | DOT Exams & FCEs",
-    description: "Comprehensive occupational health exams including DOT physicals, Functional Capacity Evaluations (FCEs), and lift assessments.",
+    description: "Comprehensive occupational health exams including DOT physicals, Functional Capacity Evaluations (FCEs), lift assessments, and audiograms to ensure workforce safety and compliance.",
+    alternates: {
+        canonical: 'https://firstnationalstaffing.com/solutions/workforce-health-screening/occupational-physicals',
+    },
+    openGraph: {
+        title: "Occupational Physicals | DOT Exams & FCEs",
+        description: "Comprehensive occupational health exams including DOT physicals, Functional Capacity Evaluations (FCEs), lift assessments, and audiograms to ensure workforce safety and compliance.",
+        url: 'https://firstnationalstaffing.com/solutions/workforce-health-screening/occupational-physicals',
+        images: ['/solutions/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 }
 
 export default function OccupationalPhysicalsPage() {
@@ -29,7 +42,7 @@ export default function OccupationalPhysicalsPage() {
                         </TextReveal>
                         <FadeIn delay={0.5}>
                             <MagneticButton>
-                                <Link href="/contact" className="btn-primary text-lg px-8 py-4">
+                                <Link href="/contact/general-inquiries" className="btn-primary text-lg px-8 py-4">
                                     Schedule Physicals
                                 </Link>
                             </MagneticButton>
@@ -88,6 +101,10 @@ export default function OccupationalPhysicalsPage() {
                     </div>
                 </div>
             </section>
-        </main>
+
+            <div className="container py-12">
+                <PremiumCTA />
+            </div>
+        </main >
     )
 }

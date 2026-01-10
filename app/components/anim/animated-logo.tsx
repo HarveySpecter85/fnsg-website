@@ -52,7 +52,7 @@ export function AnimatedLogo() {
                 className="relative w-10 h-10 md:w-12 md:h-12 invisible transition-transform duration-300 group-hover:scale-105 group-hover:brightness-110"
             >
                 <Image
-                    src="/images/fnsg-icon.png"
+                    src="/brand/fnsg-icon.png"
                     alt="FNSG Icon"
                     fill
                     className="object-contain"

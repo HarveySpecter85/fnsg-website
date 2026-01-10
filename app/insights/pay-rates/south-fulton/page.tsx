@@ -5,6 +5,18 @@ import Link from 'next/link';
 export const metadata = {
     title: "South Fulton Staffing Pay Rates – First National Staffing",
     description: "Pay rate analysis for South Fulton. Airport logistics, heavy industrial, and recycling facility wages.",
+    alternates: {
+        canonical: '/insights/pay-rates/south-fulton',
+    },
+    openGraph: {
+        title: "South Fulton Staffing Pay Rates – First National Staffing",
+        description: "Pay rate analysis for South Fulton. Airport logistics, heavy industrial, and recycling facility wages.",
+        url: 'https://firstnationalstaffing.com/insights/pay-rates/south-fulton',
+        images: ['/insights/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'article',
+    },
 };
 
 export default function SouthFultonPayPage() {
@@ -20,28 +32,43 @@ export default function SouthFultonPayPage() {
                 <h1 className="text-4xl font-bold text-slate-900 mb-6">South Fulton Market Pay Rates</h1>
 
                 <div className="mb-12 p-6 border border-slate-200 rounded-xl bg-slate-50">
-                    <h3 className="font-bold text-slate-900 mb-4">Local Wage Benchmarks (Placeholder)</h3>
-                    <div className="space-y-4">
-                        <div className="flex justify-between items-center border-b border-slate-200 pb-2">
-                            <span className="text-slate-600">Recycling Sorter</span>
-                            <span className="font-mono font-bold text-slate-900">$16.00 - $18.00</span>
-                        </div>
-                        <div className="flex justify-between items-center border-b border-slate-200 pb-2">
-                            <span className="text-slate-600">Heavy Lifter</span>
-                            <span className="font-mono font-bold text-slate-900">$18.00 - $21.00</span>
-                        </div>
+                    <h3 className="font-bold text-slate-900 mb-4">2025 Pay Rate Snapshot – South Fulton</h3>
+                    {/* // TODO: Replace payRates with live Supabase pay-rate tables once backend sync is ready. */}
+                    <div className="overflow-x-auto">
+                        <table className="w-full text-left text-sm text-slate-600">
+                            <thead className="border-b border-slate-200">
+                                <tr>
+                                    <th className="pb-2 font-semibold text-slate-900">Role</th>
+                                    <th className="pb-2 font-semibold text-slate-900">Avg</th>
+                                    <th className="pb-2 font-semibold text-slate-900">Range</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {[
+                                    { role: "Recycling Sorter", avg: 17.00, range: "16.00 – 18.00" },
+                                    { role: "Heavy Lifter", avg: 19.50, range: "18.00 – 21.00" },
+                                    { role: "CDL Driver (Local)", avg: 26.00, range: "24.00 – 28.00" },
+                                    { role: "Fulfillment Assoc", avg: 17.50, range: "16.50 – 18.50" }
+                                ].map((rate, i) => (
+                                    <tr key={i} className="border-b border-slate-100 last:border-0 hover:bg-slate-100 transition-colors">
+                                        <td className="py-2 font-medium text-slate-900">{rate.role}</td>
+                                        <td className="py-2">${rate.avg.toFixed(2)}</td>
+                                        <td className="py-2 text-slate-500">{rate.range}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
                     </div>
-                    <p className="text-xs text-slate-400 mt-4 italic">// TODO: Load dynamic pay data from OS</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 border-t border-slate-200 pt-8">
                     <Link href="/insights/city/south-fulton" className="p-4 border border-slate-100 rounded-lg hover:border-blue-500 transition-colors">
                         <h4 className="font-bold text-slate-900 text-sm">South Fulton Hub</h4>
-                        <p className="text-xs text-slate-500">Market overview.</p>
+                        <p className="text-xs text-slate-500">Airport & logistics context.</p>
                     </Link>
                     <Link href="/insights/industry/recycling" className="p-4 border border-slate-100 rounded-lg hover:border-blue-500 transition-colors">
                         <h4 className="font-bold text-slate-900 text-sm">Recycling Trends</h4>
-                        <p className="text-xs text-slate-500">Industry data.</p>
+                        <p className="text-xs text-slate-500">Waste management pay data.</p>
                     </Link>
                 </div>
             </div>

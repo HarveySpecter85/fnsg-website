@@ -6,6 +6,18 @@ import { User, Briefcase, FileText, LogIn, ArrowRight } from 'lucide-react';
 export const metadata = {
     title: "Talent Portal | First National Staffing",
     description: "Job board, employee benefits, and worker portal access for FNSG associates.",
+    alternates: {
+        canonical: '/talent',
+    },
+    openGraph: {
+        title: "Talent Portal | First National Staffing",
+        description: "Job board, employee benefits, and worker portal access for FNSG associates.",
+        url: 'https://firstnationalstaffing.com/talent',
+        images: ['/talent/opengraph-image'],
+        siteName: 'First National Staffing Group',
+        locale: 'en_US',
+        type: 'website',
+    },
 };
 
 export default function TalentPage() {
