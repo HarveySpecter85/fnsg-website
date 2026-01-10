@@ -45,7 +45,7 @@ export function TalentTerminal({ title, children, className = '' }: TalentTermin
                 </div>
                 <div className="flex items-center gap-4">
                     <span className="text-slate-500 font-mono text-xs">
-                        FNSG OS v2.0
+                        FNSG
                     </span>
                     <span className="text-slate-600 font-mono text-xs">
                         {timestamp}

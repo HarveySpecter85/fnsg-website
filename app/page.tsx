@@ -11,11 +11,11 @@ import { B2BContactForm } from '@/app/components/home/b2b-contact-form'
 export const revalidate = 86400
 
 export const metadata: Metadata = {
-    title: "First National Staffing OS – Workforce Intelligence Platform",
-    description: "Workforce Operations Intelligence for Georgia Employers. Staffing, compliance, insights and analytics connected in a single OS.",
+    title: "First National Staffing Group – Industrial Staffing in Georgia",
+    description: "Georgia's premier industrial staffing agency. Warehouse, manufacturing, food production, and logistics staffing with full W-2 compliance.",
     openGraph: {
-        title: "First National Staffing OS",
-        description: "Workforce Intelligence for Georgia Employers.",
+        title: "First National Staffing Group",
+        description: "Georgia's premier industrial staffing agency.",
         images: [
             {
                 url: "/opengraph-image",
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "First National Staffing OS",
-        description: "Workforce Intelligence for Georgia Employers.",
+        title: "First National Staffing Group",
+        description: "Georgia's premier industrial staffing agency.",
         images: ["/opengraph-image"],
     },
 }

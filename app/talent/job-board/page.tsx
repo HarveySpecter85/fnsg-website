@@ -7,10 +7,10 @@ import { GHLApplicationForm } from '@/app/components/talent/ghl-application-form
 import { FadeIn } from '@/app/components/anim/fade-in'
 
 export const metadata: Metadata = {
-    title: "Talent Acquisition Interface | Apply Now",
+    title: "Career Opportunities | Apply Now | First National Staffing",
     description: "Join Georgia's premier industrial workforce. Immediate placement for Warehouse, Manufacturing, Hospitality, and Healthcare roles. W-2 employment, weekly pay, full benefits.",
     openGraph: {
-        title: "FNSG OS™ Talent Acquisition Interface",
+        title: "Career Opportunities | First National Staffing Group",
         description: "Deploy your career with Georgia's premier industrial staffing network. 150+ open positions, 24h average placement.",
         type: "website",
     }
@@ -69,7 +69,7 @@ export default function JobBoardPage() {
                 <div className="container">
                     <div className="text-center max-w-2xl mx-auto">
                         <p className="text-slate-500 font-mono text-sm mb-4">
-                            FNSG OS™ TALENT ACQUISITION SYSTEM
+                            FIRST NATIONAL STAFFING GROUP
                         </p>
                         <p className="text-slate-400 text-sm">
                             Your information is encrypted and transmitted securely. We are committed to protecting your privacy and ensuring a safe job search experience.

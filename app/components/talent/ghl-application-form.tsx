@@ -77,7 +77,7 @@ export function GHLApplicationForm() {
             {/* Footer */}
             <div className="text-center pt-4 border-t border-slate-800">
                 <p className="text-xs text-slate-600 font-mono">
-                    Powered by FNSG OS™ | Your data is encrypted and secure
+                    Your data is encrypted and secure
                 </p>
             </div>
 

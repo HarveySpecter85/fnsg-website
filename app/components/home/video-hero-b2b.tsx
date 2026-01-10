@@ -67,7 +67,7 @@ export function VideoHeroB2B() {
                         <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
                     </span>
                     <span className="text-emerald-400 font-mono text-sm tracking-wider">
-                        SYSTEM OPERATIONAL • v2025.1
+                        ACTIVELY DEPLOYING ACROSS GEORGIA
                     </span>
                 </div>
 
@@ -81,7 +81,7 @@ export function VideoHeroB2B() {
 
                 {/* Subtitle */}
                 <p className="hero-animate text-slate-400 text-lg md:text-xl max-w-2xl mb-8 leading-relaxed">
-                    Georgia's first Workforce Operations Intelligence Platform.
+                    Georgia's premier industrial staffing agency.
                     Optimize headcount, mitigate risk, and scale instantly with W-2 compliant labor.
                 </p>
 

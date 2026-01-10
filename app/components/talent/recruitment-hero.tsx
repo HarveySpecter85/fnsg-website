@@ -63,14 +63,14 @@ export function RecruitmentHero() {
                 {/* Main Title */}
                 <div className="overflow-hidden mb-4">
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight">
-                        <span className="block">TALENT ACQUISITION</span>
-                        <span className="block text-cyan-400">INTERFACE</span>
+                        <span className="block">CAREER</span>
+                        <span className="block text-cyan-400">OPPORTUNITIES</span>
                     </h1>
                 </div>
 
                 {/* Subtitle */}
                 <p className="text-slate-400 font-mono text-sm md:text-base tracking-wider mb-4">
-                    FNSG OS™ V.2.0 | STATUS: RECRUITING
+                    FIRST NATIONAL STAFFING GROUP | ACTIVELY RECRUITING
                 </p>
 
                 {/* Tagline */}

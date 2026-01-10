@@ -13,9 +13,9 @@ function cn(...inputs: ClassValue[]) {
 const navigation = {
     solutions: {
         outcomeBased: [
-            { title: 'Workforce Health Screening', href: '/solutions/workforce-health-screening-os', description: 'Drug testing, physicals, and immunizations.' },
-            { title: 'On-Site Management', href: '/solutions/on-site-workforce-management-os', description: 'Embedded performance teams.' },
-            { title: 'Payroll & Compliance', href: '/solutions/payroll-compliance-administration-os', description: 'EOR services and tax handling.' },
+            { title: 'Workforce Health Screening', href: '/solutions/workforce-health-screening', description: 'Drug testing, physicals, and immunizations.' },
+            { title: 'On-Site Management', href: '/solutions/on-site-workforce-management', description: 'Embedded performance teams.' },
+            { title: 'Payroll & Compliance', href: '/solutions/payroll-compliance-administration', description: 'EOR services and tax handling.' },
             { title: 'Direct Hire', href: '/solutions/direct-hire-recruitment', description: 'Executive and technical search.' },
             { title: 'Farm Labor Contracting', href: '/solutions/farm-labor-contracting', description: 'Licensed agricultural staffing.' },
         ],

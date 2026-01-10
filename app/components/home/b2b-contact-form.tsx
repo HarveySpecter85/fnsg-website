@@ -53,8 +53,8 @@ export function B2BContactForm() {
                                         <Terminal className="w-6 h-6 text-cyan-400" />
                                     </div>
                                     <div>
-                                        <h3 className="text-white font-bold">FNSG OS Intelligence</h3>
-                                        <p className="text-slate-500 text-sm">Workforce optimization platform</p>
+                                        <h3 className="text-white font-bold">Why Work With Us</h3>
+                                        <p className="text-slate-500 text-sm">Workforce optimization solutions</p>
                                     </div>
                                 </div>
 
@@ -98,7 +98,7 @@ export function B2BContactForm() {
                                         <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
                                     </div>
                                     <span className="text-slate-500 text-xs font-mono ml-2">
-                                        FNSG OS™ | REQUEST FORM
+                                        FNSG | REQUEST WORKFORCE
                                     </span>
                                 </div>
                                 <div className="flex items-center gap-2 text-emerald-400">
@@ -142,7 +142,7 @@ export function B2BContactForm() {
                             {/* Footer */}
                             <div className="px-4 py-3 bg-slate-950/50 border-t border-slate-800 text-center">
                                 <p className="text-xs text-slate-600 font-mono">
-                                    Your data is encrypted and secure. | Powered by FNSG OS
+                                    Your data is encrypted and secure.
                                 </p>
                             </div>
                         </div>
