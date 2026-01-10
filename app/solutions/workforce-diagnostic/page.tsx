@@ -6,13 +6,13 @@ import PremiumCTA from '@/app/components/PremiumCTA';
 
 export const metadata: Metadata = {
     title: "Workforce Diagnostic OS — Workforce Intelligence for Operational Leaders",
-    description: "Operational Workforce Diagnostic powered by FNSG OS to assess labor risk, predict attendance, benchmark pay, analyze turnover, and identify root causes impacting productivity and OSHA compliance.",
+    description: "Operational Workforce Diagnostic powered by FNSG to assess labor risk, predict attendance, benchmark pay, analyze turnover, and identify root causes impacting productivity and OSHA compliance.",
     alternates: {
         canonical: 'https://firstnationalstaffing.com/solutions/workforce-diagnostic-os',
     },
     openGraph: {
         title: "Workforce Diagnostic OS — Workforce Intelligence for Operational Leaders",
-        description: "Operational Workforce Diagnostic powered by FNSG OS to assess labor risk, predict attendance, benchmark pay, analyze turnover, and identify root causes impacting productivity and OSHA compliance.",
+        description: "Operational Workforce Diagnostic powered by FNSG to assess labor risk, predict attendance, benchmark pay, analyze turnover, and identify root causes impacting productivity and OSHA compliance.",
         url: 'https://firstnationalstaffing.com/solutions/workforce-diagnostic-os',
         images: ['/solutions/opengraph-image'],
         siteName: 'First National Staffing Group',
@@ -32,7 +32,7 @@ export default function WorkforceDiagnosticOSPage() {
             "url": "https://firstnationalstaffing.com"
         },
         "areaServed": "Georgia",
-        "description": "Operational Workforce Diagnostic powered by FNSG OS to assess labor risk, predict attendance, benchmark pay, analyze turnover, and identify root causes impacting productivity and OSHA compliance.",
+        "description": "Operational Workforce Diagnostic powered by FNSG to assess labor risk, predict attendance, benchmark pay, analyze turnover, and identify root causes impacting productivity and OSHA compliance.",
         "url": "https://firstnationalstaffing.com/solutions/workforce-diagnostic-os"
     };
 
@@ -48,7 +48,7 @@ export default function WorkforceDiagnosticOSPage() {
                 <div className="absolute inset-0 opacity-10 bg-[url('/grid-pattern.svg')]"></div>
                 <div className="container mx-auto px-6 py-20 relative z-10 max-w-5xl">
                     <div className="mb-6">
-                        <span className="text-blue-400 font-bold tracking-widest text-sm uppercase">Powered by FNSG Workforce Intelligence OS</span>
+                        <span className="text-blue-400 font-bold tracking-widest text-sm uppercase">Powered by FNSG Workforce Solutions</span>
                     </div>
                     <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6">
                         Workforce Diagnostic OS: <br />
@@ -128,9 +128,9 @@ export default function WorkforceDiagnosticOSPage() {
                     </div>
                 </section>
 
-                {/* H2 - How FNSG OS Solves It */}
+                {/* H2 - How FNSG Solves It */}
                 <section className="py-16">
-                    <h2 className="text-3xl font-bold text-slate-900 mb-8">How FNSG OS Solves It</h2>
+                    <h2 className="text-3xl font-bold text-slate-900 mb-8">How FNSG Solves It</h2>
                     <div className="space-y-8">
                         <div className="flex flex-col md:flex-row gap-6 items-start">
                             <div className="bg-blue-50 p-4 rounded-lg min-w-[60px] flex justify-center text-2xl">⭐</div>

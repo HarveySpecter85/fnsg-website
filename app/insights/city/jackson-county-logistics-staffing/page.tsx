@@ -219,9 +219,9 @@ export default function JacksonCountyPage() {
                                 </div>
                             </section>
 
-                            {/* How FNSG OS Improves Stability */}
+                            {/* How FNSG Improves Stability */}
                             <section className="bg-slate-900 text-white p-8 rounded-xl">
-                                <h2 className="text-2xl font-bold mb-4">How FNSG OS Stabilizes Workforce in Jackson County</h2>
+                                <h2 className="text-2xl font-bold mb-4">How FNSG Stabilizes Workforce in Jackson County</h2>
                                 <p className="mb-6 text-slate-300">
                                     We counter the "churn and burn" culture of logistics with data-backed engagement strategies.
                                 </p>

@@ -229,9 +229,9 @@ export default function DuluthPage() {
                                 </div>
                             </section>
 
-                            {/* How FNSG OS Improves Stability */}
+                            {/* How FNSG Improves Stability */}
                             <section className="bg-slate-900 text-white p-8 rounded-xl">
-                                <h2 className="text-2xl font-bold mb-4">How FNSG OS Optimizes Workforce in Duluth</h2>
+                                <h2 className="text-2xl font-bold mb-4">How FNSG Optimizes Workforce in Duluth</h2>
                                 <p className="mb-6 text-slate-300">
                                     We leverage Duluth's diverse talent pool and logistics infrastructure to deliver reliable staffing solutions.
                                 </p>

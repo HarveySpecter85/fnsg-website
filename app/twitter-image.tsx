@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
-export const alt = 'First National Staffing OS';
+export const alt = 'First National Staffing Group';
 export const size = {
     width: 1600,
     height: 900,
@@ -68,7 +68,7 @@ export default async function Image() {
                             letterSpacing: '-0.03em',
                         }}
                     >
-                        FNSG OS
+                        FNSG
                     </div>
                     <div
                         style={{
@@ -79,7 +79,7 @@ export default async function Image() {
                             textTransform: 'uppercase',
                         }}
                     >
-                        Workforce Intelligence
+                        Industrial Staffing
                     </div>
                 </div>
 

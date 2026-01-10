@@ -31,7 +31,7 @@ const comparisons = [
             icon: TrendingUp,
             label: 'Rapid Deployment',
             stat: '24 hours',
-            description: 'Average time to fill with FNSG OS',
+            description: 'Average time to fill with FNSG',
         },
         color: 'from-amber-500 to-yellow-500',
         solutionColor: 'from-cyan-500 to-blue-500',

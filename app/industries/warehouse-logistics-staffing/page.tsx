@@ -7,8 +7,8 @@ import { PackageCheck, Truck, Clock, Users, ShieldCheck, Box, BarChart3, CheckCi
 import PremiumCTA from '@/app/components/PremiumCTA';
 
 export const metadata = {
-    title: "Warehouse & Logistics Staffing Solutions in Georgia | FNSG OS",
-    description: "Workforce Intelligence-driven staffing for warehouse, distribution, and 3PL operations. Reduce turnover and improve fill rates with FNSG OS.",
+    title: "Warehouse & Logistics Staffing Solutions in Georgia | FNSG",
+    description: "Workforce Intelligence-driven staffing for warehouse, distribution, and 3PL operations. Reduce turnover and improve fill rates with FNSG.",
     openGraph: {
         title: "Warehouse & Logistics Staffing Solutions",
         url: "https://firstnationalstaffing.com/industries/warehouse-logistics-staffing",
@@ -55,14 +55,14 @@ export default function WarehouseLogisticsPage() {
 
                             {/* H1 & Intro */}
                             <section>
-                                <h1 className="text-4xl font-bold text-slate-900 mb-6">Warehouse & Logistics Staffing Solutions in Georgia — Powered by FNSG OS</h1>
+                                <h1 className="text-4xl font-bold text-slate-900 mb-6">Warehouse & Logistics Staffing Solutions in Georgia — Powered by FNSG</h1>
                                 <p className="text-lg text-slate-700 leading-relaxed mb-6">
                                     Georgia's supply chain is undergoing an accelerated transformation.
                                     The pressure on warehouse, distribution, and fulfillment operations continues to increase due to turnover, absenteeism, aggressive wage shifts, demand peaks, operator shortages, and growing operational complexity.
                                 </p>
                                 <p className="text-lg text-slate-700 leading-relaxed font-medium">
                                     In this environment, companies relying on warehouse & logistics need stability, predictability, and compliance.
-                                    <span className="text-blue-600"> FNSG OS is the platform designed to achieve it.</span>
+                                    <span className="text-blue-600"> FNSG is the platform designed to achieve it.</span>
                                 </p>
                             </section>
 
@@ -113,9 +113,9 @@ export default function WarehouseLogisticsPage() {
                                 </div>
                             </section>
 
-                            {/* How FNSG OS Solves These Problems */}
+                            {/* How FNSG Solves These Problems */}
                             <section>
-                                <h2 className="text-2xl font-bold text-slate-900 mb-6">How FNSG OS Solves These Problems</h2>
+                                <h2 className="text-2xl font-bold text-slate-900 mb-6">How FNSG Solves These Problems</h2>
                                 <p className="text-lg text-slate-700 mb-8 italic border-l-4 border-blue-600 pl-4">
                                     The difference is NO longer just "sending people". It's managing the operation with intelligence.
                                 </p>
@@ -157,7 +157,7 @@ export default function WarehouseLogisticsPage() {
                                         <div>
                                             <h3 className="text-xl font-bold text-slate-900">On-Site Workforce Management Programs</h3>
                                             <p className="text-slate-600 mt-2">
-                                                FNSG OS manages attendance, replacements, training, safety, OSHA compliance, and daily reporting.
+                                                FNSG manages attendance, replacements, training, safety, OSHA compliance, and daily reporting.
                                                 Ideal for operations with 20–200 workers.
                                             </p>
                                         </div>
@@ -193,7 +193,7 @@ export default function WarehouseLogisticsPage() {
                                         <thead className="bg-slate-900 text-white font-semibold">
                                             <tr>
                                                 <th className="p-4 border-b border-slate-700">KPI</th>
-                                                <th className="p-4 border-b border-slate-700">Improvement with FNSG OS</th>
+                                                <th className="p-4 border-b border-slate-700">Improvement with FNSG</th>
                                             </tr>
                                         </thead>
                                         <tbody className="divide-y divide-slate-100">
@@ -254,7 +254,7 @@ export default function WarehouseLogisticsPage() {
                                 <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
                                 <div className="space-y-4">
                                     {[
-                                        { q: "How fast can FNSG OS staff a warehouse?", a: "Between 24–72 hours depending on the volume required." },
+                                        { q: "How fast can FNSG staff a warehouse?", a: "Between 24–72 hours depending on the volume required." },
                                         { q: "How do you stabilize 2nd & 3rd shift?", a: "Through our Attendance OS, targeted incentives, and risk prediction modeling." },
                                         { q: "Do you provide forklift-certified operators?", a: "Yes, with both internal validations and client-specific practical assessments." },
                                         { q: "Can you support peak season ramp-ups?", a: "Yes, this is an OS specialty: supporting Q4 logistics peaks and Q2/Q3 production surges." },

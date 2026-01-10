@@ -65,7 +65,7 @@ export default function HospitalityDeepDivePage() {
                         <li>Workforce demand swings drastically week-to-week</li>
                     </ul>
                     <p>
-                        FNSG OS delivers stability, predictability, and consistency in one of the most human-dependent industries.
+                        FNSG delivers stability, predictability, and consistency in one of the most human-dependent industries.
                     </p>
 
                     {/* Industry Overview */}
@@ -252,7 +252,7 @@ export default function HospitalityDeepDivePage() {
                     </ul>
 
                     {/* Workforce Intelligence Insights */}
-                    <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Workforce Intelligence Insights (FNSG OS)</h2>
+                    <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Workforce Intelligence Insights (FNSG)</h2>
                     <ul className="list-disc pl-6 mb-6 space-y-2">
                         <li><strong>Attendance Early Warning System:</strong> Predicts high-risk dates based on weather, event calendar, and gig-economy surges.</li>
                         <li><strong>Grooming Compliance Index:</strong> Evaluates readiness for presentation-required roles.</li>
@@ -338,7 +338,7 @@ export default function HospitalityDeepDivePage() {
                             <p>Wages must be competitive with warehouse and gig economy roles to ensure retention.</p>
                         </div>
                         <div>
-                            <h3 className="text-xl font-bold text-slate-900 mb-2">Can FNSG OS support 100-person event ramp-ups?</h3>
+                            <h3 className="text-xl font-bold text-slate-900 mb-2">Can FNSG support 100-person event ramp-ups?</h3>
                             <p>Yes, we can mobilize large teams within 24–48 hours.</p>
                         </div>
                         <div>

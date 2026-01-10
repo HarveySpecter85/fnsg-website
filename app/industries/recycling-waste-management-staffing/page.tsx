@@ -7,7 +7,7 @@ import { Recycle, Trash2, Truck, AlertTriangle, Users, TrendingUp, CheckCircle, 
 import PremiumCTA from '@/app/components/PremiumCTA';
 
 export const metadata = {
-    title: "Recycling & Waste Management Staffing Solutions in Georgia | FNSG OS",
+    title: "Recycling & Waste Management Staffing Solutions in Georgia | FNSG",
     description: "Workforce Intelligence-driven staffing for recycling and waste management operations, including sorters, baler operators, forklift operators, landfill labor, and safety-monitored task teams.",
     openGraph: {
         title: "Recycling & Waste Management Staffing Solutions",
@@ -55,7 +55,7 @@ export default function RecyclingPage() {
 
                             {/* H1 & Intro */}
                             <section>
-                                <h1 className="text-4xl font-bold text-slate-900 mb-6">Recycling & Waste Management Staffing Solutions in Georgia — Powered by FNSG OS</h1>
+                                <h1 className="text-4xl font-bold text-slate-900 mb-6">Recycling & Waste Management Staffing Solutions in Georgia — Powered by FNSG</h1>
                                 <p className="text-lg text-slate-700 leading-relaxed mb-6">
                                     Recycling and waste management operations require a highly resilient, safe, punctual, and trained workforce.
                                 </p>
@@ -63,7 +63,7 @@ export default function RecyclingPage() {
                                     This sector faces some of the biggest turnover and safety challenges in the industry, impacting: daily productivity, contract compliance, equipment safety, operating costs, sorting and baling efficiency, and OSHA compliance.
                                 </p>
                                 <p className="text-lg text-slate-700 leading-relaxed font-medium">
-                                    <span className="text-blue-600">FNSG OS provides the operational intelligence needed to stabilize these critical operations.</span>
+                                    <span className="text-blue-600">FNSG provides the operational intelligence needed to stabilize these critical operations.</span>
                                 </p>
                             </section>
 
@@ -111,9 +111,9 @@ export default function RecyclingPage() {
                                 </div>
                             </section>
 
-                            {/* How FNSG OS Solves These Problems */}
+                            {/* How FNSG Solves These Problems */}
                             <section>
-                                <h2 className="text-2xl font-bold text-slate-900 mb-6">How FNSG OS Solves These Problems</h2>
+                                <h2 className="text-2xl font-bold text-slate-900 mb-6">How FNSG Solves These Problems</h2>
 
                                 <div className="space-y-8">
                                     <div className="flex gap-4">
@@ -186,7 +186,7 @@ export default function RecyclingPage() {
                                         <thead className="bg-slate-900 text-white font-semibold">
                                             <tr>
                                                 <th className="p-4 border-b border-slate-700">KPI</th>
-                                                <th className="p-4 border-b border-slate-700">Improvement with FNSG OS</th>
+                                                <th className="p-4 border-b border-slate-700">Improvement with FNSG</th>
                                             </tr>
                                         </thead>
                                         <tbody className="divide-y divide-slate-100">
@@ -247,7 +247,7 @@ export default function RecyclingPage() {
                             <section className="bg-slate-900 text-white p-8 rounded-xl">
                                 <h2 className="text-2xl font-bold mb-4">Compliance & Safety Layer</h2>
                                 <p className="mb-6 text-slate-300">
-                                    Highest risk industry. FNSG OS complies and documents:
+                                    Highest risk industry. FNSG complies and documents:
                                 </p>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div className="flex items-center gap-2">

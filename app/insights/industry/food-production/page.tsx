@@ -60,7 +60,7 @@ export default function FoodProductionDeepDivePage() {
                         From poultry processing in Gainesville to beverage manufacturing in Atlanta, this sector requires a workforce that is not just present, but compliant, safe, and productive.
                     </p>
                     <p>
-                        FNSG OS provides the intelligence layer to stabilize this volatile workforce.
+                        FNSG provides the intelligence layer to stabilize this volatile workforce.
                     </p>
 
                     {/* Industry Overview */}
@@ -230,8 +230,8 @@ export default function FoodProductionDeepDivePage() {
                     </ul>
 
                     {/* Workforce Intelligence Insights */}
-                    <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Workforce Intelligence Insights (FNSG OS)</h2>
-                    <p className="mb-4">Examples of insights FNSG OS provides:</p>
+                    <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Workforce Intelligence Insights (FNSG)</h2>
+                    <p className="mb-4">Examples of insights FNSG provides:</p>
                     <ul className="list-disc pl-6 mb-6 space-y-2">
                         <li><strong>Cold Tolerance Profiling:</strong> Matches candidates with prior cold-chain experience to reduce early attrition.</li>
                         <li><strong>Attendance Probability Scoring:</strong> Predicts reliability based on commute distance and shift timing.</li>

@@ -236,9 +236,9 @@ export default function NorcrossPage() {
                                 </div>
                             </section>
 
-                            {/* How FNSG OS Improves Stability */}
+                            {/* How FNSG Improves Stability */}
                             <section className="bg-slate-900 text-white p-8 rounded-xl">
-                                <h2 className="text-2xl font-bold mb-4">How FNSG OS Optimizes Workforce in Norcross</h2>
+                                <h2 className="text-2xl font-bold mb-4">How FNSG Optimizes Workforce in Norcross</h2>
                                 <p className="mb-6 text-slate-300">
                                     We tap into Norcross's diverse talent pool and manufacturing expertise to deliver skilled, reliable workers.
                                 </p>

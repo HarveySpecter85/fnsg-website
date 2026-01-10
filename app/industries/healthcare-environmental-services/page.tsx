@@ -7,7 +7,7 @@ import { Trash2, Heart, ShieldCheck, Clock, TrendingUp, Sparkles, Building2, Che
 import PremiumCTA from '@/app/components/PremiumCTA';
 
 export const metadata = {
-    title: "Healthcare Environmental Services (EVS) Staffing in Georgia | FNSG OS",
+    title: "Healthcare Environmental Services (EVS) Staffing in Georgia | FNSG",
     description: "EVS and Healthcare support staffing powered by Workforce Intelligence including terminal cleaning, isolation-room cleaning, PPE compliance, and audit-ready sanitation documentation for hospitals and medical facilities.",
     openGraph: {
         title: "Healthcare Environmental Services (EVS) Staffing",
@@ -55,7 +55,7 @@ export default function HealthcareEVSPage() {
 
                             {/* H1 & Intro */}
                             <section>
-                                <h1 className="text-4xl font-bold text-slate-900 mb-6">Healthcare Environmental Services Staffing in Georgia — Powered by FNSG OS</h1>
+                                <h1 className="text-4xl font-bold text-slate-900 mb-6">Healthcare Environmental Services Staffing in Georgia — Powered by FNSG</h1>
                                 <p className="text-lg text-slate-700 leading-relaxed mb-6">
                                     Hospital cleaning quality is not a &quot;janitorial&quot; role: it is a critical patient safety function.
                                 </p>
@@ -63,7 +63,7 @@ export default function HealthcareEVSPage() {
                                     The performance of an EVS team directly affects: infection control, patient satisfaction scores (HCAHPS), hospital compliance, safety, operational risk, patient flow, and clinical outcomes.
                                 </p>
                                 <p className="text-lg text-slate-700 leading-relaxed font-medium">
-                                    <span className="text-blue-600">FNSG OS provides highly reliable, trained, and audit-ready EVS teams.</span>
+                                    <span className="text-blue-600">FNSG provides highly reliable, trained, and audit-ready EVS teams.</span>
                                 </p>
                             </section>
 
@@ -117,9 +117,9 @@ export default function HealthcareEVSPage() {
                                 </div>
                             </section>
 
-                            {/* How FNSG OS Solves These Problems */}
+                            {/* How FNSG Solves These Problems */}
                             <section>
-                                <h2 className="text-2xl font-bold text-slate-900 mb-6">How FNSG OS Solves These Problems</h2>
+                                <h2 className="text-2xl font-bold text-slate-900 mb-6">How FNSG Solves These Problems</h2>
 
                                 <div className="space-y-8">
                                     <div className="flex gap-4">
@@ -182,7 +182,7 @@ export default function HealthcareEVSPage() {
                                         <thead className="bg-slate-900 text-white font-semibold">
                                             <tr>
                                                 <th className="p-4 border-b border-slate-700">KPI</th>
-                                                <th className="p-4 border-b border-slate-700">Improvement with FNSG OS</th>
+                                                <th className="p-4 border-b border-slate-700">Improvement with FNSG</th>
                                             </tr>
                                         </thead>
                                         <tbody className="divide-y divide-slate-100">
@@ -234,7 +234,7 @@ export default function HealthcareEVSPage() {
                             <section className="bg-slate-900 text-white p-8 rounded-xl">
                                 <h2 className="text-2xl font-bold mb-4">Compliance & Safety Layer</h2>
                                 <p className="mb-6 text-slate-300">
-                                    FNSG OS documents and supports compliance in:
+                                    FNSG documents and supports compliance in:
                                 </p>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div className="flex items-center gap-2">

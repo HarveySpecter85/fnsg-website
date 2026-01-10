@@ -7,7 +7,7 @@ import { Sliders, Wrench, Factory, RotateCcw, BoxSelect, ShieldCheck, CheckCircl
 import PremiumCTA from '@/app/components/PremiumCTA';
 
 export const metadata = {
-    title: "Manufacturing & Production Staffing Solutions in Georgia | FNSG OS",
+    title: "Manufacturing & Production Staffing Solutions in Georgia | FNSG",
     description: "Intelligence-driven staffing solutions for manufacturing and production operations, including skilled machine operators, line workers, QA/QC, and on-site workforce management programs.",
     openGraph: {
         title: "Manufacturing & Production Staffing Solutions",
@@ -55,12 +55,12 @@ export default function ManufacturingProductionPage() {
 
                             {/* H1 & Intro */}
                             <section>
-                                <h1 className="text-4xl font-bold text-slate-900 mb-6">Manufacturing & Production Staffing Solutions in Georgia — Powered by FNSG OS</h1>
+                                <h1 className="text-4xl font-bold text-slate-900 mb-6">Manufacturing & Production Staffing Solutions in Georgia — Powered by FNSG</h1>
                                 <p className="text-lg text-slate-700 leading-relaxed mb-6">
                                     The manufacturing industry in Georgia faces growing pressures: high turnover, shortage of skilled operators, high demand for 2nd and 3rd shifts, attendance issues, aggressive ramp-ups, complex OSHA compliance, and a lack of operational intelligence for workforce planning.
                                 </p>
                                 <p className="text-lg text-slate-700 leading-relaxed font-medium">
-                                    <span className="text-blue-600">FNSG OS helps manufacturing plants build stable, safe, and highly predictable workforces.</span>
+                                    <span className="text-blue-600">FNSG helps manufacturing plants build stable, safe, and highly predictable workforces.</span>
                                 </p>
                             </section>
 
@@ -108,9 +108,9 @@ export default function ManufacturingProductionPage() {
                                 </div>
                             </section>
 
-                            {/* How FNSG OS Solves These Problems */}
+                            {/* How FNSG Solves These Problems */}
                             <section>
-                                <h2 className="text-2xl font-bold text-slate-900 mb-6">How FNSG OS Solves These Problems</h2>
+                                <h2 className="text-2xl font-bold text-slate-900 mb-6">How FNSG Solves These Problems</h2>
 
                                 <div className="space-y-8">
                                     <div className="flex gap-4">
@@ -183,7 +183,7 @@ export default function ManufacturingProductionPage() {
                                         <thead className="bg-slate-900 text-white font-semibold">
                                             <tr>
                                                 <th className="p-4 border-b border-slate-700">KPI</th>
-                                                <th className="p-4 border-b border-slate-700">Improvement with FNSG OS</th>
+                                                <th className="p-4 border-b border-slate-700">Improvement with FNSG</th>
                                             </tr>
                                         </thead>
                                         <tbody className="divide-y divide-slate-100">
@@ -248,7 +248,7 @@ export default function ManufacturingProductionPage() {
                             <section className="bg-slate-900 text-white p-8 rounded-xl">
                                 <h2 className="text-2xl font-bold mb-4">Compliance & Safety Layer</h2>
                                 <p className="mb-6 text-slate-300">
-                                    Manufacturing demands more rigor than other industries. FNSG OS covers:
+                                    Manufacturing demands more rigor than other industries. FNSG covers:
                                 </p>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div className="flex items-center gap-2">
@@ -283,7 +283,7 @@ export default function ManufacturingProductionPage() {
                                         { q: "How do you recruit experienced machine operators?", a: "Through skill matching, pay benchmarking, and maintaining a robust operator pipeline." },
                                         { q: "Can you support 3rd shift in high-rotation environments?", a: "Yes, using Attendance OS, targeted incentives, and risk prediction." },
                                         { q: "Do you provide OSHA-compliant training?", a: "Yes, through our Safety OS and audit-ready documentation." },
-                                        { q: "Can you staff ramp-ups of 20–100 workers?", a: "This is a core specialty of the FNSG OS." },
+                                        { q: "Can you staff ramp-ups of 20–100 workers?", a: "This is a core specialty of the FNSG." },
                                         { q: "How fast can you replace production line workers?", a: "Typically between 24–48 hours." },
                                         { q: "Do you offer bilingual staffing?", a: "Yes, we provide bilingual staffing solutions." }
                                     ].map((faq, index) => (

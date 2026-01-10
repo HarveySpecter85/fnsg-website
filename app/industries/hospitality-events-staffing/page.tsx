@@ -7,8 +7,8 @@ import { Users, CalendarClock, UserCheck, Star, TrendingUp, AlertTriangle, Check
 import PremiumCTA from '@/app/components/PremiumCTA';
 
 export const metadata = {
-    title: "Hospitality & Events Staffing in Georgia | FNSG OS",
-    description: "Hospitality & Events staffing solutions powered by FNSG OS including banquet staff, bartenders, housekeeping, dishwashers, AV support, event setup crews, and onsite workforce management.",
+    title: "Hospitality & Events Staffing in Georgia | FNSG",
+    description: "Hospitality & Events staffing solutions powered by FNSG including banquet staff, bartenders, housekeeping, dishwashers, AV support, event setup crews, and onsite workforce management.",
     openGraph: {
         title: "Hospitality & Events Staffing",
         url: "https://firstnationalstaffing.com/industries/hospitality-events-staffing",
@@ -30,7 +30,7 @@ export default function HospitalityEventsPage() {
             "@type": "AdministrativeArea",
             "name": "Georgia"
         },
-        "description": "Hospitality & Events staffing solutions powered by FNSG OS including banquet staff, bartenders, housekeeping, dishwashers, AV support, event setup crews, and onsite workforce management.",
+        "description": "Hospitality & Events staffing solutions powered by FNSG including banquet staff, bartenders, housekeeping, dishwashers, AV support, event setup crews, and onsite workforce management.",
         "url": "https://firstnationalstaffing.com/industries/hospitality-events-staffing"
     };
 
@@ -55,7 +55,7 @@ export default function HospitalityEventsPage() {
 
                             {/* H1 & Intro */}
                             <section>
-                                <h1 className="text-4xl font-bold text-slate-900 mb-6">Hospitality & Events Staffing in Georgia — Powered by FNSG OS</h1>
+                                <h1 className="text-4xl font-bold text-slate-900 mb-6">Hospitality & Events Staffing in Georgia — Powered by FNSG</h1>
                                 <p className="text-lg text-slate-700 leading-relaxed mb-6">
                                     The Hospitality & Events industry demands reliable, professional, and highly adaptable staff. From hotels and conventions to banquets and corporate events, operational success depends on: punctuality, presentation, professional attitude, speed of execution, interpersonal skills, and immediate availability.
                                 </p>
@@ -63,7 +63,7 @@ export default function HospitalityEventsPage() {
                                     It is an environment where turnover is high, peaks are unpredictable, and demand changes by season, weather, and local calendar.
                                 </p>
                                 <p className="text-lg text-slate-700 leading-relaxed font-medium">
-                                    <span className="text-blue-600">FNSG OS offers trained, predictable, and audit-ready Hospitality & Events teams.</span>
+                                    <span className="text-blue-600">FNSG offers trained, predictable, and audit-ready Hospitality & Events teams.</span>
                                 </p>
                             </section>
 
@@ -111,9 +111,9 @@ export default function HospitalityEventsPage() {
                                 </div>
                             </section>
 
-                            {/* How FNSG OS Solves These Challenges */}
+                            {/* How FNSG Solves These Challenges */}
                             <section>
-                                <h2 className="text-2xl font-bold text-slate-900 mb-6">How FNSG OS Solves These Challenges</h2>
+                                <h2 className="text-2xl font-bold text-slate-900 mb-6">How FNSG Solves These Challenges</h2>
 
                                 <div className="space-y-8">
                                     <div className="flex gap-4">
@@ -176,7 +176,7 @@ export default function HospitalityEventsPage() {
                                         <thead className="bg-slate-900 text-white font-semibold">
                                             <tr>
                                                 <th className="p-4 border-b border-slate-700">KPI</th>
-                                                <th className="p-4 border-b border-slate-700">Improvement with FNSG OS</th>
+                                                <th className="p-4 border-b border-slate-700">Improvement with FNSG</th>
                                             </tr>
                                         </thead>
                                         <tbody className="divide-y divide-slate-100">
@@ -242,7 +242,7 @@ export default function HospitalityEventsPage() {
                             <section className="bg-slate-900 text-white p-8 rounded-xl">
                                 <h2 className="text-2xl font-bold mb-4">Compliance & Professional Standards Layer</h2>
                                 <p className="mb-6 text-slate-300">
-                                    FNSG OS guarantees:
+                                    FNSG guarantees:
                                 </p>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div className="flex items-center gap-2">

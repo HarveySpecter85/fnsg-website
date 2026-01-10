@@ -219,9 +219,9 @@ export default function SavannahPage() {
                                 </div>
                             </section>
 
-                            {/* How FNSG OS Improves Stability */}
+                            {/* How FNSG Improves Stability */}
                             <section className="bg-slate-900 text-white p-8 rounded-xl">
-                                <h2 className="text-2xl font-bold mb-4">How FNSG OS Stabilizes Workforce in Savannah</h2>
+                                <h2 className="text-2xl font-bold mb-4">How FNSG Stabilizes Workforce in Savannah</h2>
                                 <p className="mb-6 text-slate-300">
                                     We navigate the complexities of the port ecosystem to deliver reliable, credentialed talent.
                                 </p>

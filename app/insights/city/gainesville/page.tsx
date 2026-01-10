@@ -238,9 +238,9 @@ export default function GainesvillePage() {
                                 </div>
                             </section>
 
-                            {/* How FNSG OS Improves Stability */}
+                            {/* How FNSG Improves Stability */}
                             <section className="bg-slate-900 text-white p-8 rounded-xl">
-                                <h2 className="text-2xl font-bold mb-4">How FNSG OS Stabilizes Workforce in Gainesville</h2>
+                                <h2 className="text-2xl font-bold mb-4">How FNSG Stabilizes Workforce in Gainesville</h2>
                                 <p className="mb-6 text-slate-300">
                                     We understand the unique demands of the "Poultry Capital" and deploy strategies to keep lines running.
                                 </p>

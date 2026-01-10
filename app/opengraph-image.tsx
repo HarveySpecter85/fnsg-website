@@ -4,7 +4,7 @@ import { ImageResponse } from 'next/og';
 export const runtime = 'edge';
 
 // Image metadata
-export const alt = 'First National Staffing OS';
+export const alt = 'First National Staffing Group';
 export const size = {
     width: 1200,
     height: 630,
@@ -120,7 +120,7 @@ export default async function Image() {
                             textShadow: '0 0 30px rgba(59, 130, 246, 0.5)',
                         }}
                     >
-                        First National Staffing OS
+                        First National Staffing Group
                     </div>
                     <div
                         style={{
@@ -131,7 +131,7 @@ export default async function Image() {
                             lineHeight: 1.4,
                         }}
                     >
-                        Workforce Operations Intelligence for Georgia Employers
+                        Georgia's Premier Industrial Staffing Agency
                     </div>
                 </div>
 

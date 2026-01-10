@@ -60,7 +60,7 @@ export default function AgricultureDeepDivePage() {
                         From greenhouse operations and landscape nurseries to field agriculture and seasonal contracts, this sector depends on stable, physically resilient, and compliance-aligned workforce models.
                     </p>
                     <p>
-                        FNSG OS provides an intelligence layer that makes this possible.
+                        FNSG provides an intelligence layer that makes this possible.
                     </p>
 
                     {/* Industry Overview */}
@@ -247,8 +247,8 @@ export default function AgricultureDeepDivePage() {
                     </ul>
 
                     {/* Workforce Intelligence Insights */}
-                    <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Workforce Intelligence Insights (FNSG OS)</h2>
-                    <p className="mb-4">Examples of insights FNSG OS provides:</p>
+                    <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Workforce Intelligence Insights (FNSG)</h2>
+                    <p className="mb-4">Examples of insights FNSG provides:</p>
                     <ul className="list-disc pl-6 mb-6 space-y-2">
                         <li><strong>Climate-Adjusted Attendance Forecast:</strong> Predicts how many workers will actually show up based on temperature, humidity, precipitation, and distance to field/nursery.</li>
                         <li><strong>Seasonal Labor Stability Index:</strong> Measures how likely a crew is to remain stable throughout the entire cycle.</li>
@@ -344,7 +344,7 @@ export default function AgricultureDeepDivePage() {
                             <p>Yes, we specialize in high-velocity ramp-ups with 4–6 weeks of planning for peak seasons.</p>
                         </div>
                         <div>
-                            <h3 className="text-xl font-bold text-slate-900 mb-2">Can FNSG OS provide bilingual crew leads?</h3>
+                            <h3 className="text-xl font-bold text-slate-900 mb-2">Can FNSG provide bilingual crew leads?</h3>
                             <p>Yes, we provide bilingual crew leaders to ensure effective communication and supervision.</p>
                         </div>
                     </div>

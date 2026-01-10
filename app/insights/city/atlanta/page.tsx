@@ -218,11 +218,11 @@ export default function AtlantaHub() {
                             </div>
                         </section>
 
-                        {/* How FNSG OS Improves Stability */}
+                        {/* How FNSG Improves Stability */}
                         <section className="bg-slate-900 text-white p-8 rounded-xl">
-                            <h2 className="text-2xl font-bold mb-4">How FNSG OS Stabilizes Workforce in Atlanta</h2>
+                            <h2 className="text-2xl font-bold mb-4">How FNSG Stabilizes Workforce in Atlanta</h2>
                             <p className="mb-6 text-slate-300">
-                                In a city that never stops moving, FNSG OS provides the friction-less staffing infrastructure you need.
+                                In a city that never stops moving, FNSG provides the friction-less staffing infrastructure you need.
                             </p>
                             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <li className="flex items-center gap-2">

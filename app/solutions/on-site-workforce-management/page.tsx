@@ -6,13 +6,13 @@ import PremiumCTA from '@/app/components/PremiumCTA';
 
 export const metadata: Metadata = {
     title: "On-Site Workforce Management OS — Stabilize Your Operation With Embedded Intelligence",
-    description: "Embedded workforce management solution that stabilizes attendance, improves safety compliance, optimizes production floors, and provides real-time workforce intelligence via FNSG OS.",
+    description: "Embedded workforce management solution that stabilizes attendance, improves safety compliance, optimizes production floors, and provides real-time workforce intelligence via FNSG.",
     alternates: {
         canonical: 'https://firstnationalstaffing.com/solutions/on-site-workforce-management-os',
     },
     openGraph: {
         title: "On-Site Workforce Management OS — Stabilize Your Operation With Embedded Intelligence",
-        description: "Embedded workforce management solution that stabilizes attendance, improves safety compliance, optimizes production floors, and provides real-time workforce intelligence via FNSG OS.",
+        description: "Embedded workforce management solution that stabilizes attendance, improves safety compliance, optimizes production floors, and provides real-time workforce intelligence via FNSG.",
         url: 'https://firstnationalstaffing.com/solutions/on-site-workforce-management-os',
         images: ['/solutions/opengraph-image'],
         siteName: 'First National Staffing Group',
@@ -32,7 +32,7 @@ export default function OnSiteWorkforceManagementPage() {
             "url": "https://firstnationalstaffing.com"
         },
         "areaServed": "Georgia",
-        "description": "Embedded workforce management solution that stabilizes attendance, improves safety compliance, optimizes production floors, and provides real-time workforce intelligence via FNSG OS.",
+        "description": "Embedded workforce management solution that stabilizes attendance, improves safety compliance, optimizes production floors, and provides real-time workforce intelligence via FNSG.",
         "url": "https://firstnationalstaffing.com/solutions/on-site-workforce-management-os"
     };
 
@@ -48,7 +48,7 @@ export default function OnSiteWorkforceManagementPage() {
                 <div className="absolute inset-0 opacity-10 bg-[url('/grid-pattern.svg')]"></div>
                 <div className="container mx-auto px-6 py-20 relative z-10 max-w-5xl">
                     <div className="mb-6">
-                        <span className="text-blue-400 font-bold tracking-widest text-sm uppercase">Powered by FNSG Workforce Intelligence OS</span>
+                        <span className="text-blue-400 font-bold tracking-widest text-sm uppercase">Powered by FNSG Workforce Solutions</span>
                     </div>
                     <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6">
                         On-Site Workforce Management OS: <br />

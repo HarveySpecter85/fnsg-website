@@ -242,7 +242,7 @@ export default function RecyclingDeepDivePage() {
                     </ul>
 
                     {/* Workforce Intelligence Insights */}
-                    <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Workforce Intelligence Insights (FNSG OS)</h2>
+                    <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Workforce Intelligence Insights (FNSG)</h2>
                     <ul className="list-disc pl-6 mb-6 space-y-2">
                         <li><strong>Weather-Adjusted Attendance Forecast:</strong> Predicts NCNS based on climate conditions.</li>
                         <li><strong>Heat-Stress Risk Index:</strong> Forecasts fatigue patterns for outdoor crews.</li>

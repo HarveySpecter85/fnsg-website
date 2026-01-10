@@ -48,7 +48,7 @@ export default function PeakSeasonDeploymentPage() {
                 <div className="absolute inset-0 opacity-10 bg-[url('/grid-pattern.svg')]"></div>
                 <div className="container mx-auto px-6 py-20 relative z-10 max-w-5xl">
                     <div className="mb-6">
-                        <span className="text-blue-400 font-bold tracking-widest text-sm uppercase">Powered by FNSG Workforce Intelligence OS</span>
+                        <span className="text-blue-400 font-bold tracking-widest text-sm uppercase">Powered by FNSG Workforce Solutions</span>
                     </div>
                     <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6">
                         Peak Season Deployment OS: <br />

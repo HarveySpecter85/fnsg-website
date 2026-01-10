@@ -107,7 +107,7 @@ export default function WarehouseDeepDivePage() {
 
                     <div className="bg-blue-50 p-6 rounded-xl border border-blue-100 my-8">
                         <h4 className="font-bold text-blue-900 mb-2">Your OS advantage:</h4>
-                        <p className="text-blue-800 m-0">FNSG OS can track wage expectations by city, county and role, and flag facilities where pay is below the competitive band.</p>
+                        <p className="text-blue-800 m-0">FNSG can track wage expectations by city, county and role, and flag facilities where pay is below the competitive band.</p>
                     </div>
 
                     {/* Role Difficulty Index */}
@@ -186,7 +186,7 @@ export default function WarehouseDeepDivePage() {
                             <li>seasonality</li>
                             <li>previous assignment history</li>
                         </ul>
-                        <p className="font-medium text-slate-900">FNSG OS can surface early warning indicators before a facility enters a high churn phase.</p>
+                        <p className="font-medium text-slate-900">FNSG can surface early warning indicators before a facility enters a high churn phase.</p>
                     </div>
 
                     {/* OSHA and Safety */}
@@ -221,7 +221,7 @@ export default function WarehouseDeepDivePage() {
                     </ol>
 
                     <div className="bg-slate-50 p-6 rounded-xl border border-slate-200 my-8">
-                        <h4 className="font-bold text-slate-900 mb-2">FNSG OS can:</h4>
+                        <h4 className="font-bold text-slate-900 mb-2">FNSG can:</h4>
                         <ul className="list-disc pl-6 space-y-2">
                             <li>Detect NCNS patterns before they become systemic</li>
                             <li>Identify which recruiting sources produce stable vs unstable workers</li>
@@ -231,7 +231,7 @@ export default function WarehouseDeepDivePage() {
                     </div>
 
                     {/* Workforce Intelligence Insights */}
-                    <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Workforce Intelligence Insights From FNSG OS</h2>
+                    <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Workforce Intelligence Insights From FNSG</h2>
                     <p>This section es donde tu OS se ve como un producto de verdad.</p>
                     <p className="mb-4">Ejemplos de insights que el OS podría mostrar en un dashboard:</p>
                     <ul className="list-disc pl-6 mb-6 space-y-2">

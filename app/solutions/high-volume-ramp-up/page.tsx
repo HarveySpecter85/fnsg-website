@@ -6,13 +6,13 @@ import PremiumCTA from '@/app/components/PremiumCTA';
 
 export const metadata: Metadata = {
     title: "High-Volume Ramp-Up OS — Deploy 20–200 Workers in 24–72 Hours",
-    description: "Deploy 20–200 workers in 24–72 hours using FNSG Workforce Intelligence OS, combining prediction, on-site command, screening automation, and stability analysis for peak performance.",
+    description: "Deploy 20–200 workers in 24–72 hours using FNSG Workforce Solutions, combining prediction, on-site command, screening automation, and stability analysis for peak performance.",
     alternates: {
         canonical: 'https://firstnationalstaffing.com/solutions/high-volume-ramp-up-os',
     },
     openGraph: {
         title: "High-Volume Ramp-Up OS — Deploy 20–200 Workers in 24–72 Hours",
-        description: "Deploy 20–200 workers in 24–72 hours using FNSG Workforce Intelligence OS, combining prediction, on-site command, screening automation, and stability analysis for peak performance.",
+        description: "Deploy 20–200 workers in 24–72 hours using FNSG Workforce Solutions, combining prediction, on-site command, screening automation, and stability analysis for peak performance.",
         url: 'https://firstnationalstaffing.com/solutions/high-volume-ramp-up-os',
         images: ['/solutions/opengraph-image'],
         siteName: 'First National Staffing Group',
@@ -32,7 +32,7 @@ export default function HighVolumeRampUpPage() {
             "url": "https://firstnationalstaffing.com"
         },
         "areaServed": "Georgia",
-        "description": "Deploy 20–200 workers in 24–72 hours using FNSG Workforce Intelligence OS, combining prediction, on-site command, screening automation, and stability analysis for peak performance.",
+        "description": "Deploy 20–200 workers in 24–72 hours using FNSG Workforce Solutions, combining prediction, on-site command, screening automation, and stability analysis for peak performance.",
         "url": "https://firstnationalstaffing.com/solutions/high-volume-ramp-up-os"
     };
 
@@ -48,7 +48,7 @@ export default function HighVolumeRampUpPage() {
                 <div className="absolute inset-0 opacity-10 bg-[url('/grid-pattern.svg')]"></div>
                 <div className="container mx-auto px-6 py-20 relative z-10 max-w-5xl">
                     <div className="mb-6">
-                        <span className="text-blue-400 font-bold tracking-widest text-sm uppercase">Powered by FNSG Workforce Intelligence OS</span>
+                        <span className="text-blue-400 font-bold tracking-widest text-sm uppercase">Powered by FNSG Workforce Solutions</span>
                     </div>
                     <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6">
                         High-Volume Ramp-Up OS: <br />
@@ -125,7 +125,7 @@ export default function HighVolumeRampUpPage() {
                     </div>
                 </div>
 
-                {/* H2 - How FNSG OS Solves It (Module Grid) */}
+                {/* H2 - How FNSG Solves It (Module Grid) */}
                 <section className="py-12">
                     <h2 className="text-3xl font-bold text-slate-900 mb-8">How High-Volume Ramp-Up OS Works</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

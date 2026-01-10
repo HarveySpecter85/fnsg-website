@@ -249,7 +249,7 @@ export default function HealthcareEVSDeepDivePage() {
                     </ul>
 
                     {/* Workforce Intelligence Insights */}
-                    <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Workforce Intelligence Insights (FNSG OS)</h2>
+                    <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Workforce Intelligence Insights (FNSG)</h2>
                     <ul className="list-disc pl-6 mb-6 space-y-2">
                         <li><strong>Infection Control Compliance Index:</strong> Tracks EVS readiness for audits.</li>
                         <li><strong>Patient Room Turnover Efficiency:</strong> Predicts bottlenecks in room readiness.</li>

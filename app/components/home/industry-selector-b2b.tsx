@@ -93,7 +93,7 @@ export function IndustrySelectorB2B() {
                     </div>
                 </FadeIn>
 
-                {/* Industry Tabs - Grid for all 7 */}
+                {/* Industry Tabs - Grid for all 7 (semantic links for SEO) */}
                 <FadeIn delay={0.1}>
                     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3 mb-12">
                         {industries.map((industry) => {
@@ -101,19 +101,25 @@ export function IndustrySelectorB2B() {
                             const isActive = activeIndustry === industry.id
 
                             return (
-                                <button
+                                <Link
                                     key={industry.id}
-                                    onClick={() => setActiveIndustry(industry.id)}
+                                    href={industry.href}
+                                    onMouseEnter={() => setActiveIndustry(industry.id)}
+                                    onClick={(e) => {
+                                        e.preventDefault()
+                                        setActiveIndustry(industry.id)
+                                    }}
                                     className={clsx(
                                         'flex flex-col items-center gap-2 px-4 py-4 rounded-xl font-medium transition-all duration-300',
                                         isActive
                                             ? 'bg-cyan-600 text-white shadow-[0_0_20px_rgba(8,145,178,0.4)]'
                                             : 'bg-slate-900/60 text-slate-400 border border-slate-700 hover:border-cyan-500/50 hover:text-white'
                                     )}
+                                    aria-label={`View ${industry.label} staffing solutions`}
                                 >
                                     <Icon className="w-6 h-6" />
                                     <span className="text-xs text-center leading-tight">{industry.label}</span>
-                                </button>
+                                </Link>
                             )
                         })}
                     </div>

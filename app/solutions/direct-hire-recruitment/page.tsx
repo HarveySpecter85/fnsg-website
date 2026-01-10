@@ -48,7 +48,7 @@ export default function DirectHireRecruitmentPage() {
                 <div className="absolute inset-0 opacity-10 bg-[url('/grid-pattern.svg')]"></div>
                 <div className="container mx-auto px-6 py-20 relative z-10 max-w-5xl">
                     <div className="mb-6">
-                        <span className="text-blue-400 font-bold tracking-widest text-sm uppercase">Powered by FNSG Workforce Intelligence OS</span>
+                        <span className="text-blue-400 font-bold tracking-widest text-sm uppercase">Powered by FNSG Workforce Solutions</span>
                     </div>
                     <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6">
                         Direct Hire Recruitment OS: <br />
@@ -125,9 +125,9 @@ export default function DirectHireRecruitmentPage() {
                     </div>
                 </div>
 
-                {/* H2 - How FNSG OS Solves It (Module Grid) */}
+                {/* H2 - How FNSG Solves It (Module Grid) */}
                 <section className="py-12">
-                    <h2 className="text-3xl font-bold text-slate-900 mb-8">How FNSG OS Solves It</h2>
+                    <h2 className="text-3xl font-bold text-slate-900 mb-8">How FNSG Solves It</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {[
                             {

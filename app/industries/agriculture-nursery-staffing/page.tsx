@@ -7,8 +7,8 @@ import { Sun, CloudRain, Sprout, Truck, ClipboardCheck, Users, TrendingUp, Alert
 import PremiumCTA from '@/app/components/PremiumCTA';
 
 export const metadata = {
-    title: "Agriculture & Nursery Staffing Solutions in Georgia | FNSG OS",
-    description: "Agriculture and nursery staffing powered by Workforce Intelligence OS, including greenhouse labor, potting, trimming, irrigation, harvesting crews, MSPA compliance, and field operations.",
+    title: "Agriculture & Nursery Staffing Solutions in Georgia | FNSG",
+    description: "Agriculture and nursery staffing powered by Workforce Solutions, including greenhouse labor, potting, trimming, irrigation, harvesting crews, MSPA compliance, and field operations.",
     openGraph: {
         title: "Agriculture & Nursery Staffing Solutions",
         url: "https://firstnationalstaffing.com/industries/agriculture-nursery-staffing",
@@ -30,7 +30,7 @@ export default function AgricultureNurseryPage() {
             "@type": "AdministrativeArea",
             "name": "Georgia"
         },
-        "description": "Agriculture and nursery staffing powered by Workforce Intelligence OS, including greenhouse labor, potting, trimming, irrigation, harvesting crews, MSPA compliance, and field operations.",
+        "description": "Agriculture and nursery staffing powered by Workforce Solutions, including greenhouse labor, potting, trimming, irrigation, harvesting crews, MSPA compliance, and field operations.",
         "url": "https://firstnationalstaffing.com/industries/agriculture-nursery-staffing"
     };
 
@@ -55,12 +55,12 @@ export default function AgricultureNurseryPage() {
 
                             {/* H1 & Intro */}
                             <section>
-                                <h1 className="text-4xl font-bold text-slate-900 mb-6">Agriculture & Nursery Staffing Solutions in Georgia — Powered by FNSG OS</h1>
+                                <h1 className="text-4xl font-bold text-slate-900 mb-6">Agriculture & Nursery Staffing Solutions in Georgia — Powered by FNSG</h1>
                                 <p className="text-lg text-slate-700 leading-relaxed mb-6">
                                     The agriculture and nursery sector in Georgia faces unique challenges: highly seasonal demand, outdoor working conditions, strict compliance (including MSPA), high physical risks, structural labor shortages, and the need for stable, resilient, and reliable workers.
                                 </p>
                                 <p className="text-lg text-slate-700 leading-relaxed font-medium">
-                                    <span className="text-blue-600">FNSG OS offers labor solutions designed specifically for agricultural and horticulture operations, focusing on stability, safety, and total compliance.</span>
+                                    <span className="text-blue-600">FNSG offers labor solutions designed specifically for agricultural and horticulture operations, focusing on stability, safety, and total compliance.</span>
                                 </p>
                             </section>
 
@@ -114,9 +114,9 @@ export default function AgricultureNurseryPage() {
                                 </div>
                             </section>
 
-                            {/* How FNSG OS Solves These Challenges */}
+                            {/* How FNSG Solves These Challenges */}
                             <section>
-                                <h2 className="text-2xl font-bold text-slate-900 mb-6">How FNSG OS Solves These Problems</h2>
+                                <h2 className="text-2xl font-bold text-slate-900 mb-6">How FNSG Solves These Problems</h2>
 
                                 <div className="space-y-8">
                                     <div className="flex gap-4">
@@ -189,7 +189,7 @@ export default function AgricultureNurseryPage() {
                                         <thead className="bg-slate-900 text-white font-semibold">
                                             <tr>
                                                 <th className="p-4 border-b border-slate-700">KPI</th>
-                                                <th className="p-4 border-b border-slate-700">Improvement with FNSG OS</th>
+                                                <th className="p-4 border-b border-slate-700">Improvement with FNSG</th>
                                             </tr>
                                         </thead>
                                         <tbody className="divide-y divide-slate-100">
@@ -252,7 +252,7 @@ export default function AgricultureNurseryPage() {
                             <section className="bg-slate-900 text-white p-8 rounded-xl">
                                 <h2 className="text-2xl font-bold mb-4">Compliance & Safety Layer</h2>
                                 <p className="mb-6 text-slate-300">
-                                    Agricultural compliance requires extreme care. FNSG OS covers:
+                                    Agricultural compliance requires extreme care. FNSG covers:
                                 </p>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div className="flex items-center gap-2">

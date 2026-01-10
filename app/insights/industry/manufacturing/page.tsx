@@ -281,7 +281,7 @@ export default function ManufacturingDeepDivePage() {
                     </ul>
 
                     {/* Workforce Intelligence Insights */}
-                    <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Workforce Intelligence Insights (FNSG OS)</h2>
+                    <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Workforce Intelligence Insights (FNSG)</h2>
                     <p className="mb-4">Your OS can show insights such as:</p>
                     <ul className="list-disc pl-6 mb-6 space-y-2">
                         <li><strong>Skill Stability Index:</strong> Retention prediction based on background.</li>

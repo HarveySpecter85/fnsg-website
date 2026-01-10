@@ -7,7 +7,7 @@ import { AlertTriangle, ThermometerSnowflake, ShieldCheck, Clock, TrendingUp, Za
 import PremiumCTA from '@/app/components/PremiumCTA';
 
 export const metadata = {
-    title: "Food & Beverage Production Staffing Solutions in Georgia | FNSG OS",
+    title: "Food & Beverage Production Staffing Solutions in Georgia | FNSG",
     description: "Intelligence-driven staffing for food production operations including line workers, machine operators, sanitation techs, and QA teams with HACCP, OSHA, and food safety compliance.",
     openGraph: {
         title: "Food & Beverage Production Staffing Solutions",
@@ -55,7 +55,7 @@ export default function FoodBeveragePage() {
 
                             {/* H1 & Intro */}
                             <section>
-                                <h1 className="text-4xl font-bold text-slate-900 mb-6">Food & Beverage Production Staffing Solutions in Georgia — Powered by FNSG OS</h1>
+                                <h1 className="text-4xl font-bold text-slate-900 mb-6">Food & Beverage Production Staffing Solutions in Georgia — Powered by FNSG</h1>
                                 <p className="text-lg text-slate-700 leading-relaxed mb-6">
                                     The food industry in Georgia continues to grow at historic rates: poultry, bakery, ready-to-eat, beverage manufacturing, cold storage, packaging, and fulfillment.
                                 </p>
@@ -64,7 +64,7 @@ export default function FoodBeveragePage() {
                                 </p>
                                 <p className="text-lg text-slate-700 leading-relaxed font-medium">
                                     Food & Beverage plants need stability, predictable attendance, trained workers, and impeccable OSHA + Food Safety compliance.
-                                    <span className="text-blue-600"> FNSG OS is the platform designed to achieve it.</span>
+                                    <span className="text-blue-600"> FNSG is the platform designed to achieve it.</span>
                                 </p>
                             </section>
 
@@ -112,9 +112,9 @@ export default function FoodBeveragePage() {
                                 </div>
                             </section>
 
-                            {/* How FNSG OS Solves These Problems */}
+                            {/* How FNSG Solves These Problems */}
                             <section>
-                                <h2 className="text-2xl font-bold text-slate-900 mb-6">How FNSG OS Solves These Problems</h2>
+                                <h2 className="text-2xl font-bold text-slate-900 mb-6">How FNSG Solves These Problems</h2>
 
                                 <div className="space-y-8">
                                     <div className="flex gap-4">
@@ -187,7 +187,7 @@ export default function FoodBeveragePage() {
                                         <thead className="bg-slate-900 text-white font-semibold">
                                             <tr>
                                                 <th className="p-4 border-b border-slate-700">KPI</th>
-                                                <th className="p-4 border-b border-slate-700">Improvement with FNSG OS</th>
+                                                <th className="p-4 border-b border-slate-700">Improvement with FNSG</th>
                                             </tr>
                                         </thead>
                                         <tbody className="divide-y divide-slate-100">
@@ -284,7 +284,7 @@ export default function FoodBeveragePage() {
                                     </div>
                                 </div>
                                 <p className="mt-6 text-slate-300 font-medium border-t border-slate-700 pt-4">
-                                    FNSG OS documents everything in an audit-ready format.
+                                    FNSG documents everything in an audit-ready format.
                                 </p>
                             </section>
 
