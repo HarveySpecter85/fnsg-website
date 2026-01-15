@@ -334,7 +334,7 @@ export function SubmitResumeContent() {
                             <div className="bg-slate-50 p-4 md:p-6">
                                 <iframe
                                     src="https://api.leadconnectorhq.com/widget/form/ln9MZIydyVxYQ3czpUgY"
-                                    style={{ width: '100%', height: '1676px', border: 'none', borderRadius: '12px', background: 'white' }}
+                                    style={{ width: '100%', height: '100%', border: 'none', borderRadius: '5px' }}
                                     id="inline-ln9MZIydyVxYQ3czpUgY"
                                     data-layout="{'id':'INLINE'}"
                                     data-trigger-type="alwaysShow"
@@ -344,11 +344,10 @@ export function SubmitResumeContent() {
                                     data-deactivation-type="neverDeactivate"
                                     data-deactivation-value=""
                                     data-form-name="Job Seeker Lead Generator"
-                                    data-height="1676"
+                                    data-height="1822"
                                     data-layout-iframe-id="inline-ln9MZIydyVxYQ3czpUgY"
                                     data-form-id="ln9MZIydyVxYQ3czpUgY"
                                     title="Job Seeker Lead Generator"
-                                    allow="camera *; microphone *; autoplay"
                                 />
                             </div>
                         </div>
