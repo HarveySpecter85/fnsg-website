@@ -6,6 +6,7 @@ import { IndustrySelectorB2B } from '@/app/components/home/industry-selector-b2b
 import { TestimonialCarousel } from '@/app/components/home/testimonial-carousel'
 import { GeorgiaMap } from '@/app/components/home/georgia-map'
 import { B2BContactForm } from '@/app/components/home/b2b-contact-form'
+import { PhotoGallery } from '@/app/components/gallery'
 
 // ISR: Revalidate every 24 hours
 export const revalidate = 86400
@@ -56,7 +57,10 @@ export default function HomePage() {
             {/* 6. Georgia Map + Locations */}
             <GeorgiaMap />
 
-            {/* 7. B2B Contact Form with GHL */}
+            {/* 7. People & Culture Gallery (Compact) */}
+            <PhotoGallery variant="compact" />
+
+            {/* 8. B2B Contact Form with GHL */}
             <B2BContactForm />
         </main>
     )

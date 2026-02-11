@@ -33,6 +33,12 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# gallery photo staging (raw uploads before Cloudinary)
+/gallery-assets
+
+# upload scripts (contain API keys)
+upload-*.sh
+
 # vercel
 .vercel
 

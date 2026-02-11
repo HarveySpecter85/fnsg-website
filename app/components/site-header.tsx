@@ -69,6 +69,7 @@ const navigation = {
             { title: 'Leadership Team', href: '/company/leadership-team' },
             { title: 'Performance Metrics', href: '/company/performance-metrics' },
             { title: 'Press & Media', href: '/company/press-media' },
+            { title: 'Gallery', href: '/company/gallery' },
             { title: 'Blog', href: '/company/blog' },
         ],
         partners: [

@@ -20,6 +20,15 @@ const nextConfig: NextConfig = {
   experimental: {
     mdxRs: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        pathname: '/*/image/upload/**',
+      },
+    ],
+  },
   async redirects() {
     return [
       {
