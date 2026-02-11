@@ -42,16 +42,10 @@ export const metadata: Metadata = {
   },
 };
 
-import dynamic from "next/dynamic";
 import { SiteHeader } from "./components/site-header";
 import { SiteFooter } from "./components/site-footer";
 import KnowledgeGraph from "./components/json-ld-knowledge-graph";
-
-/* Lazy-load Lenis+GSAP only on client — no SSR needed for scroll effects */
-const SmoothScrollerInit = dynamic(
-  () => import("./components/ui/smooth-scroller").then((m) => m.SmoothScrollerInit),
-  { ssr: false }
-);
+import { SmoothScrollerInit } from "./components/ui/smooth-scroller";
 
 export default function RootLayout({
   children,
