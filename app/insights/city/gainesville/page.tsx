@@ -4,6 +4,7 @@ import { Breadcrumbs } from '@/app/components/navigation/Breadcrumbs';
 import { SEOBlock } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import Script from 'next/script';
+import FaqJsonLd from '@/app/components/seo/faq-json-ld';
 
 export const metadata = {
     title: "Gainesville Staffing & Workforce Intelligence – First National Staffing",
@@ -19,6 +20,19 @@ export const metadata = {
 };
 
 export default function GainesvillePage() {
+    const faqData = [
+        { q: "Do you have experience with food processing staffing?", a: "Yes, it is one of our core specialties in Gainesville, covering both raw and cooked poultry processing, as well as other food manufacturing." },
+        { q: "Can you provide bilingual site supervisors?", a: "Absolutely. We deploy bilingual (English/Spanish) on-site managers to bridge communication gaps and improve retention." },
+        { q: "What PPE do you provide to associates?", a: "We provide standard PPE (vests, glasses, earplugs, hairnets) and can manage client-specific gear like cut-resistant gloves and insulated clothing." },
+        { q: "How do you handle cold storage turnover?", a: "We use a specific 'Cold Tolerance' screening process during onboarding to ensure candidates are prepared for frigid environments." },
+        { q: "Do you staff for sanitation shifts?", a: "Yes, we have a dedicated pool of candidates willing and experienced in 3rd shift sanitation roles." },
+        { q: "What is the average starting wage for general production?", a: "In Gainesville, competitive food production rates start between $16.50 and $18.00/hr, with shift differentials for 2nd and 3rd." },
+        { q: "Are your workers USDA/FDA compliant?", a: "Our orientation includes modules on GMPs, HACCP awareness, allergen protocols, and food defense to support your compliance requirements." },
+        { q: "How quickly can you ramp up for a new production line?", a: "We can typically source and onboard a 20-person production team within 5-7 business days for Gainesville clients." },
+        { q: "Do you offer transportation solutions?", a: "We partner with local van-pool providers to help transport workers from outlying rural areas like Banks and Jackson counties." },
+        { q: "Why choose FNSG for Gainesville staffing?", a: "Our deep roots in Hall County, food processing expertise, and bilingual capabilities make us the most reliable staffing partner in the Poultry Capital." }
+    ];
+
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
@@ -61,6 +75,7 @@ export default function GainesvillePage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
+            <FaqJsonLd faqs={faqData} />
 
             <div className="container mx-auto px-6 max-w-7xl">
                 <div className="flex flex-col lg:flex-row gap-12">
@@ -270,18 +285,7 @@ export default function GainesvillePage() {
                             <section>
                                 <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
                                 <div className="space-y-4">
-                                    {[
-                                        { q: "Do you have experience with food processing staffing?", a: "Yes, it is one of our core specialties in Gainesville, covering both raw and cooked poultry processing, as well as other food manufacturing." },
-                                        { q: "Can you provide bilingual site supervisors?", a: "Absolutely. We deploy bilingual (English/Spanish) on-site managers to bridge communication gaps and improve retention." },
-                                        { q: "What PPE do you provide to associates?", a: "We provide standard PPE (vests, glasses, earplugs, hairnets) and can manage client-specific gear like cut-resistant gloves and insulated clothing." },
-                                        { q: "How do you handle cold storage turnover?", a: "We use a specific 'Cold Tolerance' screening process during onboarding to ensure candidates are prepared for frigid environments." },
-                                        { q: "Do you staff for sanitation shifts?", a: "Yes, we have a dedicated pool of candidates willing and experienced in 3rd shift sanitation roles." },
-                                        { q: "What is the average starting wage for general production?", a: "In Gainesville, competitive food production rates start between $16.50 and $18.00/hr, with shift differentials for 2nd and 3rd." },
-                                        { q: "Are your workers USDA/FDA compliant?", a: "Our orientation includes modules on GMPs, HACCP awareness, allergen protocols, and food defense to support your compliance requirements." },
-                                        { q: "How quickly can you ramp up for a new production line?", a: "We can typically source and onboard a 20-person production team within 5-7 business days for Gainesville clients." },
-                                        { q: "Do you offer transportation solutions?", a: "We partner with local van-pool providers to help transport workers from outlying rural areas like Banks and Jackson counties." },
-                                        { q: "Why choose FNSG for Gainesville staffing?", a: "Our deep roots in Hall County, food processing expertise, and bilingual capabilities make us the most reliable staffing partner in the Poultry Capital." }
-                                    ].map((faq, index) => (
+                                    {faqData.map((faq, index) => (
                                         <details key={index} className="group border border-slate-200 rounded-lg p-4 open:bg-slate-50 transition-all">
                                             <summary className="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
                                                 {faq.q}

@@ -4,6 +4,7 @@ import { Breadcrumbs } from '@/app/components/navigation/Breadcrumbs';
 import { SEOBlock } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import Script from 'next/script';
+import FaqJsonLd from '@/app/components/seo/faq-json-ld';
 
 export const metadata = {
     title: "Hall County Staffing & Workforce Intelligence – First National Staffing",
@@ -19,6 +20,19 @@ export const metadata = {
 };
 
 export default function HallCountyPage() {
+    const faqData = [
+        { q: "Do you have experience with food processing staffing?", a: "Yes, it is one of our core specialties in Hall County, covering both raw and cooked processing." },
+        { q: "Can you provide bilingual site supervisors?", a: "Absolutely. We can deploy bilingual (English/Spanish) on-site managers to bridge communication gaps." },
+        { q: "What PPE do you provide to associates?", a: "We provide standard PPE (vests, glasses, earplugs) and can manage client-specific gear like cut-resistant gloves." },
+        { q: "How do you handle cold storage turnover?", a: "We use a specific 'Cold Tolerance' screening process to ensure candidates are prepared for the environment." },
+        { q: "Do you staff for sanitation shifts?", a: "Yes, we have a dedicated pool of candidates willing to work 3rd shift sanitation roles." },
+        { q: "What is the average starting wage for general labor?", a: "In Hall County, competitive general labor rates start between $16.50 and $18.00/hr." },
+        { q: "Are you USDA/FDA compliant?", a: "Our orientation includes modules on GMPs, HACCP awareness, and food defense to support your compliance." },
+        { q: "How quickly can you ramp up for a new line?", a: "We can typically source and onboard a 20-person production team within 5-7 business days." },
+        { q: "Do you offer transportation solutions?", a: "We can partner with local van-pool providers to help transport workers from outlying areas." },
+        { q: "Why choose FNSG for Hall County?", a: "Our deep roots in the local community and expertise in food manufacturing make us the reliable choice." }
+    ];
+
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
@@ -59,6 +73,7 @@ export default function HallCountyPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
+            <FaqJsonLd faqs={faqData} />
 
             <div className="container mx-auto px-6 max-w-7xl">
                 <div className="flex flex-col lg:flex-row gap-12">
@@ -244,18 +259,7 @@ export default function HallCountyPage() {
                             <section>
                                 <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
                                 <div className="space-y-4">
-                                    {[
-                                        { q: "Do you have experience with food processing staffing?", a: "Yes, it is one of our core specialties in Hall County, covering both raw and cooked processing." },
-                                        { q: "Can you provide bilingual site supervisors?", a: "Absolutely. We can deploy bilingual (English/Spanish) on-site managers to bridge communication gaps." },
-                                        { q: "What PPE do you provide to associates?", a: "We provide standard PPE (vests, glasses, earplugs) and can manage client-specific gear like cut-resistant gloves." },
-                                        { q: "How do you handle cold storage turnover?", a: "We use a specific 'Cold Tolerance' screening process to ensure candidates are prepared for the environment." },
-                                        { q: "Do you staff for sanitation shifts?", a: "Yes, we have a dedicated pool of candidates willing to work 3rd shift sanitation roles." },
-                                        { q: "What is the average starting wage for general labor?", a: "In Hall County, competitive general labor rates start between $16.50 and $18.00/hr." },
-                                        { q: "Are you USDA/FDA compliant?", a: "Our orientation includes modules on GMPs, HACCP awareness, and food defense to support your compliance." },
-                                        { q: "How quickly can you ramp up for a new line?", a: "We can typically source and onboard a 20-person production team within 5-7 business days." },
-                                        { q: "Do you offer transportation solutions?", a: "We can partner with local van-pool providers to help transport workers from outlying areas." },
-                                        { q: "Why choose FNSG for Hall County?", a: "Our deep roots in the local community and expertise in food manufacturing make us the reliable choice." }
-                                    ].map((faq, index) => (
+                                    {faqData.map((faq, index) => (
                                         <details key={index} className="group border border-slate-200 rounded-lg p-4 open:bg-slate-50 transition-all">
                                             <summary className="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
                                                 {faq.q}

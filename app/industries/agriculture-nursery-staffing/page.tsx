@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Script from 'next/script';
 import { Sun, CloudRain, Sprout, Truck, ClipboardCheck, Users, TrendingUp, AlertTriangle, CheckCircle, Thermometer } from 'lucide-react';
 import PremiumCTA from '@/app/components/PremiumCTA';
+import FaqJsonLd from '@/app/components/seo/faq-json-ld';
 
 export const metadata = {
     title: "Agriculture & Nursery Staffing Solutions in Georgia | FNSG",
@@ -34,6 +35,15 @@ export default function AgricultureNurseryPage() {
         "url": "https://firstnationalstaffing.com/industries/agriculture-nursery-staffing"
     };
 
+    const faqData = [
+        { q: "Do you supply seasonal agricultural workers?", a: "Yes, ramp-ups in 24–72 hours." },
+        { q: "Do you work with nurseries and greenhouses?", a: "Yes, with staff trained in potting, trimming, spacing, and plant care." },
+        { q: "Are your workers MSPA compliant?", a: "Yes, with audit-ready documentation." },
+        { q: "How do you reduce turnover in farm labor?", a: "Attendance OS + role matching + pay intelligence." },
+        { q: "Does climate impact staffing?", a: "Yes, we predict it with Attendance Intelligence OS." },
+        { q: "Do you provide crew leaders?", a: "Yes, for field & greenhouse." }
+    ];
+
     return (
         <main className="bg-white min-h-screen py-12">
             <Script
@@ -41,6 +51,7 @@ export default function AgricultureNurseryPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
+            <FaqJsonLd faqs={faqData} />
 
             <div className="container mx-auto px-6 max-w-7xl">
                 <div className="flex flex-col lg:flex-row gap-12">
@@ -289,14 +300,7 @@ export default function AgricultureNurseryPage() {
                             <section>
                                 <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
                                 <div className="space-y-4">
-                                    {[
-                                        { q: "Do you supply seasonal agricultural workers?", a: "Yes, ramp-ups in 24–72 hours." },
-                                        { q: "Do you work with nurseries and greenhouses?", a: "Yes, with staff trained in potting, trimming, spacing, and plant care." },
-                                        { q: "Are your workers MSPA compliant?", a: "Yes, with audit-ready documentation." },
-                                        { q: "How do you reduce turnover in farm labor?", a: "Attendance OS + role matching + pay intelligence." },
-                                        { q: "Does climate impact staffing?", a: "Yes, we predict it with Attendance Intelligence OS." },
-                                        { q: "Do you provide crew leaders?", a: "Yes, for field & greenhouse." }
-                                    ].map((faq, index) => (
+                                    {faqData.map((faq, index) => (
                                         <details key={index} className="group border border-slate-200 rounded-lg p-4 open:bg-slate-50 transition-all">
                                             <summary className="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
                                                 {faq.q}

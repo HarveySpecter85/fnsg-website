@@ -4,6 +4,7 @@ import { Breadcrumbs } from '@/app/components/navigation/Breadcrumbs';
 import { SEOBlock } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import Script from 'next/script';
+import FaqJsonLd from '@/app/components/seo/faq-json-ld';
 
 export const metadata = {
     title: "Norcross Staffing & Workforce Intelligence – First National Staffing",
@@ -19,6 +20,19 @@ export const metadata = {
 };
 
 export default function NorcrossPage() {
+    const faqData = [
+        { q: "What industries do you staff in Norcross?", a: "We specialize in light manufacturing, automotive suppliers, plastics/packaging, food production, and general warehousing in the Norcross area." },
+        { q: "Do you have bilingual workers available?", a: "Yes, our Norcross talent pool includes many Spanish, Vietnamese, and Korean speakers. We can match language capabilities to your needs." },
+        { q: "Can you provide skilled machine operators?", a: "Absolutely. We screen for machine operation experience and can assess candidates on specific equipment types." },
+        { q: "How do you handle high turnover in manufacturing?", a: "We focus on cultural fit, realistic job previews, and competitive pay benchmarking. Our retention rates exceed industry averages by 15%." },
+        { q: "What safety training do your workers receive?", a: "All associates complete our standard safety orientation. For manufacturing clients, we add LOTO awareness and machine-specific protocols." },
+        { q: "Do you offer temp-to-hire arrangements?", a: "Yes, temp-to-hire is our most popular model in Norcross. It lets you evaluate workers before committing to permanent employment." },
+        { q: "How quickly can you fill manufacturing positions?", a: "For general production roles, typically 3-5 business days. Skilled positions (CNC, quality) may take 1-2 weeks." },
+        { q: "What shifts do you cover?", a: "All shifts: 1st (6am-2pm), 2nd (2pm-10pm), 3rd (10pm-6am), and weekend-only schedules." },
+        { q: "Can you staff an entire new production line?", a: "Yes, we've successfully ramped up complete production teams of 50+ workers for new Norcross facilities." },
+        { q: "Why choose FNSG for Norcross staffing?", a: "Our deep understanding of Gwinnett's diverse workforce, manufacturing expertise, and proven retention strategies make us the partner of choice." }
+    ];
+
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
@@ -61,6 +75,7 @@ export default function NorcrossPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
+            <FaqJsonLd faqs={faqData} />
 
             <div className="container mx-auto px-6 max-w-7xl">
                 <div className="flex flex-col lg:flex-row gap-12">
@@ -268,18 +283,7 @@ export default function NorcrossPage() {
                             <section>
                                 <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
                                 <div className="space-y-4">
-                                    {[
-                                        { q: "What industries do you staff in Norcross?", a: "We specialize in light manufacturing, automotive suppliers, plastics/packaging, food production, and general warehousing in the Norcross area." },
-                                        { q: "Do you have bilingual workers available?", a: "Yes, our Norcross talent pool includes many Spanish, Vietnamese, and Korean speakers. We can match language capabilities to your needs." },
-                                        { q: "Can you provide skilled machine operators?", a: "Absolutely. We screen for machine operation experience and can assess candidates on specific equipment types." },
-                                        { q: "How do you handle high turnover in manufacturing?", a: "We focus on cultural fit, realistic job previews, and competitive pay benchmarking. Our retention rates exceed industry averages by 15%." },
-                                        { q: "What safety training do your workers receive?", a: "All associates complete our standard safety orientation. For manufacturing clients, we add LOTO awareness and machine-specific protocols." },
-                                        { q: "Do you offer temp-to-hire arrangements?", a: "Yes, temp-to-hire is our most popular model in Norcross. It lets you evaluate workers before committing to permanent employment." },
-                                        { q: "How quickly can you fill manufacturing positions?", a: "For general production roles, typically 3-5 business days. Skilled positions (CNC, quality) may take 1-2 weeks." },
-                                        { q: "What shifts do you cover?", a: "All shifts: 1st (6am-2pm), 2nd (2pm-10pm), 3rd (10pm-6am), and weekend-only schedules." },
-                                        { q: "Can you staff an entire new production line?", a: "Yes, we've successfully ramped up complete production teams of 50+ workers for new Norcross facilities." },
-                                        { q: "Why choose FNSG for Norcross staffing?", a: "Our deep understanding of Gwinnett's diverse workforce, manufacturing expertise, and proven retention strategies make us the partner of choice." }
-                                    ].map((faq, index) => (
+                                    {faqData.map((faq, index) => (
                                         <details key={index} className="group border border-slate-200 rounded-lg p-4 open:bg-slate-50 transition-all">
                                             <summary className="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
                                                 {faq.q}

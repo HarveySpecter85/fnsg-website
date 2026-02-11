@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Script from 'next/script';
 import { AlertTriangle, ThermometerSnowflake, ShieldCheck, Clock, TrendingUp, Zap, CheckCircle } from 'lucide-react';
 import PremiumCTA from '@/app/components/PremiumCTA';
+import FaqJsonLd from '@/app/components/seo/faq-json-ld';
 
 export const metadata = {
     title: "Food & Beverage Production Staffing Solutions in Georgia | FNSG",
@@ -34,6 +35,15 @@ export default function FoodBeveragePage() {
         "url": "https://firstnationalstaffing.com/industries/food-beverage-production"
     };
 
+    const faqData = [
+        { q: "What types of workers do you supply for food production?", a: "From line workers to sanitation, QA, and machine operators." },
+        { q: "How do you ensure food safety compliance?", a: "Through our Sanitation OS, PPE tracking, and standardized training." },
+        { q: "Can you support cold storage labor?", a: "Yes, with a workforce prepared for cold environments." },
+        { q: "Can you staff ramp-ups of 20–200 workers?", a: "Yes, typically within 24–72 hours." },
+        { q: "Do you offer bilingual staffing?", a: "Yes, we provide English/Spanish speakers for all roles." },
+        { q: "How do you reduce high turnover in food production?", a: "By using Attendance OS, pay intelligence, and standardized training." }
+    ];
+
     return (
         <main className="bg-white min-h-screen py-12">
             <Script
@@ -41,6 +51,7 @@ export default function FoodBeveragePage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
+            <FaqJsonLd faqs={faqData} />
 
             <div className="container mx-auto px-6 max-w-7xl">
                 <div className="flex flex-col lg:flex-row gap-12">
@@ -292,14 +303,7 @@ export default function FoodBeveragePage() {
                             <section>
                                 <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
                                 <div className="space-y-4">
-                                    {[
-                                        { q: "What types of workers do you supply for food production?", a: "From line workers to sanitation, QA, and machine operators." },
-                                        { q: "How do you ensure food safety compliance?", a: "Through our Sanitation OS, PPE tracking, and standardized training." },
-                                        { q: "Can you support cold storage labor?", a: "Yes, with a workforce prepared for cold environments." },
-                                        { q: "Can you staff ramp-ups of 20–200 workers?", a: "Yes, typically within 24–72 hours." },
-                                        { q: "Do you offer bilingual staffing?", a: "Yes, we provide English/Spanish speakers for all roles." },
-                                        { q: "How do you reduce high turnover in food production?", a: "By using Attendance OS, pay intelligence, and standardized training." }
-                                    ].map((faq, index) => (
+                                    {faqData.map((faq, index) => (
                                         <details key={index} className="group border border-slate-200 rounded-lg p-4 open:bg-slate-50 transition-all">
                                             <summary className="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
                                                 {faq.q}

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Script from 'next/script';
 import { Sliders, Wrench, Factory, RotateCcw, BoxSelect, ShieldCheck, CheckCircle, AlertTriangle, Users, Clock, Shield, TrendingUp, Zap } from 'lucide-react';
 import PremiumCTA from '@/app/components/PremiumCTA';
+import FaqJsonLd from '@/app/components/seo/faq-json-ld';
 
 export const metadata = {
     title: "Manufacturing & Production Staffing Solutions in Georgia | FNSG",
@@ -34,6 +35,15 @@ export default function ManufacturingProductionPage() {
         "url": "https://firstnationalstaffing.com/industries/manufacturing-production-staffing"
     };
 
+    const faqData = [
+        { q: "How do you recruit experienced machine operators?", a: "Through skill matching, pay benchmarking, and maintaining a robust operator pipeline." },
+        { q: "Can you support 3rd shift in high-rotation environments?", a: "Yes, using Attendance OS, targeted incentives, and risk prediction." },
+        { q: "Do you provide OSHA-compliant training?", a: "Yes, through our Safety OS and audit-ready documentation." },
+        { q: "Can you staff ramp-ups of 20–100 workers?", a: "This is a core specialty of the FNSG." },
+        { q: "How fast can you replace production line workers?", a: "Typically between 24–48 hours." },
+        { q: "Do you offer bilingual staffing?", a: "Yes, we provide bilingual staffing solutions." }
+    ];
+
     return (
         <main className="bg-white min-h-screen py-12">
             <Script
@@ -41,6 +51,7 @@ export default function ManufacturingProductionPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
+            <FaqJsonLd faqs={faqData} />
 
             <div className="container mx-auto px-6 max-w-7xl">
                 <div className="flex flex-col lg:flex-row gap-12">
@@ -279,14 +290,7 @@ export default function ManufacturingProductionPage() {
                             <section>
                                 <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
                                 <div className="space-y-4">
-                                    {[
-                                        { q: "How do you recruit experienced machine operators?", a: "Through skill matching, pay benchmarking, and maintaining a robust operator pipeline." },
-                                        { q: "Can you support 3rd shift in high-rotation environments?", a: "Yes, using Attendance OS, targeted incentives, and risk prediction." },
-                                        { q: "Do you provide OSHA-compliant training?", a: "Yes, through our Safety OS and audit-ready documentation." },
-                                        { q: "Can you staff ramp-ups of 20–100 workers?", a: "This is a core specialty of the FNSG." },
-                                        { q: "How fast can you replace production line workers?", a: "Typically between 24–48 hours." },
-                                        { q: "Do you offer bilingual staffing?", a: "Yes, we provide bilingual staffing solutions." }
-                                    ].map((faq, index) => (
+                                    {faqData.map((faq, index) => (
                                         <details key={index} className="group border border-slate-200 rounded-lg p-4 open:bg-slate-50 transition-all">
                                             <summary className="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
                                                 {faq.q}

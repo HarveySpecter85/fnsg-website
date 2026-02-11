@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Script from 'next/script';
 import { PackageCheck, Truck, Clock, Users, ShieldCheck, Box, BarChart3, CheckCircle, AlertTriangle, TrendingUp, Shield } from 'lucide-react';
 import PremiumCTA from '@/app/components/PremiumCTA';
+import FaqJsonLd from '@/app/components/seo/faq-json-ld';
 
 export const metadata = {
     title: "Warehouse & Logistics Staffing Solutions in Georgia | FNSG",
@@ -34,6 +35,15 @@ export default function WarehouseLogisticsPage() {
         "url": "https://firstnationalstaffing.com/industries/warehouse-logistics-staffing"
     };
 
+    const faqData = [
+        { q: "How fast can FNSG staff a warehouse?", a: "Between 24–72 hours depending on the volume required." },
+        { q: "How do you stabilize 2nd & 3rd shift?", a: "Through our Attendance OS, targeted incentives, and risk prediction modeling." },
+        { q: "Do you provide forklift-certified operators?", a: "Yes, with both internal validations and client-specific practical assessments." },
+        { q: "Can you support peak season ramp-ups?", a: "Yes, this is an OS specialty: supporting Q4 logistics peaks and Q2/Q3 production surges." },
+        { q: "How do you reduce turnover?", a: "By using predictive models, pay rate intelligence, and dedicated on-site supervision." },
+        { q: "Do you offer bilingual staff?", a: "Yes, we provide English/Spanish speakers for warehouse roles and can staff entire bilingual teams." }
+    ];
+
     return (
         <main className="bg-white min-h-screen py-12">
             <Script
@@ -41,6 +51,7 @@ export default function WarehouseLogisticsPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
+            <FaqJsonLd faqs={faqData} />
 
             <div className="container mx-auto px-6 max-w-7xl">
                 <div className="flex flex-col lg:flex-row gap-12">
@@ -253,14 +264,7 @@ export default function WarehouseLogisticsPage() {
                             <section>
                                 <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
                                 <div className="space-y-4">
-                                    {[
-                                        { q: "How fast can FNSG staff a warehouse?", a: "Between 24–72 hours depending on the volume required." },
-                                        { q: "How do you stabilize 2nd & 3rd shift?", a: "Through our Attendance OS, targeted incentives, and risk prediction modeling." },
-                                        { q: "Do you provide forklift-certified operators?", a: "Yes, with both internal validations and client-specific practical assessments." },
-                                        { q: "Can you support peak season ramp-ups?", a: "Yes, this is an OS specialty: supporting Q4 logistics peaks and Q2/Q3 production surges." },
-                                        { q: "How do you reduce turnover?", a: "By using predictive models, pay rate intelligence, and dedicated on-site supervision." },
-                                        { q: "Do you offer bilingual staff?", a: "Yes, we provide English/Spanish speakers for warehouse roles and can staff entire bilingual teams." }
-                                    ].map((faq, index) => (
+                                    {faqData.map((faq, index) => (
                                         <details key={index} className="group border border-slate-200 rounded-lg p-4 open:bg-slate-50 transition-all">
                                             <summary className="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
                                                 {faq.q}

@@ -45,6 +45,7 @@ export const metadata: Metadata = {
 import { SiteHeader } from "./components/site-header";
 import { SiteFooter } from "./components/site-footer";
 import KnowledgeGraph from "./components/json-ld-knowledge-graph";
+import BreadcrumbJsonLd from "./components/seo/breadcrumb-json-ld";
 import { SmoothScrollerInit } from "./components/ui/smooth-scroller";
 
 export default function RootLayout({
@@ -63,6 +64,7 @@ export default function RootLayout({
         </a>
 
         <KnowledgeGraph />
+        <BreadcrumbJsonLd />
         {process.env.NODE_ENV === "production" &&
           process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID && (
             <Script id="microsoft-clarity" strategy="afterInteractive">

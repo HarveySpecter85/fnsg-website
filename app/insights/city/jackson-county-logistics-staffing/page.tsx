@@ -4,6 +4,7 @@ import { Breadcrumbs } from '@/app/components/navigation/Breadcrumbs';
 import { SEOBlock } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import Script from 'next/script';
+import FaqJsonLd from '@/app/components/seo/faq-json-ld';
 
 export const metadata = {
     title: "Jackson County Staffing & Workforce Intelligence – First National Staffing",
@@ -19,6 +20,19 @@ export const metadata = {
 };
 
 export default function JacksonCountyPage() {
+    const faqData = [
+        { q: "Can you handle high-volume ramp-ups for peak season?", a: "Yes, we specialize in deploying 100+ associates in under 10 days for Q4 peaks." },
+        { q: "Where do you find candidates for Jackson County?", a: "We recruit regionally, drawing heavily from Athens, Winder, and Banks County." },
+        { q: "Do you certify forklift operators?", a: "We verify existing certifications and can partner with you to conduct on-site validation." },
+        { q: "What is the starting pay for warehouse roles?", a: "To remain competitive, most general warehouse roles in Jackson County start at $16.50+." },
+        { q: "How do you reduce turnover in logistics?", a: "We focus on 'realistic job previews' to ensure candidates understand the physical demands before starting." },
+        { q: "Do you offer on-site management?", a: "Yes, for accounts with 50+ associates, we provide dedicated on-site performance managers." },
+        { q: "Can you staff for weekend shifts?", a: "Yes, we have robust pools for weekend warrior shifts (Fri-Sun or Sat-Sun)." },
+        { q: "Are you experienced with WMS systems?", a: "Our candidates are screened for digital literacy and experience with RF scanners/WMS terminals." },
+        { q: "Do you provide background checks?", a: "Yes, we offer standard and enhanced background screening packages based on your security needs." },
+        { q: "Why choose FNSG for Jackson County logistics?", a: "Our 'Deployment Squad' model is built specifically for the speed and scale of the I-85 corridor." }
+    ];
+
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
@@ -59,6 +73,7 @@ export default function JacksonCountyPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
+            <FaqJsonLd faqs={faqData} />
 
             <div className="container mx-auto px-6 max-w-7xl">
                 <div className="flex flex-col lg:flex-row gap-12">
@@ -245,18 +260,7 @@ export default function JacksonCountyPage() {
                             <section>
                                 <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
                                 <div className="space-y-4">
-                                    {[
-                                        { q: "Can you handle high-volume ramp-ups for peak season?", a: "Yes, we specialize in deploying 100+ associates in under 10 days for Q4 peaks." },
-                                        { q: "Where do you find candidates for Jackson County?", a: "We recruit regionally, drawing heavily from Athens, Winder, and Banks County." },
-                                        { q: "Do you certify forklift operators?", a: "We verify existing certifications and can partner with you to conduct on-site validation." },
-                                        { q: "What is the starting pay for warehouse roles?", a: "To remain competitive, most general warehouse roles in Jackson County start at $16.50+." },
-                                        { q: "How do you reduce turnover in logistics?", a: "We focus on 'realistic job previews' to ensure candidates understand the physical demands before starting." },
-                                        { q: "Do you offer on-site management?", a: "Yes, for accounts with 50+ associates, we provide dedicated on-site performance managers." },
-                                        { q: "Can you staff for weekend shifts?", a: "Yes, we have robust pools for weekend warrior shifts (Fri-Sun or Sat-Sun)." },
-                                        { q: "Are you experienced with WMS systems?", a: "Our candidates are screened for digital literacy and experience with RF scanners/WMS terminals." },
-                                        { q: "Do you provide background checks?", a: "Yes, we offer standard and enhanced background screening packages based on your security needs." },
-                                        { q: "Why choose FNSG for Jackson County logistics?", a: "Our 'Deployment Squad' model is built specifically for the speed and scale of the I-85 corridor." }
-                                    ].map((faq, index) => (
+                                    {faqData.map((faq, index) => (
                                         <details key={index} className="group border border-slate-200 rounded-lg p-4 open:bg-slate-50 transition-all">
                                             <summary className="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
                                                 {faq.q}

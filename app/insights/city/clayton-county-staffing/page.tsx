@@ -4,6 +4,7 @@ import { Breadcrumbs } from '@/app/components/navigation/Breadcrumbs';
 import { SEOBlock } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import Script from 'next/script';
+import FaqJsonLd from '@/app/components/seo/faq-json-ld';
 
 export const metadata = {
     title: "Clayton County Staffing & Workforce Intelligence – First National Staffing",
@@ -19,6 +20,19 @@ export const metadata = {
 };
 
 export default function ClaytonCountyPage() {
+    const faqData = [
+        { q: "Do you provide staffing for airport-related roles?", a: "Yes, we support logistics and cargo clients in the airport district, including those requiring TSA clearance." },
+        { q: "How do you handle background checks?", a: "We offer standard criminal checks and can facilitate more in-depth screenings (STA/SIDA) as required." },
+        { q: "Can you staff 3rd shift operations?", a: "Absolutely. We have a dedicated pool of candidates specifically seeking night shift opportunities." },
+        { q: "What is the average pay for general labor in Clayton?", a: "Entry-level roles typically start between $16.00-$17.50/hr depending on the shift." },
+        { q: "Do you have experience with cold storage staffing?", a: "Yes, we regularly staff for food distribution and cold storage facilities in Forest Park." },
+        { q: "How quickly can you fill 50+ positions?", a: "With our 'Deployment Squad' model, we can ramp up high-volume rosters within 5-7 business days." },
+        { q: "Do you offer transportation assistance?", a: "We focus on recruiting candidates who live near your facility or along reliable MARTA routes." },
+        { q: "What is your fill rate for peak season?", a: "We maintained a 94% fill rate during the 2024 peak season for our Clayton County partners." },
+        { q: "Are you OSHA compliant?", a: "Yes, we strictly adhere to OSHA standards and provide general safety training to all associates." },
+        { q: "How do I get started?", a: "Click the 'Request Strategy Session' button below to connect with our local account team." }
+    ];
+
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
@@ -59,6 +73,7 @@ export default function ClaytonCountyPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
+            <FaqJsonLd faqs={faqData} />
 
             <div className="container mx-auto px-6 max-w-7xl">
                 <div className="flex flex-col lg:flex-row gap-12">
@@ -243,18 +258,7 @@ export default function ClaytonCountyPage() {
                             <section>
                                 <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
                                 <div className="space-y-4">
-                                    {[
-                                        { q: "Do you provide staffing for airport-related roles?", a: "Yes, we support logistics and cargo clients in the airport district, including those requiring TSA clearance." },
-                                        { q: "How do you handle background checks?", a: "We offer standard criminal checks and can facilitate more in-depth screenings (STA/SIDA) as required." },
-                                        { q: "Can you staff 3rd shift operations?", a: "Absolutely. We have a dedicated pool of candidates specifically seeking night shift opportunities." },
-                                        { q: "What is the average pay for general labor in Clayton?", a: "Entry-level roles typically start between $16.00-$17.50/hr depending on the shift." },
-                                        { q: "Do you have experience with cold storage staffing?", a: "Yes, we regularly staff for food distribution and cold storage facilities in Forest Park." },
-                                        { q: "How quickly can you fill 50+ positions?", a: "With our 'Deployment Squad' model, we can ramp up high-volume rosters within 5-7 business days." },
-                                        { q: "Do you offer transportation assistance?", a: "We focus on recruiting candidates who live near your facility or along reliable MARTA routes." },
-                                        { q: "What is your fill rate for peak season?", a: "We maintained a 94% fill rate during the 2024 peak season for our Clayton County partners." },
-                                        { q: "Are you OSHA compliant?", a: "Yes, we strictly adhere to OSHA standards and provide general safety training to all associates." },
-                                        { q: "How do I get started?", a: "Click the 'Request Strategy Session' button below to connect with our local account team." }
-                                    ].map((faq, index) => (
+                                    {faqData.map((faq, index) => (
                                         <details key={index} className="group border border-slate-200 rounded-lg p-4 open:bg-slate-50 transition-all">
                                             <summary className="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
                                                 {faq.q}

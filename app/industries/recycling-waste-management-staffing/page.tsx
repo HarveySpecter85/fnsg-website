@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Script from 'next/script';
 import { Recycle, Trash2, Truck, AlertTriangle, Users, TrendingUp, CheckCircle, Sun, CloudRain, ShieldAlert } from 'lucide-react';
 import PremiumCTA from '@/app/components/PremiumCTA';
+import FaqJsonLd from '@/app/components/seo/faq-json-ld';
 
 export const metadata = {
     title: "Recycling & Waste Management Staffing Solutions in Georgia | FNSG",
@@ -34,6 +35,15 @@ export default function RecyclingPage() {
         "url": "https://firstnationalstaffing.com/industries/recycling-waste-management-staffing"
     };
 
+    const faqData = [
+        { q: "Do you staff sorters, baler operators and landfill labor?", a: "Yes, with prior training and PPE compliance." },
+        { q: "How do you reduce turnover in recycling operations?", a: "Attendance OS + pay intelligence + onsite supervision." },
+        { q: "Can you staff in outdoor environments?", a: "Yes, matching based on physical tolerance and weather." },
+        { q: "How do you handle OSHA compliance?", a: "Safety OS + documentation + incident tracking + PPE enforcement." },
+        { q: "Can you support high-volume contracts?", a: "Yes, with ramp-ups of 20–80 workers in 24–72 hours." },
+        { q: "Do you offer bilingual teams?", a: "Yes, EN/ES." }
+    ];
+
     return (
         <main className="bg-white min-h-screen py-12">
             <Script
@@ -41,6 +51,7 @@ export default function RecyclingPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
+            <FaqJsonLd faqs={faqData} />
 
             <div className="container mx-auto px-6 max-w-7xl">
                 <div className="flex flex-col lg:flex-row gap-12">
@@ -278,14 +289,7 @@ export default function RecyclingPage() {
                             <section>
                                 <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
                                 <div className="space-y-4">
-                                    {[
-                                        { q: "Do you staff sorters, baler operators and landfill labor?", a: "Yes, with prior training and PPE compliance." },
-                                        { q: "How do you reduce turnover in recycling operations?", a: "Attendance OS + pay intelligence + onsite supervision." },
-                                        { q: "Can you staff in outdoor environments?", a: "Yes, matching based on physical tolerance and weather." },
-                                        { q: "How do you handle OSHA compliance?", a: "Safety OS + documentation + incident tracking + PPE enforcement." },
-                                        { q: "Can you support high-volume contracts?", a: "Yes, with ramp-ups of 20–80 workers in 24–72 hours." },
-                                        { q: "Do you offer bilingual teams?", a: "Yes, EN/ES." }
-                                    ].map((faq, index) => (
+                                    {faqData.map((faq, index) => (
                                         <details key={index} className="group border border-slate-200 rounded-lg p-4 open:bg-slate-50 transition-all">
                                             <summary className="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
                                                 {faq.q}

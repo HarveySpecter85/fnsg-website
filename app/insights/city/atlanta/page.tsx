@@ -2,6 +2,7 @@ import React from 'react';
 import { CityHubHeader, Breadcrumbs, SEOBlock } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import Script from 'next/script';
+import FaqJsonLd from '@/app/components/seo/faq-json-ld';
 
 export const metadata = {
     title: "Atlanta Staffing Agency & Workforce Intelligence – First National Staffing",
@@ -17,6 +18,19 @@ export const metadata = {
 };
 
 export default function AtlantaHub() {
+    const faqData = [
+        { q: "How quickly can you staff a warehouse in Atlanta?", a: "For general labor, we can often deploy teams within 24 hours. Skilled roles typically take 48-72 hours." },
+        { q: "Do you service the airport area?", a: "Yes, we have a strong presence in the South Atlanta/Airport logistics corridor." },
+        { q: "Can you provide TSA-screened candidates?", a: "Yes, we can facilitate TSA background checks and STA applications for air cargo clients." },
+        { q: "What is the average pay for forklift drivers in Atlanta?", a: "As of 2025, experienced forklift operators in Atlanta command between $19.00 and $23.00 per hour." },
+        { q: "Do you offer transportation for workers?", a: "We partner with local van-pool services and recruit specifically along MARTA lines to ensure reliability." },
+        { q: "How do you handle high turnover?", a: "We use our Retention Intelligence module to identify root causes and implement attendance bonuses and engagement programs." },
+        { q: "Are you available for weekend shifts?", a: "Yes, we provide 24/7 staffing support, including weekend and night shift coverage." },
+        { q: "Do you staff for events and hospitality?", a: "Absolutely. We support major venues and hotels with banquet servers, setup crews, and housekeeping staff." },
+        { q: "What safety training do associates receive?", a: "All associates undergo general safety awareness training, including lifting techniques and PPE requirements." },
+        { q: "Why choose FNSG over other Atlanta agencies?", a: "Our OS-driven approach gives you data visibility and operational control that traditional agencies cannot match." }
+    ];
+
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
@@ -57,6 +71,7 @@ export default function AtlantaHub() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
+            <FaqJsonLd faqs={faqData} />
 
             <CityHubHeader
                 city="Atlanta"
@@ -244,18 +259,7 @@ export default function AtlantaHub() {
                         <section>
                             <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
                             <div className="space-y-4">
-                                {[
-                                    { q: "How quickly can you staff a warehouse in Atlanta?", a: "For general labor, we can often deploy teams within 24 hours. Skilled roles typically take 48-72 hours." },
-                                    { q: "Do you service the airport area?", a: "Yes, we have a strong presence in the South Atlanta/Airport logistics corridor." },
-                                    { q: "Can you provide TSA-screened candidates?", a: "Yes, we can facilitate TSA background checks and STA applications for air cargo clients." },
-                                    { q: "What is the average pay for forklift drivers in Atlanta?", a: "As of 2025, experienced forklift operators in Atlanta command between $19.00 and $23.00 per hour." },
-                                    { q: "Do you offer transportation for workers?", a: "We partner with local van-pool services and recruit specifically along MARTA lines to ensure reliability." },
-                                    { q: "How do you handle high turnover?", a: "We use our Retention Intelligence module to identify root causes and implement attendance bonuses and engagement programs." },
-                                    { q: "Are you available for weekend shifts?", a: "Yes, we provide 24/7 staffing support, including weekend and night shift coverage." },
-                                    { q: "Do you staff for events and hospitality?", a: "Absolutely. We support major venues and hotels with banquet servers, setup crews, and housekeeping staff." },
-                                    { q: "What safety training do associates receive?", a: "All associates undergo general safety awareness training, including lifting techniques and PPE requirements." },
-                                    { q: "Why choose FNSG over other Atlanta agencies?", a: "Our OS-driven approach gives you data visibility and operational control that traditional agencies cannot match." }
-                                ].map((faq, index) => (
+                                {faqData.map((faq, index) => (
                                     <details key={index} className="group border border-slate-200 rounded-lg p-4 open:bg-slate-50 transition-all">
                                         <summary className="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
                                             {faq.q}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Breadcrumbs, EmptyState, SEOBlock } from '@/app/components/blog/shared';
 import Link from 'next/link';
+import FaqJsonLd from '@/app/components/seo/faq-json-ld';
 
 export const metadata = {
     title: "Warehouse Jobs & Staffing FAQ – First National Staffing",
@@ -20,8 +21,28 @@ export const metadata = {
 };
 
 export default function WarehouseFAQPage() {
+    const faqData = [
+        {
+            question: "What is the average turnaround time to fill warehouse roles?",
+            answer: "Most standard warehouse positions are filled within 24 to 48 hours depending on the client requirements and candidate availability."
+        },
+        {
+            question: "Do candidates come with their own PPE?",
+            answer: "Yes, our candidates are screened for possession of steel-toed boots and standard PPE. We can also provide branded gear upon request."
+        },
+        {
+            question: "How do you ensure safety compliance?",
+            answer: "We conduct basic safety orientations and verify that all candidates understand general warehouse safety protocols before deployment."
+        },
+        {
+            question: "What is the current hourly rate for forklift operators?",
+            answer: "Rates vary by location, but current averages range from $16.50 to $19.00/hr depending on certification levels."
+        }
+    ];
+
     return (
         <main className="py-16 bg-white">
+            <FaqJsonLd faqs={faqData} />
             <div className="container mx-auto px-6 max-w-5xl">
                 <Breadcrumbs items={[
                     { label: 'Insights', href: '/insights' },
@@ -34,24 +55,7 @@ export default function WarehouseFAQPage() {
                 <div className="mb-12">
                     {/* // TODO: Replace staticFAQData with Supabase query once backend is ready. */}
                     <div className="space-y-6">
-                        {[
-                            {
-                                question: "What is the average turnaround time to fill warehouse roles?",
-                                answer: "Most standard warehouse positions are filled within 24 to 48 hours depending on the client requirements and candidate availability."
-                            },
-                            {
-                                question: "Do candidates come with their own PPE?",
-                                answer: "Yes, our candidates are screened for possession of steel-toed boots and standard PPE. We can also provide branded gear upon request."
-                            },
-                            {
-                                question: "How do you ensure safety compliance?",
-                                answer: "We conduct basic safety orientations and verify that all candidates understand general warehouse safety protocols before deployment."
-                            },
-                            {
-                                question: "What is the current hourly rate for forklift operators?",
-                                answer: "Rates vary by location, but current averages range from $16.50 to $19.00/hr depending on certification levels."
-                            }
-                        ].map((faq, index) => (
+                        {faqData.map((faq, index) => (
                             <div key={index} className="p-6 bg-slate-50 rounded-xl border border-slate-100">
                                 <h3 className="font-bold text-slate-900 mb-2">{faq.question}</h3>
                                 <p className="text-slate-600 text-sm leading-relaxed">{faq.answer}</p>

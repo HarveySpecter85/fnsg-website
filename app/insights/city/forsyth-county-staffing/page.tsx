@@ -4,6 +4,7 @@ import { Breadcrumbs } from '@/app/components/navigation/Breadcrumbs';
 import { SEOBlock } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import Script from 'next/script';
+import FaqJsonLd from '@/app/components/seo/faq-json-ld';
 
 export const metadata = {
     title: "Forsyth County Staffing & Workforce Intelligence – First National Staffing",
@@ -19,6 +20,19 @@ export const metadata = {
 };
 
 export default function ForsythCountyPage() {
+    const faqData = [
+        { q: "Do you staff for clean room environments?", a: "Yes, we have extensive experience staffing ISO-certified clean rooms for medical and tech clients." },
+        { q: "Where do you recruit candidates for Forsyth County?", a: "We recruit heavily from North Fulton, Hall, Dawson, and Gwinnett counties to fill local roles." },
+        { q: "Can you find candidates with specific technical certifications?", a: "Absolutely. We screen for IPC soldering, quality control, and various machine operation certs." },
+        { q: "What is the typical pay for assembly roles here?", a: "Due to the high cost of living and commute, assembly roles often start at $18.50+." },
+        { q: "Do you offer temp-to-hire for technical roles?", a: "Yes, this is our most popular model for skilled positions, allowing you to evaluate technical fit." },
+        { q: "How do you handle the lack of public transit?", a: "We verify reliable personal transportation for every candidate before placement." },
+        { q: "What industries are strongest in Forsyth?", a: "Advanced manufacturing, medical technology, and data center operations are the pillars." },
+        { q: "Do you provide safety training?", a: "Yes, including specific modules for clean room protocols and chemical safety awareness." },
+        { q: "How quickly can you fill a specialized role?", a: "For specialized tech roles, our average time-to-fill is 7-10 business days." },
+        { q: "Why use FNSG in Forsyth County?", a: "Our ability to draw talent from surrounding counties gives us a deeper pool than local-only agencies." }
+    ];
+
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
@@ -59,6 +73,7 @@ export default function ForsythCountyPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
+            <FaqJsonLd faqs={faqData} />
 
             <div className="container mx-auto px-6 max-w-7xl">
                 <div className="flex flex-col lg:flex-row gap-12">
@@ -244,18 +259,7 @@ export default function ForsythCountyPage() {
                             <section>
                                 <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
                                 <div className="space-y-4">
-                                    {[
-                                        { q: "Do you staff for clean room environments?", a: "Yes, we have extensive experience staffing ISO-certified clean rooms for medical and tech clients." },
-                                        { q: "Where do you recruit candidates for Forsyth County?", a: "We recruit heavily from North Fulton, Hall, Dawson, and Gwinnett counties to fill local roles." },
-                                        { q: "Can you find candidates with specific technical certifications?", a: "Absolutely. We screen for IPC soldering, quality control, and various machine operation certs." },
-                                        { q: "What is the typical pay for assembly roles here?", a: "Due to the high cost of living and commute, assembly roles often start at $18.50+." },
-                                        { q: "Do you offer temp-to-hire for technical roles?", a: "Yes, this is our most popular model for skilled positions, allowing you to evaluate technical fit." },
-                                        { q: "How do you handle the lack of public transit?", a: "We verify reliable personal transportation for every candidate before placement." },
-                                        { q: "What industries are strongest in Forsyth?", a: "Advanced manufacturing, medical technology, and data center operations are the pillars." },
-                                        { q: "Do you provide safety training?", a: "Yes, including specific modules for clean room protocols and chemical safety awareness." },
-                                        { q: "How quickly can you fill a specialized role?", a: "For specialized tech roles, our average time-to-fill is 7-10 business days." },
-                                        { q: "Why use FNSG in Forsyth County?", a: "Our ability to draw talent from surrounding counties gives us a deeper pool than local-only agencies." }
-                                    ].map((faq, index) => (
+                                    {faqData.map((faq, index) => (
                                         <details key={index} className="group border border-slate-200 rounded-lg p-4 open:bg-slate-50 transition-all">
                                             <summary className="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
                                                 {faq.q}

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Script from 'next/script';
 import { Trash2, Heart, ShieldCheck, Clock, TrendingUp, Sparkles, Building2, CheckCircle } from 'lucide-react';
 import PremiumCTA from '@/app/components/PremiumCTA';
+import FaqJsonLd from '@/app/components/seo/faq-json-ld';
 
 export const metadata = {
     title: "Healthcare Environmental Services (EVS) Staffing in Georgia | FNSG",
@@ -34,6 +35,15 @@ export default function HealthcareEVSPage() {
         "url": "https://firstnationalstaffing.com/industries/healthcare-environmental-services"
     };
 
+    const faqData = [
+        { q: "Do your EVS workers have experience in hospitals?", a: "Yes, we prioritize EVS background." },
+        { q: "Can you support terminal cleaning?", a: "Yes, with validated training and digital checklists." },
+        { q: "Do you assist during audits?", a: "Yes, with documentation and traceability." },
+        { q: "Do you provide bilingual EVS teams?", a: "Yes, EN/ES." },
+        { q: "Can you staff 24/7 operations?", a: "Yes, with Attendance OS and 3-shift models." },
+        { q: "Do you supply EVS supervisors?", a: "Yes, with proven experience and hospital training." }
+    ];
+
     return (
         <main className="bg-white min-h-screen py-12">
             <Script
@@ -41,6 +51,7 @@ export default function HealthcareEVSPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
+            <FaqJsonLd faqs={faqData} />
 
             <div className="container mx-auto px-6 max-w-7xl">
                 <div className="flex flex-col lg:flex-row gap-12">
@@ -268,14 +279,7 @@ export default function HealthcareEVSPage() {
                             <section>
                                 <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
                                 <div className="space-y-4">
-                                    {[
-                                        { q: "Do your EVS workers have experience in hospitals?", a: "Yes, we prioritize EVS background." },
-                                        { q: "Can you support terminal cleaning?", a: "Yes, with validated training and digital checklists." },
-                                        { q: "Do you assist during audits?", a: "Yes, with documentation and traceability." },
-                                        { q: "Do you provide bilingual EVS teams?", a: "Yes, EN/ES." },
-                                        { q: "Can you staff 24/7 operations?", a: "Yes, with Attendance OS and 3-shift models." },
-                                        { q: "Do you supply EVS supervisors?", a: "Yes, with proven experience and hospital training." }
-                                    ].map((faq, index) => (
+                                    {faqData.map((faq, index) => (
                                         <details key={index} className="group border border-slate-200 rounded-lg p-4 open:bg-slate-50 transition-all">
                                             <summary className="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
                                                 {faq.q}

@@ -4,6 +4,7 @@ import { Breadcrumbs } from '@/app/components/navigation/Breadcrumbs';
 import { SEOBlock } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import Script from 'next/script';
+import FaqJsonLd from '@/app/components/seo/faq-json-ld';
 
 export const metadata = {
     title: "Cobb County Staffing & Workforce Intelligence – First National Staffing",
@@ -19,6 +20,19 @@ export const metadata = {
 };
 
 export default function CobbCountyPage() {
+    const faqData = [
+        { q: "Do you staff for administrative roles in Cobb?", a: "Yes, we have a strong network of administrative, customer service, and data entry professionals." },
+        { q: "Can you support skilled trades hiring?", a: "Absolutely. We specialize in placing CNC machinists, welders, and maintenance technicians." },
+        { q: "What is the average time to fill a role?", a: "For administrative roles, 3-5 days. For skilled trades, 7-10 days due to rigorous vetting." },
+        { q: "Do you work with Kennesaw State students?", a: "Yes, we partner with local institutions to provide flexible work opportunities for students." },
+        { q: "How do you handle background checks?", a: "We offer multi-jurisdictional criminal checks, education verification, and credit checks where appropriate." },
+        { q: "Are your candidates local to Cobb County?", a: "We prioritize local candidates to minimize commute friction and improve retention." },
+        { q: "Do you offer temp-to-hire options?", a: "Yes, our 'Try-Before-You-Hire' model is very popular with Cobb County employers." },
+        { q: "What industries do you serve here?", a: "We serve a mix of manufacturing, professional services, logistics, and construction support." },
+        { q: "How do you assess soft skills?", a: "We use behavioral interviewing techniques and situational judgment tests to gauge reliability and communication." },
+        { q: "Why choose FNSG for Cobb County staffing?", a: "Our deep understanding of the local 'corporate-industrial' mix allows us to find the right cultural fit for your team." }
+    ];
+
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
@@ -59,6 +73,7 @@ export default function CobbCountyPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
+            <FaqJsonLd faqs={faqData} />
 
             <div className="container mx-auto px-6 max-w-7xl">
                 <div className="flex flex-col lg:flex-row gap-12">
@@ -243,18 +258,7 @@ export default function CobbCountyPage() {
                             <section>
                                 <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
                                 <div className="space-y-4">
-                                    {[
-                                        { q: "Do you staff for administrative roles in Cobb?", a: "Yes, we have a strong network of administrative, customer service, and data entry professionals." },
-                                        { q: "Can you support skilled trades hiring?", a: "Absolutely. We specialize in placing CNC machinists, welders, and maintenance technicians." },
-                                        { q: "What is the average time to fill a role?", a: "For administrative roles, 3-5 days. For skilled trades, 7-10 days due to rigorous vetting." },
-                                        { q: "Do you work with Kennesaw State students?", a: "Yes, we partner with local institutions to provide flexible work opportunities for students." },
-                                        { q: "How do you handle background checks?", a: "We offer multi-jurisdictional criminal checks, education verification, and credit checks where appropriate." },
-                                        { q: "Are your candidates local to Cobb County?", a: "We prioritize local candidates to minimize commute friction and improve retention." },
-                                        { q: "Do you offer temp-to-hire options?", a: "Yes, our 'Try-Before-You-Hire' model is very popular with Cobb County employers." },
-                                        { q: "What industries do you serve here?", a: "We serve a mix of manufacturing, professional services, logistics, and construction support." },
-                                        { q: "How do you assess soft skills?", a: "We use behavioral interviewing techniques and situational judgment tests to gauge reliability and communication." },
-                                        { q: "Why choose FNSG for Cobb County staffing?", a: "Our deep understanding of the local 'corporate-industrial' mix allows us to find the right cultural fit for your team." }
-                                    ].map((faq, index) => (
+                                    {faqData.map((faq, index) => (
                                         <details key={index} className="group border border-slate-200 rounded-lg p-4 open:bg-slate-50 transition-all">
                                             <summary className="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
                                                 {faq.q}

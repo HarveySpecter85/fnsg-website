@@ -4,6 +4,7 @@ import { Breadcrumbs } from '@/app/components/navigation/Breadcrumbs';
 import { SEOBlock } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import Script from 'next/script';
+import FaqJsonLd from '@/app/components/seo/faq-json-ld';
 
 export const metadata = {
     title: "Savannah Logistics Staffing & Workforce Intelligence – First National Staffing",
@@ -19,6 +20,19 @@ export const metadata = {
 };
 
 export default function SavannahPage() {
+    const faqData = [
+        { q: "Do you provide candidates with TWIC cards?", a: "Yes, we maintain a specific pool of active TWIC cardholders for port-side assignments." },
+        { q: "How do you handle the summer heat safety?", a: "We implement strict work/rest cycles and provide hydration stations for all outdoor/non-climate controlled sites." },
+        { q: "Can you staff for container unloading (lumping)?", a: "Yes, we deploy teams of 'lumpers' experienced in manual container unloading and palletizing." },
+        { q: "What is the typical pay for forklift operators here?", a: "Due to port demand, experienced forklift operators in Savannah typically start at $20.00+/hr." },
+        { q: "Do you offer transportation for workers?", a: "We can coordinate van-pools for large shifts coming from outlying areas like Rincon or Guyton." },
+        { q: "Are your candidates background checked for port access?", a: "Yes, all candidates undergo rigorous screening to ensure eligibility for port and secure facility access." },
+        { q: "How quickly can you fill a ramp-up for a new ship arrival?", a: "We monitor vessel schedules and can deploy 'surge squads' on 24-48 hour notice." },
+        { q: "Do you staff for 3rd shift logistics?", a: "Yes, we support 24/7 port operations with dedicated night shift rosters." },
+        { q: "What industries do you serve besides logistics?", a: "We also support the growing advanced manufacturing and aerospace sectors in the region." },
+        { q: "Why use FNSG in Savannah?", a: "Our understanding of the unique 'Port Ecosystem' allows us to anticipate labor crunches before they hit." }
+    ];
+
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
@@ -59,6 +73,7 @@ export default function SavannahPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
+            <FaqJsonLd faqs={faqData} />
 
             <div className="container mx-auto px-6 max-w-7xl">
                 <div className="flex flex-col lg:flex-row gap-12">
@@ -245,18 +260,7 @@ export default function SavannahPage() {
                             <section>
                                 <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
                                 <div className="space-y-4">
-                                    {[
-                                        { q: "Do you provide candidates with TWIC cards?", a: "Yes, we maintain a specific pool of active TWIC cardholders for port-side assignments." },
-                                        { q: "How do you handle the summer heat safety?", a: "We implement strict work/rest cycles and provide hydration stations for all outdoor/non-climate controlled sites." },
-                                        { q: "Can you staff for container unloading (lumping)?", a: "Yes, we deploy teams of 'lumpers' experienced in manual container unloading and palletizing." },
-                                        { q: "What is the typical pay for forklift operators here?", a: "Due to port demand, experienced forklift operators in Savannah typically start at $20.00+/hr." },
-                                        { q: "Do you offer transportation for workers?", a: "We can coordinate van-pools for large shifts coming from outlying areas like Rincon or Guyton." },
-                                        { q: "Are your candidates background checked for port access?", a: "Yes, all candidates undergo rigorous screening to ensure eligibility for port and secure facility access." },
-                                        { q: "How quickly can you fill a ramp-up for a new ship arrival?", a: "We monitor vessel schedules and can deploy 'surge squads' on 24-48 hour notice." },
-                                        { q: "Do you staff for 3rd shift logistics?", a: "Yes, we support 24/7 port operations with dedicated night shift rosters." },
-                                        { q: "What industries do you serve besides logistics?", a: "We also support the growing advanced manufacturing and aerospace sectors in the region." },
-                                        { q: "Why use FNSG in Savannah?", a: "Our understanding of the unique 'Port Ecosystem' allows us to anticipate labor crunches before they hit." }
-                                    ].map((faq, index) => (
+                                    {faqData.map((faq, index) => (
                                         <details key={index} className="group border border-slate-200 rounded-lg p-4 open:bg-slate-50 transition-all">
                                             <summary className="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
                                                 {faq.q}

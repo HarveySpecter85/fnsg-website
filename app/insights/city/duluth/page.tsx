@@ -4,6 +4,7 @@ import { Breadcrumbs } from '@/app/components/navigation/Breadcrumbs';
 import { SEOBlock } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import Script from 'next/script';
+import FaqJsonLd from '@/app/components/seo/faq-json-ld';
 
 export const metadata = {
     title: "Duluth Staffing & Workforce Intelligence – First National Staffing",
@@ -19,6 +20,19 @@ export const metadata = {
 };
 
 export default function DuluthPage() {
+    const faqData = [
+        { q: "Do you have Korean-speaking workers available?", a: "Yes, Duluth has a strong Korean community and we maintain a pool of Korean-speaking candidates for employers who need bilingual staff." },
+        { q: "How quickly can you staff a new distribution center?", a: "For a typical 50-person startup, we can have fully trained associates on-site within 7-10 business days." },
+        { q: "Do your workers have forklift certifications?", a: "Many do. We verify all certifications and can arrange training for candidates who need it through our eScreen partner network." },
+        { q: "What shifts are most in-demand in Duluth?", a: "2nd shift (2pm-10pm) and weekend shifts are in highest demand due to e-commerce fulfillment schedules." },
+        { q: "Can you provide same-day replacements for no-shows?", a: "Yes, we maintain an on-call bench specifically for the Duluth/Gwinnett area to handle urgent fill requests." },
+        { q: "What industries do you staff in Duluth?", a: "Primarily warehouse/logistics, e-commerce fulfillment, light manufacturing, and food distribution." },
+        { q: "Do you offer temp-to-hire placements?", a: "Absolutely. Many of our Duluth clients use temp-to-hire to evaluate workers before making permanent offers." },
+        { q: "How do you handle peak season staffing?", a: "We begin recruiting 6-8 weeks ahead of Q4 peak and offer retention bonuses to keep workers through the season." },
+        { q: "What PPE do you provide?", a: "Standard PPE (safety vests, glasses, gloves) is provided. Steel-toe boots are typically worker-supplied but we can coordinate group purchases." },
+        { q: "Why choose FNSG for Duluth staffing?", a: "Our deep understanding of Gwinnett's diverse workforce and strong relationships with local employers make us the reliable choice." }
+    ];
+
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
@@ -61,6 +75,7 @@ export default function DuluthPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
+            <FaqJsonLd faqs={faqData} />
 
             <div className="container mx-auto px-6 max-w-7xl">
                 <div className="flex flex-col lg:flex-row gap-12">
@@ -255,18 +270,7 @@ export default function DuluthPage() {
                             <section>
                                 <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
                                 <div className="space-y-4">
-                                    {[
-                                        { q: "Do you have Korean-speaking workers available?", a: "Yes, Duluth has a strong Korean community and we maintain a pool of Korean-speaking candidates for employers who need bilingual staff." },
-                                        { q: "How quickly can you staff a new distribution center?", a: "For a typical 50-person startup, we can have fully trained associates on-site within 7-10 business days." },
-                                        { q: "Do your workers have forklift certifications?", a: "Many do. We verify all certifications and can arrange training for candidates who need it through our eScreen partner network." },
-                                        { q: "What shifts are most in-demand in Duluth?", a: "2nd shift (2pm-10pm) and weekend shifts are in highest demand due to e-commerce fulfillment schedules." },
-                                        { q: "Can you provide same-day replacements for no-shows?", a: "Yes, we maintain an on-call bench specifically for the Duluth/Gwinnett area to handle urgent fill requests." },
-                                        { q: "What industries do you staff in Duluth?", a: "Primarily warehouse/logistics, e-commerce fulfillment, light manufacturing, and food distribution." },
-                                        { q: "Do you offer temp-to-hire placements?", a: "Absolutely. Many of our Duluth clients use temp-to-hire to evaluate workers before making permanent offers." },
-                                        { q: "How do you handle peak season staffing?", a: "We begin recruiting 6-8 weeks ahead of Q4 peak and offer retention bonuses to keep workers through the season." },
-                                        { q: "What PPE do you provide?", a: "Standard PPE (safety vests, glasses, gloves) is provided. Steel-toe boots are typically worker-supplied but we can coordinate group purchases." },
-                                        { q: "Why choose FNSG for Duluth staffing?", a: "Our deep understanding of Gwinnett's diverse workforce and strong relationships with local employers make us the reliable choice." }
-                                    ].map((faq, index) => (
+                                    {faqData.map((faq, index) => (
                                         <details key={index} className="group border border-slate-200 rounded-lg p-4 open:bg-slate-50 transition-all">
                                             <summary className="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
                                                 {faq.q}

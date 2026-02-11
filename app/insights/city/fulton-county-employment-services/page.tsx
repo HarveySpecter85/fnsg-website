@@ -4,6 +4,7 @@ import { Breadcrumbs } from '@/app/components/navigation/Breadcrumbs';
 import { SEOBlock } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import Script from 'next/script';
+import FaqJsonLd from '@/app/components/seo/faq-json-ld';
 
 export const metadata = {
     title: "Fulton County Employment Services & Workforce Intelligence – First National Staffing",
@@ -19,6 +20,19 @@ export const metadata = {
 };
 
 export default function FultonCountyPage() {
+    const faqData = [
+        { q: "Do you service both North and South Fulton?", a: "Yes, we have dedicated recruiting teams for the industrial South and the corporate/tech-focused North." },
+        { q: "Can you provide candidates with MARTA access?", a: "Absolutely. We can filter our candidate pool specifically for those with reliable access to your transit line." },
+        { q: "What is the average time-to-fill in Fulton County?", a: "For general labor, 24-48 hours. For skilled roles, 3-5 business days." },
+        { q: "Do you handle background checks for high-security sites?", a: "Yes, we offer comprehensive screening including federal, state, and county checks." },
+        { q: "Can you staff for 24/7 operations?", a: "Yes, we have extensive experience managing 3-shift rotations and weekend crews." },
+        { q: "What are the competitive pay rates for admin roles?", a: "In North Fulton, admin roles typically start between $20-$24/hr depending on experience." },
+        { q: "Do you offer on-site management?", a: "Yes, for clients with 50+ contingent workers, we recommend our On-Site Performance Program." },
+        { q: "How do you handle peak season ramp-ups?", a: "We build a 'warm bench' of pre-screened candidates starting in August to ensure readiness for Q4." },
+        { q: "Are you insured for light industrial risks?", a: "Yes, we carry comprehensive workers' comp and general liability insurance tailored to industrial staffing." },
+        { q: "Why choose FNSG for Fulton County staffing?", a: "Our deep local presence and ability to navigate the complex transit/geography of Atlanta gives us an edge." }
+    ];
+
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
@@ -59,6 +73,7 @@ export default function FultonCountyPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
+            <FaqJsonLd faqs={faqData} />
 
             <div className="container mx-auto px-6 max-w-7xl">
                 <div className="flex flex-col lg:flex-row gap-12">
@@ -244,18 +259,7 @@ export default function FultonCountyPage() {
                             <section>
                                 <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
                                 <div className="space-y-4">
-                                    {[
-                                        { q: "Do you service both North and South Fulton?", a: "Yes, we have dedicated recruiting teams for the industrial South and the corporate/tech-focused North." },
-                                        { q: "Can you provide candidates with MARTA access?", a: "Absolutely. We can filter our candidate pool specifically for those with reliable access to your transit line." },
-                                        { q: "What is the average time-to-fill in Fulton County?", a: "For general labor, 24-48 hours. For skilled roles, 3-5 business days." },
-                                        { q: "Do you handle background checks for high-security sites?", a: "Yes, we offer comprehensive screening including federal, state, and county checks." },
-                                        { q: "Can you staff for 24/7 operations?", a: "Yes, we have extensive experience managing 3-shift rotations and weekend crews." },
-                                        { q: "What are the competitive pay rates for admin roles?", a: "In North Fulton, admin roles typically start between $20-$24/hr depending on experience." },
-                                        { q: "Do you offer on-site management?", a: "Yes, for clients with 50+ contingent workers, we recommend our On-Site Performance Program." },
-                                        { q: "How do you handle peak season ramp-ups?", a: "We build a 'warm bench' of pre-screened candidates starting in August to ensure readiness for Q4." },
-                                        { q: "Are you insured for light industrial risks?", a: "Yes, we carry comprehensive workers' comp and general liability insurance tailored to industrial staffing." },
-                                        { q: "Why choose FNSG for Fulton County staffing?", a: "Our deep local presence and ability to navigate the complex transit/geography of Atlanta gives us an edge." }
-                                    ].map((faq, index) => (
+                                    {faqData.map((faq, index) => (
                                         <details key={index} className="group border border-slate-200 rounded-lg p-4 open:bg-slate-50 transition-all">
                                             <summary className="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
                                                 {faq.q}

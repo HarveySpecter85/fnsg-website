@@ -2,6 +2,7 @@ import React from 'react';
 import { CompanyBreadcrumbs } from '@/app/components/navigation/CompanyBreadcrumbs';
 import { Calendar, User, Clock, Share2 } from 'lucide-react';
 import Link from 'next/link';
+import BlogPostJsonLd from '@/app/components/seo/blog-post-json-ld';
 
 export const metadata = {
     title: "How Workforce Intelligence Transforms Staffing Operations in Georgia",
@@ -9,33 +10,14 @@ export const metadata = {
 };
 
 export default function SampleBlogPostPage() {
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "headline": "How Workforce Intelligence Transforms Staffing Operations in Georgia",
-        "description": "An executive-level overview of how workforce intelligence improves decision-making in Georgia industrial staffing.",
-        "url": "https://firstnationalstaffing.com/company/blog/sample-post",
-        "author": {
-            "@type": "Organization",
-            "name": "First National Staffing OS"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "First National Staffing OS",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://firstnationalstaffing.com/assets/logo-fnsg-os.png"
-            }
-        },
-        "datePublished": "2025-01-01",
-        "dateModified": "2025-01-01"
-    };
-
     return (
         <main className="min-h-screen bg-white">
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            <BlogPostJsonLd
+                headline="How Workforce Intelligence Transforms Staffing Operations in Georgia"
+                description="An executive-level overview of how workforce intelligence improves decision-making in Georgia industrial staffing."
+                url="https://firstnationalstaffing.com/company/blog/sample-post"
+                datePublished="2025-01-01"
+                dateModified="2025-01-01"
             />
 
             {/* Header */}

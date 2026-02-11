@@ -4,6 +4,7 @@ import { Breadcrumbs } from '@/app/components/navigation/Breadcrumbs';
 import { SEOBlock } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import Script from 'next/script';
+import FaqJsonLd from '@/app/components/seo/faq-json-ld';
 
 export const metadata = {
     title: "Barrow County Staffing & Workforce Intelligence – First National Staffing",
@@ -19,6 +20,19 @@ export const metadata = {
 };
 
 export default function BarrowCountyPage() {
+    const faqData = [
+        { q: "What areas of Barrow County do you serve?", a: "We actively recruit in Winder, Auburn, Bethlehem, Statham, and surrounding areas." },
+        { q: "Do you have candidates with manufacturing experience?", a: "Yes, our Barrow County talent pool is rich with candidates experienced in assembly, machine operation, and production." },
+        { q: "How do you handle the lack of public transit?", a: "We prioritize candidates with reliable personal transportation and organize carpooling initiatives where feasible." },
+        { q: "What are the typical pay rates in Winder?", a: "General labor typically starts around $16.00/hr, with skilled roles commanding $19.00+." },
+        { q: "Can you support rapid ramp-ups for new facilities?", a: "Yes, we have successfully staffed greenfield projects in the area using our 'Deployment Squad' model." },
+        { q: "Do you offer drug screening?", a: "All candidates undergo a comprehensive drug screen and background check before placement." },
+        { q: "What industries are growing fastest here?", a: "Advanced manufacturing and e-commerce distribution are the primary growth drivers in Barrow County." },
+        { q: "How do you ensure retention?", a: "We focus on placing candidates in roles that match their commute and schedule preferences to reduce burnout." },
+        { q: "Are you locally licensed and insured?", a: "Yes, First National Staffing is fully licensed and carries comprehensive workers' compensation and liability insurance." },
+        { q: "How can I get a quote for staffing?", a: "Simply contact us via the form below or call our office for a customized workforce consultation." }
+    ];
+
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
@@ -59,6 +73,7 @@ export default function BarrowCountyPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
+            <FaqJsonLd faqs={faqData} />
 
             <div className="container mx-auto px-6 max-w-7xl">
                 <div className="flex flex-col lg:flex-row gap-12">
@@ -242,18 +257,7 @@ export default function BarrowCountyPage() {
                             <section>
                                 <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
                                 <div className="space-y-4">
-                                    {[
-                                        { q: "What areas of Barrow County do you serve?", a: "We actively recruit in Winder, Auburn, Bethlehem, Statham, and surrounding areas." },
-                                        { q: "Do you have candidates with manufacturing experience?", a: "Yes, our Barrow County talent pool is rich with candidates experienced in assembly, machine operation, and production." },
-                                        { q: "How do you handle the lack of public transit?", a: "We prioritize candidates with reliable personal transportation and organize carpooling initiatives where feasible." },
-                                        { q: "What are the typical pay rates in Winder?", a: "General labor typically starts around $16.00/hr, with skilled roles commanding $19.00+." },
-                                        { q: "Can you support rapid ramp-ups for new facilities?", a: "Yes, we have successfully staffed greenfield projects in the area using our 'Deployment Squad' model." },
-                                        { q: "Do you offer drug screening?", a: "All candidates undergo a comprehensive drug screen and background check before placement." },
-                                        { q: "What industries are growing fastest here?", a: "Advanced manufacturing and e-commerce distribution are the primary growth drivers in Barrow County." },
-                                        { q: "How do you ensure retention?", a: "We focus on placing candidates in roles that match their commute and schedule preferences to reduce burnout." },
-                                        { q: "Are you locally licensed and insured?", a: "Yes, First National Staffing is fully licensed and carries comprehensive workers' compensation and liability insurance." },
-                                        { q: "How can I get a quote for staffing?", a: "Simply contact us via the form below or call our office for a customized workforce consultation." }
-                                    ].map((faq, index) => (
+                                    {faqData.map((faq, index) => (
                                         <details key={index} className="group border border-slate-200 rounded-lg p-4 open:bg-slate-50 transition-all">
                                             <summary className="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
                                                 {faq.q}

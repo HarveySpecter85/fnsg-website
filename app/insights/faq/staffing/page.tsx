@@ -1,6 +1,7 @@
 import React from 'react';
 import { Breadcrumbs, EmptyState, SEOBlock } from '@/app/components/blog/shared';
 import Link from 'next/link';
+import FaqJsonLd from '@/app/components/seo/faq-json-ld';
 
 export const metadata = {
     title: "Staffing Services FAQ – First National Staffing",
@@ -20,8 +21,28 @@ export const metadata = {
 };
 
 export default function StaffingFAQPage() {
+    const faqData = [
+        {
+            question: "What is the average time to fill a general labor role?",
+            answer: "We typically fill general labor positions within 24 to 48 hours, depending on shift requirements."
+        },
+        {
+            question: "Does First National Staffing use E-Verify?",
+            answer: "Yes, we participate in E-Verify for all placements to ensure workforce compliance."
+        },
+        {
+            question: "How do you handle attendance issues?",
+            answer: "We have a strict attendance policy. No-call/no-show incidents result in immediate review and potential replacement."
+        },
+        {
+            question: "What happens if a temp employee underperforms?",
+            answer: "We offer a 4-hour guarantee. If you are unsatisfied within the first 4 hours, we replace the worker at no cost."
+        }
+    ];
+
     return (
         <main className="py-16 bg-white">
+            <FaqJsonLd faqs={faqData} />
             <div className="container mx-auto px-6 max-w-5xl">
                 <Breadcrumbs items={[
                     { label: 'Insights', href: '/insights' },
@@ -34,24 +55,7 @@ export default function StaffingFAQPage() {
                 <div className="mb-12">
                     {/* // TODO: Replace staticFAQData with Supabase query once backend is ready. */}
                     <div className="space-y-6">
-                        {[
-                            {
-                                question: "What is the average time to fill a general labor role?",
-                                answer: "We typically fill general labor positions within 24 to 48 hours, depending on shift requirements."
-                            },
-                            {
-                                question: "Does First National Staffing use E-Verify?",
-                                answer: "Yes, we participate in E-Verify for all placements to ensure workforce compliance."
-                            },
-                            {
-                                question: "How do you handle attendance issues?",
-                                answer: "We have a strict attendance policy. No-call/no-show incidents result in immediate review and potential replacement."
-                            },
-                            {
-                                question: "What happens if a temp employee underperforms?",
-                                answer: "We offer a 4-hour guarantee. If you are unsatisfied within the first 4 hours, we replace the worker at no cost."
-                            }
-                        ].map((faq, index) => (
+                        {faqData.map((faq, index) => (
                             <div key={index} className="p-6 bg-slate-50 rounded-xl border border-slate-100">
                                 <h3 className="font-bold text-slate-900 mb-2">{faq.question}</h3>
                                 <p className="text-slate-600 text-sm leading-relaxed">{faq.answer}</p>

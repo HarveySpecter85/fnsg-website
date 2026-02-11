@@ -4,6 +4,7 @@ import { Breadcrumbs } from '@/app/components/navigation/Breadcrumbs';
 import { SEOBlock } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import Script from 'next/script';
+import FaqJsonLd from '@/app/components/seo/faq-json-ld';
 
 export const metadata = {
     title: "South Fulton Industrial Staffing & Airport Logistics – First National Staffing",
@@ -19,6 +20,19 @@ export const metadata = {
 };
 
 export default function SouthFultonPage() {
+    const faqData = [
+        { q: "Do you staff for recycling and waste management operations?", a: "Yes, it is a core competency. We place experienced sorters, equipment operators, and facility managers in regional MRF and transfer station operations." },
+        { q: "Can you handle airport logistics staffing?", a: "Absolutely. We support cargo handling, ground support, and TSA-adjacent roles near ATL. We verify all security clearance requirements upfront." },
+        { q: "What certifications do your candidates hold?", a: "Many of our South Fulton candidates carry CDL licenses and heavy equipment certifications (forklift, loader, excavator). We maintain a registry of certified operators." },
+        { q: "Are you experienced with 3rd shift operations?", a: "Yes, 3rd shift is our specialty in South Fulton due to airport and logistics demand. We have dedicated 24/7 rosters and night-shift supervisory support." },
+        { q: "What is the typical hourly rate for heavy equipment operators?", a: "Experienced heavy equipment operators in South Fulton typically earn $24-30/hr depending on equipment and shift, with night shift premiums." },
+        { q: "Do you provide on-site safety training?", a: "Yes, we deliver tailored safety programs covering machinery, recycling hazards, heat exposure, and airborne particulates. All custom to your facility." },
+        { q: "How quickly can you ramp up a new operation?", a: "With experience in multiple industries, we can typically staff a 50-person facility within 5-7 business days." },
+        { q: "Do you staff for temporary project work?", a: "Yes, we support both temp and temp-to-hire arrangements for seasonal peaks and project-based work." },
+        { q: "Are you licensed to operate in Georgia's industrial zones?", a: "Yes, First National Staffing is fully licensed and insured to operate throughout South Fulton and Atlanta's industrial corridor." },
+        { q: "Why choose FNSG for South Fulton?", a: "Our 24/7 operational model, heavy equipment expertise, and proven track record in recycling and airport logistics make us the ideal staffing partner for Atlanta's industrial heartland." }
+    ];
+
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
@@ -61,6 +75,7 @@ export default function SouthFultonPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
+            <FaqJsonLd faqs={faqData} />
 
             <div className="container mx-auto px-6 max-w-7xl">
                 <div className="flex flex-col lg:flex-row gap-12">
@@ -334,18 +349,7 @@ export default function SouthFultonPage() {
                             <section>
                                 <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
                                 <div className="space-y-4">
-                                    {[
-                                        { q: "What industries do you staff in South Fulton?", a: "We specialize in recycling & waste management, airport logistics, heavy manufacturing, transportation, and general industrial operations in the South Fulton and airport corridor area." },
-                                        { q: "Can you provide workers for overnight shifts?", a: "Absolutely. 3rd shift (overnight) staffing is one of our specialties in South Fulton. We have a strong pool of workers who prefer or are experienced with overnight schedules." },
-                                        { q: "Do you have forklift and heavy equipment operators?", a: "Yes, we maintain a network of certified forklift, loader, and heavy equipment operators. All certifications are verified before placement." },
-                                        { q: "How do you handle the physical demands of these jobs?", a: "We screen candidates for physical capability, including lifting requirements and ability to work in outdoor/semi-outdoor conditions. We're transparent with candidates about job demands." },
-                                        { q: "Can you staff recycling facility positions?", a: "Yes, we have extensive experience staffing MRFs and recycling operations, including sorters, equipment operators, and material handlers. Safety training is included." },
-                                        { q: "What about CDL drivers?", a: "We have a pool of Class A and Class B CDL holders for local and regional driving positions. All driving records are verified." },
-                                        { q: "How quickly can you fill positions?", a: "For general labor roles, typically 2-3 business days. Equipment operators and CDL drivers may take 5-7 days depending on certification requirements." },
-                                        { q: "Do workers need airport security clearance?", a: "For positions requiring airfield access, yes. We can help facilitate the badging process, though timelines vary by airport authority." },
-                                        { q: "What safety training do your workers receive?", a: "All associates complete our industrial safety orientation. For recycling clients, we add sharps awareness and equipment-specific protocols. OSHA 10 certification is available." },
-                                        { q: "Why choose FNSG for South Fulton staffing?", a: "Our deep experience in heavy industrial and recycling environments, combined with our 24/7 operational capability, makes us the ideal partner for South Fulton employers." }
-                                    ].map((faq, index) => (
+                                    {faqData.map((faq, index) => (
                                         <details key={index} className="group border border-slate-200 rounded-lg p-4 open:bg-slate-50 transition-all">
                                             <summary className="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
                                                 {faq.q}
