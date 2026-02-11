@@ -20,15 +20,17 @@ export function TextReveal({ children, className = '', as: Component = 'h1' }: T
         const element = ref.current
         if (!element) return
 
-        // Split text into words or characters if needed, but for simple reveal we can just animate the element itself 
-        // or wrap lines. For this specific request "text moves up from y:100% to 0%", we need a wrapper with overflow hidden.
-        // Since we can't easily split text without a library like SplitType in this environment without adding more deps,
-        // I will assume the children is a single block or I will wrap the content in a span that moves.
+        const textContent = element.querySelector('.text-content')
+        if (!textContent) return
 
-        // Actually, to do "y:100% to 0%" effectively for text, usually we wrap the text in a div with overflow hidden.
+        /* ── WCAG: Skip animation when user prefers reduced motion ── */
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            gsap.set(textContent, { y: '0%' })
+            return
+        }
 
         gsap.fromTo(
-            element.querySelector('.text-content'),
+            textContent,
             {
                 y: '100%',
             },

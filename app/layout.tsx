@@ -42,10 +42,16 @@ export const metadata: Metadata = {
   },
 };
 
+import dynamic from "next/dynamic";
 import { SiteHeader } from "./components/site-header";
 import { SiteFooter } from "./components/site-footer";
-import { SmoothScroller } from "./components/ui/smooth-scroller";
 import KnowledgeGraph from "./components/json-ld-knowledge-graph";
+
+/* Lazy-load Lenis+GSAP only on client — no SSR needed for scroll effects */
+const SmoothScrollerInit = dynamic(
+  () => import("./components/ui/smooth-scroller").then((m) => m.SmoothScrollerInit),
+  { ssr: false }
+);
 
 export default function RootLayout({
   children,
@@ -57,6 +63,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Skip Navigation — WCAG 2.4.1 */}
+        <a href="#main-content" className="skip-nav">
+          Skip to main content
+        </a>
+
         <KnowledgeGraph />
         {process.env.NODE_ENV === "production" &&
           process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID && (
@@ -70,12 +81,13 @@ export default function RootLayout({
           `}
             </Script>
           )}
-        <SmoothScroller>
-          <SiteHeader />
+        <SmoothScrollerInit />
+        <SiteHeader />
+        <main id="main-content">
           {children}
-          <Analytics />
-          <SiteFooter />
-        </SmoothScroller>
+        </main>
+        <Analytics />
+        <SiteFooter />
       </body>
     </html>
   );

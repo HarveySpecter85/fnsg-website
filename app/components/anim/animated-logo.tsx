@@ -11,6 +11,13 @@ export function AnimatedLogo() {
     const textRef = useRef<HTMLDivElement>(null)
 
     useGSAP(() => {
+        /* ── WCAG: Show logo instantly when user prefers reduced motion ── */
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            gsap.set(iconRef.current, { autoAlpha: 1, clipPath: 'none', rotation: 0, scale: 1 })
+            gsap.set(textRef.current, { autoAlpha: 1, clipPath: 'none' })
+            return
+        }
+
         const tl = gsap.timeline({ defaults: { ease: 'power2.out' } })
 
         // Initial set

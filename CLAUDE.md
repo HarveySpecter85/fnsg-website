@@ -260,3 +260,349 @@ When the user shares event photos (uploads, pastes, or provides paths), **ALWAYS
 After receiving answers, execute the full `gallery-image-manager` skill pipeline (SKILL.md #12): classify → SEO alt-text → Cloudinary upload via MCP → gallery-data.ts registration → validate.
 
 **Cloudinary config**: `NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=dr7fov4v4` | Folder: `fnsg-gallery/{event-slug}/`
+
+---
+
+## Design System & UX Standards (Post-Audit Feb 2026)
+
+> These rules were established after a comprehensive design/UX audit of 150+ pages and 80+ components.
+> Full report: `FNSG-Design-UX-Audit-Report.docx` in project root.
+
+### Visual Identity: Light Theme (Mandatory)
+
+**The FNSG website uses a LIGHT professional theme. Do NOT introduce dark backgrounds (slate-900, slate-950, gray-900, #0f172a, etc.) as primary section backgrounds.**
+
+**Approved background palette:**
+- `bg-white` — Primary page background
+- `bg-brand-light` (`#F8FAFC` / `slate-50`) — Alternating section backgrounds
+- `bg-slate-50` / `bg-slate-100` — Subtle section differentiation
+- `bg-brand-navy` (`#242e45`) — ONLY for footer and very specific accent bars (never full sections)
+- `bg-brand-primary/5` or `bg-brand-teal/5` — Subtle tinted backgrounds for feature highlights
+
+**Prohibited background patterns:**
+- ❌ `bg-slate-900`, `bg-slate-950`, `bg-gray-900`, `bg-black` as section backgrounds
+- ❌ `bg-[#0f172a]` or any hardcoded dark hex as section fills
+- ❌ Dark backgrounds with light text as the dominant page layout
+- ❌ `bg-gradient-to-*` with dark endpoints for content sections
+
+### Color Token Usage (MANDATORY)
+
+**NEVER hardcode hex values in components.** Always use Tailwind brand tokens or standard Tailwind palette:
+
+| Purpose | Use This | NOT This |
+|---------|----------|----------|
+| Primary buttons/CTAs | `bg-brand-primary` | `bg-[#218fea]`, `bg-blue-500` |
+| Hover states | `hover:bg-brand-secondary` | `hover:bg-[#1b5ca0]` |
+| Headings | `text-brand-navy` | `text-[#242e45]`, `text-slate-900` |
+| Body text | `text-slate-600` | `text-[#94a3b8]`, `text-gray-500` |
+| Secondary text | `text-brand-gray` | `text-[#878898]` |
+| Accent icons | `text-brand-teal` | `text-[#1ea1be]`, `text-cyan-500` |
+| Light backgrounds | `bg-brand-light` | `bg-[#F8FAFC]` |
+| Borders | `border-slate-100` or `border-slate-200` | `border-[#e2e8f0]` |
+
+**When Tailwind slate-* is acceptable:** Standard Tailwind colors (slate-50 through slate-600) are fine for text, borders, and backgrounds. The rule prohibits *hardcoded hex values* — use the Tailwind class names.
+
+### Button & Component Classes (MANDATORY)
+
+**Always use the predefined utility classes from globals.css:**
+
+```
+.btn-primary    → All primary action buttons (blue, filled)
+.btn-outline    → All secondary action buttons (navy border, outlined)
+.card-standard  → All content cards (white, border, shadow-sm, hover shadow-md)
+.icon-wrapper   → All circular icon containers (teal/10 background)
+```
+
+**Never recreate button styles inline.** If you need a variant, extend in globals.css:
+```css
+.btn-primary-lg { @apply btn-primary text-lg px-8 py-4; }
+.btn-primary-sm { @apply btn-primary text-xs px-4 py-2; }
+```
+
+### CTA Text Standardization
+
+Use ONLY these 4 CTA text patterns across the entire site:
+
+| CTA Text | Usage Context |
+|----------|---------------|
+| **Get Started** | Primary conversion (employer intake, consultation) |
+| **Learn More** | Secondary info links (solutions, features, industries) |
+| **Apply Now** | Talent-facing actions (job application, resume submit) |
+| **Schedule a Call** | Direct contact/consultation booking |
+
+Avoid: "Contact Us", "Request a Quote", "Start Your Journey", "Explore Solutions", "View Details", "Submit", "Discover", or any other variant.
+
+### Typography Scale (Standard)
+
+Headings are defined in `globals.css @layer base`. Do NOT override with inline Tailwind:
+
+| Element | Mobile | Desktop | Weight | Color |
+|---------|--------|---------|--------|-------|
+| h1 | `text-4xl` | `md:text-5xl` | `font-bold` | `text-brand-navy` |
+| h2 | `text-3xl` | `md:text-4xl` | `font-bold` | `text-brand-navy` |
+| h3 | `text-2xl` | — | `font-semibold` | `text-brand-navy` |
+| Body | `text-base` | — | normal | `text-slate-600` |
+| Small/muted | `text-sm` | — | normal | `text-brand-gray` |
+
+**Do NOT use** `font-extrabold` or `font-black` on headings. Do NOT use `text-5xl`, `text-6xl`, or `text-7xl` outside of the hero section.
+
+### Section Spacing Rhythm
+
+Use these 3 standard vertical paddings consistently:
+
+| Section Type | Padding | Example |
+|-------------|---------|---------|
+| Hero / major section | `py-20 md:py-28` | Homepage hero, industry heroes |
+| Standard content section | `py-16 md:py-20` | Features, testimonials, team |
+| Compact section | `py-10 md:py-14` | CTAs, banners, dividers |
+
+**Do NOT mix** py-8, py-12, py-24, py-32 randomly. Pick from the 3 tiers above.
+
+### Shadow & Transition Tokens
+
+**Shadows (pick one per context):**
+- Cards at rest: `shadow-sm`
+- Cards on hover: `shadow-md`
+- Modals / overlays: `shadow-xl`
+- Hero elements / elevated CTAs: `shadow-lg`
+
+**Transitions (standard durations):**
+- Interactive hover: `duration-200`
+- Panel open/close: `duration-300`
+- Page-level animations (GSAP): `0.6s` to `0.8s`
+
+Do NOT use `duration-150`, `duration-500`, `duration-700`, or custom millisecond values.
+
+---
+
+## Accessibility Standards (WCAG 2.1 AA — MANDATORY)
+
+### Motion & Animation Safety
+
+**EVERY animation must respect `prefers-reduced-motion`.** This is non-negotiable.
+
+For GSAP animations:
+```tsx
+useEffect(() => {
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) return; // Skip animation entirely
+  gsap.from(ref.current, { opacity: 0, y: 30, duration: 0.6 });
+}, []);
+```
+
+For CSS transitions, always include:
+```css
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+```
+
+For Lenis smooth scrolling — disable when reduced motion is preferred:
+```tsx
+const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (!prefersReduced) { /* initialize Lenis */ }
+```
+
+### Skip Navigation
+
+The site MUST include a skip-to-content link as the first focusable element in `app/layout.tsx`:
+```tsx
+<a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-brand-primary focus:text-white focus:px-4 focus:py-2 focus:rounded">
+  Skip to main content
+</a>
+```
+And the main content area must have `id="main-content"`.
+
+### ARIA Requirements
+
+- All `<iframe>` elements MUST have a descriptive `title` attribute
+- All icon-only buttons MUST have `aria-label`
+- All SVG interactive elements MUST have `role` and `aria-label`
+- All modal/dialog components MUST have `aria-modal="true"` and `role="dialog"`
+- Gallery images MUST show metadata on focus (not hover-only) for keyboard/touch accessibility
+
+### Color Contrast
+
+- Body text (`text-slate-600` on `bg-white`): ✅ passes 4.5:1
+- Muted text (`text-brand-gray` on `bg-white`): verify passes 4.5:1 for small text
+- **Never use** `text-slate-400` for meaningful content (fails contrast on white)
+- Brand-primary (`#218fea`) on white: passes for large text only; use `text-brand-secondary` for small text links
+
+---
+
+## Performance Rules (MANDATORY)
+
+### Server Components First
+
+**Default to Server Components.** Only add `"use client"` when the component genuinely needs:
+- `useState`, `useEffect`, `useRef` with DOM interaction
+- Event handlers (`onClick`, `onChange`, `onSubmit`)
+- Browser APIs (`window`, `document`, `localStorage`)
+
+**Extract client interactivity into thin wrappers:**
+```tsx
+// ✅ GOOD: Server component with small client island
+// card.tsx (server)
+export function Card({ data }) {
+  return <div className="card-standard"><CardActions id={data.id} /><p>{data.text}</p></div>
+}
+// card-actions.tsx (client)
+"use client"
+export function CardActions({ id }) { /* onClick handlers */ }
+
+// ❌ BAD: Entire component is client just for one click handler
+"use client"
+export function Card({ data }) { /* everything */ }
+```
+
+### Lazy Loading with next/dynamic
+
+**Heavy components MUST use `next/dynamic`:**
+```tsx
+import dynamic from 'next/dynamic';
+
+const ROICalculator = dynamic(() => import('@/app/components/data-insights/roi-calculator'), {
+  loading: () => <div className="h-96 animate-pulse bg-slate-100 rounded-xl" />,
+  ssr: false
+});
+
+const GalleryGrid = dynamic(() => import('@/app/components/gallery/GalleryGrid'), {
+  loading: () => <div className="h-64 animate-pulse bg-slate-100 rounded-xl" />
+});
+```
+
+**Components that MUST be lazy-loaded:**
+- ROI Calculator (Recharts ~200KB)
+- Gallery Grid + Lightbox
+- Data Dashboard / KPI widgets
+- Any GSAP-heavy animation sections
+- Workforce Diagnostic Form (multi-step)
+
+### SmoothScroller Architecture
+
+The Lenis `SmoothScroller` MUST NOT wrap the entire app tree as a client component. Instead, initialize Lenis via a thin client hook or component that doesn't force the whole layout client-side:
+```tsx
+// ✅ GOOD: Thin client wrapper, children stay server-renderable
+"use client"
+export function LenisProvider({ children }) {
+  useEffect(() => { /* init Lenis */ return () => { /* cleanup */ } }, []);
+  return <>{children}</>;
+}
+```
+
+### Bundle Size Awareness
+
+| Library | Size | Strategy |
+|---------|------|----------|
+| GSAP + @gsap/react | ~200KB | Lazy-load animation components |
+| Recharts | ~200KB | Lazy-load dashboard/charts |
+| Lenis | ~50KB | Conditional load (check reduced-motion) |
+| pdfkit | ~300KB | Server-side only, never in client bundle |
+
+---
+
+## Navigation & Sitemap Rules
+
+### Header Mega-Menu Completeness
+
+All industry verticals with dedicated pages MUST appear in the header mega-menu under Solutions. Currently missing (fix required):
+- Healthcare
+- Environmental Services
+
+### XML Sitemap (`sitemap.ts`)
+
+**Every public page MUST be in the sitemap.** When adding new pages, always add the corresponding entry to `app/sitemap.ts`. Currently missing 45+ pages including:
+- All blog posts (`/company/blog/*`)
+- FAQ pages (`/insights/faq/*`)
+- OSHA resources (`/insights/osha/*`)
+- Pay rates pages (`/insights/pay-rates/*`)
+- Talent pages (`/talent/*`)
+- Partner pages (`/company/partners/*`)
+- Gallery page (`/company/gallery`)
+
+### Breadcrumbs
+
+Use a single breadcrumb component (`/app/components/navigation/breadcrumbs.tsx`) across ALL inner pages. Do NOT create page-specific breadcrumb implementations.
+
+### Footer Expansion
+
+The footer SHOULD include these navigation sections:
+- **Solutions** (current) — service offerings
+- **Industries** (missing) — all 8 industry vertical links
+- **Insights** (missing) — city pages, pay rates, OSHA, FAQs
+- **Company** (current) — about, leadership, gallery, blog
+- **Legal** (current) — privacy, terms
+
+### URL Pattern (Single Strategy)
+
+Use FLAT URLs for solutions: `/solutions/{solution-slug}`
+Do NOT create nested duplicates: `/solutions/industries/{slug}`
+
+---
+
+## UX Flow Guidelines
+
+### Employer Conversion Path
+
+The employer journey SHOULD funnel through a single intake flow:
+1. **Entry**: CTA → General inquiry form (lightweight, 3-5 fields)
+2. **Qualification**: Based on company size and needs, route to:
+   - Small business → automated response + scheduled call
+   - Enterprise → Workforce Diagnostic form (progressive disclosure)
+3. **ROI proof**: Calculator results should gate behind email capture
+
+Do NOT create additional standalone contact forms. Consolidate to one entry point with smart routing.
+
+### Talent Conversion Path
+
+The talent journey is well-structured. Preserve this flow:
+1. Landing → Browse Jobs → Apply Now
+2. Submit Resume → GHL form with Video Pitch option
+3. Confirmation → next steps
+
+### Form UX Requirements
+
+- Multi-section forms (3+ sections) MUST include a progress indicator (step X of Y)
+- GHL iframes MUST use responsive height (not fixed pixel values). Use `postMessage` resize or `min-h-[600px] max-h-screen` approach
+- Every content page MUST end with a CTA (no dead-end pages)
+- The Employee Benefits page MUST include a conversion CTA
+
+### GHL Iframe Responsive Pattern
+
+```tsx
+// ✅ GOOD: Responsive iframe container
+<div className="w-full min-h-[600px] md:min-h-[800px]">
+  <iframe
+    src="..."
+    className="w-full h-full min-h-[600px]"
+    style={{ height: 'auto', minHeight: '600px' }}
+    title="Descriptive Form Title"
+    allow="camera; microphone"
+  />
+</div>
+
+// ❌ BAD: Fixed pixel height
+<iframe style={{ height: '1822px' }} />
+```
+
+---
+
+## New Component Checklist
+
+When creating ANY new component, verify:
+
+- [ ] Uses `brand-*` tokens from Tailwind config (no hardcoded hex)
+- [ ] Uses `.btn-primary` / `.btn-outline` / `.card-standard` where applicable
+- [ ] Server Component by default (`"use client"` only if needed)
+- [ ] Heavy dependencies lazy-loaded with `next/dynamic`
+- [ ] All animations wrapped in `prefers-reduced-motion` check
+- [ ] All interactive elements have `aria-label` or visible label
+- [ ] Touch targets are minimum 44x44px
+- [ ] Responsive: works at 375px, 768px, 1024px, 1440px
+- [ ] CTA text follows the 4 approved patterns
+- [ ] Section padding uses one of the 3 standard tiers
+- [ ] Page added to `sitemap.ts` if it's a public route

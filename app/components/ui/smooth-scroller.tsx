@@ -1,14 +1,25 @@
 'use client'
 
-import { ReactNode, useEffect } from 'react'
+import { useEffect } from 'react'
 import Lenis from 'lenis'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-export function SmoothScroller({ children }: { children: ReactNode }) {
+/**
+ * SmoothScrollerInit — Side-effect-only component.
+ * Initialises Lenis smooth scrolling and syncs it with GSAP ScrollTrigger.
+ * Does NOT wrap children; placed as a sibling in the layout tree so the
+ * rest of the page remains fully server-renderable (no client boundary
+ * wrapping the entire tree).
+ */
+export function SmoothScrollerInit() {
     useEffect(() => {
+        /* ── WCAG: Respect prefers-reduced-motion ── */
+        const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+        if (motionQuery.matches) return          // Skip Lenis entirely
+
         const lenis = new Lenis()
 
         function raf(time: number) {
@@ -21,19 +32,18 @@ export function SmoothScroller({ children }: { children: ReactNode }) {
         // Sync GSAP ScrollTrigger with Lenis
         lenis.on('scroll', ScrollTrigger.update)
 
-        gsap.ticker.add((time) => {
+        const tickerCallback = (time: number) => {
             lenis.raf(time * 1000)
-        })
+        }
 
+        gsap.ticker.add(tickerCallback)
         gsap.ticker.lagSmoothing(0)
 
         return () => {
             lenis.destroy()
-            gsap.ticker.remove((time) => {
-                lenis.raf(time * 1000)
-            })
+            gsap.ticker.remove(tickerCallback)
         }
     }, [])
 
-    return <>{children}</>
+    return null   // Renders nothing — pure side-effect
 }

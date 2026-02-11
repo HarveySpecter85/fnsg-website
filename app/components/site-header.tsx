@@ -34,6 +34,7 @@ const navigation = {
         { title: 'Warehouse & Logistics', href: '/industries/warehouse-logistics-staffing' },
         { title: 'Hospitality & Events', href: '/industries/hospitality-events-staffing' },
         { title: 'Healthcare Support & EVS', href: '/industries/healthcare-support-staffing' },
+        { title: 'Healthcare Environmental Services', href: '/industries/healthcare-environmental-services' },
     ],
     // NEW: Resources mega-menu (merge of Risk & Compliance + Data Insights)
     resources: {

@@ -23,6 +23,12 @@ export function ParallaxImage({ containerClassName = '', imageClassName = '', sp
         const image = imageRef.current
         if (!container || !image) return
 
+        /* ── WCAG: Skip parallax when user prefers reduced motion ── */
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            gsap.set(image, { y: '0%' })
+            return
+        }
+
         gsap.fromTo(
             image,
             {

@@ -54,7 +54,7 @@ export function GHLApplicationForm() {
                     data-height="1592"
                     data-layout-iframe-id="inline-ln9MZIydyVxYQ3czpUgY"
                     data-form-id="ln9MZIydyVxYQ3czpUgY"
-                    title="Job Seeker Lead Generator"
+                    title="Job Application Form — First National Staffing Group"
                     allow="camera; microphone"
                     onLoad={() => setIsLoading(false)}
                 />

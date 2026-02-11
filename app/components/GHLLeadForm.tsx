@@ -18,7 +18,7 @@ export default function GHLLeadForm() {
                 data-height="984"
                 data-layout-iframe-id="inline-U2DHOgSZ3bvTaycd1y9i"
                 data-form-id="U2DHOgSZ3bvTaycd1y9i"
-                title="Web FNSG CTO"
+                title="Request Workforce — Contact Form"
             />
             <script src="https://link.msgsndr.com/js/form_embed.js" defer></script>
         </div>

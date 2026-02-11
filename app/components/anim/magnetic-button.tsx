@@ -17,6 +17,9 @@ export function MagneticButton({ children, className = '', strength = 0.5 }: Mag
         const element = ref.current
         if (!element) return
 
+        /* ── WCAG: Disable magnetic effect when user prefers reduced motion ── */
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
         const xTo = gsap.quickTo(element, "x", { duration: 1, ease: "elastic.out(1, 0.3)" })
         const yTo = gsap.quickTo(element, "y", { duration: 1, ease: "elastic.out(1, 0.3)" })
 

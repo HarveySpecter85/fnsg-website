@@ -22,6 +22,12 @@ export function FadeIn({ children, delay = 0, stagger = 0.1, y = 30, className =
         const element = ref.current
         if (!element) return
 
+        /* ── WCAG: Skip animation when user prefers reduced motion ── */
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            gsap.set(element.children, { opacity: 1, y: 0 })
+            return
+        }
+
         gsap.fromTo(
             element.children,
             {
