@@ -3,6 +3,7 @@ import { Breadcrumbs } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import { Metadata } from 'next';
 import PremiumCTA from '@/app/components/PremiumCTA';
+import HowToJsonLd from '@/app/components/seo/how-to-json-ld';
 
 export const metadata: Metadata = {
     title: "Direct Hire Recruitment OS — Precision Hiring Powered by Workforce Intelligence",
@@ -22,6 +23,33 @@ export const metadata: Metadata = {
 };
 
 export default function DirectHireRecruitmentPage() {
+    const howToSteps = [
+        {
+            name: "Workforce Diagnostic",
+            text: "FNSG analyzes your facility's workforce composition, historical turnover patterns, retention challenges, and production requirements. We assess commute patterns, wage bands, shift preferences, and cultural fit criteria to establish baseline hiring patterns and identify risk factors."
+        },
+        {
+            name: "Role & Culture Profiling",
+            text: "We develop detailed profiles for each target role including physical demands, required skills, shift expectations, and supervisor compatibility factors. This profiling captures both explicit job requirements and implicit cultural expectations to predict successful long-term hires."
+        },
+        {
+            name: "OS Matching Configuration",
+            text: "Our Skill Fit Engine, Stability Prediction Model, Pay Intelligence OS, Culture Fit Engine, and Document Compliance OS are calibrated to your specific hiring criteria. These modules automatically score candidates against your validated success profiles and historical data."
+        },
+        {
+            name: "Candidate Scoring",
+            text: "Candidates are evaluated using our predictive models to generate a Workforce Readiness Scorecard. Each candidate receives scores for skill fit, retention probability at 30/60/90 days, appropriate pay range, cultural compatibility, and compliance readiness before your HR team interviews them."
+        },
+        {
+            name: "Offer Calibration with Pay Intelligence",
+            text: "Pay Intelligence ensures offers are properly calibrated to avoid unnecessary overpayment causing turnover or undervaluing that causes immediate quits. Final 3-tier verification confirms all pre-offer checks including I-9, E-Verify, health readiness, and OSHA experience validation."
+        },
+        {
+            name: "Post-Hire 60-Day Stability Tracking",
+            text: "We monitor each hired candidate through their critical first 60 days, tracking attendance, performance, safety metrics, and supervisor feedback. This data feeds back into our models to continuously improve prediction accuracy for future hires at your facility."
+        }
+    ];
+
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "Service",
@@ -41,6 +69,12 @@ export default function DirectHireRecruitmentPage() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <HowToJsonLd
+                name="How to Hire With Precision Using Direct Hire Recruitment OS"
+                description="Six-step intelligence-driven hiring process using workforce stability prediction, skill matching, pay calibration, and culture fit evaluation to improve hiring accuracy and reduce early turnover."
+                steps={howToSteps}
+                totalTime="PT3W"
             />
 
             {/* Hero Section */}

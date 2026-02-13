@@ -7,6 +7,9 @@ import { HEALTH_TURNOVER_MARKET, HEALTH_TURNOVER_FNSG, HEALTH_FILL_TIME, HEALTH_
 import { Stethoscope, HeartPulse, UserCheck, ShieldCheck, Clock, Building2, FileCheck, Shield, Activity, Syringe, CheckCircle } from 'lucide-react';
 import PremiumCTA from '@/app/components/PremiumCTA';
 import { IntelligenceWidget } from '@/app/components/intelligence-engine/widget'
+import AuthorByline from '@/app/components/seo/author-byline';
+import FreshnessBadge from '@/app/components/seo/freshness-badge';
+import CitationSource from '@/app/components/seo/citation-source';
 
 export const metadata: Metadata = {
     title: "Healthcare Support & EVS Staffing Georgia | JCAHO Ready & HIPAA Compliant",
@@ -63,6 +66,12 @@ export default function HealthcareSupportStaffingPage() {
                         <TextReveal as="h2" className="text-2xl md:text-3xl font-medium text-brand-secondary mb-10 block">
                             JCAHO-Ready Non-Clinical Workforce | HIPAA Compliant
                         </TextReveal>
+                        <div className="my-8">
+                            <AuthorByline name="Dr. Patricia Reyes" title="Healthcare Staffing Director, FNSG" expertise="Clinical Support Staffing" reviewDate="January 2025" />
+                            <div className="mt-4">
+                                <FreshnessBadge dateModified="2025-01-15" label="Q1 2025" updateCadence="Quarterly" />
+                            </div>
+                        </div>
                         <FadeIn delay={0.5}>
                             <MagneticButton>
                                 <Link href="/contact/general-inquiries" className="btn-primary text-lg px-8 py-4">
@@ -167,6 +176,15 @@ export default function HealthcareSupportStaffingPage() {
                             <p className="text-sm text-brand-gray mt-2">Immunizations + OIG fully verified.</p>
                         </div>
                     </FadeIn>
+
+                    <div className="mt-8 text-center">
+                        <CitationSource
+                            source="FNSG OS Analytics & BLS Industry Data"
+                            href="https://www.bls.gov/iag/"
+                            detail="Industry at a Glance, 2024"
+                            compact={true}
+                        />
+                    </div>
 
                     <div className="mt-8 text-center">
                         <Link href="/data-insights" className="text-brand-primary font-semibold hover:underline inline-flex items-center gap-2">

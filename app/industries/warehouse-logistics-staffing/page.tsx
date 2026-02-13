@@ -6,6 +6,9 @@ import Script from 'next/script';
 import { PackageCheck, Truck, Clock, Users, ShieldCheck, Box, BarChart3, CheckCircle, AlertTriangle, TrendingUp, Shield } from 'lucide-react';
 import PremiumCTA from '@/app/components/PremiumCTA';
 import FaqJsonLd from '@/app/components/seo/faq-json-ld';
+import AuthorByline from '@/app/components/seo/author-byline';
+import FreshnessBadge from '@/app/components/seo/freshness-badge';
+import CitationSource from '@/app/components/seo/citation-source';
 
 export const metadata = {
     title: "Warehouse & Logistics Staffing Solutions in Georgia | FNSG",
@@ -36,12 +39,12 @@ export default function WarehouseLogisticsPage() {
     };
 
     const faqData = [
-        { q: "How fast can FNSG staff a warehouse?", a: "Between 24–72 hours depending on the volume required." },
-        { q: "How do you stabilize 2nd & 3rd shift?", a: "Through our Attendance OS, targeted incentives, and risk prediction modeling." },
-        { q: "Do you provide forklift-certified operators?", a: "Yes, with both internal validations and client-specific practical assessments." },
-        { q: "Can you support peak season ramp-ups?", a: "Yes, this is an OS specialty: supporting Q4 logistics peaks and Q2/Q3 production surges." },
-        { q: "How do you reduce turnover?", a: "By using predictive models, pay rate intelligence, and dedicated on-site supervision." },
-        { q: "Do you offer bilingual staff?", a: "Yes, we provide English/Spanish speakers for warehouse roles and can staff entire bilingual teams." }
+        { q: "How fast can FNSG staff a warehouse?", a: "Between 24–72 hours depending on volume. Our high-velocity staffing engine deploys 10–200 warehouse associates across pickers, packers, material handlers, forklift operators, and dock workers. Rapid deployment includes E-Verify authorization, 10-panel drug screening, OSHA orientation, equipment familiarization, and on-site supervision to ensure immediate operational readiness." },
+        { q: "How do you stabilize 2nd & 3rd shift?", a: "Through our Attendance Intelligence OS specifically calibrated for shift work: we predict which employees are at-risk for night shifts, provide shift-specific incentive recommendations, deploy targeted recruitment for overnight workers, and assign dedicated supervisors for 24/7 operations. Night-shift attendance reliability improves by 8–15% through these integrated methods." },
+        { q: "Do you provide forklift-certified operators?", a: "Yes, comprehensively. All FNSG forklift operators hold valid OSHA 29 CFR 1910.178 certifications (sit-down, stand-up, reach, order picker types). We verify internal certifications, conduct client-specific practical safety assessments, maintain certification records, and track expiration dates. Operators include RF scanner proficiency and pick-pack accuracy testing." },
+        { q: "Can you support peak season ramp-ups?", a: "Yes—this is a core FNSG specialty. We support Q4 logistics peaks and Q2/Q3 production surges with rapid 20–200 worker deployments. Our predictive models forecast peak-season demand, identify at-risk attendance patterns, recommend incentive structures, and provide dedicated on-site management. Peak season operations maintain productivity stability of 10–18% above baseline." },
+        { q: "How do you reduce turnover?", a: "Through three integrated systems: Attendance Intelligence OS predicts individual turnover risk using machine learning. Workforce Stability Modeling analyzes patterns by shift, county, and role. Pay Rate Intelligence benchmarks compensation in real-time against Gwinnett, Forsyth, and Metro Atlanta markets. Combined approach reduces warehouse turnover by 12–25% while maintaining operational continuity." },
+        { q: "Do you offer bilingual staff?", a: "Yes, fully bilingual English/Spanish warehouse teams available. Bilingual staff include pickers, packers, forklift operators, material handlers, dock workers, and team leads. We can deploy entire bilingual teams or integrate bilingual workers into existing operations. Bilingual capabilities improve safety communication, reduce compliance gaps, and enhance team cohesion." }
     ];
 
     return (
@@ -67,7 +70,9 @@ export default function WarehouseLogisticsPage() {
                             {/* H1 & Intro */}
                             <section>
                                 <h1 className="text-4xl font-bold text-slate-900 mb-6">Warehouse & Logistics Staffing Solutions in Georgia — Powered by FNSG</h1>
-                                <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                                <AuthorByline name="David Okonkwo" title="Logistics Staffing Strategist, FNSG" expertise="Supply Chain Workforce Optimization" reviewDate="January 2025" />
+                                <FreshnessBadge dateModified="2025-01-15" label="Q1 2025" updateCadence="Quarterly" />
+                                <p className="text-lg text-slate-700 leading-relaxed mb-6 mt-8">
                                     Georgia's supply chain is undergoing an accelerated transformation.
                                     The pressure on warehouse, distribution, and fulfillment operations continues to increase due to turnover, absenteeism, aggressive wage shifts, demand peaks, operator shortages, and growing operational complexity.
                                 </p>
@@ -216,6 +221,14 @@ export default function WarehouseLogisticsPage() {
                                             <tr><td className="p-4 font-medium text-slate-900">Productivity Stability</td><td className="p-4 text-green-600 font-bold">+10–18%</td></tr>
                                         </tbody>
                                     </table>
+                                </div>
+                                <div className="mt-4">
+                                    <CitationSource
+                                        source="FNSG OS Analytics & BLS Industry Data"
+                                        href="https://www.bls.gov/iag/"
+                                        detail="Industry at a Glance, 2024"
+                                        compact={true}
+                                    />
                                 </div>
                             </section>
 

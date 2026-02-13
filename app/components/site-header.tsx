@@ -82,6 +82,8 @@ const navigation = {
     },
     locations: [
         { title: 'Atlanta Staffing Agency', href: '/insights/city/atlanta' },
+        { title: 'Smyrna Staffing Agency', href: '/insights/city/smyrna-staffing' },
+        { title: 'Marietta Staffing Agency', href: '/insights/city/marietta-staffing' },
         { title: 'Fulton County Employment', href: '/insights/city/fulton-county-employment-services' },
         { title: 'DeKalb County Staffing', href: '/insights/city/dekalb-county-staffing' },
         { title: 'Clayton County Staffing', href: '/insights/city/clayton-county-staffing' },
@@ -156,7 +158,7 @@ export function SiteHeader() {
 
                             {/* Office highlights */}
                             <span className="text-slate-500 hidden xl:inline">
-                                Atlanta HQ • Gainesville • Savannah
+                                Atlanta HQ • Smyrna • Gainesville • Savannah
                             </span>
                         </div>
 

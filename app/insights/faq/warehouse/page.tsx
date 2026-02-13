@@ -24,19 +24,19 @@ export default function WarehouseFAQPage() {
     const faqData = [
         {
             question: "What is the average turnaround time to fill warehouse roles?",
-            answer: "Most standard warehouse positions are filled within 24 to 48 hours depending on the client requirements and candidate availability."
+            answer: "Most standard warehouse positions are filled within 24 to 48 hours depending on client requirements, role complexity, and candidate availability. Forklift operators and specialized roles (reach truck operators, order pickers) may require 48–72 hours for proper competency matching. Urgent requests for 20+ workers are expedited to 12–24 hours using our high-velocity deployment system."
         },
         {
             question: "Do candidates come with their own PPE?",
-            answer: "Yes, our candidates are screened for possession of steel-toed boots and standard PPE. We can also provide branded gear upon request."
+            answer: "Yes, all FNSG warehouse candidates are pre-screened for possession of OSHA-compliant steel-toed boots and standard warehouse PPE (hi-visibility vests, gloves). We verify PPE compliance during onboarding. We also provide branded company gear, safety glasses, and additional PPE upon client request. PPE costs are typically absorbed by the client or passed through as direct expenses."
         },
         {
             question: "How do you ensure safety compliance?",
-            answer: "We conduct basic safety orientations and verify that all candidates understand general warehouse safety protocols before deployment."
+            answer: "FNSG conducts comprehensive safety orientations covering OSHA warehouse standards, forklift operation safety, proper lifting techniques, electrical hazard awareness, and fall prevention. All candidates complete documented safety briefings before deployment. On-site supervisors conduct continuous safety monitoring, incident tracking, and corrective coaching. We maintain audit-ready safety documentation and incident logs."
         },
         {
             question: "What is the current hourly rate for forklift operators?",
-            answer: "Rates vary by location, but current averages range from $16.50 to $19.00/hr depending on certification levels."
+            answer: "Current rates vary by Georgia location and certification level: $16.50–$19.00/hour for stand-up operators; $17.50–$20.50/hour for sit-down operators; $18.00–$21.00/hour for reach truck and order picker specialists. Rates adjust quarterly based on market benchmarking across Gwinnett, Hall, Jackson, and Metro Atlanta counties. Contact FNSG for location-specific pricing."
         }
     ];
 

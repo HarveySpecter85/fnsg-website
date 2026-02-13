@@ -5,6 +5,7 @@ import { FadeIn } from '@/app/components/anim/fade-in'
 import GHLLeadForm from '@/app/components/GHLLeadForm'
 import { CONTACT_INFO } from '@/lib/site-config'
 import { Clock, ShieldCheck, FileCheck, PhoneCall, ArrowRight, CheckCircle2 } from 'lucide-react'
+import HowToJsonLd from '@/app/components/seo/how-to-json-ld'
 
 export const metadata: Metadata = {
     title: "Request Workforce | 24-72h Staffing Fulfillment Georgia",
@@ -24,8 +25,33 @@ export const metadata: Metadata = {
 }
 
 export default function RequestWorkforcePage() {
+    const howToSteps = [
+        {
+            name: "Tell Us Your Requirements",
+            text: "Submit your staffing needs through our digital intake form including job title, shift schedule, duration, required skills, safety certifications, and any special requirements. An account manager reviews your submission within 2 business hours to clarify specifications, verify candidate availability, and provide an initial rate card quote."
+        },
+        {
+            name: "Consultation & Verification",
+            text: "Our team contacts you to verify detailed specifications including shift times, safety requirements, PPE needs, background check level, and candidate count. We confirm scheduling details and discuss any job-specific screening, training, or compliance requirements to ensure perfect candidate-to-role alignment."
+        },
+        {
+            name: "Recruitment & Screening",
+            text: "FNSG activates our 'Warm Bench' of pre-qualified candidates and screens applicants through eScreen drug testing and background verification. Candidates meeting your criteria are confirmed, scheduled, and notified with orientation details. For urgent needs less than 48 hours, contact our dispatch line directly."
+        },
+        {
+            name: "Deployment & Orientation",
+            text: "Candidates arrive at your facility ready for orientation with valid photo IDs, completed paperwork, and appropriate PPE. All workers are fully W-2, E-Verify cleared, and insured from Day 1. We provide an 8-hour performance guarantee—if unsatisfied with a candidate, replacement is immediate with no charge."
+        }
+    ];
+
     return (
         <main className="bg-slate-50 min-h-screen">
+            <HowToJsonLd
+                name="How to Request Workforce From FNSG"
+                description="Four-step process for submitting staffing orders, receiving consultation, screening candidates, and deploying workers with 24-72 hour standard fulfillment time."
+                steps={howToSteps}
+                totalTime="PT72H"
+            />
             {/* Hero Header */}
             <section className="bg-brand-navy text-white py-20 lg:py-24 relative overflow-hidden">
                 <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-10"></div>

@@ -24,19 +24,19 @@ export default function StaffingFAQPage() {
     const faqData = [
         {
             question: "What is the average time to fill a general labor role?",
-            answer: "We typically fill general labor positions within 24 to 48 hours, depending on shift requirements."
+            answer: "First National Staffing typically fills general labor positions within 24 to 48 hours, depending on shift type, volume, and specific role requirements. Our rapid placement process includes pre-screening, background verification, OSHA orientation, equipment familiarization, and on-site supervisor assignment. For urgent requests requiring 50+ workers, we expedite deployment within 24 hours using our high-velocity staffing engine."
         },
         {
             question: "Does First National Staffing use E-Verify?",
-            answer: "Yes, we participate in E-Verify for all placements to ensure workforce compliance."
+            answer: "Yes, 100% compliance. All FNSG placements undergo mandatory E-Verify authorization verification, 10-panel drug screening, and I-9 documentation. We maintain audit-ready records for federal compliance and provide clients with verification confirmations. E-Verify participation ensures your workforce is legally authorized and reduces employment eligibility risk."
         },
         {
             question: "How do you handle attendance issues?",
-            answer: "We have a strict attendance policy. No-call/no-show incidents result in immediate review and potential replacement."
+            answer: "FNSG maintains a rigorous attendance policy: No-call/no-show incidents trigger immediate investigation and potential replacement within 24 hours at no additional cost. Our Attendance Intelligence OS predicts attendance risk before absences occur, enabling proactive replacement. For chronic issues, we counsel workers and escalate to termination. Clients receive daily attendance reports and replacement coordination."
         },
         {
             question: "What happens if a temp employee underperforms?",
-            answer: "We offer a 4-hour guarantee. If you are unsatisfied within the first 4 hours, we replace the worker at no cost."
+            answer: "We offer a 4-hour performance guarantee. If you are unsatisfied with a worker's performance, effort, attitude, or capability within the first 4 hours, we replace the worker immediately at no cost. This guarantee covers quality concerns, safety violations, inability to perform tasks, or any reason affecting operations. Replacements are deployed within 2–4 hours."
         }
     ];
 

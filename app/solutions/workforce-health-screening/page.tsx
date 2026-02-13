@@ -6,6 +6,7 @@ import ScreeningServicesCatalog from "@/app/components/services/ScreeningService
 import ScreeningServicesBanner from "@/app/components/banners/ScreeningServicesBanner";
 import ScreeningServicesCTA from "@/app/components/cta/ScreeningServicesCTA";
 import PremiumCTA from "@/app/components/PremiumCTA";
+import HowToJsonLd from '@/app/components/seo/how-to-json-ld';
 
 export const metadata: Metadata = {
     title: "Workforce Health Screening Services — Reduce Risk, Accelerate Hiring and Protect Your Workforce",
@@ -25,6 +26,25 @@ export const metadata: Metadata = {
 };
 
 export default function WorkforceHealthScreeningPage() {
+    const howToSteps = [
+        {
+            name: "Requirements Mapping",
+            text: "FNSG assesses your facility's specific medical and vaccine protocols, including job-specific health screening needs. We identify which roles require drug testing, physicals, vaccinations, titers, TB testing, or X-rays based on industry regulations and operational requirements."
+        },
+        {
+            name: "Candidate Scheduling and Follow Up",
+            text: "Our dedicated team schedules appointment slots with occupational health clinics, urgent care centers, and LabCorp/eScreen sites. We handle candidate notifications, reminders, and chase down no-shows to ensure screening pipelines stay on track and reduce delays to start."
+        },
+        {
+            name: "Result Verification and Documentation",
+            text: "We receive and validate every screening result against your standards, including identity verification, medical form accuracy, vaccine titers, and OSHA compliance documentation. All findings are reviewed by medical professionals before clearance."
+        },
+        {
+            name: "Ready to Work Status Updates",
+            text: "Once all screenings pass, supervisors receive a clear 'GO' status update. We organize all documentation in an audit-ready structure and provide supervisors with immediate visibility on which workers are fully cleared to begin shifts."
+        }
+    ];
+
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "Service",
@@ -54,6 +74,12 @@ export default function WorkforceHealthScreeningPage() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <HowToJsonLd
+                name="How to Implement Managed Workforce Health Screening"
+                description="Step-by-step process for coordinating pre-employment drug screening, medical exams, vaccinations, and OSHA compliance through FNSG's managed health screening services."
+                steps={howToSteps}
+                totalTime="PT2W"
             />
 
             {/* Task 1: Hero Section */}

@@ -3,6 +3,9 @@ import { Breadcrumbs } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import { Metadata } from 'next';
 import DemoLineChart from '@/app/components/charts/DemoLineChart';
+import AuthorByline from '@/app/components/seo/author-byline';
+import FreshnessBadge from '@/app/components/seo/freshness-badge';
+import CitationSource from '@/app/components/seo/citation-source';
 
 export const metadata: Metadata = {
     title: "Georgia Industrial Workforce Benchmark Report 2025 | FNSG",
@@ -107,6 +110,21 @@ export default function GeorgiaIndustrialReport() {
                     { label: 'Reports', href: '/insights/reports' },
                     { label: 'Georgia Industrial Benchmark', href: '/insights/reports/georgia-industrial-workforce-2025' }
                 ]} />
+
+                {/* Author and Freshness Information */}
+                <div className="mb-8 space-y-3">
+                    <AuthorByline
+                        name="James Whitfield"
+                        title="Senior Workforce Analyst, FNSG"
+                        expertise="Georgia Industrial Labor Markets"
+                        reviewDate="January 2025"
+                    />
+                    <FreshnessBadge
+                        dateModified="2025-01-15"
+                        label="Q1 2025"
+                        updateCadence="Quarterly"
+                    />
+                </div>
 
                 {/* 1. METRIC CONSTANTS (KPI Cards) */}
                 <div className="metrics-row grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 py-8">
@@ -362,7 +380,7 @@ export default function GeorgiaIndustrialReport() {
                 {/* FAQ Section */}
                 <div className="mt-16 pt-8 border-t border-slate-200">
                     <h2 className="text-2xl font-bold text-slate-900 mb-6">Methodology & FAQ</h2>
-                    <div className="grid md:grid-cols-2 gap-6">
+                    <div className="grid md:grid-cols-2 gap-6 mb-8">
                         <div className="bg-slate-50 p-4 rounded-lg">
                             <h4 className="font-bold text-slate-800 text-sm">Data Sources</h4>
                             <p className="text-xs text-slate-600 mt-1">Aggregated anonymized stats from First National Staffing OS platform, combined with BLS and private industry reports.</p>
@@ -370,6 +388,32 @@ export default function GeorgiaIndustrialReport() {
                         <div className="bg-slate-50 p-4 rounded-lg">
                             <h4 className="font-bold text-slate-800 text-sm">Update Frequency</h4>
                             <p className="text-xs text-slate-600 mt-1">This benchmark report is updated quarterly. Next update: Q2 2025.</p>
+                        </div>
+                    </div>
+
+                    {/* Data Attribution & Citation Sources */}
+                    <div className="space-y-4">
+                        <h3 className="font-bold text-slate-800 text-sm">Key Data Sources</h3>
+                        <div className="space-y-3">
+                            <CitationSource
+                                source="FNSG OS Analytics"
+                                detail="Proprietary placement data, Q1 2025"
+                            />
+                            <CitationSource
+                                source="U.S. Bureau of Labor Statistics"
+                                href="https://www.bls.gov/oes/"
+                                detail="Occupational Employment and Wage Statistics, May 2024"
+                            />
+                            <CitationSource
+                                source="Georgia Department of Labor"
+                                href="https://dol.georgia.gov/labor-market-information"
+                                detail="Georgia Labor Market Explorer"
+                            />
+                            <CitationSource
+                                source="OSHA Injury Tracking Application"
+                                href="https://www.osha.gov/injuryreporting"
+                                detail="Establishment-specific injury data"
+                            />
                         </div>
                     </div>
                 </div>

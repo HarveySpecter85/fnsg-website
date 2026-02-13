@@ -10,7 +10,6 @@ export default function KnowledgeGraph() {
             "https://www.facebook.com/people/First-National-Staffing-Group/100077472108918/",
             "https://www.instagram.com/staffing_first_national/"
         ],
-        // AQUÍ ESTÁ LA MAGIA GEO: Conectamos nuestros servicios con conceptos de Wikipedia
         "knowsAbout": [
             {
                 "@type": "Thing",
@@ -31,6 +30,37 @@ export default function KnowledgeGraph() {
                 "@type": "Thing",
                 "name": "Temporary work",
                 "sameAs": "https://en.wikipedia.org/wiki/Temporary_work"
+            }
+        ],
+        "location": [
+            {
+                "@type": "Place",
+                "name": "First National Staffing Group - Atlanta HQ",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Atlanta",
+                    "addressRegion": "GA",
+                    "addressCountry": "US"
+                }
+            },
+            {
+                "@type": "Place",
+                "name": "First National Staffing Group - Smyrna / Cobb County",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "2430 Herodian Way",
+                    "addressLocality": "Smyrna",
+                    "addressRegion": "GA",
+                    "postalCode": "30080",
+                    "addressCountry": "US"
+                }
+            }
+        ],
+        "areaServed": [
+            {
+                "@type": "State",
+                "name": "Georgia",
+                "sameAs": "https://en.wikipedia.org/wiki/Georgia_(U.S._state)"
             }
         ],
         "contactPoint": {

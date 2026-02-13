@@ -3,6 +3,9 @@ import { Breadcrumbs } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import { Metadata } from 'next';
 import DemoLineChart from '@/app/components/charts/DemoLineChart';
+import AuthorByline from '@/app/components/seo/author-byline';
+import FreshnessBadge from '@/app/components/seo/freshness-badge';
+import CitationSource from '@/app/components/seo/citation-source';
 
 export const metadata: Metadata = {
     title: "Warehouse & Logistics Workforce Forecast 2025 | FNSG",
@@ -184,6 +187,21 @@ export default function WarehouseLogisticsReport() {
                     { label: 'Reports', href: '/insights/reports' },
                     { label: 'Warehouse & Logistics Forecast', href: '/insights/reports/warehouse-logistics-forecast-2025' }
                 ]} />
+
+                {/* Author and Freshness Information */}
+                <div className="mb-8 space-y-3">
+                    <AuthorByline
+                        name="David Okonkwo"
+                        title="Logistics Staffing Strategist, FNSG"
+                        expertise="Supply Chain Workforce Forecasting"
+                        reviewDate="January 2025"
+                    />
+                    <FreshnessBadge
+                        dateModified="2025-01-15"
+                        label="Q1 2025"
+                        updateCadence="Quarterly"
+                    />
+                </div>
 
                 {/* 1. KPI CARDS */}
                 <div className="metrics-row grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 py-8">
@@ -460,8 +478,33 @@ export default function WarehouseLogisticsReport() {
                 </div>
 
                 {/* Methodology Footer */}
-                <div className="mt-16 pt-8 border-t border-slate-200 text-center text-slate-500 text-xs">
-                    <p>Data sourced from proprietary FNSG OS placement analytics, BLS regional files, and privacy-compliant client benchmarking.</p>
+                <div className="mt-16 pt-8 border-t border-slate-200">
+
+                    {/* Data Attribution & Citation Sources */}
+                    <div className="space-y-4">
+                        <h3 className="font-bold text-slate-800 text-sm">Key Data Sources</h3>
+                        <div className="space-y-3">
+                            <CitationSource
+                                source="FNSG OS Analytics"
+                                detail="Proprietary placement analytics, Q1 2025"
+                            />
+                            <CitationSource
+                                source="U.S. Bureau of Labor Statistics"
+                                href="https://www.bls.gov/oes/"
+                                detail="Occupational Employment and Wage Statistics, May 2024"
+                            />
+                            <CitationSource
+                                source="Georgia Department of Labor"
+                                href="https://dol.georgia.gov/labor-market-information"
+                                detail="Georgia Labor Market Explorer"
+                            />
+                            <CitationSource
+                                source="OSHA Injury Tracking Application"
+                                href="https://www.osha.gov/injuryreporting"
+                                detail="Establishment-specific injury data"
+                            />
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>

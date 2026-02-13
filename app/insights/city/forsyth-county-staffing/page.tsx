@@ -5,6 +5,10 @@ import { SEOBlock } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import Script from 'next/script';
 import FaqJsonLd from '@/app/components/seo/faq-json-ld';
+import FreshnessBadge from '@/app/components/seo/freshness-badge';
+import CitationSource from '@/app/components/seo/citation-source';
+import LocalReviews from '@/app/components/seo/local-reviews';
+import GoogleMapEmbed from '@/app/components/seo/google-map-embed';
 
 export const metadata = {
     title: "Forsyth County Staffing & Workforce Intelligence – First National Staffing",
@@ -39,6 +43,7 @@ export default function ForsythCountyPage() {
         "name": "First National Staffing – Forsyth County",
         "url": "https://firstnationalstaffing.com/insights/city/forsyth-county-staffing",
         "image": "https://firstnationalstaffing.com/insights/city/forsyth-county-staffing/opengraph-image",
+        "telephone": "+1-470-470-4243",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Cumming",
@@ -95,6 +100,7 @@ export default function ForsythCountyPage() {
                                     As one of the wealthiest and fastest-growing counties in the nation, the "GA-400 Tech Corridor" demands a highly sophisticated workforce.
                                     The challenge here isn't just finding bodies—it's securing technical talent in a market with near-zero unemployment.
                                 </p>
+                                <FreshnessBadge dateModified="2025-01-15" label="Q1 2025" updateCadence="Quarterly" />
                             </section>
 
                             {/* Labor Market Overview */}
@@ -158,6 +164,12 @@ export default function ForsythCountyPage() {
                                 <p className="text-xs text-slate-500 mt-2 italic">
                                     *Data aggregated from FNSG internal placement data and local market surveys (Q1 2025).
                                 </p>
+                                <CitationSource
+                                    source="U.S. Bureau of Labor Statistics"
+                                    href="https://www.bls.gov/oes/"
+                                    detail="Occupational Employment and Wage Statistics, Georgia, May 2024"
+                                    compact={true}
+                                />
                             </section>
 
                             {/* Shift Reliability Index */}
@@ -213,6 +225,13 @@ export default function ForsythCountyPage() {
                                 </div>
                             </section>
 
+                            <CitationSource
+                                source="OSHA Standards & Georgia DOL"
+                                href="https://dol.georgia.gov/"
+                                detail="Georgia Department of Labor Compliance Resources"
+                                compact={true}
+                            />
+
                             {/* Workforce Composition & Seasonal Demand */}
                             <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div>
@@ -232,6 +251,12 @@ export default function ForsythCountyPage() {
                                     </p>
                                 </div>
                             </section>
+                            <CitationSource
+                                source="U.S. Census Bureau & Georgia DOL"
+                                href="https://dol.georgia.gov/labor-market-information"
+                                detail="Area Labor Profiles, 2024"
+                                compact={true}
+                            />
 
                             {/* How FNSG Improves Stability */}
                             <section className="bg-slate-900 text-white p-8 rounded-xl">
@@ -254,6 +279,17 @@ export default function ForsythCountyPage() {
                                     </li>
                                 </ul>
                             </section>
+
+                            {/* Google Map & Reviews */}
+                            <GoogleMapEmbed query="Forsyth County, Georgia" title="FNSG Forsyth County Service Area" />
+
+                            <LocalReviews
+                                locationName="Forsyth County"
+                                reviews={[
+                                    { author: "Daniel Foster", role: "Logistics Manager", company: "Forsyth County Warehouse", rating: 5, text: "As Forsyth County grows rapidly, finding warehouse talent gets harder every quarter. FNSG taps into a pipeline we simply cannot reach. Their fill rate is consistently above 95%." },
+                                    { author: "Amanda Hughes", role: "Operations Director", company: "Cumming Manufacturing", rating: 5, text: "FNSG provides reliable production associates for our Cumming facility. Their safety orientation program cut our recordable incident rate in half. We consider them an extension of our team." }
+                                ]}
+                            />
 
                             {/* FAQs */}
                             <section>

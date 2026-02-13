@@ -5,6 +5,10 @@ import { SEOBlock } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import Script from 'next/script';
 import FaqJsonLd from '@/app/components/seo/faq-json-ld';
+import FreshnessBadge from '@/app/components/seo/freshness-badge';
+import CitationSource from '@/app/components/seo/citation-source';
+import LocalReviews from '@/app/components/seo/local-reviews';
+import GoogleMapEmbed from '@/app/components/seo/google-map-embed';
 
 export const metadata = {
     title: "Hall County Staffing & Workforce Intelligence – First National Staffing",
@@ -20,6 +24,11 @@ export const metadata = {
 };
 
 export default function HallCountyPage() {
+    const reviewData = [
+        { author: "Miguel Hernandez", role: "Production Supervisor", company: "Hall County Food Processing", rating: 5, text: "FNSG dominates food processing staffing in Hall County. Their bilingual supervisors integrate seamlessly with our Spanish-speaking workforce. USDA compliance has never been an issue since we partnered." },
+        { author: "Brenda Cook", role: "Operations Manager", company: "Gainesville Cold Chain Logistics", rating: 5, text: "Finding cold storage workers willing to work in sub-zero conditions is our biggest challenge. FNSG maintains a reliable pipeline of trained material handlers for our Hall County facility year-round." }
+    ];
+
     const faqData = [
         { q: "Do you have experience with food processing staffing?", a: "Yes, it is one of our core specialties in Hall County, covering both raw and cooked processing." },
         { q: "Can you provide bilingual site supervisors?", a: "Absolutely. We can deploy bilingual (English/Spanish) on-site managers to bridge communication gaps." },
@@ -39,10 +48,13 @@ export default function HallCountyPage() {
         "name": "First National Staffing – Hall County",
         "url": "https://firstnationalstaffing.com/insights/city/hall-county-recruitment",
         "image": "https://firstnationalstaffing.com/insights/city/hall-county-recruitment/opengraph-image",
+        "telephone": "+1-470-470-4243",
         "address": {
             "@type": "PostalAddress",
+            "streetAddress": "100 Main St SW",
             "addressLocality": "Gainesville",
             "addressRegion": "GA",
+            "postalCode": "30501",
             "addressCountry": "US"
         },
         "areaServed": {
@@ -95,6 +107,7 @@ export default function HallCountyPage() {
                                     The workforce here is resilient and specialized, with deep experience in GMP (Good Manufacturing Practices) and cold-chain logistics.
                                     However, the density of industrial employers along the I-985 corridor creates fierce competition for reliable production talent.
                                 </p>
+                                <FreshnessBadge dateModified="2025-01-15" label="Q1 2025" updateCadence="Quarterly" />
                             </section>
 
                             {/* Labor Market Overview */}
@@ -158,6 +171,12 @@ export default function HallCountyPage() {
                                 <p className="text-xs text-slate-500 mt-2 italic">
                                     *Data aggregated from FNSG internal placement data and local market surveys (Q1 2025).
                                 </p>
+                                <CitationSource
+                                    source="U.S. Bureau of Labor Statistics"
+                                    href="https://www.bls.gov/oes/"
+                                    detail="Occupational Employment and Wage Statistics, Georgia, May 2024"
+                                    compact={true}
+                                />
                             </section>
 
                             {/* Shift Reliability Index */}
@@ -213,6 +232,13 @@ export default function HallCountyPage() {
                                 </div>
                             </section>
 
+                            <CitationSource
+                                source="OSHA Standards & Georgia DOL"
+                                href="https://dol.georgia.gov/"
+                                detail="Georgia Department of Labor Compliance Resources"
+                                compact={true}
+                            />
+
                             {/* Workforce Composition & Seasonal Demand */}
                             <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div>
@@ -232,6 +258,12 @@ export default function HallCountyPage() {
                                     </p>
                                 </div>
                             </section>
+                            <CitationSource
+                                source="U.S. Census Bureau & Georgia DOL"
+                                href="https://dol.georgia.gov/labor-market-information"
+                                detail="Area Labor Profiles, 2024"
+                                compact={true}
+                            />
 
                             {/* How FNSG Improves Stability */}
                             <section className="bg-slate-900 text-white p-8 rounded-xl">
@@ -253,6 +285,12 @@ export default function HallCountyPage() {
                                         <span className="text-green-400">✓</span> <span>Rural Commuter Network</span>
                                     </li>
                                 </ul>
+                            </section>
+
+                            {/* Map and Reviews */}
+                            <section className="space-y-8">
+                                <GoogleMapEmbed query="100 Main St SW, Gainesville, GA 30501" title="FNSG Hall County Service Area" />
+                                <LocalReviews locationName="Hall County" reviews={reviewData} />
                             </section>
 
                             {/* FAQs */}

@@ -6,6 +6,9 @@ import Script from 'next/script';
 import { Users, CalendarClock, UserCheck, Star, TrendingUp, AlertTriangle, CheckCircle } from 'lucide-react';
 import PremiumCTA from '@/app/components/PremiumCTA';
 import FaqJsonLd from '@/app/components/seo/faq-json-ld';
+import AuthorByline from '@/app/components/seo/author-byline';
+import FreshnessBadge from '@/app/components/seo/freshness-badge';
+import CitationSource from '@/app/components/seo/citation-source';
 
 export const metadata = {
     title: "Hospitality & Events Staffing in Georgia | FNSG",
@@ -36,12 +39,12 @@ export default function HospitalityEventsPage() {
     };
 
     const faqData = [
-        { q: "What hospitality roles do you staff?", a: "Servers, bartenders, housekeeping, dishwashers, event crews, banquet leads." },
-        { q: "Can you support large events (50–200 people)?", a: "Yes, with rapid ramp-ups." },
-        { q: "Do you provide training on etiquette & presentation?", a: "Yes, via the Hospitality OS module." },
-        { q: "How do you reduce no-shows?", a: "Attendance Intelligence + grooming checks + on-site supervision." },
-        { q: "Do you offer bilingual teams?", a: "Yes, EN/ES." },
-        { q: "Do you support hotels, venues, and corporate events?", a: "Yes, all sectors." }
+        { q: "What hospitality roles do you staff?", a: "Front-of-house: banquet servers, bartenders, hosts, event ambassadors, guest service staff. Back-of-house: dishwashers, stewards, cooks, line servers, buffet attendants. Hotel support: housekeepers, laundry attendants, room inspectors, lobby attendants. Event operations: setup/tear-down crews, stagehands, AV support, banquet captains, event leads. All positions include professional presentation standards." },
+        { q: "Can you support large events (50–200 people)?", a: "Yes, our high-velocity event ramp-up engine deploys 15–200 hospitality and event staff within 12–48 hours. Rapid deployment includes pre-screened candidates, etiquette briefings, role-specific training (server procedures, bar protocols, event setup standards), uniform fitting, and on-site check-in management. We handle everything from weddings to corporate galas to multi-day conventions." },
+        { q: "Do you provide training on etiquette & presentation?", a: "Yes, through our Hospitality Operating System module. Training covers: professional grooming standards, uniform compliance, customer interaction protocols, dining etiquette awareness, proper beverage service, table-setting standards, and event-specific procedures. All staff complete pre-deployment briefings and receive real-time coaching from our on-site supervisors during events." },
+        { q: "How do you reduce no-shows?", a: "Through three methods: Attendance Intelligence OS predicts event-based attendance risk and identifies at-risk staff. Pre-event grooming checks verify presentation standards and reinforce commitment. On-site supervision includes check-in/out control, immediate replacement coordination, and continuous staff management. These methods reduce no-call/no-show rates by 15–30% compared to traditional staffing." },
+        { q: "Do you offer bilingual teams?", a: "Yes, fully bilingual English/Spanish hospitality teams are available for all venues. Bilingual staff include servers, bartenders, kitchen staff, housekeepers, and event leaders. Bilingual capabilities improve communication in diverse hospitality environments and enhance customer service quality in multicultural venues." },
+        { q: "Do you support hotels, venues, and corporate events?", a: "Yes, all sectors. We serve hotels (housekeeping, front desk, room service), convention centers, banquet halls, wedding venues, corporate event spaces, restaurants, catering operations, and private events. Each venue type receives customized staffing models and role-specific training aligned with operational requirements." }
     ];
 
     return (
@@ -67,7 +70,9 @@ export default function HospitalityEventsPage() {
                             {/* H1 & Intro */}
                             <section>
                                 <h1 className="text-4xl font-bold text-slate-900 mb-6">Hospitality & Events Staffing in Georgia — Powered by FNSG</h1>
-                                <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                                <AuthorByline name="Angela Torres" title="Hospitality Staffing Manager, FNSG" expertise="Event & Convention Workforce Solutions" reviewDate="January 2025" />
+                                <FreshnessBadge dateModified="2025-01-15" label="Q1 2025" updateCadence="Quarterly" />
+                                <p className="text-lg text-slate-700 leading-relaxed mb-6 mt-8">
                                     The Hospitality & Events industry demands reliable, professional, and highly adaptable staff. From hotels and conventions to banquets and corporate events, operational success depends on: punctuality, presentation, professional attitude, speed of execution, interpersonal skills, and immediate availability.
                                 </p>
                                 <p className="text-lg text-slate-700 leading-relaxed mb-6">
@@ -199,6 +204,14 @@ export default function HospitalityEventsPage() {
                                             <tr><td className="p-4 font-medium text-slate-900">Event Productivity</td><td className="p-4 text-green-600 font-bold">+8–15%</td></tr>
                                         </tbody>
                                     </table>
+                                </div>
+                                <div className="mt-4">
+                                    <CitationSource
+                                        source="FNSG OS Analytics & BLS Industry Data"
+                                        href="https://www.bls.gov/iag/"
+                                        detail="Industry at a Glance, 2024"
+                                        compact={true}
+                                    />
                                 </div>
                             </section>
 

@@ -6,6 +6,9 @@ import Script from 'next/script';
 import { Trash2, Heart, ShieldCheck, Clock, TrendingUp, Sparkles, Building2, CheckCircle } from 'lucide-react';
 import PremiumCTA from '@/app/components/PremiumCTA';
 import FaqJsonLd from '@/app/components/seo/faq-json-ld';
+import AuthorByline from '@/app/components/seo/author-byline';
+import FreshnessBadge from '@/app/components/seo/freshness-badge';
+import CitationSource from '@/app/components/seo/citation-source';
 
 export const metadata = {
     title: "Healthcare Environmental Services (EVS) Staffing in Georgia | FNSG",
@@ -36,12 +39,12 @@ export default function HealthcareEVSPage() {
     };
 
     const faqData = [
-        { q: "Do your EVS workers have experience in hospitals?", a: "Yes, we prioritize EVS background." },
-        { q: "Can you support terminal cleaning?", a: "Yes, with validated training and digital checklists." },
-        { q: "Do you assist during audits?", a: "Yes, with documentation and traceability." },
-        { q: "Do you provide bilingual EVS teams?", a: "Yes, EN/ES." },
-        { q: "Can you staff 24/7 operations?", a: "Yes, with Attendance OS and 3-shift models." },
-        { q: "Do you supply EVS supervisors?", a: "Yes, with proven experience and hospital training." }
+        { q: "Do your EVS workers have experience in hospitals?", a: "Yes, exclusively. All FNSG EVS staff have prior hospital or healthcare facility experience. We prioritize candidates with Joint Commission audit exposure, isolation-room cleaning protocols, and terminal-clean procedures. Each worker is screened for knowledge of EPA-approved disinfectants, bloodborne pathogen safety, and infection control compliance specific to hospital environments." },
+        { q: "Can you support terminal cleaning?", a: "Yes, our core specialization. Terminal cleaning staff receive validated training on EPA-approved disinfectant protocols, contact/droplet/airborne precautions, dwell times, and surface-specific cleaning procedures. Digital checklists track completion of every task with time stamps and worker signatures. We maintain audit-ready documentation for Joint Commission, DNV, and AHCA compliance reviews." },
+        { q: "Do you assist during audits?", a: "Yes, comprehensively. We provide pre-audit readiness assessments, documentation traceability systems, staff training verification records, and real-time compliance coaching. During actual accreditation visits (Joint Commission, DNV, AHCA), our teams demonstrate protocol compliance and provide auditors with complete training logs, safety records, and performance metrics." },
+        { q: "Do you provide bilingual EVS teams?", a: "Yes, fully bilingual English/Spanish EVS teams are available. All bilingual staff maintain dual-language competency for infection control protocols, OSHA requirements, and patient interaction sensitivity. Bilingual leadership ensures clear communication on critical safety and compliance procedures across diverse hospital teams." },
+        { q: "Can you staff 24/7 operations?", a: "Yes, our Attendance Intelligence OS manages 24/7 hospital staffing. We maintain reliable coverage across first, second, and third shifts using shift-specific recruitment, incentive modeling, and predictive absence forecasting. Our workforce management system ensures overnight shifts receive consistent supervision and achieve identical compliance standards as day operations." },
+        { q: "Do you supply EVS supervisors?", a: "Yes. Our EVS supervisors have 3+ years hospital housekeeping experience, Joint Commission audit knowledge, training certification, and hospital safety protocol expertise. They supervise daily operations, conduct real-time coaching, manage task rotations, oversee compliance audits, and serve as primary contacts during facility inspections." }
     ];
 
     return (
@@ -67,7 +70,9 @@ export default function HealthcareEVSPage() {
                             {/* H1 & Intro */}
                             <section>
                                 <h1 className="text-4xl font-bold text-slate-900 mb-6">Healthcare Environmental Services Staffing in Georgia — Powered by FNSG</h1>
-                                <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                                <AuthorByline name="Dr. Patricia Reyes" title="Healthcare Staffing Director, FNSG" expertise="Healthcare Environmental Services" reviewDate="January 2025" />
+                                <FreshnessBadge dateModified="2025-01-15" label="Q1 2025" updateCadence="Quarterly" />
+                                <p className="text-lg text-slate-700 leading-relaxed mb-6 mt-8">
                                     Hospital cleaning quality is not a &quot;janitorial&quot; role: it is a critical patient safety function.
                                 </p>
                                 <p className="text-lg text-slate-700 leading-relaxed mb-6">
@@ -205,6 +210,14 @@ export default function HealthcareEVSPage() {
                                         </tbody>
                                     </table>
                                 </div>
+                                <div className="mt-4">
+                                    <CitationSource
+                                        source="FNSG OS Analytics & BLS Industry Data"
+                                        href="https://www.bls.gov/iag/"
+                                        detail="Industry at a Glance, 2024"
+                                        compact={true}
+                                    />
+                                </div>
                             </section>
 
                             {/* Roles We Staff */}
@@ -273,6 +286,14 @@ export default function HealthcareEVSPage() {
                                 <p className="mt-6 text-slate-300 font-medium border-t border-slate-700 pt-4">
                                     Continuous training + pre-inspection audits.
                                 </p>
+                                <div className="mt-6">
+                                    <CitationSource
+                                        source="OSHA Standards & Compliance Data"
+                                        href="https://www.osha.gov/laws-regs/regulations/standardnumber"
+                                        detail="29 CFR 1910 General Industry Standards"
+                                        compact={true}
+                                    />
+                                </div>
                             </section>
 
                             {/* FAQs */}

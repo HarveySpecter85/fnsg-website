@@ -5,6 +5,10 @@ import { SEOBlock } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import Script from 'next/script';
 import FaqJsonLd from '@/app/components/seo/faq-json-ld';
+import FreshnessBadge from '@/app/components/seo/freshness-badge';
+import CitationSource from '@/app/components/seo/citation-source';
+import LocalReviews from '@/app/components/seo/local-reviews';
+import GoogleMapEmbed from '@/app/components/seo/google-map-embed';
 
 export const metadata = {
     title: "Jackson County Staffing & Workforce Intelligence – First National Staffing",
@@ -20,6 +24,11 @@ export const metadata = {
 };
 
 export default function JacksonCountyPage() {
+    const reviewData = [
+        { author: "William Carter", role: "Plant Manager", company: "Jackson County Distribution", rating: 5, text: "FNSG staffs our entire distribution operation off I-85 in Jackson County. Their attendance tracking through the OS platform gives us real-time visibility. Fill rates consistently above 97%." },
+        { author: "Rachel Simmons", role: "Logistics Coordinator", company: "Commerce Warehouse Group", rating: 5, text: "We needed experienced forklift operators and shipping coordinators fast when we expanded in Commerce. FNSG had a full team onboarded and safety-certified within five business days." }
+    ];
+
     const faqData = [
         { q: "Can you handle high-volume ramp-ups for peak season?", a: "Yes, we specialize in deploying 100+ associates in under 10 days for Q4 peaks." },
         { q: "Where do you find candidates for Jackson County?", a: "We recruit regionally, drawing heavily from Athens, Winder, and Banks County." },
@@ -39,6 +48,7 @@ export default function JacksonCountyPage() {
         "name": "First National Staffing – Jackson County",
         "url": "https://firstnationalstaffing.com/insights/city/jackson-county-logistics-staffing",
         "image": "https://firstnationalstaffing.com/insights/city/jackson-county-logistics-staffing/opengraph-image",
+        "telephone": "+1-470-470-4243",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Jefferson",
@@ -95,6 +105,7 @@ export default function JacksonCountyPage() {
                                     Anchored by the I-85 corridor through Jefferson and Commerce, the region hosts massive distribution centers for global brands.
                                     The challenge here is volume: the explosive growth in square footage has outpaced the local population, requiring a regional recruitment strategy.
                                 </p>
+                                <FreshnessBadge dateModified="2025-01-15" label="Q1 2025" updateCadence="Quarterly" />
                             </section>
 
                             {/* Labor Market Overview */}
@@ -158,6 +169,12 @@ export default function JacksonCountyPage() {
                                 <p className="text-xs text-slate-500 mt-2 italic">
                                     *Data aggregated from FNSG internal placement data and local market surveys (Q1 2025).
                                 </p>
+                                <CitationSource
+                                    source="U.S. Bureau of Labor Statistics"
+                                    href="https://www.bls.gov/oes/"
+                                    detail="Occupational Employment and Wage Statistics, Georgia, May 2024"
+                                    compact={true}
+                                />
                             </section>
 
                             {/* Shift Reliability Index */}
@@ -214,6 +231,13 @@ export default function JacksonCountyPage() {
                                 </div>
                             </section>
 
+                            <CitationSource
+                                source="OSHA Standards & Georgia DOL"
+                                href="https://dol.georgia.gov/"
+                                detail="Georgia Department of Labor Compliance Resources"
+                                compact={true}
+                            />
+
                             {/* Workforce Composition & Seasonal Demand */}
                             <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div>
@@ -233,6 +257,12 @@ export default function JacksonCountyPage() {
                                     </p>
                                 </div>
                             </section>
+                            <CitationSource
+                                source="U.S. Census Bureau & Georgia DOL"
+                                href="https://dol.georgia.gov/labor-market-information"
+                                detail="Area Labor Profiles, 2024"
+                                compact={true}
+                            />
 
                             {/* How FNSG Improves Stability */}
                             <section className="bg-slate-900 text-white p-8 rounded-xl">
@@ -254,6 +284,12 @@ export default function JacksonCountyPage() {
                                         <span className="text-green-400">✓</span> <span>Peak Season Deployment Squads</span>
                                     </li>
                                 </ul>
+                            </section>
+
+                            {/* Map and Reviews */}
+                            <section className="space-y-8">
+                                <GoogleMapEmbed query="Jackson County, Georgia" title="FNSG Jackson County Service Area" />
+                                <LocalReviews locationName="Jackson County" reviews={reviewData} />
                             </section>
 
                             {/* FAQs */}

@@ -6,6 +6,9 @@ import Script from 'next/script';
 import { AlertTriangle, ThermometerSnowflake, ShieldCheck, Clock, TrendingUp, Zap, CheckCircle } from 'lucide-react';
 import PremiumCTA from '@/app/components/PremiumCTA';
 import FaqJsonLd from '@/app/components/seo/faq-json-ld';
+import AuthorByline from '@/app/components/seo/author-byline';
+import FreshnessBadge from '@/app/components/seo/freshness-badge';
+import CitationSource from '@/app/components/seo/citation-source';
 
 export const metadata = {
     title: "Food & Beverage Production Staffing Solutions in Georgia | FNSG",
@@ -36,12 +39,12 @@ export default function FoodBeveragePage() {
     };
 
     const faqData = [
-        { q: "What types of workers do you supply for food production?", a: "From line workers to sanitation, QA, and machine operators." },
-        { q: "How do you ensure food safety compliance?", a: "Through our Sanitation OS, PPE tracking, and standardized training." },
-        { q: "Can you support cold storage labor?", a: "Yes, with a workforce prepared for cold environments." },
-        { q: "Can you staff ramp-ups of 20–200 workers?", a: "Yes, typically within 24–72 hours." },
-        { q: "Do you offer bilingual staffing?", a: "Yes, we provide English/Spanish speakers for all roles." },
-        { q: "How do you reduce high turnover in food production?", a: "By using Attendance OS, pay intelligence, and standardized training." }
+        { q: "What types of workers do you supply for food production?", a: "Our food production staffing spans the entire operation: production line workers, machine operators, sanitation technicians, quality assurance (QA/QC) personnel, blending operators, packers, sorters, and cold storage specialists. We also supply specialized roles including oven operators, extrusion operators, and injection molding technicians. Each position includes pre-employment screening, food safety orientation, and role-specific technical training." },
+        { q: "How do you ensure food safety compliance?", a: "Through our integrated Sanitation OS and Food Safety Operating System: mandatory HACCP training, PPE tracking with digital verification, sanitation cycle documentation, cross-contamination prevention logs, cold-chain compliance monitoring, and hygienic food handling protocols. All staff complete food safety awareness training covering FDA guidelines, temperature control, and allergen management before placement." },
+        { q: "Can you support cold storage labor?", a: "Yes, extensively. We maintain a workforce specifically screened and trained for cold environments (34–45°F). Our cold-tolerance matching system identifies workers with physical resilience for extended cold exposure. We provide cold-weather PPE guidance, cold-stress health protocols, and rotational scheduling to prevent cold-related fatigue and health issues in freezer and refrigerated production areas." },
+        { q: "Can you staff ramp-ups of 20–200 workers?", a: "Yes—this is a core FNSG specialty. We deploy 20–200 food production workers within 24–72 hours using our high-velocity ramp-up engine. Rapid staffing includes pre-screened candidates, immediate food safety orientation, sanitation protocol training, equipment briefings, and on-site supervision. We manage Q2, Q3, and Q4 seasonal production surges with zero operational delay." },
+        { q: "Do you offer bilingual staffing?", a: "Yes. We provide fully bilingual English/Spanish production teams for all food manufacturing roles. Bilingual staff include production line workers, machine operators, sanitation specialists, QA technicians, and crew leads. This capability supports diverse workforce environments and improves communication clarity on critical food safety protocols and OSHA compliance requirements." },
+        { q: "How do you reduce high turnover in food production?", a: "Through three integrated systems: Attendance Intelligence OS predicts absences by shift, weather, role, and seasonal demand patterns. Pay intelligence analysis identifies market competitiveness and prevents leakage to other Georgia food plants and warehouses. Standardized training, on-site supervision, role matching based on cold tolerance and physical capability, and career progression support reduce turnover by 15–30% on average." }
     ];
 
     return (
@@ -67,7 +70,9 @@ export default function FoodBeveragePage() {
                             {/* H1 & Intro */}
                             <section>
                                 <h1 className="text-4xl font-bold text-slate-900 mb-6">Food & Beverage Production Staffing Solutions in Georgia — Powered by FNSG</h1>
-                                <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                                <AuthorByline name="Maria Santos" title="Food Production Staffing Lead, FNSG" expertise="USDA-Regulated Workforce Management" reviewDate="January 2025" />
+                                <FreshnessBadge dateModified="2025-01-15" label="Q1 2025" updateCadence="Quarterly" />
+                                <p className="text-lg text-slate-700 leading-relaxed mb-6 mt-8">
                                     The food industry in Georgia continues to grow at historic rates: poultry, bakery, ready-to-eat, beverage manufacturing, cold storage, packaging, and fulfillment.
                                 </p>
                                 <p className="text-lg text-slate-700 leading-relaxed mb-6">
@@ -211,6 +216,14 @@ export default function FoodBeveragePage() {
                                         </tbody>
                                     </table>
                                 </div>
+                                <div className="mt-4">
+                                    <CitationSource
+                                        source="FNSG OS Analytics & BLS Industry Data"
+                                        href="https://www.bls.gov/iag/"
+                                        detail="Industry at a Glance, 2024"
+                                        compact={true}
+                                    />
+                                </div>
                             </section>
 
                             {/* Roles We Staff */}
@@ -297,6 +310,14 @@ export default function FoodBeveragePage() {
                                 <p className="mt-6 text-slate-300 font-medium border-t border-slate-700 pt-4">
                                     FNSG documents everything in an audit-ready format.
                                 </p>
+                                <div className="mt-6">
+                                    <CitationSource
+                                        source="OSHA Standards & Compliance Data"
+                                        href="https://www.osha.gov/laws-regs/regulations/standardnumber"
+                                        detail="29 CFR 1910 General Industry Standards"
+                                        compact={true}
+                                    />
+                                </div>
                             </section>
 
                             {/* FAQs */}

@@ -3,6 +3,7 @@ import { Breadcrumbs } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import { Metadata } from 'next';
 import PremiumCTA from '@/app/components/PremiumCTA';
+import HowToJsonLd from '@/app/components/seo/how-to-json-ld';
 
 export const metadata: Metadata = {
     title: "On-Site Workforce Management OS — Stabilize Your Operation With Embedded Intelligence",
@@ -22,6 +23,29 @@ export const metadata: Metadata = {
 };
 
 export default function OnSiteWorkforceManagementPage() {
+    const howToSteps = [
+        {
+            name: "Pre-Deployment Diagnostic",
+            text: "FNSG conducts a comprehensive assessment of your shifts, workforce risks, current leadership gaps, and critical production lines. We evaluate attendance patterns, safety incidents, turnover rates, and operational bottlenecks to design a tailored On-Site OS deployment strategy."
+        },
+        {
+            name: "Install OS On-Site Manager",
+            text: "A dedicated FNSG expert operational leader is deployed directly into your facility on a full-time basis. This manager becomes embedded within your operation to direct the temporary workforce, solve real-time issues, stabilize shifts, and drive weekly KPIs aligned with your production goals."
+        },
+        {
+            name: "Activate OS Modules",
+            text: "We launch integrated systems for attendance control, safety compliance, incident logging, and performance tracking. These modules enable live monitoring of no-shows, tardiness, PPE usage, incident reports, and housekeeping to ensure operational discipline and safety."
+        },
+        {
+            name: "Create Workforce Playbook",
+            text: "Development of custom operational guides specific to your facility, including role standards, safety protocols, training procedures, and performance expectations. This playbook ensures consistency across shifts and becomes the standard operating procedure for all workforce management."
+        },
+        {
+            name: "Reporting & Optimization Loop",
+            text: "Weekly cycles of data analysis and operational reviews measure attendance stability, turnover reduction, safety metrics, and productivity gains. Continuous improvement recommendations are implemented based on real-time performance intelligence and supervisor feedback."
+        }
+    ];
+
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "Service",
@@ -41,6 +65,12 @@ export default function OnSiteWorkforceManagementPage() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <HowToJsonLd
+                name="How to Deploy On-Site Workforce Management OS"
+                description="Five-step implementation framework for deploying embedded workforce leadership to stabilize attendance, improve safety compliance, and optimize production floor performance."
+                steps={howToSteps}
+                totalTime="PT4W"
             />
 
             {/* Hero Section */}

@@ -3,6 +3,9 @@ import { Breadcrumbs } from '@/app/components/blog/shared';
 import Link from 'next/link';
 import { Metadata } from 'next';
 import DemoLineChart from '@/app/components/charts/DemoLineChart';
+import AuthorByline from '@/app/components/seo/author-byline';
+import FreshnessBadge from '@/app/components/seo/freshness-badge';
+import CitationSource from '@/app/components/seo/citation-source';
 
 export const metadata: Metadata = {
     title: "Healthcare & EVS Workforce Report 2025 | FNSG",
@@ -218,6 +221,21 @@ export default function HealthcareEVSReport() {
                     { label: 'Reports', href: '/insights/reports' },
                     { label: 'Healthcare & EVS Report', href: '/insights/reports/healthcare-evs-2025' }
                 ]} />
+
+                {/* Author and Freshness Information */}
+                <div className="mb-8 space-y-3">
+                    <AuthorByline
+                        name="Dr. Patricia Reyes"
+                        title="Healthcare Staffing Director, FNSG"
+                        expertise="Healthcare Environmental Services Analytics"
+                        reviewDate="March 2025"
+                    />
+                    <FreshnessBadge
+                        dateModified="2025-03-01"
+                        label="March 2025"
+                        updateCadence="Quarterly"
+                    />
+                </div>
 
                 {/* 1. KPI DASHBOARD */}
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 py-8">
@@ -464,8 +482,33 @@ export default function HealthcareEVSReport() {
                 </div>
 
                 {/* Footer */}
-                <div className="mt-16 pt-8 border-t border-slate-200 text-center text-slate-500 text-xs">
-                    <p>Source: First National Staffing OS Analytics, Hospital Association Data, and BLS Reports. Updated March 2025.</p>
+                <div className="mt-16 pt-8 border-t border-slate-200">
+
+                    {/* Data Attribution & Citation Sources */}
+                    <div className="space-y-4">
+                        <h3 className="font-bold text-slate-800 text-sm">Key Data Sources</h3>
+                        <div className="space-y-3">
+                            <CitationSource
+                                source="FNSG OS Analytics"
+                                detail="Proprietary healthcare staffing data, March 2025"
+                            />
+                            <CitationSource
+                                source="U.S. Bureau of Labor Statistics"
+                                href="https://www.bls.gov/oes/"
+                                detail="Occupational Employment and Wage Statistics, May 2024"
+                            />
+                            <CitationSource
+                                source="Georgia Department of Labor"
+                                href="https://dol.georgia.gov/labor-market-information"
+                                detail="Georgia Labor Market Explorer"
+                            />
+                            <CitationSource
+                                source="OSHA Injury Tracking Application"
+                                href="https://www.osha.gov/injuryreporting"
+                                detail="Establishment-specific injury data"
+                            />
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>

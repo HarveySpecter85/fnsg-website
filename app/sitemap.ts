@@ -87,7 +87,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/insights/city/jackson-county-logistics-staffing',
         '/insights/city/norcross',
         '/insights/city/savannah-logistics-staffing',
+        '/insights/city/smyrna-staffing',
         '/insights/city/south-fulton',
+        '/insights/city/marietta-staffing',
     ];
 
     /* ── City Deep-Dive Sub-Pages ── */

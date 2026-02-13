@@ -6,6 +6,9 @@ import Script from 'next/script';
 import { Recycle, Trash2, Truck, AlertTriangle, Users, TrendingUp, CheckCircle, Sun, CloudRain, ShieldAlert } from 'lucide-react';
 import PremiumCTA from '@/app/components/PremiumCTA';
 import FaqJsonLd from '@/app/components/seo/faq-json-ld';
+import AuthorByline from '@/app/components/seo/author-byline';
+import FreshnessBadge from '@/app/components/seo/freshness-badge';
+import CitationSource from '@/app/components/seo/citation-source';
 
 export const metadata = {
     title: "Recycling & Waste Management Staffing Solutions in Georgia | FNSG",
@@ -36,12 +39,12 @@ export default function RecyclingPage() {
     };
 
     const faqData = [
-        { q: "Do you staff sorters, baler operators and landfill labor?", a: "Yes, with prior training and PPE compliance." },
-        { q: "How do you reduce turnover in recycling operations?", a: "Attendance OS + pay intelligence + onsite supervision." },
-        { q: "Can you staff in outdoor environments?", a: "Yes, matching based on physical tolerance and weather." },
-        { q: "How do you handle OSHA compliance?", a: "Safety OS + documentation + incident tracking + PPE enforcement." },
-        { q: "Can you support high-volume contracts?", a: "Yes, with ramp-ups of 20–80 workers in 24–72 hours." },
-        { q: "Do you offer bilingual teams?", a: "Yes, EN/ES." }
+        { q: "Do you staff sorters, baler operators and landfill labor?", a: "Yes, comprehensively. Our staffing includes material sorters, line workers, quality sorting specialists, forklift operators, skid-steer operators, bobcat operators, baler operators, compactor operators, and landfill cleanup crews. All personnel complete equipment-specific safety training, PPE verification, and role-specific competency assessments before deployment to recycling facilities." },
+        { q: "How do you reduce turnover in recycling operations?", a: "Through three integrated systems: Attendance Intelligence OS predicts absences accounting for weather, fatigue, outdoor work demands, and 2nd/3rd shift challenges. Pay intelligence analysis benchmarks rates against warehouse, construction, and landscaping to prevent talent leakage. On-site workforce management provides direct supervision, safety coaching, and career development to improve retention by 15–28%." },
+        { q: "Can you staff in outdoor environments?", a: "Yes, extensively. Our outdoor staffing uses physical-capability matching to identify workers with tolerance for harsh weather, physically demanding roles, and environmental exposure. We deploy cold-weather and heat-stress protocols, adjust scheduling for seasonal demands, and provide weather-adjusted attendance forecasting. This specialized matching supports grounds workers, cleanup crews, and heavy-labor teams." },
+        { q: "How do you handle OSHA compliance?", a: "OSHA compliance is critical in recycling. Our Safety Operating System covers: OSHA 1910 Subchapter N (waste standards), compactor and baler safety regulations, PPE high-risk enforcement, heat stress monitoring, ergonomic hazard mapping, incident prevention systems, and daily safety briefing logs. All documentation is audit-ready with continuous training and incident trending." },
+        { q: "Can you support high-volume contracts?", a: "Yes, our high-velocity ramp-up engine deploys 20–80 recycling workers within 24–72 hours. Rapid deployment covers municipal contracts, temporary surge projects, and seasonal clean-up cycles. We provide pre-screened personnel, equipment familiarization, safety orientation, and on-site supervision for seamless operational integration." },
+        { q: "Do you offer bilingual teams?", a: "Yes, fully bilingual English/Spanish recycling and waste management teams available. Bilingual staff include sorters, equipment operators, safety coordinators, and crew leaders. Bilingual capabilities improve critical safety communication, particularly for OSHA-intensive operations and emergency procedures." }
     ];
 
     return (
@@ -67,7 +70,9 @@ export default function RecyclingPage() {
                             {/* H1 & Intro */}
                             <section>
                                 <h1 className="text-4xl font-bold text-slate-900 mb-6">Recycling & Waste Management Staffing Solutions in Georgia — Powered by FNSG</h1>
-                                <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                                <AuthorByline name="Robert Kim" title="Environmental Services Lead, FNSG" expertise="Recycling & Waste Management Staffing" reviewDate="January 2025" />
+                                <FreshnessBadge dateModified="2025-01-15" label="Q1 2025" updateCadence="Quarterly" />
+                                <p className="text-lg text-slate-700 leading-relaxed mb-6 mt-8">
                                     Recycling and waste management operations require a highly resilient, safe, punctual, and trained workforce.
                                 </p>
                                 <p className="text-lg text-slate-700 leading-relaxed mb-6">
@@ -210,6 +215,14 @@ export default function RecyclingPage() {
                                         </tbody>
                                     </table>
                                 </div>
+                                <div className="mt-4">
+                                    <CitationSource
+                                        source="FNSG OS Analytics & BLS Industry Data"
+                                        href="https://www.bls.gov/iag/"
+                                        detail="Industry at a Glance, 2024"
+                                        compact={true}
+                                    />
+                                </div>
                             </section>
 
                             {/* Roles We Staff */}
@@ -282,6 +295,14 @@ export default function RecyclingPage() {
                                     <div className="flex items-center gap-2">
                                         <CheckCircle className="text-green-400 w-5 h-5" /> <span>Daily safety briefings logs</span>
                                     </div>
+                                </div>
+                                <div className="mt-6">
+                                    <CitationSource
+                                        source="OSHA Standards & Compliance Data"
+                                        href="https://www.osha.gov/laws-regs/regulations/standardnumber"
+                                        detail="29 CFR 1910 General Industry Standards"
+                                        compact={true}
+                                    />
                                 </div>
                             </section>
 

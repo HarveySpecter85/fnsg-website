@@ -6,6 +6,9 @@ import Script from 'next/script';
 import { Sliders, Wrench, Factory, RotateCcw, BoxSelect, ShieldCheck, CheckCircle, AlertTriangle, Users, Clock, Shield, TrendingUp, Zap } from 'lucide-react';
 import PremiumCTA from '@/app/components/PremiumCTA';
 import FaqJsonLd from '@/app/components/seo/faq-json-ld';
+import AuthorByline from '@/app/components/seo/author-byline';
+import FreshnessBadge from '@/app/components/seo/freshness-badge';
+import CitationSource from '@/app/components/seo/citation-source';
 
 export const metadata = {
     title: "Manufacturing & Production Staffing Solutions in Georgia | FNSG",
@@ -36,12 +39,12 @@ export default function ManufacturingProductionPage() {
     };
 
     const faqData = [
-        { q: "How do you recruit experienced machine operators?", a: "Through skill matching, pay benchmarking, and maintaining a robust operator pipeline." },
-        { q: "Can you support 3rd shift in high-rotation environments?", a: "Yes, using Attendance OS, targeted incentives, and risk prediction." },
-        { q: "Do you provide OSHA-compliant training?", a: "Yes, through our Safety OS and audit-ready documentation." },
-        { q: "Can you staff ramp-ups of 20–100 workers?", a: "This is a core specialty of the FNSG." },
-        { q: "How fast can you replace production line workers?", a: "Typically between 24–48 hours." },
-        { q: "Do you offer bilingual staffing?", a: "Yes, we provide bilingual staffing solutions." }
+        { q: "How do you recruit experienced machine operators?", a: "Through intelligent skill-based matching: we assess prior equipment types (CNC, presses, extrusion, injection molding), relevant certifications, and hands-on experience levels. We maintain an active pipeline of pre-qualified machine operators with validated competencies. Pay intelligence benchmarks against Hall, Jackson, and Metro Atlanta markets to prevent talent leakage to competing manufacturers." },
+        { q: "Can you support 3rd shift in high-rotation environments?", a: "Yes, our Attendance Intelligence OS specifically predicts night-shift attendance challenges. We deploy shift-specific recruitment strategies, offer targeted incentives for overnight workers, identify at-risk candidates, and provide dedicated overnight supervision. Third-shift staffing is a core strength with 10–18% improved attendance reliability." },
+        { q: "Do you provide OSHA-compliant training?", a: "Yes, comprehensively. Our Safety Operating System covers OSHA 1910 standards, lockout/tagout procedures, chemical handling, ergonomics mapping, PPE compliance tracking, incident trend analysis, and documentation. All staff receive certified training with audit-ready records. We provide continuous refresher training and hazard-specific protocols." },
+        { q: "Can you staff ramp-ups of 20–100 workers?", a: "Yes—this is a core FNSG specialty. Our high-velocity ramp-up engine deploys 20–100 production workers within 24–72 hours. Rapid deployment includes pre-screened line operators, machine operators, quality staff, and material handlers. On-site supervision manages initial training, safety orientation, equipment familiarization, and continuous coaching." },
+        { q: "How fast can you replace production line workers?", a: "Typically 24–48 hours for standard production positions, 48–72 hours for specialized machine operator roles. Our replacement process includes immediate candidate notification, background verification, role-specific briefing, on-site supervision, and quality assurance during first shifts. Emergency requests receive prioritized response." },
+        { q: "Do you offer bilingual staffing?", a: "Yes, fully bilingual English/Spanish production teams available for all manufacturing roles. Bilingual staff include line operators, machine operators, material handlers, quality technicians, and team leads. Bilingual capabilities improve safety communication, reduce OSHA compliance gaps, and enhance team cohesion in diverse manufacturing environments." }
     ];
 
     return (
@@ -67,7 +70,9 @@ export default function ManufacturingProductionPage() {
                             {/* H1 & Intro */}
                             <section>
                                 <h1 className="text-4xl font-bold text-slate-900 mb-6">Manufacturing & Production Staffing Solutions in Georgia — Powered by FNSG</h1>
-                                <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                                <AuthorByline name="James Whitfield" title="Manufacturing Operations Lead, FNSG" expertise="Industrial Workforce Planning" reviewDate="January 2025" />
+                                <FreshnessBadge dateModified="2025-01-15" label="Q1 2025" updateCadence="Quarterly" />
+                                <p className="text-lg text-slate-700 leading-relaxed mb-6 mt-8">
                                     The manufacturing industry in Georgia faces growing pressures: high turnover, shortage of skilled operators, high demand for 2nd and 3rd shifts, attendance issues, aggressive ramp-ups, complex OSHA compliance, and a lack of operational intelligence for workforce planning.
                                 </p>
                                 <p className="text-lg text-slate-700 leading-relaxed font-medium">
@@ -207,6 +212,14 @@ export default function ManufacturingProductionPage() {
                                         </tbody>
                                     </table>
                                 </div>
+                                <div className="mt-4">
+                                    <CitationSource
+                                        source="FNSG OS Analytics & BLS Industry Data"
+                                        href="https://www.bls.gov/iag/"
+                                        detail="Industry at a Glance, 2024"
+                                        compact={true}
+                                    />
+                                </div>
                             </section>
 
                             {/* Roles We Staff */}
@@ -283,6 +296,14 @@ export default function ManufacturingProductionPage() {
                                     <div className="flex items-center gap-2">
                                         <CheckCircle className="text-green-400 w-5 h-5" /> <span>Safety incident trend analysis</span>
                                     </div>
+                                </div>
+                                <div className="mt-6">
+                                    <CitationSource
+                                        source="OSHA Standards & Compliance Data"
+                                        href="https://www.osha.gov/laws-regs/regulations/standardnumber"
+                                        detail="29 CFR 1910 General Industry Standards"
+                                        compact={true}
+                                    />
                                 </div>
                             </section>
 

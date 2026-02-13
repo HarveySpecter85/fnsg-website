@@ -5,6 +5,7 @@ import { FadeIn } from '@/app/components/anim/fade-in'
 import { MagneticButton } from '@/app/components/anim/magnetic-button'
 import { Tractor, Bus, FileCheck, Sprout } from 'lucide-react'
 import PremiumCTA from '@/app/components/PremiumCTA'
+import HowToJsonLd from '@/app/components/seo/how-to-json-ld'
 
 export const metadata: Metadata = {
     title: "Farm Labor Contracting (FLC) | Agricultural Staffing",
@@ -24,8 +25,33 @@ export const metadata: Metadata = {
 }
 
 export default function FLCPage() {
+    const howToSteps = [
+        {
+            name: "Recruitment",
+            text: "FNSG sources experienced agricultural field workers and verifies their eligibility for farm labor work. We maintain a network of skilled workers experienced with seasonal planting and harvest operations, ensuring qualified crew members ready for immediate deployment to your fields."
+        },
+        {
+            name: "Transportation",
+            text: "We provide safe, DOT-compliant transportation for workers traveling to and from fields using properly maintained buses and licensed drivers. All transportation follows MSPA regulations and ensures workers arrive on time and in condition to perform effectively throughout the day."
+        },
+        {
+            name: "Payroll",
+            text: "FNSG manages accurate piece-rate or hourly wage calculations with all proper deductions including taxes, insurance, and required withholdings. We maintain detailed records of work performed and compensation earned, providing both workers and growers with transparent accounting and compliance documentation."
+        },
+        {
+            name: "Compliance",
+            text: "Full MSPA (Migrant and Seasonal Agricultural Worker Protection Act) adherence is maintained throughout operations, including housing inspections, wage disclosures, worker rights notifications, and regulatory record-keeping. We ensure all labor laws are followed to protect both workers and your facility from violations."
+        }
+    ];
+
     return (
         <main className="bg-white">
+            <HowToJsonLd
+                name="How Farm Labor Contracting Works With FNSG"
+                description="End-to-end FLC management process including recruitment, transportation, payroll, and MSPA compliance for seasonal agricultural staffing and harvest operations."
+                steps={howToSteps}
+                totalTime="PT1W"
+            />
             {/* Hero Section */}
             <section className="relative py-24 lg:py-32 overflow-hidden bg-slate-50 border-b border-slate-200">
                 <div className="container">
