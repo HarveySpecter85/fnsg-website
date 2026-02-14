@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
-export const alt = 'First National Staffing OS - Manufacturing & Production';
+export const alt = 'First National Staffing Group - Manufacturing & Production';
 export const size = {
     width: 1200,
     height: 630,

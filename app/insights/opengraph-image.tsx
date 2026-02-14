@@ -8,7 +8,7 @@ export default function Image() {
     return new ImageResponse(
         (
             <OGBaseTemplate
-                title="First National Staffing OS"
+                title="First National Staffing Group"
                 subtitle="Workforce Intelligence & Staffing Insights"
                 section="Insights"
             />
