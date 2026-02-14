@@ -37,14 +37,13 @@ export function GalleryGrid({
 
         gsap.fromTo(
             items,
-            { opacity: 0, y: 40, scale: 0.95 },
+            { opacity: 0, y: 30 },
             {
                 opacity: 1,
                 y: 0,
-                scale: 1,
-                duration: 0.6,
-                stagger: 0.08,
-                ease: 'power3.out',
+                duration: 0.5,
+                stagger: 0.05,
+                ease: 'power2.out',
                 scrollTrigger: {
                     trigger: gridRef.current,
                     start: 'top 85%',
@@ -63,49 +62,16 @@ export function GalleryGrid({
         );
     }
 
-    // Determine span classes for masonry effect
-    const getSpanClass = (image: GalleryImage, index: number): string => {
-        if (layout === 'uniform') return '';
-
-        // Featured images get double width on desktop
-        if (image.featured && index < 3) {
-            return 'md:col-span-2 md:row-span-2';
-        }
-        if (image.aspect === 'portrait') {
-            return 'row-span-2';
-        }
-        return '';
-    };
-
-    const getAspectClass = (image: GalleryImage, index: number): string => {
-        if (layout === 'uniform') return 'aspect-[4/3]';
-
-        if (image.featured && index < 3) return 'aspect-[4/3]';
-        if (image.aspect === 'portrait') return 'aspect-[3/4]';
-        if (image.aspect === 'square') return 'aspect-square';
-        return 'aspect-[4/3]';
-    };
-
     return (
         <div
             ref={gridRef}
-            className={clsx(
-                'grid gap-4',
-                layout === 'masonry'
-                    ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 auto-rows-auto'
-                    : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4'
-            )}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
         >
             {images.map((image, index) => (
                 <div
                     key={image.id}
                     data-gallery-item
-                    className={clsx(
-                        'group relative overflow-hidden rounded-xl cursor-pointer',
-                        'bg-slate-100 border border-slate-200',
-                        'hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300',
-                        getSpanClass(image, index)
-                    )}
+                    className="group flex flex-col bg-white rounded-lg overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer"
                     onClick={() => onImageClick(index)}
                     role="button"
                     tabIndex={0}
@@ -117,37 +83,43 @@ export function GalleryGrid({
                         }
                     }}
                 >
-                    <div className={clsx('relative w-full overflow-hidden', getAspectClass(image, index))}>
+                    {/* Image Container */}
+                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
                         <Image
                             loader={cloudinaryLoader}
                             src={image.src}
                             alt={image.alt}
                             fill
                             className="object-cover transition-transform duration-500 group-hover:scale-105"
-                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                            loading={index < 4 ? 'eager' : 'lazy'}
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                            loading={index < 6 ? 'eager' : 'lazy'}
                         />
 
-                        {/* Hover Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                        {/* Event Badge */}
+                        {/* Event Badge Overlay */}
                         {showEventBadge && (
-                            <div className="absolute top-3 left-3 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-                                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-medium text-slate-700">
-                                    <Calendar className="w-3 h-3" />
+                            <div className="absolute top-3 left-3">
+                                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-semibold text-brand-navy shadow-sm">
+                                    <Calendar className="w-3 h-3 text-brand-primary" />
                                     {new Date(image.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
                                 </span>
                             </div>
                         )}
+                    </div>
 
-                        {/* Caption on Hover */}
-                        <div className="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0">
-                            {image.caption && (
-                                <p className="text-white text-sm font-medium leading-snug">{image.caption}</p>
-                            )}
-                            <p className="text-white/60 text-xs mt-1">{image.event}</p>
-                        </div>
+                    {/* Content Below Image */}
+                    <div className="p-4 flex flex-col flex-grow">
+                        {image.caption ? (
+                            <p className="text-brand-navy font-medium leading-snug mb-1 line-clamp-2">
+                                {image.caption}
+                            </p>
+                        ) : (
+                            <p className="text-brand-navy font-medium leading-snug mb-1 line-clamp-2">
+                                {image.alt}
+                            </p>
+                        )}
+                        <p className="text-slate-500 text-xs mt-auto pt-2 border-t border-slate-100">
+                            {image.event}
+                        </p>
                     </div>
                 </div>
             ))}

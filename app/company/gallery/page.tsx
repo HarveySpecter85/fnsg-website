@@ -83,7 +83,7 @@ export default function GalleryPage() {
     const events = getGalleryEvents();
 
     return (
-        <main className="bg-white">
+        <main className="bg-brand-light">
             <GalleryJsonLd />
 
             {/* Breadcrumbs */}
